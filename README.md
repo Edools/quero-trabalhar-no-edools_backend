@@ -11,7 +11,7 @@ Uma especificação básica segue abaixo. Tudo que não foi especificado deve se
  - Email do Dono
  - Pitch
  - Subdomínio
-- Data de Criação
+ - Data de Criação
 
 - Cursos
  - Título
@@ -22,6 +22,11 @@ Uma especificação básica segue abaixo. Tudo que não foi especificado deve se
  - Data de Criação
  - Alunos Ativos
  - Preço
+
+## Relacionamentos
+
+- Uma escola pode possuir diversos cursos
+- Um curso só pode pertencer a uma escola
 
 ## Features
 
@@ -50,4 +55,5 @@ O horário do pull-request será o horário considerado para a entrega.
 # Recomendações finais
 
 - Nossa avaliação não será apenas em cima de produtividade, daremos grande valor a qualidade do código escrito.
+- Não iremos considerar entregas após o prazo combinado.
 - Não tente burlar horários e prazos, essa é uma péssima maneira de começar e não iremos tolerar tal atitude.
