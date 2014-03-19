@@ -1,0 +1,42 @@
+<%= form_for(@curso, :url => @curso.new_record? ? escola_cursos_path : escola_curso_path) do |f| %>
+  <% if @curso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
+
+      <ul>
+      <% @curso.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :conteudo %><br>
+    <%= f.text_field :conteudo %>
+  </div>
+  <div class="field">
+    <%= f.label :duracao %><br>
+    <%= f.text_field :duracao %>
+  </div>
+  <div class="field">
+    <%= f.label :alunos_ativos %><br>
+    <%= f.number_field :alunos_ativos %>
+  </div>
+  <div class="field">
+    <%= f.label :preco %><br>
+    <%= f.text_field :preco %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

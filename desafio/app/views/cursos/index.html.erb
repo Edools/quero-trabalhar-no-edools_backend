@@ -1,0 +1,50 @@
+<h1>Buscar curso</h1>
+
+ <%= form_tag(escola_cursos_path(@escola), :method => :get) do %>
+
+  <%= label_tag "Título" %>
+  <%= text_field_tag "busca[titulo]" %>
+  <%= submit_tag "Buscar", :title => "Clique aqui para buscar" %>
+
+ <% end %>
+
+<h1>Listing cursos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Descricao</th>
+      <th>Conteudo</th>
+      <th>Duracao</th>
+      <th>Alunos ativos</th>
+      <th>Preco</th>
+      <th>Escola</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cursos.each do |curso| %>
+      <tr>
+        <td><%= curso.titulo %></td>
+        <td><%= curso.descricao %></td>
+        <td><%= curso.conteudo %></td>
+        <td><%= curso.duracao %></td>
+        <td><%= curso.alunos_ativos %></td>
+        <td><%= curso.preco %></td>
+        <td><%= curso.escola.nome %></td>
+        <td><%= link_to 'Ver', escola_curso_path(curso.escola, curso) %></td>
+        <td><%= link_to 'Editar', edit_escola_curso_path(curso.escola, curso) %></td>
+        <td><%= link_to 'Deletar', escola_curso_path(curso.escola, curso), method: :delete, data: { confirm: 'Voce tem certeza que deseja deletar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Curso', new_escola_curso_path(@escola) %>
+<%= link_to 'Voltar', escolas_path %>
