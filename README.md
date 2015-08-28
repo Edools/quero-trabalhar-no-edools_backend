@@ -44,16 +44,11 @@ Siga as boas práticas que adota normalmente nos projetos que desenvolve.
 
 - Rails 4
 - Ruby 2
-- **2h de duração**
-
-# Início e fim do desafio
-
-Você deve iniciar na hora combinada por email e fazer um fork desse repositório. Quando terminar deve enviar um pull-request.
-
-O horário do pull-request será o horário considerado para a entrega.
 
 # Recomendações finais
 
 - Nossa avaliação não será apenas em cima de produtividade, daremos grande valor a qualidade do código escrito.
 - Não iremos considerar entregas após o prazo combinado.
-- Não tente burlar horários e prazos, essa é uma péssima maneira de começar e não iremos tolerar tal atitude.
+- O horário do pull-request será o horário considerado para a entrega.
+
+*We wish you good luck, and may the Quality be with you!*
