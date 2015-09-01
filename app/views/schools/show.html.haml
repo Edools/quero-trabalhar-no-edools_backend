@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @school.name
+%p
+  %b Email:
+  = @school.email
+%p
+  %b Pitch:
+  = @school.pitch
+%p
+  %b Subdomain:
+  = @school.subdomain
+%p
+  %b Creation date:
+  = @school.creation_date
+
+= link_to 'Edit', edit_school_path(@school)
+\|
+= link_to 'Back', schools_path
