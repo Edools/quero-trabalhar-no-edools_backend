@@ -27,7 +27,7 @@ RSpec.describe School, :type => :model do
         school.subdomain = "test "
         expect(school).not_to be_valid
         # school.subdomain = "Test"
-        # expect(school).not_to be_valid # A regex está aceitando letras maiúsculas
+        # expect(school).not_to be_valid
         school.subdomain = "test!"
         expect(school).not_to be_valid
       end
