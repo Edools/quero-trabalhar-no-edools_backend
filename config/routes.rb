@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   resources :courses
-  resources :schools
+  resources :schools do
+    collection do
+      get :report
+    end
+  end
+  root 'schools#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -8,5 +8,6 @@ class Course < ActiveRecord::Base
   validates :creation_date, presence: true
 
   scope :by_school, -> (school_id) { where(school_id: school_id) }
+  scope :search_by_title, -> (title) { where("title ILIKE ?", "%#{title}%".gsub(' ','%')) } 
 
 end

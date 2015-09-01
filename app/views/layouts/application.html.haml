@@ -28,23 +28,26 @@
         %a.navbar-brand(href="#") Academic
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to "Link 1", "/path1"
-            %li= link_to "Link 2", "/path2"
-            %li= link_to "Link 3", "/path3"
-            %li= link_to "Link 3", "/path3"
+            %li.dropdown
+              = link_to "#", class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button" do
+                Schools
+                %span.caret  
+              %ul.dropdown-menu
+                %li= link_to "Index", schools_path
+                %li= link_to "New Schools", new_school_path
+                %li= link_to "Active Students Report", report_schools_path
+            %li.dropdown
+              = link_to "#", class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button" do
+                Courses
+                %span.caret  
+              %ul.dropdown-menu
+                %li= link_to "Index", courses_path
+                %li= link_to "New Course", new_course_path
 
     .container
       .row
-        .col-lg-9
+        .col-lg-12
           = bootstrap_flash
           = yield
-        .col-lg-3
-          .well.sidebar-nav
-            %h3 Sidebar
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
       %footer
         %p &copy; Company 2015

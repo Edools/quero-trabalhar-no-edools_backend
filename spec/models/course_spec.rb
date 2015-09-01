@@ -44,6 +44,16 @@ RSpec.describe Course, :type => :model do
     end
   end
   context "Scopes" do
+    describe "search_by_title" do
+      it "returns courses with given title" do
+        course_a = create :course, title: "course A"
+        course_b = create :course, title: "course B"
+        course_ab = create :course, title: "course AB"
+        expect(Course.search_by_title("A")).to include(course_a)
+        expect(Course.search_by_title("A")).to include(course_ab)
+        expect(Course.search_by_title("A")).not_to include(course_b)
+      end
+    end
     describe "by_school" do
       it "returns courses of given school" do
         course1 = create :course
