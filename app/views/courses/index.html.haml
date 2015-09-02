@@ -6,6 +6,9 @@
   .form-group
     = label_tag :title, "Search by title:"
     = text_field_tag :title, nil, class: "form-control"
+  .form-group
+    = label_tag :school_id, "Filter by School:"
+    = select_tag :school_id, options_for_select(@schools, params[:school_id]), class: "form-control"
   = submit_tag "Search", class: "btn btn-primary"
 %table.table.table-striped
   %thead
@@ -26,7 +29,7 @@
       %tr
         %td= link_to course.id, course_path(course)
         %td= course.title
-        %td= course.school_id
+        %td= course.school.name
         %td= course.description
         %td= course.content
         %td= course.duration

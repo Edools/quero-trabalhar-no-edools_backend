@@ -1,9 +1,10 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-  before_action :get_schools, only: [:new, :create, :edit, :update]
+  before_action :get_schools, only: [:index, :new, :create, :edit, :update]
 
   def index
     @courses = params[:title].blank? ? Course.all : Course.search_by_title(params[:title])
+    @courses = @courses.by_school(params[:school_id]) unless params[:school_id].blank?
   end
 
   def show
