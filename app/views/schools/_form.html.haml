@@ -22,7 +22,7 @@
   .form-group
     = f.label :creation_date, class: 'control-label'
     .controls
-      = f.text_field :creation_date, class: 'form-control', required: true
+      = f.text_field :creation_date, class: 'form-control', required: true,'data-provide'=>'datepicker'
     = error_span(@school[:creation_date])
   = f.submit nil,class: 'btn btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), schools_path, :class => 'btn btn-default'

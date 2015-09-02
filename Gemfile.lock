@@ -40,6 +40,8 @@ GEM
     awesome_print (1.6.1)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-datepicker-rails (1.4.0)
+      railties (>= 3.0)
     builder (3.2.2)
     byebug (6.0.2)
     coderay (1.1.0)
@@ -190,6 +192,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  bootstrap-datepicker-rails
   byebug
   coffee-rails (~> 4.1.0)
   factory_girl
