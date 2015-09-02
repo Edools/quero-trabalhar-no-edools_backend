@@ -2,7 +2,7 @@ class School < ActiveRecord::Base
   has_many :courses
 
   validates :name, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, format: { with: /@/ }
   validates :subdomain, presence: true, format: { with: /\A[a-z0-9.-_]+\Z/ }
   validates :creation_date, presence: true
 

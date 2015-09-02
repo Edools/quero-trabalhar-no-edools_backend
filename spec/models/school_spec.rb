@@ -17,6 +17,11 @@ RSpec.describe School, :type => :model do
         school.email = nil
         expect(school).not_to be_valid
       end
+      it "should be valid unless it doesn`t contain @" do
+        school = build :school
+        school.email = "email"
+        expect(school).not_to be_valid
+      end
     end
     describe "subdomain" do
       it "should be valid unless it's nil, or isn't a valid domain" do
