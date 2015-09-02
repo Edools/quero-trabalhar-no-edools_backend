@@ -8,4 +8,8 @@ class School < ActiveRecord::Base
 
   scope :search_by_name, -> (name) { where("name ILIKE ?", "%#{name}%".gsub(' ','%')) } 
 
+  def active_students
+    courses.pluck(:active_students).sum
+  end
+
 end

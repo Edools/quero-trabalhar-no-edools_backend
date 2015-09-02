@@ -2,7 +2,7 @@
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
 
-= form_tag schools_path, class: "form-inline" do
+= form_tag schools_path, method: 'get', class: "form-inline" do
   .form-group
     = label_tag :name, "Search by Name:"
     = text_field_tag :name, nil, class: "form-control"

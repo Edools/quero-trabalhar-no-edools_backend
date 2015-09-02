@@ -2,11 +2,11 @@ class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
 
   def index
-    @schools = params[:name].blank? ? School.all : School.by_name(params[:name])
+    @schools = params[:name].blank? ? School.all : School.search_by_name(params[:name])
   end
 
   def report
-    @schools = School.all
+    @schools = School.all.sort_by{|s| s.active_students}
   end
 
   def show

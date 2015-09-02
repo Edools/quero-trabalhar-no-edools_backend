@@ -1,0 +1,21 @@
+- model_class = School
+.page-header
+  %h1
+    Active Students Report
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:email)
+      %th= model_class.human_attribute_name(:active_students)
+      %th= model_class.human_attribute_name(:subdomain)
+  %tbody
+    - @schools.each do |school|
+      %tr
+        %td= link_to school.id, school_path(school)
+        %td= school.name
+        %td= school.email
+        %td= school.active_students
+        %td= school.subdomain
