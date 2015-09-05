@@ -3,7 +3,9 @@ FactoryGirl.define do
     name           "Test School"
     email          "test_school@email.com"
     pitch          "test"
-    subdomain      "test_school"
+    sequence :subdomain do |n|
+      "test_school#{n}"
+    end
     creation_date Date.today
   end
 

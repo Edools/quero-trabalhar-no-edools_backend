@@ -24,17 +24,30 @@ RSpec.describe School, :type => :model do
       end
     end
     describe "subdomain" do
-      it "should be valid unless it's nil, or isn't a valid domain" do
-        school = build :school
-        expect(school).to be_valid
-        school.subdomain = nil
-        expect(school).not_to be_valid
-        school.subdomain = "test "
-        expect(school).not_to be_valid
-        # school.subdomain = "Test"
-        # expect(school).not_to be_valid
-        school.subdomain = "test!"
-        expect(school).not_to be_valid
+      context "should be valid if" do
+        it "isn't nil, or is valid, or is unique" do
+          school = build :school
+          expect(school).to be_valid
+        end
+      end
+      context "should be invalid if" do
+        it "is nil" do
+          school = build :school ,subdomain: nil
+          expect(school).not_to be_valid
+        end
+        it "has a space" do
+          school = build :school ,subdomain: "test "
+          expect(school).not_to be_valid
+        end
+        it "has a special character" do
+          school = build :school ,subdomain: "test!"
+          expect(school).not_to be_valid
+        end
+        it "isn't unique" do
+          create :school, subdomain: "test"
+          school = build :school, subdomain: "test"
+          expect(school).not_to be_valid
+        end
       end
     end
     describe "creation_date" do
