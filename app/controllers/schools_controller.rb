@@ -21,7 +21,7 @@ class SchoolsController < ApplicationController
 
   def create
     @school = School.new(school_params)
-
+    binding.pry
     respond_to do |format|
       if @school.save
         format.html { redirect_to @school, notice: 'School was successfully created.' }

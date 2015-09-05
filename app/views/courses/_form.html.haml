@@ -27,7 +27,7 @@
   .form-group
     = f.label :creation_date, class: 'control-label'
     .controls
-      = f.text_field :creation_date, class: 'form-control', required: true,'data-provide'=>'datepicker'
+      = f.text_field :creation_date, class: 'form-control datepicker', required: true
     = error_span(@course[:creation_date])
   .form-group
     = f.label :active_students, class: 'control-label'
