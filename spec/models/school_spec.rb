@@ -58,4 +58,15 @@ RSpec.describe School, :type => :model do
       end
     end
   end
+  context "Methods" do
+    describe "#active_students" do
+      it "returns school's courses' active_students sum" do
+        school = create :school
+        create :course, school: school, active_students: 5
+        create :course, school: school, active_students: 7
+        school.reload
+        expect(school.active_students).to eq(12)
+      end
+    end
+  end
 end
