@@ -1,0 +1,22 @@
+<h1>Escolas</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email o dono</th>
+      <th>pitch</th>
+      <th>Subdomínio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.name %></td>
+        <td><%= school.owner_email %></td>
+        <td><%= school.pitch %></td>
+        <td><%= school.subdomain %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

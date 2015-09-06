@@ -5,6 +5,7 @@ gem 'rails', '4.1.4'
 
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '~> 4.0.0'
+gem 'bootstrap-generators', '~> 3.3.4'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
