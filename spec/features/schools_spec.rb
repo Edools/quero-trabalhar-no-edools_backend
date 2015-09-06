@@ -37,4 +37,26 @@ describe "Schools" do
       expect(page).to have_content "Salvo com sucesso"
     end
   end
+
+  context "Edit School" do
+    let(:school) { create(:school) }
+
+    it "goes to edit school page" do
+      visit edit_school_path(school)
+
+      expect(page).to have_content "Editar Escola"
+    end
+
+    it "updates a new school" do
+      visit edit_school_path(school)
+
+      fill_in "school_name", with: "Fulano"
+      fill_in "school_owner_email", with: "fulano@email.com"
+      fill_in "school_subdomain", with: "escoladofulano.edools.com"
+
+      click_on "Salvar"
+
+      expect(page).to have_content "Atualizado com sucesso"
+    end
+  end
 end
