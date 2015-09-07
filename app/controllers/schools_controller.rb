@@ -1,5 +1,5 @@
 class SchoolsController < ApplicationController
-  before_action :set_school, only: [:edit, :update]
+  before_action :set_school, only: [:edit, :update, :destroy]
 
   def index
     @schools = School.all
@@ -29,6 +29,12 @@ class SchoolsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @school.destroy
+
+    redirect_to schools_path, notice: 'Excluído com sucesso.'
   end
 
   private

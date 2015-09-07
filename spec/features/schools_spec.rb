@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Schools" do
   context "List schools" do
-    let(:schools) { create_list(:school, 2) }
+    let!(:schools) { create_list(:school, 2) }
 
     it "shows a page of schools" do
       visit schools_path
@@ -15,6 +15,26 @@ describe "Schools" do
 
       expect(page).to have_content schools.first.name
       expect(page).to have_content schools.last.name
+    end
+
+    context "Destroy school" do
+      let(:school_to_delete) { schools.first }
+
+      it "allows the user to delete a school from list" do
+        visit schools_path
+
+        find("tr#school_#{school_to_delete.id} .destroy").click
+
+        expect(page).to have_content "Excluído com sucesso"
+      end
+
+      it "removes deleted school from the list" do
+        visit schools_path
+
+        find("tr#school_#{school_to_delete.id} .destroy").click
+
+        expect(page).to have_no_css "tr#school_#{school_to_delete.id} .destroy"
+      end
     end
   end
 

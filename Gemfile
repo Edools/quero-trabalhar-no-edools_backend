@@ -55,7 +55,8 @@ group :development, :test do
   gem 'rails-assets-angular-scenario', '1.2.14'
 
   gem 'awesome_print'
-  gem 'pry-rails'
+  gem 'byebug'
+
 end
 
 group :test do
