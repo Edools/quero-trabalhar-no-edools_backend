@@ -1,0 +1,27 @@
+<h1>Cursos</h1>
+
+<% if @courses.present? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Escola</th>
+        <th>Duração</th>
+        <th colspan="2">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr id="course_<%= course.id %>">
+          <td><%= course.title %></td>
+          <td><%= course.school.name %></td>
+          <td><%= course.duration %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  Não existem cursos cadastrados
+<% end %>
+
+<%= link_to 'Nova escola', new_course_path %>

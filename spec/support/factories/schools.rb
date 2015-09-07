@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :school do
-    name "MyString"
-    owner_email "MyString"
+    sequence(:name) { |n| "Escola #{n}" }
+    sequence(:owner_email) { |n| "fulano#{n}@escola.com" }
     pitch "MyString"
-    subdomain "MyString"
+    subdomain "minhaescola.edools.com"
   end
 end
