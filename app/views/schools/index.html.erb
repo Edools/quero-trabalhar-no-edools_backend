@@ -1,24 +1,31 @@
 <h1>Escolas</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Email o dono</th>
-      <th>pitch</th>
-      <th>Subdomínio</th>
-      <th colspan="1">Opções</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @schools.each do |school| %>
-      <tr id="school_<%= school.id %>">
-        <td><%= school.name %></td>
-        <td><%= school.owner_email %></td>
-        <td><%= school.pitch %></td>
-        <td><%= school.subdomain %></td>
-        <td><%= link_to 'Excluir', school, method: :delete, class: "destroy" %></td>
+<% if @schools.present? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email o dono</th>
+        <th>pitch</th>
+        <th>Subdomínio</th>
+        <th colspan="2">Opções</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @schools.each do |school| %>
+        <tr id="school_<%= school.id %>">
+          <td><%= school.name %></td>
+          <td><%= school.owner_email %></td>
+          <td><%= school.pitch %></td>
+          <td><%= school.subdomain %></td>
+          <td><%= link_to 'Editar', edit_school_path(school) %></td>
+          <td><%= link_to 'Excluir', school, method: :delete, class: "destroy" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  Não existem escolas cadastradas
+<% end %>
+
+<%= link_to 'Nova escola', new_school_path %>

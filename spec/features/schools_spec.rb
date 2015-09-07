@@ -2,38 +2,47 @@ require 'rails_helper'
 
 describe "Schools" do
   context "List schools" do
-    let!(:schools) { create_list(:school, 2) }
-
     it "shows a page of schools" do
       visit schools_path
 
       expect(page).to have_content "Escolas"
     end
 
-    it "shows a list of schools already created" do
-      visit schools_path
-
-      expect(page).to have_content schools.first.name
-      expect(page).to have_content schools.last.name
+    context "When there is not schools created" do
+      it "shows message of no schools created" do
+        visit schools_path
+        expect(page).to have_content "Não existem escolas cadastradas"
+      end
     end
 
-    context "Destroy school" do
-      let(:school_to_delete) { schools.first }
+    context "When there is schools created" do
+      let!(:schools) { create_list(:school, 2) }
 
-      it "allows the user to delete a school from list" do
+      it "shows a list of schools already created" do
         visit schools_path
 
-        find("tr#school_#{school_to_delete.id} .destroy").click
-
-        expect(page).to have_content "Excluído com sucesso"
+        expect(page).to have_content schools.first.name
+        expect(page).to have_content schools.last.name
       end
 
-      it "removes deleted school from the list" do
-        visit schools_path
+      context "Destroy school" do
+        let(:school_to_delete) { schools.first }
 
-        find("tr#school_#{school_to_delete.id} .destroy").click
+        it "allows the user to delete a school from list" do
+          visit schools_path
 
-        expect(page).to have_no_css "tr#school_#{school_to_delete.id} .destroy"
+          find("tr#school_#{school_to_delete.id} .destroy").click
+
+          expect(page).to have_content "Excluído com sucesso"
+        end
+
+        it "removes deleted school from the list" do
+          visit schools_path
+
+          find("tr#school_#{school_to_delete.id} .destroy").click
+
+          expect(page).to have_no_css "tr#school_#{school_to_delete.id} .destroy"
+        end
       end
     end
   end
