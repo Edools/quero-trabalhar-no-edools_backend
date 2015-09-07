@@ -16,6 +16,7 @@
           <td><%= course.title %></td>
           <td><%= course.school.name %></td>
           <td><%= course.duration %></td>
+          <td><%= link_to 'Excluir', course, method: :delete, class: "destroy" %></td>
         </tr>
       <% end %>
     </tbody>
