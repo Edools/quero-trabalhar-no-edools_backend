@@ -8,12 +8,12 @@ RSpec.describe School, type: :model do
     expect(school).to be_valid
   end
 
-  describe "has ActiveModel Validations" do
-    it { expect(school).to validate_presence_of(:name) }
-    it { expect(school).to validate_presence_of(:owner_email) }
-    it { expect(school).to validate_presence_of(:pitch) }
-    it { expect(school).to validate_presence_of(:subdomain) }
-    it { expect(school).to validate_presence_of(:date_of_creation) }
+  it "has ActiveModel Validations" do    
+    expect(school).to validate_presence_of(:name)
+    expect(school).to validate_presence_of(:owner_email)
+    expect(school).to validate_presence_of(:pitch)
+    expect(school).to validate_presence_of(:subdomain)
+    expect(school).to validate_presence_of(:date_of_creation)
   end
 
 end

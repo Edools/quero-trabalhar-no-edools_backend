@@ -1,3 +1,5 @@
+require 'faker'
+
 FactoryGirl.define do
   factory :school do
     name "#{Faker::StarWars.character}'s School"
