@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: edools_development 
+  username: postgres
+  password:   
+
+test:
+  <<: *default
+  database: edools_test
+  username: postgres
+  password:
+
+production:
+  <<: *default
+  url:  <%= ENV["DATABASE_URL"] %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
