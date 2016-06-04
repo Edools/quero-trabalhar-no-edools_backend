@@ -1,0 +1,26 @@
+<div class="demo-grid-ruler ">  
+    <table class="mdl-cell mdl-cell--12-col mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">
+            Nome da Escola
+          </th>          
+          <th>Email</th>
+          <th>Estudantes Ativos</th>
+          <th>Subdominio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @schools.each do |school| %>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric">
+              <%= school.name %>
+            </td>            
+            <td><%= school.email %></td>
+            <td><%= school.active_students %></td>
+            <td><%= school.subdomain %></td>
+          </tr>
+        <% end %>  
+      </tbody>
+    </table>
+</div>

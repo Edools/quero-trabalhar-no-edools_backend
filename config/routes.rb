@@ -2,6 +2,7 @@ DesafioEdoolsBackend::Application.routes.draw do
   resources :students
   resources :courses
   resources :schools
+  resources :reports, only: [:index]
   
   root 'home#index'
   
