@@ -202,6 +202,7 @@ pt-BR:
       default: ! '%a, %d de %B de %Y, %H:%M:%S %z'
       long: ! '%d de %B de %Y, %H:%M'
       short: ! '%d de %B, %H:%M'
+      custom: ! '%d de %B de %Y'
     pm: ''
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:

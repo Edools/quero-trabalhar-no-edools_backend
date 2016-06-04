@@ -28,7 +28,7 @@ RSpec.describe StudentsController, :type => :controller do
   }
   
   let(:valid_attributes) do 
-    { :name => "MyString", :register_number => "MyString", :status => true }
+    { :name => "MyString", :register_number => "9090909", :status => true }
   end
 
   let(:invalid_attributes) do 
@@ -106,15 +106,14 @@ RSpec.describe StudentsController, :type => :controller do
 
   describe "PUT update" do
     describe "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+      let(:new_attributes) do 
+    { :name => "MyString2", :register_number => "000000", :status => true }
+  end
 
       it "updates the requested student" do
         student = valid_student
         put :update, {:id => student.to_param, :student => new_attributes}, valid_session
         student.reload
-        skip("Add assertions for updated state")
       end
 
       it "assigns the requested student as @student" do

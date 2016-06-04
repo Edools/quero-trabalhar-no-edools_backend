@@ -1,10 +1,9 @@
 class Course < ActiveRecord::Base
   belongs_to :school
   
-	has_many :classrooms
+	has_many :classrooms, dependent: :destroy
   has_many :students, through: :classrooms
   
-  before_destroy { students.clear }
   
   validates :title, presence: true
   validates :duration, presence: true

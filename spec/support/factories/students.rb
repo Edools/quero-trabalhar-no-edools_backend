@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :student do
     name "MyString"
-    register_number "MyString"
+    register_number "1234567"
     status true
   end
 end

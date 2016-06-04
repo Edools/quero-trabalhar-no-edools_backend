@@ -6,7 +6,6 @@
             Nome da Escola
           </th>          
           <th>Email</th>
-          <th>Pitch</th>
           <th>Subdominio</th>
           <th>Data de Criação</th>
           <th></th>
@@ -19,9 +18,8 @@
               <%= school.name %>
             </td>            
             <td><%= school.email %></td>
-            <td><%= school.pitch %></td>
             <td><%= school.subdomain %></td>
-            <td><%= l school.created_at %></td>
+            <td><%= l school.created_at, format: :custom %></td>
             <td>
               <%= link_to "Visualizar", school_path(school), method: :get, class: "mdl-button mdl-js-button mdl-button--primary" %>
               <%= link_to "Editar", edit_school_path(school), method: :get, class: "mdl-button mdl-js-button mdl-button--primary" %>
