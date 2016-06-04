@@ -18,4 +18,6 @@ RSpec.describe Course, type: :model do
     expect(course).to validate_presence_of(:price)
   end
 
+  it { should belong_to(:school) }
+
 end
