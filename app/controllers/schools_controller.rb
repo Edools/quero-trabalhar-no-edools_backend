@@ -4,7 +4,7 @@ class SchoolsController < ApplicationController
   respond_to :html
 
   def index
-    @schools = School.all
+    @schools = params[:name].blank? ? School.all : School.search_by_name(params[:name])
     respond_with(@schools)
   end
 
@@ -42,6 +42,6 @@ class SchoolsController < ApplicationController
     end
 
     def school_params
-      params[:school]
+      params.require(:school).permit(:name, :email, :pitch, :subdomain)
     end
 end

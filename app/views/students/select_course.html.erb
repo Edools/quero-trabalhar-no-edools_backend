@@ -1,0 +1,31 @@
+<div class="secondary-navbar" style="padding:20px">
+	<h4>Estudante : <%= @student.name %> - <%= @student.register_number %></h4>
+	<span>Obs.: Matricule-se em um dos cursos listados abaixo :</span>
+</div>	
+
+<div class="demo-grid-ruler ">  
+    <table class="mdl-cell mdl-cell--12-col mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">
+            Nome do Curso
+          </th>          
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @courses.each do |course| %>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric">
+              <%= course.name %>
+            </td>            
+            <td>
+              <%= link_to "Matricular", {:controller => :students, :action => :matriculate, 
+                                        :course_id => course.id, :student_id => @student.id }, 
+                                        :method => :post, class: "mdl-button mdl-js-button mdl-button--primary" %>
+            </td>
+          </tr>
+        <% end %>  
+      </tbody>
+    </table>
+</div> 

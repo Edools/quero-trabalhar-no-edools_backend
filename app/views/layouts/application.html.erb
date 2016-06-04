@@ -40,12 +40,15 @@
         <span class="mdl-layout-title">Menu</span>
         <nav class="mdl-navigation">      
           <a class="mdl-navigation__link" href="">
-            <%= link_to "Adicionar Estudante", new_student_path, method: :get,
-              class: "mdl-navigation__link" %>
-            <%= link_to "Adicionar Curso", new_course_path, method: :get,
-              class: "mdl-navigation__link" %>
             <%= link_to "Adicionar Escola", new_school_path, method: :get,
               class: "mdl-navigation__link" %>
+              
+            <%= link_to "Adicionar Curso", new_course_path, method: :get,
+              class: "mdl-navigation__link" %>
+            
+            <%= link_to "Adicionar Estudante", new_student_path, method: :get,
+              class: "mdl-navigation__link" %>
+            
           </a>
         </nav>
       </div>

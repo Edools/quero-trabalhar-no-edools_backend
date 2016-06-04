@@ -1,10 +1,27 @@
-<%= simple_form_for(@student) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<div class="shadow default-form" style="margin:20px">
+  <%= form_for @student do |f| %>    
+    <div class="demo-grid-3 mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">   
+        <%= f.text_field :name, class: "mdl-textfield__input" %>
+        <%= f.label :name, class: "mdl-textfield__label" %>          
+        <%= error_tag @student, :name %>    
+      </div>
+      <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">       
+        <%= f.number_field :register, class: "mdl-textfield__input", pattern: "-?[0-9]*(\.[0-9]+)?" %>
+        <%= f.label :register, class: "mdl-textfield__label" %>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+        <%= error_tag @course, :register %>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield-- floating-label"> 
+        <%= f.label :status, class: "mdl-textfield__label" %><br />
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">  
+          <%= f.check_box :status, id: "switch-1", class: "mdl-switch__input" %>          
+          <span class="mdl-switch__label"></span>
+        </label>
+      </div>
+    </div>
+      <div class="demo-grid-2 mdl-grid">
+        <%= f.submit "Salvar", class: "mdl-cell mdl-cell--6-col mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>     
+      </div>  
+  <% end %>
+</div>

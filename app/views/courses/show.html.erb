@@ -1,4 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col">
+		<div class="mdl-card mdl-shadow--2dp demo-card-square-course">
+		  <div class="mdl-card__title mdl-card--expand">
+		  	<%= image_tag "course.png", width: "250px", style: "margin:20px" %>  	    
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		  	<h4>Curso : <%= @course.title %></h4>
+		  	<br />
+		  	<%= @course.description %>
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">
+		    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+		      Alunos cadastrados neste curso
+		    </a>
+		  </div>
+		</div>
+  </div>
+</div>

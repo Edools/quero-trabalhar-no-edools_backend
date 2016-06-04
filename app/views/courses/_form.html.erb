@@ -1,10 +1,44 @@
-<%= simple_form_for(@course) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<div class="shadow default-form" style="margin:20px">
+  <%= form_for @course do |f| %>    
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">   
+        <%= f.text_field :title, class: "mdl-textfield__input" %>
+        <%= f.label :title, class: "mdl-textfield__label" %>          
+        <%= error_tag @course, :name %>    
+      </div>
+    </div>
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">       
+        <%= f.text_field :description, class: "mdl-textfield__input" %>
+        <%= f.label :description, class: "mdl-textfield__label" %>
+        <%= error_tag @course, :description %>
+      </div>
+    </div>
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">       
+        <%= f.text_field :content, class: "mdl-textfield__input" %>
+        <%= f.label :content, class: "mdl-textfield__label" %>
+        <%= error_tag @course, :content %>
+      </div>
+    </div>
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">       
+        <%= f.number_field :duration, class: "mdl-textfield__input", pattern: "-?[0-9]*(\.[0-9]+)?" %>
+        <%= f.label :duration, class: "mdl-textfield__label" %>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+        <%= error_tag @course, :duration %>
+      </div>
+    </div>
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">       
+        <%= f.number_field :price, class: "mdl-textfield__input", pattern: "-?[0-9]*(\.[0-9]+)?" %>
+        <%= f.label :price, class: "mdl-textfield__label" %>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+        <%= error_tag @course, :price %>
+      </div>
+    </div>
+    <div class="demo-grid-2 mdl-grid">
+      <%= f.submit "Salvar", class: "mdl-cell mdl-cell--6-col mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>     
+    </div>  
+  <% end %>
+</div>

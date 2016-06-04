@@ -4,7 +4,8 @@ class CoursesController < ApplicationController
   respond_to :html
 
   def index
-    @courses = Course.all
+    @courses = params[:title].blank? ? Course.all : Course.search_by_title(params[:title])
+    @courses = @courses.by_school(params[:school_id]) unless params[:school_id].blank?
     respond_with(@courses)
   end
 
@@ -42,6 +43,8 @@ class CoursesController < ApplicationController
     end
 
     def course_params
-      params[:course]
+      params.require(:course).permit(
+        :title, :school_id, :description, :content, 
+        :duration, :price)
     end
 end

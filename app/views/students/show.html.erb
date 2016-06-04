@@ -1,4 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col">
+		<div class="mdl-card mdl-shadow--2dp demo-card-square">
+		  <div class="mdl-card__title mdl-card--expand">
+		  	<%= image_tag "student.png", width: "250px", style: "margin:20px" %>  	    
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		  	Estudante : <%= @student.name %>, N. de Registro : <%= @student.register_number %>,
+		  	Status : <%= @student.status_value %>
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">		    
+		      <%= link_to "Matricule-se [+]", "/student/#{@student.id}/select_course", method: :get, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %> 
+		  </div>
+		</div>
+  </div>
+</div>

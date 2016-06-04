@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :select_course]
 
   respond_to :html
 
@@ -35,6 +35,20 @@ class StudentsController < ApplicationController
     @student.destroy
     respond_with(@student)
   end
+  
+	def select_course
+		@courses = Course.where(status: true)			
+	end
+
+	def matriculate
+		@classroom = Classroom.new(student_id: params[:student_id],
+															 course_id: params[:course_id])
+		@classroom.entry_at = DateTime.now
+		@classroom.save ? flash[:success] = "sucesso"	: flash[:error] = "Falha"	
+		redirect_to @classroom, location: -> { student_path(@classroom.student_id) } 
+		
+	end
+
 
   private
     def set_student
@@ -42,6 +56,10 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-      params[:student]
+      params.require(:student).permit(:name, :register_number, :status)
     end
+    
+    def classroom_params
+  		params.require(:classroom).permit(:student_id, :course_id)	
+  	end
 end
