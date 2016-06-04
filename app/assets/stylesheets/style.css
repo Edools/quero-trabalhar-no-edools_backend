@@ -38,3 +38,8 @@ body {
     width: 420px;
     height: 420px;
 }
+
+.demo-card-square.mdl-card-course {
+    width: 520px;
+    height: 720px;
+}
