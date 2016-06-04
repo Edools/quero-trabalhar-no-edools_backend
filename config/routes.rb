@@ -1,4 +1,4 @@
-DesafioEdoolsBackend::Application.routes.draw do
+Rails.application.routes.draw do
   resources :students
   resources :courses
   resources :schools

@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :get_schools, only: [:new, :create, :edit, :update]
 
   respond_to :html
 
@@ -40,6 +41,10 @@ class CoursesController < ApplicationController
   private
     def set_course
       @course = Course.find(params[:id])
+    end
+    
+    def get_schools
+      @schools = School.all.map{|s| [s.name, s.id]}
     end
 
     def course_params

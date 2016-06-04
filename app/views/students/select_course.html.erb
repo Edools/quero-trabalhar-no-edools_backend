@@ -17,7 +17,7 @@
         <% @courses.each do |course| %>
           <tr>
             <td class="mdl-data-table__cell--non-numeric">
-              <%= course.name %>
+              <%= course.title %>
             </td>            
             <td>
               <%= link_to "Matricular", {:controller => :students, :action => :matriculate, 

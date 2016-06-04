@@ -2,17 +2,16 @@
   <div class="mdl-cell mdl-cell--4-col">
 		<div class="mdl-card mdl-shadow--2dp demo-card-square-course">
 		  <div class="mdl-card__title mdl-card--expand">
-		  	<%= image_tag "course.png", width: "250px", style: "margin:20px" %>  	    
+		  	<%= image_tag "course.jpg", width: "250px", style: "margin:20px" %>  	    
 		  </div>
 		  <div class="mdl-card__supporting-text">
 		  	<h4>Curso : <%= @course.title %></h4>
 		  	<br />
-		  	<%= @course.description %>
+		  	<strong>Curso : </strong> <%= @course.description %>
 		  </div>
 		  <div class="mdl-card__actions mdl-card--border">
-		    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-		      Alunos cadastrados neste curso
-		    </a>
+        <%= link_to "Alunos Cadastrados neste Curso", students_path(course_id: @course.id), 
+              method: :get, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
 		  </div>
 		</div>
   </div>

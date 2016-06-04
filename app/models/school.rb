@@ -1,5 +1,5 @@
 class School < ActiveRecord::Base
-  has_many :courses
+  has_many :courses, dependent: :destroy
   has_many :students, through: :courses
  
   validates :name, presence: true
@@ -9,6 +9,8 @@ class School < ActiveRecord::Base
   scope :search_by_name, -> (name) { where("name ILIKE ?", "%#{name}%".gsub(' ','%')) }
   
   def active_students
-     courses.pluck(:active_students).sum
+    sum = 0
+    courses.map { |x| sum += x.active_students}
+    return sum
    end
 end

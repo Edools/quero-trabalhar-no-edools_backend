@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-DesafioEdoolsBackend::Application.config.secret_key_base = '046b36956e145c607fa2d228bc19ff1ffc19fcdd33b1df2e30360999d74efad7d15dbbe8daba3d9154eb3f5d25c008306ad9e4f38385bdc9dfbd95bcb803bacb'
+Rails.application.config.secret_key_base = '046b36956e145c607fa2d228bc19ff1ffc19fcdd33b1df2e30360999d74efad7d15dbbe8daba3d9154eb3f5d25c008306ad9e4f38385bdc9dfbd95bcb803bacb'

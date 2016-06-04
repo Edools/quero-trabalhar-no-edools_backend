@@ -1,5 +1,5 @@
 <div class="demo-grid-ruler ">  
-    <table class="mdl-cell mdl-cell--12-col mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <table class="mdl-cell mdl-cell--8-col mdl-data-table mdl-js-data-table mdl-shadow--2dp">
       <thead>
         <tr>
           <th class="mdl-data-table__cell--non-numeric">
@@ -21,7 +21,7 @@
             <td><%= school.email %></td>
             <td><%= school.pitch %></td>
             <td><%= school.subdomain %></td>
-            <td><%= school.created_at %></td>
+            <td><%= l school.created_at %></td>
             <td>
               <%= link_to "Visualizar", school_path(school), method: :get, class: "mdl-button mdl-js-button mdl-button--primary" %>
               <%= link_to "Editar", edit_school_path(school), method: :get, class: "mdl-button mdl-js-button mdl-button--primary" %>

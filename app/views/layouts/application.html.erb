@@ -23,6 +23,9 @@
           </span>
           <div class="mdl-layout-spacer"></div>
     			<nav class="mdl-navigation mdl-layout--large-screen-only">
+            <%= link_to "Relatório", reports_path, method: :get,
+            class: "mdl-navigation__link" %>
+            
             <%= link_to "Escolas", schools_path, method: :get,
             class: "mdl-navigation__link" %>
                

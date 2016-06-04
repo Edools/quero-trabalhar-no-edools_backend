@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    @students = @students.by_course(params[:course_id]) unless params[:course_id].blank?
     respond_with(@students)
   end
 
@@ -37,7 +38,7 @@ class StudentsController < ApplicationController
   end
   
 	def select_course
-		@courses = Course.where(status: true)			
+		@courses = Course.all		
 	end
 
 	def matriculate
@@ -45,7 +46,7 @@ class StudentsController < ApplicationController
 															 course_id: params[:course_id])
 		@classroom.entry_at = DateTime.now
 		@classroom.save ? flash[:success] = "sucesso"	: flash[:error] = "Falha"	
-		redirect_to @classroom, location: -> { student_path(@classroom.student_id) } 
+		redirect_to student_path(@classroom.student_id)
 		
 	end
 

@@ -1,12 +1,11 @@
 class Course < ActiveRecord::Base
-  attr_internal_reader(:active_students)
   belongs_to :school
   
-  has_and_belongs_to_many :students
 	has_many :classrooms
   has_many :students, through: :classrooms
   
-
+  before_destroy { students.clear }
+  
   validates :title, presence: true
   validates :duration, presence: true
   validates :price, presence: true
@@ -15,7 +14,9 @@ class Course < ActiveRecord::Base
   scope :search_by_title, -> (title) { where("title ILIKE ?", "%#{title}%".gsub(' ','%')) }
   
   def active_students
-    students.size
+    students.where(status: true).size
   end
+  
+  
   
 end
