@@ -3,7 +3,7 @@
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
-<%= render "shared/search_form", filter_params: [:title], model_class: model_class %> 
+<%= render "shared/search_form", filter_params: [:title], model_class: model_class, select_filter_params: [ {key: :school_id, options: School.all.pluck(:name, :id) } ] %> 
 
 <table class="table table-striped">
   <thead>
