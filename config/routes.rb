@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :schools
   resources :reports, only: [:index]
   
-  root 'home#index'
+  root 'schools#index'
   
   get 'student/:id/select_course' => 'students#select_course'
   post "/matriculate" => "students#matriculate", :as => :matriculate

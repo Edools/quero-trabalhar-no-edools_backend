@@ -1,4 +1,13 @@
-<div class="demo-grid-ruler ">  
+<div id="tt1" class="mdl-grid mdl-cell--10-offset">
+    <%= link_to new_course_path, method: :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" do %>
+      <i class="material-icons">add</i>
+      <div class="mdl-tooltip mdl-tooltip--left" for="tt1">
+        Adicionar Novo Curso
+      </div>
+    <% end %>
+  </div>
+
+<div class="demo-grid-ruler "> 
     <table class="mdl-cell mdl-cell--12-col mdl-data-table mdl-js-data-table mdl-shadow--2dp">
       <thead>
         <tr>

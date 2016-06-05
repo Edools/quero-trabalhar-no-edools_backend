@@ -13,27 +13,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="mdl-layout mdl-js-layout">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
           <!-- Title -->
           <span class="mdl-layout-title">
             Desafio Edools
           </span>
-          <div class="mdl-layout-spacer"></div>
-    			<nav class="mdl-navigation mdl-layout--large-screen-only">
-            <%= link_to "Relatório", reports_path, method: :get,
-            class: "mdl-navigation__link" %>
-            
-            <%= link_to "Escolas", schools_path, method: :get,
-            class: "mdl-navigation__link" %>
-               
-            <%= link_to "Cursos", courses_path, method: :get,
-            class: "mdl-navigation__link" %>  
-            
-            <%= link_to "Estudantes", students_path, method: :get,
-            class: "mdl-navigation__link" %>        
-    			</nav>
         </div>
       </header>
       <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
@@ -41,16 +27,18 @@
       <div class="mdl-layout__drawer">    
         <span class="mdl-layout-title">Menu</span>
         <nav class="mdl-navigation">      
-          <a class="mdl-navigation__link" href="">
-            <%= link_to "Adicionar Escola", new_school_path, method: :get,
-              class: "mdl-navigation__link" %>
-              
-            <%= link_to "Adicionar Curso", new_course_path, method: :get,
-              class: "mdl-navigation__link" %>
+          <a class="mdl-navigation__link" href="">         
+            <%= link_to "Escolas", schools_path, method: :get,
+            class: "mdl-navigation__link" %>
+                  
+            <%= link_to "Cursos", courses_path, method: :get,
+            class: "mdl-navigation__link" %>  
             
-            <%= link_to "Adicionar Estudante", new_student_path, method: :get,
-              class: "mdl-navigation__link" %>
+            <%= link_to "Estudantes", students_path, method: :get,
+            class: "mdl-navigation__link" %>
             
+            <%= link_to "Relatório", reports_path, method: :get,
+            class: "mdl-navigation__link" %>            
           </a>
         </nav>
       </div>

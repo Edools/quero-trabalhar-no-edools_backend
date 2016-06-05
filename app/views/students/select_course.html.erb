@@ -9,7 +9,9 @@
         <tr>
           <th class="mdl-data-table__cell--non-numeric">
             Nome do Curso
-          </th>          
+          </th>
+          <th>Duração</th>
+          <th>Preço</th>    
           <th></th>
         </tr>
       </thead>
@@ -18,7 +20,9 @@
           <tr>
             <td class="mdl-data-table__cell--non-numeric">
               <%= course.title %>
-            </td>            
+            </td>
+            <td><%= course.duration %></td>
+            <td><%= course.price %></td>         
             <td>
               <%= link_to "Matricular", {:controller => :students, :action => :matriculate, 
                                         :course_id => course.id, :student_id => @student.id }, 

@@ -10,6 +10,8 @@
 		  	<strong>Email :</strong> <%= @school.email %>
         <br/>
 		  	<strong>Pitch :</strong> <%= @school.pitch %>
+        <br/>
+		  	<strong>Subdomínio :</strong> <%= @school.subdomain %>
 		  </div>
       <div class="mdl-card__actions mdl-card--border">
         <%= link_to "Cursos Cadastrados", courses_path(school_id: @school.id), 

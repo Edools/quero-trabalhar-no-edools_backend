@@ -10,6 +10,10 @@
 		  	<strong>Descrição : </strong> <%= @course.description %>
         <br />
 		  	<strong>Conteúdo : </strong> <%= @course.content %>
+        <br />
+		  	<strong>Duração : </strong> <%= @course.duration %>
+        <br />
+		  	<strong>Preço : </strong> <%= @course.content %>
 		  </div>
 		  <div class="mdl-card__actions mdl-card--border">
         <%= link_to "Alunos Cadastrados neste Curso", students_path(course_id: @course.id), 
