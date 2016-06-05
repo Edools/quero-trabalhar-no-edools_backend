@@ -74,4 +74,39 @@ feature 'School features' do
     expect(page).to have_content("Name can't be blank")
   end
 
+  scenario 'user filter schools by name' do
+    school = create(:school, name: 'USP')
+    FactoryGirl.create_list(:school, 4)
+
+    visit schools_path
+
+    page_schools = page.all(:css, 'tr').length - 1
+    expect(page_schools).to equal(5)
+
+    fill_in 'name', with: 'USP' 
+    find('button[type="submit"]').click
+
+    page_schools = page.all(:css, 'tr').length - 1
+    expect(page_schools).to equal(1)
+    expect(page).to have_content('USP')
+  end
+
+  scenario 'user filter schools by email' do
+    school = create(:school, name: "USP", owner_email: "email@example.com")
+    FactoryGirl.create_list(:school, 4)
+
+    visit schools_path
+    
+    page_schools = page.all(:css, 'tr').length - 1
+    expect(page_schools).to equal(5)
+
+    fill_in 'owner_email', with: 'email@example.com' 
+    find('button[type="submit"]').click
+
+    page_schools = page.all(:css, 'tr').length - 1
+    expect(page_schools).to equal(1)
+    expect(page).to have_content('USP')
+  end
+
+
 end
