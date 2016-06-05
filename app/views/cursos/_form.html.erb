@@ -1,0 +1,35 @@
+<%= form_for([@escola, @escola.cursos.build]) do |f| %>
+
+<fieldset>
+    <legend>Formulário de curso</legend>
+
+    <div class="form-group">
+        <%= f.label :titulo %>
+        <%= f.text_field :titulo, class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :descricao %><br>
+        <%= f.text_area :descricao, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :conteudo %><br>
+        <%= f.text_area :conteudo, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :duracao %>
+        <%= f.text_field :duracao, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :preco %>
+        <%= f.number_field :preco, class: "form-control" %>
+    </div>
+
+    <%= f.submit "Enviar", class: "btn btn-success" %>
+
+</fieldset>
+
+<% end %>
