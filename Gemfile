@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
+ruby "2.3.0"
 
 gem 'rails', '4.2.3'
-
 
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -37,3 +37,5 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.3.0'
   gem 'factory_girl_rails', '~> 4.4.1'
 end
+
+gem 'rails_12factor', group: :production
