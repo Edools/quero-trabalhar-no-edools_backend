@@ -1,0 +1,83 @@
+<%= form_for @course, :html => { :class => "form-horizontal course" } do |f| %>
+
+  <% if @course.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @course.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:title) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :school_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :school_id, School.all.map{ |s| [s.name, s.id, {:name => s.name}]}, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:school_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:description) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :content, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:content) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :duration, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :duration, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:duration) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :creation_date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :creation_date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:creation_date) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :active_students, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :active_students, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:active_students) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :price, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:price) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                courses_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
