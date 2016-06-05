@@ -17,7 +17,6 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.4'
   gem 'factory_girl_rails', '~> 4.5.0'
-  gem 'highline', require: false
 end
 
 group :development do

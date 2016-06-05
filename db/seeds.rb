@@ -1,8 +1,10 @@
-require 'highline/import'
 require 'faker'
 
 if Rails.env == 'development'
-  answer = ask("Do you wish to clean your current database? (type 'yes' or 'no')")
+
+  STDOUT.puts "Do you wish to clean your current database? \n Please respond with 'yes' or 'no' (or 'y' or 'n'). \n"
+  answer = STDIN.gets.chomp
+
   if answer.match(/^y(|es)$/)
     School.destroy_all
     Course.destroy_all
