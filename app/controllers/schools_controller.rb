@@ -2,7 +2,7 @@ class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
 
   def index
-    @schools = School.filter(params.slice(:name))
+    @schools = School.filter(params.slice(:name, :owner_email))
   end
 
   def show

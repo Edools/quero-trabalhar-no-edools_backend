@@ -1,0 +1,14 @@
+<div class="container">
+  <form class="navbar-form navbar-right" role="search">
+    <div class="focus-container" tabindex="-1">
+      <div class="input-group add-on">
+        <% filter_params.each do |filter_param| %>
+          <input type="text" class="form-control" placeholder="<%= model_class.human_attribute_name(filter_param)%>" name="<%= filter_param %>" id="srch-term" value="<%= params[filter_param] %>">
+        <% end %>
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
