@@ -55,4 +55,14 @@ feature 'School features' do
     expect(page).to have_content('Escola excluida com sucesso.')
   end
 
+  scenario 'user update a school' do
+    school = create(:school) 
+    visit edit_school_path(school)
+    
+    fill_in 'Name', with: Faker::StarWars.character
+    click_on 'Update School'
+
+    expect(page).to have_content('Escola atualizada com sucesso.')
+  end
+
 end
