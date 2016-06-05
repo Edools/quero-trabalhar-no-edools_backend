@@ -33,7 +33,6 @@ feature 'School features' do
     expect(page).to have_content(school.name)
   end
 
-
   scenario 'user try to create a school with invalid inputs and get an error message' do
     visit new_school_path(school)
 
@@ -63,6 +62,16 @@ feature 'School features' do
     click_on 'Update School'
 
     expect(page).to have_content('Escola atualizada com sucesso.')
+  end
+
+  scenario 'user try to update a school with invalid input' do
+    school = create(:school) 
+    visit edit_school_path(school)
+    
+    fill_in 'Name', with: nil
+    click_on 'Update School'
+
+    expect(page).to have_content("Name can't be blank")
   end
 
 end

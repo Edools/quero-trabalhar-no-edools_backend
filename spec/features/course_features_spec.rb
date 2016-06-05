@@ -35,7 +35,6 @@ feature 'Course features' do
     expect(page).to have_content(course.title)
   end
 
-
   scenario 'user try to create a course with invalid inputs and get an error message' do
     visit new_course_path(course)
 
@@ -68,6 +67,16 @@ feature 'Course features' do
     click_on 'Update Course'
 
     expect(page).to have_content('Curso atualizado com sucesso.')
+  end
+
+  scenario 'user try to update a course with invalid input' do
+    course = create(:course) 
+    visit edit_course_path(course)
+    
+    fill_in 'Title', with: nil
+    click_on 'Update Course'
+
+    expect(page).to have_content("Title can't be blank")
   end
 
 end
