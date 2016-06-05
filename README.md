@@ -2,6 +2,10 @@
  O App é uma sistema básico para manipulação de escolas, cursos e alunos desenvolvido com Ruby on Rails 
  para desafio de programação Edools.
  
+ O app se encontra no Heroku para teste.
+ 
+ Link: https://ancient-hollows-97706.herokuapp.com/
+ 
 
  ### Features
  
