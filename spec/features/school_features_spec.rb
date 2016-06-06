@@ -108,5 +108,15 @@ feature 'School features' do
     expect(page).to have_content('USP')
   end
 
+  scenario 'user get active students report' do
+    FactoryGirl.create_list(:school, 4)
+    school = School.first
+
+    visit schools_active_students_path
+
+    expect(page).to have_content(school.active_students)
+
+  end
+
 
 end
