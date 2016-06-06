@@ -5833,3 +5833,535 @@ Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School"], ["owner_email", "owner@school34.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school"], ["created_at", "2016-06-05 06:41:56.491699"], ["updated_at", "2016-06-05 06:41:56.491699"]]
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.2ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 1' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school1.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.2ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 1"], ["owner_email", "owner@school1.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-1"], ["created_at", "2016-06-06 00:27:12.068276"], ["updated_at", "2016-06-06 00:27:12.068276"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.091049"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.092691"], ["updated_at", "2016-06-06 00:27:12.092691"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.096289"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.097048"], ["updated_at", "2016-06-06 00:27:12.097048"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by CoursesController#index as HTML
+  Parameters: {"school_id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered courses/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 71ms (Views: 33.1ms | ActiveRecord: 0.2ms)
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."school_id" = ?  [["school_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 2' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school2.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 2"], ["owner_email", "owner@school2.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-2"], ["created_at", "2016-06-06 00:27:12.195896"], ["updated_at", "2016-06-06 00:27:12.195896"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.199988"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.200896"], ["updated_at", "2016-06-06 00:27:12.200896"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.205053"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.206638"], ["updated_at", "2016-06-06 00:27:12.206638"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Simple title"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.212181"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.212965"], ["updated_at", "2016-06-06 00:27:12.212965"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by CoursesController#index as HTML
+  Parameters: {"title"=>"Simple title", "school_id"=>"1"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered courses/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "courses" WHERE "courses"."school_id" = ? AND "courses"."title" = ?[0m  [["school_id", 1], ["title", "Simple title"]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."school_id" = ? AND "courses"."title" = ?  [["school_id", 1], ["title", "Simple title"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 3' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school3.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 3"], ["owner_email", "owner@school3.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-3"], ["created_at", "2016-06-06 00:27:12.245346"], ["updated_at", "2016-06-06 00:27:12.245346"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.248512"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.250259"], ["updated_at", "2016-06-06 00:27:12.250259"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.254041"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.254791"], ["updated_at", "2016-06-06 00:27:12.254791"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Simple title"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.257755"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.258470"], ["updated_at", "2016-06-06 00:27:12.258470"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by CoursesController#index as HTML
+  Parameters: {"title"=>"wrong title", "school_id"=>"1"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered courses/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "courses" WHERE "courses"."school_id" = ? AND "courses"."title" = ?[0m  [["school_id", 1], ["title", "wrong title"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."school_id" = ? AND "courses"."title" = ?  [["school_id", 1], ["title", "wrong title"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 4' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school4.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 4"], ["owner_email", "owner@school4.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-4"], ["created_at", "2016-06-06 00:27:12.286030"], ["updated_at", "2016-06-06 00:27:12.286030"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by CoursesController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered courses/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "courses"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 5' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school5.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 5"], ["owner_email", "owner@school5.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-5"], ["created_at", "2016-06-06 00:27:12.316140"], ["updated_at", "2016-06-06 00:27:12.316140"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by CoursesController#create as HTML
+  Parameters: {"course"=>{"title"=>"Awesome Course", "description"=>"Course Description", "content"=>"MyText", "duration"=>"2016-06-05T21:27:12-03:00", "active_students"=>"10", "price"=>"350.0"}, "school_id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "courses" ("title", "description", "content", "duration", "active_students", "price", "school_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Awesome Course"], ["description", "Course Description"], ["content", "MyText"], ["duration", "2000-01-01 21:27:12.000000"], ["active_students", 10], ["price", 350.0], ["school_id", 1], ["created_at", "2016-06-06 00:27:12.323385"], ["updated_at", "2016-06-06 00:27:12.323385"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/schools/1/courses
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "courses"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "courses"
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 6' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school6.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 6"], ["owner_email", "owner@school6.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-6"], ["created_at", "2016-06-06 00:27:12.334557"], ["updated_at", "2016-06-06 00:27:12.334557"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by CoursesController#create as HTML
+  Parameters: {"course"=>{"title"=>"", "description"=>"Course Description", "content"=>"MyText", "duration"=>"2016-06-05T21:27:12-03:00", "active_students"=>"10", "price"=>"350.0"}, "school_id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered courses/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "courses"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.2ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 7' LIMIT 1
+  [1m[36mSchool Exists (2.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school7.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 7"], ["owner_email", "owner@school7.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-7"], ["created_at", "2016-06-06 00:27:12.353406"], ["updated_at", "2016-06-06 00:27:12.353406"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.357621"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.358556"], ["updated_at", "2016-06-06 00:27:12.358556"]]
+  [1m[36m (0.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 8' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school8.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 8"], ["owner_email", "owner@school8.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-8"], ["created_at", "2016-06-06 00:27:12.367016"], ["updated_at", "2016-06-06 00:27:12.367016"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by CoursesController#edit as HTML
+  Parameters: {"school_id"=>"2", "id"=>"1"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered courses/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 9' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school9.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 9"], ["owner_email", "owner@school9.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-9"], ["created_at", "2016-06-06 00:27:12.389843"], ["updated_at", "2016-06-06 00:27:12.389843"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.394304"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.395125"], ["updated_at", "2016-06-06 00:27:12.395125"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 10' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school10.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 10"], ["owner_email", "owner@school10.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-10"], ["created_at", "2016-06-06 00:27:12.408646"], ["updated_at", "2016-06-06 00:27:12.408646"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by CoursesController#update as HTML
+  Parameters: {"course"=>{"title"=>"New course", "description"=>"Course Description", "content"=>"MyText", "duration"=>"2016-06-05T21:27:12-03:00", "active_students"=>"10", "price"=>"350.0"}, "school_id"=>"2", "id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "courses" SET "title" = ?, "duration" = ?, "updated_at" = ? WHERE "courses"."id" = ?  [["title", "New course"], ["duration", "2000-01-01 21:27:12.000000"], ["updated_at", "2016-06-06 00:27:12.421395"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/schools/2/courses
+Completed 302 Found in 10ms (ActiveRecord: 0.4ms)
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 11' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school11.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 11"], ["owner_email", "owner@school11.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-11"], ["created_at", "2016-06-06 00:27:12.436970"], ["updated_at", "2016-06-06 00:27:12.436970"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.439894"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.440726"], ["updated_at", "2016-06-06 00:27:12.440726"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 12' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school12.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 12"], ["owner_email", "owner@school12.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-12"], ["created_at", "2016-06-06 00:27:12.452192"], ["updated_at", "2016-06-06 00:27:12.452192"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by CoursesController#update as HTML
+  Parameters: {"course"=>{"title"=>"", "description"=>"Course Description", "content"=>"MyText", "duration"=>"2016-06-05T21:27:12-03:00", "active_students"=>"10", "price"=>"350.0"}, "school_id"=>"2", "id"=>"1"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered courses/edit.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 13' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school13.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 13"], ["owner_email", "owner@school13.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-13"], ["created_at", "2016-06-06 00:27:12.477755"], ["updated_at", "2016-06-06 00:27:12.477755"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.479730"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.480732"], ["updated_at", "2016-06-06 00:27:12.480732"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 14' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school14.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 14"], ["owner_email", "owner@school14.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-14"], ["created_at", "2016-06-06 00:27:12.489968"], ["updated_at", "2016-06-06 00:27:12.489968"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1", "school_id"=>"2"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered courses/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 15' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school15.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 15"], ["owner_email", "owner@school15.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-15"], ["created_at", "2016-06-06 00:27:12.501627"], ["updated_at", "2016-06-06 00:27:12.501627"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "courses" ("title", "school_id", "description", "content", "duration", "active_students", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Awesome Course"], ["school_id", 1], ["description", "Course Description"], ["content", "MyText"], ["duration", "2016-06-06 00:27:12.503369"], ["active_students", 10], ["price", 350.0], ["created_at", "2016-06-06 00:27:12.504160"], ["updated_at", "2016-06-06 00:27:12.504160"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "courses"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 16' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school16.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 16"], ["owner_email", "owner@school16.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-16"], ["created_at", "2016-06-06 00:27:12.509238"], ["updated_at", "2016-06-06 00:27:12.509238"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by CoursesController#destroy as HTML
+  Parameters: {"school_id"=>"2", "id"=>"1"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/schools/2/courses
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "courses"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 17' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school17.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 17"], ["owner_email", "owner@school17.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-17"], ["created_at", "2016-06-06 00:27:12.531197"], ["updated_at", "2016-06-06 00:27:12.531197"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 18' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school18.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 18"], ["owner_email", "owner@school18.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-18"], ["created_at", "2016-06-06 00:27:12.535570"], ["updated_at", "2016-06-06 00:27:12.535570"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SchoolsController#index as HTML
+  Rendered schools/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[35mSchool Load (0.2ms)[0m  SELECT "schools".* FROM "schools"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 19' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school19.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 19"], ["owner_email", "owner@school19.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-19"], ["created_at", "2016-06-06 00:27:12.552156"], ["updated_at", "2016-06-06 00:27:12.552156"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 20' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school20.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 20"], ["owner_email", "owner@school20.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-20"], ["created_at", "2016-06-06 00:27:12.556492"], ["updated_at", "2016-06-06 00:27:12.556492"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Simple name' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school21.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Simple name"], ["owner_email", "owner@school21.com"], ["pitch", "Awesome description"], ["subdomain", "simple-name"], ["created_at", "2016-06-06 00:27:12.560850"], ["updated_at", "2016-06-06 00:27:12.560850"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by SchoolsController#index as HTML
+  Parameters: {"name"=>"Simple name"}
+  Rendered schools/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "schools" WHERE "schools"."name" = ?[0m  [["name", "Simple name"]]
+  [1m[35mSchool Load (0.1ms)[0m  SELECT "schools".* FROM "schools" WHERE "schools"."name" = ?  [["name", "Simple name"]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 21' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school22.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 21"], ["owner_email", "owner@school22.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-21"], ["created_at", "2016-06-06 00:27:12.570819"], ["updated_at", "2016-06-06 00:27:12.570819"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 22' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school23.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 22"], ["owner_email", "owner@school23.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-22"], ["created_at", "2016-06-06 00:27:12.575073"], ["updated_at", "2016-06-06 00:27:12.575073"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Simple name' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school24.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Simple name"], ["owner_email", "owner@school24.com"], ["pitch", "Awesome description"], ["subdomain", "simple-name"], ["created_at", "2016-06-06 00:27:12.579157"], ["updated_at", "2016-06-06 00:27:12.579157"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by SchoolsController#index as HTML
+  Parameters: {"name"=>"wrong name"}
+  Rendered schools/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "schools" WHERE "schools"."name" = ?[0m  [["name", "wrong name"]]
+  [1m[35mSchool Load (0.0ms)[0m  SELECT "schools".* FROM "schools" WHERE "schools"."name" = ?  [["name", "wrong name"]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SchoolsController#new as HTML
+  Rendered schools/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "schools"[0m
+Processing by SchoolsController#create as HTML
+  Parameters: {"school"=>{"name"=>"Awesome School 23", "owner_email"=>"owner@school25.com", "pitch"=>"Awesome description"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 23' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school25.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 23"], ["owner_email", "owner@school25.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-23"], ["created_at", "2016-06-06 00:27:12.597458"], ["updated_at", "2016-06-06 00:27:12.597458"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/schools/1
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "schools"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "schools"[0m
+Processing by SchoolsController#create as HTML
+  Parameters: {"school"=>{"name"=>"", "owner_email"=>"owner@school26.com", "pitch"=>"Awesome description"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = '' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school26.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered schools/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "schools"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 24' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school27.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 24"], ["owner_email", "owner@school27.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-24"], ["created_at", "2016-06-06 00:27:12.615302"], ["updated_at", "2016-06-06 00:27:12.615302"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SchoolsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered schools/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 25' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school28.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 25"], ["owner_email", "owner@school28.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-25"], ["created_at", "2016-06-06 00:27:12.626101"], ["updated_at", "2016-06-06 00:27:12.626101"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by SchoolsController#update as HTML
+  Parameters: {"school"=>{"name"=>"New name", "owner_email"=>"owner@school29.com", "pitch"=>"Awesome description"}, "id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE ("schools"."name" = 'New name' AND "schools"."id" != 1) LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE ("schools"."owner_email" = 'owner@school29.com' AND "schools"."id" != 1) LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE ("schools"."subdomain" = 'awesome-school-25' AND "schools"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "schools" SET "name" = ?, "owner_email" = ?, "subdomain" = ?, "updated_at" = ? WHERE "schools"."id" = ?  [["name", "New name"], ["owner_email", "owner@school29.com"], ["subdomain", "new-name"], ["updated_at", "2016-06-06 00:27:12.634617"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/schools/1
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 26' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school30.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 26"], ["owner_email", "owner@school30.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-26"], ["created_at", "2016-06-06 00:27:12.642589"], ["updated_at", "2016-06-06 00:27:12.642589"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by SchoolsController#update as HTML
+  Parameters: {"school"=>{"name"=>"", "owner_email"=>"owner@school31.com", "pitch"=>"Awesome description"}, "id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE ("schools"."name" = '' AND "schools"."id" != 1) LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE ("schools"."owner_email" = 'owner@school31.com' AND "schools"."id" != 1) LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE ("schools"."subdomain" = 'awesome-school-26' AND "schools"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered schools/edit.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[36mSchool Load (0.1ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 27' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school32.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Awesome School 27"], ["owner_email", "owner@school32.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-27"], ["created_at", "2016-06-06 00:27:12.657343"], ["updated_at", "2016-06-06 00:27:12.657343"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered schools/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School 28' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school33.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School 28"], ["owner_email", "owner@school33.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school-28"], ["created_at", "2016-06-06 00:27:12.667971"], ["updated_at", "2016-06-06 00:27:12.667971"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "schools"[0m
+Processing by SchoolsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schools" WHERE "schools"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/schools
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "schools"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" IS NULL LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" IS NULL LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" IS NULL LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" IS NULL LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" IS NULL LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" IS NULL LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSchool Load (0.2ms)[0m  SELECT  "schools".* FROM "schools"  ORDER BY "schools"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schools" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-06-06 00:27:12.745135"], ["updated_at", "2016-06-06 00:27:12.745135"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "schools" SET "name" = ?, "subdomain" = ?, "updated_at" = ? WHERE "schools"."id" = ?[0m  [["name", "an arbitrary value"], ["subdomain", "an-arbitrary-value"], ["updated_at", "2016-06-06 00:27:12.747394"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" IS NULL LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" = 'an-arbitrary-value' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" IS NULL LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" = 'an-arbitrary-value' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSchool Load (0.1ms)[0m  [1mSELECT  "schools".* FROM "schools"  ORDER BY "schools"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2016-06-06 00:27:12.764244"], ["updated_at", "2016-06-06 00:27:12.764244"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "schools" SET "owner_email" = ?, "updated_at" = ? WHERE "schools"."id" = ?  [["owner_email", "an arbitrary value"], ["updated_at", "2016-06-06 00:27:12.766215"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" IS NULL LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" IS NULL LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools"  ORDER BY "schools"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schools" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-06-06 00:27:12.782757"], ["updated_at", "2016-06-06 00:27:12.782757"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "schools" SET "subdomain" = ?, "updated_at" = ? WHERE "schools"."id" = ?[0m  [["subdomain", "an arbitrary value"], ["updated_at", "2016-06-06 00:27:12.784686"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" IS NULL LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" IS NULL LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" IS NULL LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" IS NULL LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."name" IS NULL LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school.com' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" IS NULL LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'foo' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."name" = 'Awesome School' LIMIT 1
+  [1m[36mSchool Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schools" WHERE "schools"."owner_email" = 'owner@school34.com' LIMIT 1[0m
+  [1m[35mSchool Exists (0.1ms)[0m  SELECT  1 AS one FROM "schools" WHERE "schools"."subdomain" IS NULL LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome School"], ["owner_email", "owner@school34.com"], ["pitch", "Awesome description"], ["subdomain", "awesome-school"], ["created_at", "2016-06-06 00:27:12.811566"], ["updated_at", "2016-06-06 00:27:12.811566"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
