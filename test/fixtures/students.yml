@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 1
+  cpf: MyString
+  age: 2016-06-05
+  school_id: 
+
+two:
+  name: 1
+  cpf: MyString
+  age: 2016-06-05
+  school_id: 
