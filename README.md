@@ -5,8 +5,11 @@ Fiz apenas testes de modelos e das features, que foram necessários para garanti
 
 ## 1- Configurando ambiente
 $ bundle install
+
 $ rake db:create
+
 $ rake db:migrate
+
 $ rake db:seed (Tem uma prompt de confirmação para limpar o DB)
 
 ## 2- Rodando os Specs
