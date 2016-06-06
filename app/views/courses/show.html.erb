@@ -1,0 +1,33 @@
+<%- model_class = Course -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @course.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:school_id) %>:</strong></dt>
+  <dd><%= @course.school.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @course.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
+  <dd><%= @course.content %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:duration) %>:</strong></dt>
+  <dd><%= @course.duration %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:creation_date) %>:</strong></dt>
+  <dd><%= @course.creation_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:active_students) %>:</strong></dt>
+  <dd><%= @course.active_students %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @course.price %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              courses_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_course_path(@course), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              course_path(@course),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

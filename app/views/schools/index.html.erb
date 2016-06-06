@@ -1,0 +1,47 @@
+<%- model_class = School -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<%= render "shared/search_form", filter_params: [:name, :owner_email], model_class: model_class %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:owner_email) %></th>
+      <th><%= model_class.human_attribute_name(:pitch) %></th>
+      <th><%= model_class.human_attribute_name(:subdomain) %></th>
+      <th><%= model_class.human_attribute_name(:date_of_creation) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= link_to school.id, school_path(school) %></td>
+        <td><%= school.name %></td>
+        <td><%= school.owner_email %></td>
+        <td><%= school.pitch %></td>
+        <td><%= school.subdomain %></td>
+        <td><%= school.date_of_creation %></td>
+        <td><%=l school.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_school_path(school), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      school_path(school),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_school_path,
+            :class => 'btn btn-primary' %>

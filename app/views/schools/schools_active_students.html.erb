@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h1>Schools Active Students Report</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>School id</th>
+      <th>School Name</th>
+      <th>Active Students</th>
+      <th />
+    </tr>
+  </thead>
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= link_to school.id, school_path(school) %></td>
+        <td><%= school.name %></td>
+        <td><%= school.active_students %></td>
+        <td />
+      </tr>
+    <% end %>
+  </tbody>
+</table>

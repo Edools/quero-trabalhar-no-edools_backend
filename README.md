@@ -1,54 +1,29 @@
-# O desafio
+# Edools - Backend Assignment - Fernando Varani
 
-Neste desafio você terá que construir um sistema básico para manipulação de escolas e cursos. Nosso principal objetivo é conhecer como você aborda os problemas e desenvolve soluções.
+Excelente desafio, bem elaborado e divertido de fazer. Gostaria de ter tido mais tempo para realizar.
+Fiz apenas testes de modelos e das features, que foram necessários para garantir o funcionamento total do app. Mas com mais tempo eu teria feito specs dos controllers.
 
-Uma especificação básica segue abaixo. Tudo que não foi especificado deve ser decidido por você, isso também será avaliado.
+## 1- Configurando ambiente
+$ bundle install
 
-## CRUD de Escolas e Cursos
+$ rake db:create
 
-- Escolas
- - Nome
- - Email do Dono
- - Pitch
- - Subdomínio
- - Data de Criação
+$ rake db:migrate
 
-- Cursos
- - Título
- - Escola
- - Descrição
- - Conteúdo
- - Duração
- - Data de Criação
- - Alunos Ativos
- - Preço
+$ rake db:seed (Tem uma prompt de confirmação para limpar o DB)
 
-## Relacionamentos
+## 2- Rodando os Specs
+$ rspec -f doc
 
-- Uma escola pode possuir diversos cursos
-- Um curso só pode pertencer a uma escola
+## Code Coverage com Simplecov
+Após rodar os testes, será criado um html com um report sobre a cobertura dos testes.
+( https://github.com/colszowka/simplecov ) 
 
 ## Features
 
+- Gerenciamento de Escolas e Cursos
 - Buscar Curso e Escola por Nome e filtrar cursos por escola
 - Relatório de Alunos Ativos por escola
 - Adicionar validação no atributo Subdomínio da Escola, para que este possa ser usado para criar subdomínios do Edools (Ex: academia-bizstart.edools.com)
 
-## Boas práticas
-
-Não vamos definir quais práticas desejamos. Afinal, queremos conhecer melhor as suas :-).
-
-Siga as boas práticas que adota normalmente nos projetos que desenvolve.
-
-## Restrições Técnicas
-
-- Rails 4
-- Ruby 2
-
-# Recomendações finais
-
-- Nossa avaliação não será apenas em cima de produtividade, daremos grande valor a qualidade do código escrito.
-- Não iremos considerar entregas após o prazo combinado.
-- O horário do pull-request será o horário considerado para a entrega.
-
-*We wish you good luck, and may the Quality be with you!*
+*Obrigado pela oportunidade.*
