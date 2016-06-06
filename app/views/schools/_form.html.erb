@@ -1,0 +1,35 @@
+<div class="shadow default-form" style="margin:20px">
+  <%= form_for @school do |f| %>    
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">   
+        <%= f.text_field :name, class: "mdl-textfield__input" %>
+        <%= f.label :name, class: "mdl-textfield__label" %>          
+        <%= error_tag @school, :name %>    
+      </div>
+    </div>
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">       
+        <%= f.email_field :email, class: "mdl-textfield__input" %>
+        <%= f.label :email, class: "mdl-textfield__label" %>
+        <%= error_tag @school, :email %>
+      </div>
+    </div>
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">       
+        <%= f.text_field :pitch, class: "mdl-textfield__input" %>
+        <%= f.label :pitch, class: "mdl-textfield__label" %>
+        <%= error_tag @school, :pitch %>
+      </div>
+    </div>
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">       
+        <%= f.text_field :subdomain, class: "mdl-textfield__input" %>
+        <%= f.label :subdomain, class: "mdl-textfield__label" %>
+        <%= error_tag @school, :subdomain %>
+      </div>
+    </div>
+    <div class="demo-grid-2 mdl-grid">
+      <%= f.submit "Salvar", class: "mdl-cell mdl-cell--6-col mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>     
+    </div>  
+  <% end %>
+</div>

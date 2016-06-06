@@ -1,0 +1,24 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col">
+		<div class="mdl-card mdl-shadow--2dp demo-card-square-course">
+		  <div class="mdl-card__title mdl-card--expand">
+		  	<%= image_tag "course.jpg", width: "250px", style: "margin:20px" %>  	    
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		  	<h4>Curso : <%= @course.title %></h4>
+		  	<br />
+		  	<strong>Descrição : </strong> <%= @course.description %>
+        <br />
+		  	<strong>Conteúdo : </strong> <%= @course.content %>
+        <br />
+		  	<strong>Duração : </strong> <%= @course.duration %>
+        <br />
+		  	<strong>Preço : </strong> <%= @course.content %>
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">
+        <%= link_to "Alunos Cadastrados neste Curso", students_path(course_id: @course.id), 
+              method: :get, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+		  </div>
+		</div>
+  </div>
+</div>

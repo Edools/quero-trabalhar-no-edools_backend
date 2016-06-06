@@ -1,0 +1,42 @@
+ 
+  <div id="tt1" class="mdl-grid mdl-cell--10-offset">
+    <%= link_to new_school_path, method: :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" do %>
+      <i class="material-icons">add</i>
+      <div class="mdl-tooltip mdl-tooltip--left" for="tt1">
+        Adicionar Nova Escola
+      </div>
+    <% end %>
+  </div>
+
+<div class="demo-grid-ruler ">  
+    <table class="mdl-cell mdl-cell--12-col mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">
+            Nome da Escola
+          </th>          
+          <th>Email</th>
+          <th>Subdominio</th>
+          <th>Data de Criação</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @schools.each do |school| %>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric">
+              <%= school.name %>
+            </td>            
+            <td><%= school.email %></td>
+            <td><%= school.subdomain %></td>
+            <td><%= l school.created_at, format: :custom %></td>
+            <td>
+              <%= link_to "Visualizar", school_path(school), method: :get, class: "mdl-button mdl-js-button mdl-button--primary" %>
+              <%= link_to "Editar", edit_school_path(school), method: :get, class: "mdl-button mdl-js-button mdl-button--primary" %>
+              <%= link_to "Remover", school_path(school), method: :delete, class: "mdl-button mdl-js-button mdl-button--accent" %>
+            </td>
+          </tr>
+        <% end %>  
+      </tbody>
+    </table>
+</div>

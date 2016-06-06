@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Desafio Edools Backend">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Desafio Edools</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">
+            Desafio Edools
+          </span>
+        </div>
+      </header>
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+                mdl-layout--overlay-drawer-button">
+      <div class="mdl-layout__drawer">    
+        <span class="mdl-layout-title">Menu</span>
+        <nav class="mdl-navigation">      
+          <a class="mdl-navigation__link" href="">         
+            <%= link_to "Escolas", schools_path, method: :get,
+            class: "mdl-navigation__link" %>
+                  
+            <%= link_to "Cursos", courses_path, method: :get,
+            class: "mdl-navigation__link" %>  
+            
+            <%= link_to "Estudantes", students_path, method: :get,
+            class: "mdl-navigation__link" %>
+            
+            <%= link_to "Relatório", reports_path, method: :get,
+            class: "mdl-navigation__link" %>            
+          </a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <%= flash_message %>
+          <%= yield %>
+        </div>
+      </main>
+    </div>    
+  </body>
+</html>

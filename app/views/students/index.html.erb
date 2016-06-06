@@ -1,0 +1,39 @@
+<div id="tt1" class="mdl-grid mdl-cell--10-offset">
+    <%= link_to new_student_path, method: :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" do %>
+      <i class="material-icons">add</i>
+      <div class="mdl-tooltip mdl-tooltip--left" for="tt1">
+        Adicionar Novo Aluno
+      </div>
+    <% end %>
+  </div>
+
+<div class="demo-grid-ruler ">  
+    <table class="mdl-cell mdl-cell--12-col mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">
+            Nome
+          </th>
+          <th>N. de Registro</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each do |student| %>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric">
+              <%= student.name %>
+            </td>
+            <td><%= student.register_number %></td>
+            <td><%= student.status_value %></td>
+            <td>
+              <%= link_to "Visualizar", student_path(student), method: :get, class: "mdl-button mdl-js-button mdl-button--primary" %>
+              <%= link_to "Editar", edit_student_path(student), method: :get, class: "mdl-button mdl-js-button mdl-button--primary" %>
+              <%= link_to "Remover", student_path(student), method: :delete, class: "mdl-button mdl-js-button mdl-button--accent" %>
+            </td>
+          </tr>
+        <% end %>  
+      </tbody>
+    </table>
+</div>

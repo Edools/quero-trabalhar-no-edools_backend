@@ -1,0 +1,17 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col">
+		<div class="mdl-card mdl-shadow--2dp demo-card-square">
+		  <div class="mdl-card__title mdl-card--expand">
+		  	<%= image_tag "avatar.png", width: "250px", style: "margin:20px" %>  	    
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		  	<strong>Estudante :</strong> <%= @student.name %><br/>
+        <strong>N. de Registro :</strong> <%= @student.register_number %><br/>
+		  	<strong>Status :</strong> <%= @student.status_value %>
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">		    
+		      <%= link_to "Matricule-se em um Curso", "/student/#{@student.id}/select_course", method: :get, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %> 
+		  </div>
+		</div>
+  </div>
+</div>
