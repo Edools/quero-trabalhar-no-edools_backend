@@ -7,9 +7,9 @@ module Searchable
       results = self.where(nil)
       filter_params_keys.each do |key, value|
         if key.match(/_id$/) # Hack to check if is an association search
-          results = results.where(key => value)
+          results = results.where(key => value) if value.present?
         else
-          results = results.where(self.arel_table[key].matches("%#{value}%"))
+          results = results.where(self.arel_table[key].matches("%#{value}%")) if value.present?
         end
       end
       return results

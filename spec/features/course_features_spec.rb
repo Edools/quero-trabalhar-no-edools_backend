@@ -79,4 +79,33 @@ feature 'Course features' do
     expect(page).to have_content("Title can't be blank")
   end
 
+  scenario 'user filter courses by title' do
+    course = create(:course, title: 'Engenharia')
+    visit courses_path
+
+    page_courses = page.all(:css, 'tr').length - 1
+    expect(page_courses).to equal(Course.count)
+
+    fill_in 'Title', with: 'Engenharia' 
+    find('button[type="submit"]').click
+
+    page_courses = page.all(:css, 'tr').length - 1
+    expect(page_courses).to equal(1) 
+    expect(page).to have_content('Engenharia')
+  end
+
+  scenario 'user filter courses by school' do
+    course = create(:course)
+    visit courses_path
+
+    # binding.pry
+    find("option[value='#{course.school.id}']").click
+    find('button[type="submit"]').click
+
+    page_courses = page.all(:css, 'tr').length - 1
+    expect(page_courses).to equal(4) 
+    expect(page).to have_content(course.school.name)
+  end
+
+
 end
