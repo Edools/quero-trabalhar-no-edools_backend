@@ -1,0 +1,22 @@
+<div class="col col-md-8 col-md-offset-2">
+  <%= simple_form_for([@school, @course]) do |f| %>
+    <%= f.input :title, label: 'Título' %>
+    <%= f.input :description, label: 'Descrição' %>
+    <%= f.input :content, label: 'Conteúdo' %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.input :duration, label: 'Tempo de Duração' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :active_students, label: 'Estudantes ativos' %>
+      </div>
+      <div class="col-md-5">
+        <%= f.input :price, label: 'Preço', input_html: { min: 0.0 } %>
+      </div>
+    </div>
+    <div class="btn-group">
+      <%= link_to 'Voltar', school_courses_path(@school), class: 'btn btn-default' %>
+      <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

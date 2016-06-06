@@ -1,0 +1,12 @@
+<div class="col col-md-8 col-md-offset-2">
+  <%= simple_form_for(@school) do |f| %>
+    <%= f.input :name, label: 'Nome' %>
+    <%= f.input :owner_email, label: 'Email do dono' %>
+    <%= f.input :pitch, label: 'Pitch' %>
+
+    <div class="btn-group">
+      <%= link_to 'Voltar', schools_path, class: 'btn btn-default' %>
+      <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
