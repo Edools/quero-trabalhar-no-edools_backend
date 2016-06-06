@@ -49,6 +49,10 @@ class SchoolsController < ApplicationController
     end
   end
 
+  def schools_active_students
+    @schools =  School.all
+  end
+
   private
     def set_school
       @school = School.find(params[:id])
