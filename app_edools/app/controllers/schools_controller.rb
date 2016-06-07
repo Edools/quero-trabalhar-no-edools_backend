@@ -1,5 +1,5 @@
 class SchoolsController < ApplicationController
-  before_action :find_school, only: [:show]
+  before_action :find_school, only: [:show, :edit, :update]
 
   def index
     @schools = School.all.order(name: :asc)
@@ -19,6 +19,17 @@ class SchoolsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @school.update(school_params)
+      redirect_to @school
+    else
+      render 'edit'
+    end
   end
 
   private
