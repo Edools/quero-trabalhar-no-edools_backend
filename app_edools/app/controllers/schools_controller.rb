@@ -1,5 +1,5 @@
 class SchoolsController < ApplicationController
-  before_action :find_school, only: [:show, :edit, :update]
+  before_action :find_school, only: [:show, :edit, :update, :destroy]
 
   def index
     @schools = School.all.order(name: :asc)
@@ -30,6 +30,11 @@ class SchoolsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @school.destroy
+    redirect_to root_path
   end
 
   private
