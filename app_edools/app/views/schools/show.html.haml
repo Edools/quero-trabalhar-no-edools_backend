@@ -19,3 +19,55 @@
 = link_to "Voltar", root_path
 = link_to "Editar", edit_school_path(@school)
 = link_to "Deletar", school_path(@school), method: :delete, data: { confirm: "Você tem certeza?" }
+
+%h1 Cursos Cadastrados
+
+%table.table.table-striped
+
+  - @school.courses.each do |course|
+    %tr
+      %td
+        =course.title
+      %td
+        %button.btn-default{ "data-target" => "#myDescription", "data-toggle" => "modal", :type => "button" } Descrição
+
+        #myDescription.modal.fade{ :role => "dialog" }
+          .modal-dialog
+            .modal-content
+              .modal-header
+                %button.close{ "data-dismiss" => "modal", :type => "button" } &times;
+                %h4.modal-title Descrição
+
+              .modal-body
+                %p= simple_format(course.description)
+
+              .modal-footer
+                %button.btn.btn-default{ "data-dismiss" => "modal", :type => "button" } Fechar
+
+      %td
+        %button.btn-default{ "data-toggle" => "modal", "data-target" => "#myModal", :type => "button" } Conteúdo
+
+        #myModal.modal.fade{ :role => "dialog" }
+          .modal-dialog
+            .modal-content
+              .modal-header
+                %button.close{ "data-dismiss" => "modal", :type => "button" } &times;
+                %h4.modal-title Conteudo
+
+              .modal-body
+                %p= simple_format(course.content)
+
+              .modal-footer
+                %button.btn.btn-default{ "data-dismiss" => "modal", :type => "button" } Fechar
+
+      %td
+        = course.duration
+
+      %td
+        = number_to_currency(course.price, unit: "R$ ", separator:",", delimiter:" ")
+
+      %td
+        = link_to "Editar", edit_school_course_path(@school.id, course.id)
+
+      %td
+        = link_to "Apagar", school_course_path(@school.id, course.id), method: :delete, data: { confirm: "Você tem certeza?" }

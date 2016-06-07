@@ -6,7 +6,6 @@ class CoursesController < ApplicationController
 
   def create
     @school = School.find(params[:id])
-    byebug
     @course = @school.courses.create!(params[:course].permit(:title, :description, :content, :duration, :created_at, :price))
 
     redirect_to school_path(@school)
