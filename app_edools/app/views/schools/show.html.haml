@@ -1,0 +1,20 @@
+%h1.title= @school.name
+%p
+  Email:
+  =@school.email_responsible
+
+%p
+  Pitch:
+  = simple_format(@school.pitch)
+
+%p
+  Sub-dominio:
+  = @school.subdomain
+
+%p
+  Data da criação do curso:
+  = @school.created_at.strftime("%A %B %d")
+
+= link_to "Voltar", root_path
+= link_to "Editar", edit_school_path(@school)
+= link_to "Deletar", school_path(@school), method: :delete, data: { confirm: "Você tem certeza?" }
