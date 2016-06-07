@@ -1,0 +1,14 @@
+<h1>Novo Aluno</h1>
+
+<%= form_for :student, url: students_path do |f| %>
+
+<p>
+    <%= f.label :name, "Nome" %><br>
+    <%= f.text_field :name %>
+</p>
+
+<p>
+    <%= f.submit "Salvar" %>
+</p>
+
+<% end %>
