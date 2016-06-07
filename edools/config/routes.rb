@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
 
-  resources :escolas, :cursos
+  resources :schools, :courses
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
