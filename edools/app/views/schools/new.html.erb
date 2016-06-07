@@ -1,6 +1,6 @@
 <h1>Nova Escola</h1>
 
-<%= form_for :school do |f| %>
+<%= form_for :school, url: schools_path do |f| %>
 
 <p>
     <%= f.label :name, "Nome" %><br>
