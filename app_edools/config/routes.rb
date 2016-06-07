@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   end
 
   root 'schools#index'
+
+  post "schools/:id/courses/new" => "courses#create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

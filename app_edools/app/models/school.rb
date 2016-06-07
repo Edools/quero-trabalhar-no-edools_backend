@@ -1,4 +1,6 @@
 class School < ActiveRecord::Base
+  has_many :courses
+
   validates :name, :email_responsible, :pitch, presence: true
   validates_uniqueness_of :name, :email_responsible, :pitch, :subdomain
   validates_format_of :subdomain, with: /[A-z\d]*.[A-z\d]*\.edools.com/
