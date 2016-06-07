@@ -1,0 +1,44 @@
+<h1>Novo curso</h1>
+
+<%= form_for :course do |f| %>
+
+<p>
+    <%= f.label :title, "Título" %><br>
+    <%= f.text_field :title %>
+</p>
+
+<p>
+    <%= f.label :school, "Escola" %><br>
+    <%= f.text_field :school %>
+</p>
+
+<p>
+    <%= f.label :description, "Descrição" %><br>
+    <%= f.text_area :description %>
+</p>
+
+<p>
+    <%= f.label :content, "Conteúdo" %><br>
+    <%= f.text_area :content %>
+</p>
+
+<p>
+    <%= f.label :duration, "Duração" %><br>
+    <%= f.text_field :duration %>
+</p>
+
+<p>
+    <%= f.label :active_students, "Alunos ativos" %><br>
+    <%= f.number_field :active_students, min: 0 %>
+</p>
+
+<p>
+    <%= f.label :price, "Preço" %><br>
+    <%= f.text_field :price %>
+</p>
+
+<p>
+    <%= f.submit "Salvar" %>
+</p>
+
+<% end %>

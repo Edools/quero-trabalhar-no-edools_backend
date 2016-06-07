@@ -1,0 +1,29 @@
+<h1>Nova Escola</h1>
+
+<%= form_for :school do |f| %>
+
+<p>
+    <%= f.label :name, "Nome" %><br>
+    <%= f.text_field :name %>
+</p>
+
+<p>
+    <%= f.label :owner_email, "Email do dono" %><br>
+    <%= f.text_field :owner_email %>
+</p>
+
+<p>
+    <%= f.label :pitch %><br>
+    <%= f.text_field :pitch %>
+</p>
+
+<p>
+    <%= f.label :subdomain, "Subdomínio" %><br>
+    <%= f.text_field :subdomain %>
+</p>
+
+<p>
+    <%= f.submit "Salvar" %>
+</p>
+
+<% end %>
