@@ -1,12 +1,3 @@
--if @course.errors.any?
-  #error_explanation
-    %h2
-      = pluralize(@course.errors.count, "error")
-      itens preenchidos erroneamente ou em branco
-    %ul
-      - @course.errors.full_messages.each do |message|
-        %li= message
-
 = f.input :title, label: "Título"
 = f.input :description, label: "Descrição"
 = f.input :content, label: "Conteúdo"

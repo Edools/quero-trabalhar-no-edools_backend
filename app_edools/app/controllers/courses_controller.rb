@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to school_path(@school), notice: "Curso criado com sucesso." }
+        format.html { redirect_to school_path(@school), notice: "Curso cadastrado com sucesso." }
         format.json { render :show, status: :created, location: @school }
       else
         format.html { render :new }

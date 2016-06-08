@@ -1,4 +1,4 @@
 %h1 Editar informações do curso
 
-= simple_form_for @course, url: edit_school_course_path(@course) do |f|
+= simple_form_for @course, url: edit_school_course_path(@school, @course) do |f|
   = render "courses/form", f: f

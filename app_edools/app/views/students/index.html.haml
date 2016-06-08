@@ -1,0 +1,16 @@
+%h1 Lista de Alunos
+
+%table.table.table-striped
+  - @students.each do |student|
+    %tr
+      %th Nome
+      %th Endereço
+      %th Telefone
+      %th Documento
+      %th Inativar Aluno
+    %tr
+      %td= student.name
+      %td= student.address
+      %td= student.phone
+      %td= student.document
+      %td= link_to "Editar", edit_school_student_path(@school, student.id)
