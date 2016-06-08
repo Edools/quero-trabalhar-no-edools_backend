@@ -14,6 +14,7 @@ gem 'pg', '~> 0.15'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'less-rails'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
@@ -30,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 gem 'puma', '~> 3.4'
 gem 'simple_form', '~> 3.2.1'
+gem 'responders', '~> 2.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
