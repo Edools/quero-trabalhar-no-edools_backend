@@ -1,0 +1,17 @@
+<h1>Escolas</h1>
+
+<%= link_to 'Adicionar', new_school_path %>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th></th>
+  </tr>
+
+  <% @schools.each do |school| %>
+    <tr>
+      <td><%= school.name %></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
