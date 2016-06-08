@@ -1,4 +1,13 @@
 %h1 Novo Curso
 
 = simple_form_for @course, :url => new_school_course_path do |f|
+  -if @course.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@course.errors.count, "error")
+        itens preenchidos erroneamente ou em branco
+      %ul
+        - @course.errors.full_messages.each do |message|
+          %li= message
+
   = render "courses/form", f: f

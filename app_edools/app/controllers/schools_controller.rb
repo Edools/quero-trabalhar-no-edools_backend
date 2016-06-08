@@ -11,10 +11,15 @@ class SchoolsController < ApplicationController
 
   def create
     @school = School.create(school_params)
-    if @school.save
-      redirect_to @school
-    else
-      render 'new'
+
+    respond_to do |format|
+      if @school.save
+        format.html { redirect_to @school, notice: "Escola criada com sucesso." }
+        format.json { render :show, status: :created, location: @school }
+      else
+        format.html { render :new }
+        format.json { render json: @school.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -25,16 +30,24 @@ class SchoolsController < ApplicationController
   end
 
   def update
-    if @school.update(school_params)
-      redirect_to @school
-    else
-      render 'edit'
+    respond_to do |format|
+      if @school.update(school_params)
+        format.html { redirect_to @school, notice: "Escola atualizada com sucesso." }
+        format.json { render :show, status: :ok, location: @school }
+      else
+        format.html { render :edit }
+        format.json { render json: @school.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
     @school.destroy
-    redirect_to root_path
+
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: "Escola removida com sucesso." }
+      format.json { head :no_content }
+    end
   end
 
   private
