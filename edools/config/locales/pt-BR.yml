@@ -21,22 +21,26 @@ pt-BR:
         one: Matrícula
         other: Matrículas
     attributes:
-      school/name: Nome
-      school/owner_email: Email do dono
-      school/pitch: Pitch
-      school/subdomain: Subdomínimo
-      school/created_at: Criado em
-      course/title: Título
-      course/school: Escola
-      course/description: Descrição
-      course/content: Conteúdo
-      course/duration: Duração
-      course/created_at: Criado em
-      course/price: Preço
-      student/name: Nome
-      student/school: Escola
-      enrollment/student: Aluno
-      enrollment/course: Curso
+      school:
+        name: Nome
+        owner_email: Email do dono
+        pitch: Pitch
+        subdomain: Subdomínimo
+        created_at: Criado em
+      course:
+        title: Título
+        school: Escola
+        description: Descrição
+        content: Conteúdo
+        duration: Duração
+        created_at: Criado em
+        price: Preço
+      student:
+        name: Nome
+        school: Escola
+      enrollment:
+        student: Aluno
+        course: Curso
   date:
     abbr_day_names:
     - Dom
