@@ -2,6 +2,14 @@ require 'rails_helper'
 
 RSpec.describe SchoolsController, type: :controller do
 
+  before(:all) do
+    DatabaseCleaner.start
+  end
+
+  after(:all) do
+    DatabaseCleaner.clean
+  end
+
   describe "GET index", :type => :controller do
     it "renders the index template" do
       get :index
@@ -16,70 +24,43 @@ RSpec.describe SchoolsController, type: :controller do
     end
   end
 
-
-  describe "GET show", :type => :controller do
-    it "renders the School's page" do
-      school = create(:school)
-      get :show, id: school.id
-      expect(response).to be_success
-      expect(assigns(:school)).to eq(school)
-      expect(response).to render_template(:show)
-    end
-  end
-
-
-  describe "GET new", :type => :controller do
-    it "renders the new School page" do
+  describe "School CRUD", :type => :controller do
+    it "renders the school's creating page and creates a school" do
       get :new
       expect(response).to be_success
       expect(response).to render_template(:new)
-    end
-  end
 
-
-  describe "GET edit", :type => :controller do
-    it "renders the School's editing page" do
-      school = create(:school)
-      get :edit, id: school.id
-      expect(response).to be_success
-      expect(assigns(:school)).to eq(school)
-      expect(response).to render_template(:edit)
-    end
-  end
-
-  describe "School management", :type => :request do
-    it "creates a School and redirects to the School's page" do
-      get "/schools/new"
-      expect(response).to render_template(:new)
-
-      post "/schools", school: attributes_for(:school)
-
+      post :create, school: attributes_for(:school)
       expect(School.count).to eq(1)
-
       expect(response).to redirect_to(assigns(:school))
-      follow_redirect!
+    end
 
+    it "renders the school's page" do
+      @school = create(:school)
+
+      get :show, id: @school.id
+      expect(response).to be_success
+      expect(assigns(:school)).to eq(@school)
       expect(response).to render_template(:show)
     end
-  end
 
-  describe "Update school", :type => :controller do
-    it "updates a School and redirects to the School's page" do
-      school = create(:school)
+    it "renders the school's editing page and updates the school" do
+      @school = create(:school)
 
-      patch :update, id: school.id, school: attributes_for(:school, name: "updated")
+      get :edit, id: @school.id
+      expect(response).to be_success
+      expect(assigns(:school)).to eq(@school)
+      expect(response).to render_template(:edit)
 
-      expect(school.reload.name).to eq("updated")
+      patch :update, id: @school.id, school: attributes_for(:school, name: "updated")
+      expect(@school.reload.name).to eq("updated")
       expect(response).to redirect_to(assigns(:school))
     end
-  end
 
-  describe "Delete school", :type => :controller do
-    it "deletes a School and redirects to index" do
-      school = create(:school)
+    it "deletes the school and redirects to index" do
+      @school = create(:school)
 
-      delete :destroy, id: school.id
-
+      delete :destroy, id: @school.id
       expect(School.count).to eq(0)
       expect(response).to redirect_to(schools_path)
     end
