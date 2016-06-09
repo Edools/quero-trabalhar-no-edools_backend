@@ -19,6 +19,7 @@ FactoryGirl.define do
     content "Content"
     duration "1 month"
     price 100.0
+    #school
   end
 
   factory :invalid_course, class: Course do
