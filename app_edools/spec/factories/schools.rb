@@ -3,6 +3,6 @@ FactoryGirl.define do
     name { Faker::Name.name}
     email_responsible { Faker::Internet.email }
     pitch { Faker::Lorem.paragraph}
-    subdomain "academia-bizstart.edools.com"
+    subdomain "#{Faker::Company.profession}.edools.com"
   end
 end

@@ -7,8 +7,16 @@
   = csrf_meta_tags
 
 %body
-  .container
-    - flash.each do |name, msg|
-      = content_tag(:div, msg, class: "alert alert-infor")
+  %header.navbar.navbar-default{:role => "navigation"}
+    .navbar-inner
+      .container
+        #logo.navbar-brand= link_to "SCHOOLS", root_path
+        %nav.collapse.navbar-collapse.navbar-ex1-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to 'Nova Escola', new_school_path
 
-    = yield
+  #main_content
+    - flash.each do |name, msg|
+      = content_tag(:div, msg, class: "alert alert-info")
+    #content.col-md-9.center-block
+      = yield
