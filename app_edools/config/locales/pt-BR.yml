@@ -21,12 +21,17 @@ pt-BR:
     content: Conteúdo
     description: Descrição
   labels:
+    address: Endereço
+    active: Ativo
     content: Conteúdo
     date_school: Data da criação da escola
     description: Descrição
+    document: CPF
     duration: Duração
     email: Email
+    inactive: Inativo
     name: Nome
+    phone: Telefone
     pitch: Pitch
     price: Preço
     subdomain: Subdominio
@@ -43,6 +48,10 @@ pt-BR:
   messages:
     confirm: Você tem certeza?
   placeholders:
+    full_name: Nome completo do Aluno
+    full_address: Endereço completo
+    phone: Telefone (xx)xxxxx-xxxx
+    document: CPF - xxx.xxx.xxx-xx
     title: Título do curso
     description: Descrição do curso
     content: Conteúdo programático
@@ -51,14 +60,24 @@ pt-BR:
     name: Nome da Escola
     email: Email do responsável pela escola email@example.com
     subdomain: Subdominio deve ter o formato example-example.edools.com
+  table_titles:
+    address: Endereço
+    document: CPF
+    edit: Editar
+    name: Nome
+    phone: Telefone
+    delete: Deletar
   time:
     formats:
       long: "%d-%m-%Y"
   titles:
     content: Conteúdo
     description: Descrição
-    edit_school: Editar informações da escola
     edit_course: Editar informações do curso
+    edit_school: Editar informações da escola
+    edit_student: Editar dados do aluno
     new_course: Novo Curso
     new_school: Nova Escola
+    new_student: Novo Aluno
+    students_list: Lista de Alunos
     school_list: Controle de Escolas

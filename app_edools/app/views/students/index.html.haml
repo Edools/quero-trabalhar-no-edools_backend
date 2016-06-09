@@ -2,12 +2,12 @@
 
 %table.table.table-striped
   %tr
-    %th Nome
-    %th Endereço
-    %th Telefone
-    %th Documento
-    %th Editar
-    %th Deletar
+    %th= t('table_titles.name')
+    %th= t('table_titles.address')
+    %th= t('table_titles.phone')
+    %th= t('table_titles.document')
+    %th= t('table_titles.edit')
+    %th= t('table_titles.delete')
 
   - @students.select{|student| student[:status] == true }.each do |student|
     %tr
@@ -15,7 +15,7 @@
       %td= student.address
       %td= student.phone
       %td= student.document
-      %td= link_to "Editar", edit_school_student_path(@school, student.id)
-      %td= link_to "Deletar", school_students_path(student), method: :delete, data: { confirm: "Você tem certeza?" }
+      %td= link_to t('links.edit'), edit_school_student_path(@school, student.id)
+      %td= link_to t('links.delete'), school_students_path(student), method: :delete, data: { confirm: t('messages.confirm') }
 
-= link_to "Voltar", school_path(@school)
+= link_to t('links.back'), school_path(@school)
