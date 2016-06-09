@@ -1,9 +1,7 @@
 class StudentsController < ApplicationController
-  before_action :find_school_student, only: [:edit]
 
   def index
-    @student = Student.find(params[:school_id])
-    @school = School.find(@student[:school_id])
+    @school = School.find(params[:school_id])
     @students = @school.students.all.order(name: :asc)
   end
 
@@ -12,7 +10,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @school = School.find(params[:school_id])
+    @school = School.find(params[:id])
     @student = @school.students.create(params[:student].permit(:name, :address, :phone, :document, :status))
 
     respond_to do |format|
@@ -27,20 +25,33 @@ class StudentsController < ApplicationController
   end
 
   def edit
+    @school = School.find(params[:school_id])
+    @student = Student.find(params[:id])
   end
 
   def update
-    @student = Student.find(params[:id])
-    @school = @student.school_id
+    @school = School.find(params[:id])
+    @student = Student.find(params[:school_id])
 
     respond_to do |format|
       if @student.update(student_params)
-        format.html { redirect_to school_students_path(@student), notice: "Dados do aluno atualizado com sucesso." }
+        format.html { redirect_to school_students_path(@school), notice: "Dados do aluno atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @student }
       else
         format.html { render :edit }
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @student = Student.find(params[:school_id])
+    @school = @student.school
+    @student.destroy
+
+    respond_to do |format|
+      format.html { redirect_to school_students_path(@school), notice: 'Aluno removido com sucesso.' }
+      format.json { head :no_content }
     end
   end
 
@@ -53,5 +64,4 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @school = @student.school_id
   end
-
 end

@@ -1,16 +1,19 @@
 %h1 Lista de Alunos
 
 %table.table.table-striped
+  %tr
+    %th Nome
+    %th Endereço
+    %th Telefone
+    %th Documento
+    %th Editar
+    %th Deletar
+
   - @students.each do |student|
-    %tr
-      %th Nome
-      %th Endereço
-      %th Telefone
-      %th Documento
-      %th Inativar Aluno
     %tr
       %td= student.name
       %td= student.address
       %td= student.phone
       %td= student.document
       %td= link_to "Editar", edit_school_student_path(@school, student.id)
+      %td= link_to "Deletar", school_students_path(student), method: :delete, data: { confirm: "Você tem certeza?" }

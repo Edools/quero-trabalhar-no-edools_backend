@@ -1,4 +1,4 @@
 %h1 Editar dados do aluno
 
-= simple_form_for @student, url: edit_school_student_path(@school, @student) do |f|
+= simple_form_for @student, url: edit_school_student_path(@student, @school) do |f|
   = render "students/form", f: f
