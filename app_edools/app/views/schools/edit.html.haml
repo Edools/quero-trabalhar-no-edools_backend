@@ -1,7 +1,7 @@
 %h1
-  Editar informações da
+  = t('titles.edit_school')
   = @school.name
 
 = render 'form'
 
-= link_to "Cancelar", root_path
+= link_to t('links.cancel'), root_path

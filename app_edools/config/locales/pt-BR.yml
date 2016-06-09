@@ -1,2 +1,50 @@
 pt-BR:
-  
+  activerecord:
+    errors:
+      models:
+        school:
+          attributes:
+            name:
+              blank: O campo nome não pode ficar em branco
+            email_responsible:
+              blank: O campo email não pode ficar em branco
+              invalid: O campo email está com um formato inválido
+            pitch:
+              blank: O campo pitch não pode ficar em branco
+            subdomain:
+              invalid: O campo subdomain está com um formato inválido
+
+  buttons:
+    close: Fechar
+    content: Conteúdo
+    description: Descrição
+  labels:
+    date_school: Data da criação da escola
+    email: Email
+    name: Nome
+    pitch: Pitch
+    subdomain: Subdominio
+  links:
+    back: Voltar
+    cancel: Cancelar
+    delete: Deletar
+    edit: Editar
+    new_course: Novo Curso
+    new_school: Nova Escola
+    new_student: Novo Aluno
+    students_list: Listar Alunos
+  messages:
+    confirm: Você tem certeza?
+  placeholders:
+    name: Nome da Escola
+    email: Email do responsável pela escola email@example.com
+    subdomain: Subdominio deve ter o formato example-example.edools.com
+  time:
+    formats:
+      long: "%d-%m-%Y"
+  titles:
+    content: Conteúdo
+    description: Descrição
+    edit_school: Editar informações da escola
+    new_school: Nova Escola
+    school_list: Controle de Escolas

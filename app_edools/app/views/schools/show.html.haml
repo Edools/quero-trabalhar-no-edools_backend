@@ -1,26 +1,30 @@
 %h1.title= @school.name
 %p
-  Email:
+  =t('labels.email')
+  \:
   =@school.email_responsible
 
 %p
-  Pitch:
+  =t('labels.pitch')
+  \:
   = simple_format(@school.pitch)
 
 %p
-  Sub-dominio:
+  =t('labels.subdomain')
+  \:
   = @school.subdomain
 
 %p
-  Data da criação do curso:
-  = @school.created_at.strftime("%A %B %d")
+  =t('labels.date_school')
+  \:
+  = time_tag @school.created_at
 
-= link_to "Novo Curso", new_school_course_path(@school)
-= link_to "Novo Aluno", new_school_student_path(@school)
-= link_to "Listar Alunos", school_students_path(@school)
-= link_to "Voltar", root_path
-= link_to "Editar", edit_school_path(@school)
-= link_to "Deletar", school_path(@school), method: :delete, data: { confirm: "Você tem certeza?" }
+= link_to t('links.new_course'), new_school_course_path(@school)
+= link_to t('links.new_student'), new_school_student_path(@school)
+= link_to t('links.students_list'), school_students_path(@school)
+= link_to t('links.back'), root_path
+= link_to t('links.edit'), edit_school_path(@school)
+= link_to t('links.delete'), school_path(@school), method: :delete, data: { confirm: t('messages.confirm') }
 
 %h1 Cursos Cadastrados
 
@@ -31,36 +35,36 @@
       %td
         =course.title
       %td
-        %button.btn-default{ "data-target" => "#myDescription", "data-toggle" => "modal", :type => "button" } Descrição
+        %button.btn-default{ "data-target" => "#myDescription", "data-toggle" => "modal", type: "button" }=t('buttons.description')
 
         #myDescription.modal.fade{ :role => "dialog" }
           .modal-dialog
             .modal-content
               .modal-header
                 %button.close{ "data-dismiss" => "modal", :type => "button" } &times;
-                %h4.modal-title Descrição
+                %h4.modal-title= t('titles.description')
 
               .modal-body
                 %p= simple_format(course.description)
 
               .modal-footer
-                %button.btn.btn-default{ "data-dismiss" => "modal", :type => "button" } Fechar
+                %button.btn.btn-default{ "data-dismiss" => "modal", :type => "button" }= t('buttons.close')
 
       %td
-        %button.btn-default{ "data-toggle" => "modal", "data-target" => "#myModal", :type => "button" } Conteúdo
+        %button.btn-default{ "data-toggle" => "modal", "data-target" => "#myModal", :type => "button" }= t('buttons.content')
 
         #myModal.modal.fade{ :role => "dialog" }
           .modal-dialog
             .modal-content
               .modal-header
                 %button.close{ "data-dismiss" => "modal", :type => "button" } &times;
-                %h4.modal-title Conteudo
+                %h4.modal-title= t('titles.content')
 
               .modal-body
                 %p= simple_format(course.content)
 
               .modal-footer
-                %button.btn.btn-default{ "data-dismiss" => "modal", :type => "button" } Fechar
+                %button.btn.btn-default{ "data-dismiss" => "modal", :type => "button" }= t('buttons.close')
 
       %td
         = course.duration
@@ -69,7 +73,7 @@
         = number_to_currency(course.price, unit: "R$ ", separator:",", delimiter:" ")
 
       %td
-        = link_to "Editar", edit_school_course_path(@school.id, course.id)
+        = link_to t('links.edit'), edit_school_course_path(@school.id, course.id)
 
       %td
-        = link_to "Apagar", school_course_path(@school.id, course.id), method: :delete, data: { confirm: "Você tem certeza?" }
+        = link_to t('links.delete'), school_course_path(@school.id, course.id), method: :delete, data: { confirm: t('messages.confirm') }
