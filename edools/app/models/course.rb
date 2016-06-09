@@ -7,6 +7,5 @@ class Course < ActiveRecord::Base
   validates :description, presence: true
   validates :content, presence: true
   validates :duration, presence: true
-  validates :price, presence: true, numericality: true
-  validates_associated :students
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 0}
 end
