@@ -1,6 +1,8 @@
 pt-BR:
   activerecord:
     errors:
+      messages:
+        record_invalid: Erros nas validações
       models:
         school:
           attributes:
@@ -19,11 +21,16 @@ pt-BR:
     content: Conteúdo
     description: Descrição
   labels:
+    content: Conteúdo
     date_school: Data da criação da escola
+    description: Descrição
+    duration: Duração
     email: Email
     name: Nome
     pitch: Pitch
+    price: Preço
     subdomain: Subdominio
+    title: Título
   links:
     back: Voltar
     cancel: Cancelar
@@ -36,6 +43,11 @@ pt-BR:
   messages:
     confirm: Você tem certeza?
   placeholders:
+    title: Título do curso
+    description: Descrição do curso
+    content: Conteúdo programático
+    duration: Duração
+    price: Preço em reais
     name: Nome da Escola
     email: Email do responsável pela escola email@example.com
     subdomain: Subdominio deve ter o formato example-example.edools.com
@@ -46,5 +58,7 @@ pt-BR:
     content: Conteúdo
     description: Descrição
     edit_school: Editar informações da escola
+    edit_course: Editar informações do curso
+    new_course: Novo Curso
     new_school: Nova Escola
     school_list: Controle de Escolas
