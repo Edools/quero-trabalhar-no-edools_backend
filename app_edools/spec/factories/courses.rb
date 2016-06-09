@@ -1,9 +1,10 @@
 FactoryGirl.define do
   factory :course do
-    title "MyString"
-    description "MyText"
-    content "MyText"
-    duration "MyString"
-    price 1.5
+    title { Faker::Name.title }
+    description { Faker::Lorem.paragraph }
+    content { Faker::Lorem.paragraph }
+    duration 10
+    price { Faker::Number.decimal(2) }
+    school_id 1
   end
 end

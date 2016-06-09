@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :school do
-    name "MyString"
-    email_responsible "MyString"
-    pitch "MyText"
-    subdomain "MyString"
+    name { Faker::Name.name}
+    email { Faker::Internet.email }
+    pitch { Faker::Lorem.paragraph}
+    subdominio "academia-bizstart.edools.com"
   end
 end
