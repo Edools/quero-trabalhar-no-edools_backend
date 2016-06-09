@@ -1,5 +1,7 @@
 class SchoolsController < ApplicationController
 
+    #index, show, new, edit, create, update, destroy
+
     def index
       @schools = School.all
     end
@@ -7,15 +9,37 @@ class SchoolsController < ApplicationController
     def show
       @school = School.find(params[:id])
     end
-    
+
     def new
     end
 
+    def edit
+      @school = School.find(params[:id])
+    end
 
     def create
       @school = School.new(school_params)
-      @school.save
-      redirect_to @school
+      if @school.save
+        redirect_to @school
+      else
+        render 'new'
+      end
+    end
+
+    def update
+      @school = School.find(params[:id])
+      if @school.update(school_params)
+        redirect_to @school
+      else
+        render 'edit'
+      end
+    end
+
+    def destroy
+      @school = School.find(params[:id])
+      @school.destroy
+
+      redirect_to schools_path
     end
 
     private
