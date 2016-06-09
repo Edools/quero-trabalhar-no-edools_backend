@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'responders'
 gem 'devise'
+gem 'virtus'
 
 group :development, :test do
   gem 'dotenv-rails'
