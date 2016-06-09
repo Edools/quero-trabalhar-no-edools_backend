@@ -2,5 +2,5 @@
 = f.input :address, label: "Endereço"
 = f.input :phone, label: "Telefone"
 = f.input :document, label: "CPF"
-= f.input :status, priority: [ true ], collection: [ true, false ]
+= f.input :status, collection: [[ "Ativo", true ], [ "Inativo", false ]], selected: "Ativo", include_blank: false
 = f.button :submit

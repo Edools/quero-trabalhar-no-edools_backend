@@ -17,3 +17,5 @@
       %td= student.document
       %td= link_to "Editar", edit_school_student_path(@school, student.id)
       %td= link_to "Deletar", school_students_path(student), method: :delete, data: { confirm: "Você tem certeza?" }
+
+= link_to "Voltar", school_path(@school)
