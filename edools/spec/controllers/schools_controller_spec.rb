@@ -122,7 +122,7 @@ RSpec.describe SchoolsController, type: :controller do
       expect(School.exists?(school.id)).to be(false)
     end
 
-    it "redirects to the houses list" do
+    it "redirects to the schools list" do
       expect(response).to redirect_to(schools_path)
     end
   end
