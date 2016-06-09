@@ -9,7 +9,7 @@
     %th Editar
     %th Deletar
 
-  - @students.each do |student|
+  - @students.select{|student| student[:status] == true }.each do |student|
     %tr
       %td= student.name
       %td= student.address
