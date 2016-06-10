@@ -29,4 +29,4 @@
   %strong Última alteração em:
   = l @course.updated_at, format: :short
 
-= link_to 'Voltar para listagem', schools_path, class: 'btn btn-primary'
+= link_to 'Voltar para listagem', school_courses_path(@school), class: 'btn btn-primary'

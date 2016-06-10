@@ -28,7 +28,7 @@ feature 'Create course' do
     expect(page).to have_content(course[:title])
   end
 
-  scenario 'with invalid do not data create school' do
+  scenario 'with invalid do not data create course' do
     school = FactoryGirl.create(:school)
 
     visit root_path

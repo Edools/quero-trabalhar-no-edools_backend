@@ -1,6 +1,6 @@
 require 'rails_helper'
 feature 'See school details' do
-  scenario 'Remove school from database' do
+  scenario 'List information about school' do
     school = FactoryGirl.create(:school)
     visit root_path
     click_link 'Escolas'

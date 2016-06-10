@@ -23,7 +23,7 @@ feature 'Create course' do
     expect(page).to have_content('New title for course')
   end
 
-  scenario 'with invalid do not data create school' do
+  scenario 'with invalid do not data create course' do
     school = FactoryGirl.create(:school)
     course = FactoryGirl.create(:course, school: school)
 
