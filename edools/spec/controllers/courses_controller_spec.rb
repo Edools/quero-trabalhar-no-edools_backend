@@ -24,7 +24,7 @@ RSpec.describe CoursesController, type: :controller do
     end
   end
 
-  describe "School CRUD", :type => :controller do
+  describe "Course CRUD", :type => :controller do
     it "creates a course and then destroys it" do
       get :new, {school_id: @school.id}
       expect(response).to be_success
@@ -63,15 +63,6 @@ RSpec.describe CoursesController, type: :controller do
       patch :update, {school_id: @school.id, id: @course.id, course: attributes_for(:course, title: "updated", school_id: @school.id)}
       expect(@course.reload.title).to eq("updated")
       expect(response).to redirect_to(school_path(@school.id))
-    end
-
-    it "deletes the course and redirects to index" do
-      # @course = create(:course)
-      #
-      # delete :destroy, {school_id: @school.id, id: @course.id}
-      # expect(Course.count).to eq(0)
-      # expect(@school.reload.courses.size).to eq(0)
-      # expect(response).to redirect_to(school_path(@school.id))
     end
   end
 
