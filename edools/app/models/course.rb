@@ -1,7 +1,6 @@
 class Course < ActiveRecord::Base
   belongs_to :school
-  has_many :enrollments
-  has_many :students, through: :enrollments
+  has_and_belongs_to_many :students
 
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
