@@ -10,21 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :Nome %><br>
-    <%= f.text_field :name , class: "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :Matrícula %><br>
-    <%= f.text_field :enrollment , class: "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :Status %><br>
-    <%= f.number_field :status, class: "form-control" %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit "salvar" ,class: "btn btn-primary btn-sm" %>
+  <div class="jumbotron">
+    <div class="field">
+      <%= f.label :Nome %><br>
+      <%= f.text_field :name , class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :Matrícula %><br>
+      <%= f.text_field :enrollment , class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :Status %><br>
+      <%= f.number_field :status, class: "form-control" %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "salvar" ,class: "btn btn-primary btn-sm" %>
+    </div>
   </div>
 <% end %>
