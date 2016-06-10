@@ -13,11 +13,17 @@
         #logo.navbar-brand= link_to "SCHOOLS", root_path
         %nav.collapse.navbar-collapse.navbar-ex1-collapse
           %ul.nav.navbar-nav.navbar-right
+            %li
+              - if I18n.locale == I18n.default_locale
+                = link_to image_tag("usa_ico.png", size: "16x16", alt: "Inglês"), :locale => 'en'
+              - else
+                = link_to image_tag("br_ico.png", size: "16x16", alt: "Portuguese"), :locale => 'pt-BR'
+
             %li= link_to t('links.new_school'), new_school_path
 
   #main_content
     #content.col-md-9.center-block
       - flash.each do |name, msg|
         = content_tag(:div, msg, class: "alert alert-info")
-        
+
       = yield
