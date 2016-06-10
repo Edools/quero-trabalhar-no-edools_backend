@@ -3,4 +3,5 @@
   = f.input :contact_email
   = f.input :pitch
   = f.input :subdomain
-  = f.submit 'Salvar'
+  = f.submit 'Salvar', class: 'btn btn-primary'
+  = link_to 'Voltar para listagem', schools_path, class: 'btn btn-primary'

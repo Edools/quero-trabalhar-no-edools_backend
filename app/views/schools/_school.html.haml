@@ -2,4 +2,6 @@
   %td= school.name
   %td= school.contact_email
   %td
+    = link_to 'Ver', school_path(school), class: 'btn btn-xs btn-primary'
     = link_to 'Editar', edit_school_path(school), class: 'btn btn-xs btn-primary'
+    = link_to 'Deletar', school_path(school), method: :delete, class: 'btn btn-xs btn-danger'

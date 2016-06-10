@@ -1,2 +1,16 @@
 - content_for :page_header do
   Escola #{@school.name}
+
+%p
+  %strong Email de contato:
+  = @school.contact_email
+
+%p
+  %strong Pitch:
+  = @school.pitch
+
+%p
+  %strong Subdomínio:
+  = @school.subdomain
+
+= link_to 'Voltar para listagem', schools_path, class: 'btn btn-primary'
