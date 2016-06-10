@@ -1,0 +1,31 @@
+!!!
+%html{:lang => "pt-BR"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %title= content_for?(:page_title) ? yield(:page_title) : 'Teste Edools (eu quero essa vaga! :D)'
+
+    / HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    / WARNING: Respond.js doesn't work if you view the page via file://
+    /[if lt IE 9]
+      %script( src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+      %script( src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
+  %body
+    #wrapper
+      / Navigation
+      %nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
+        = render 'shared/navbar_top'
+        = render 'shared/sidebar'
+      #page-wrapper
+        .container-fluid
+          .row
+            .col-lg-12
+              %h1.page-header
+                = content_for?(:page_header) ? yield(:page_header) : 'Define page header with content_for(:page_header)'
+              = yield

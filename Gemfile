@@ -34,6 +34,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'haml-rails'
+gem 'simple_form'
+gem 'friendly_id', '~> 5.1.0'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,11 +51,11 @@ end
 group :test do
   gem 'faker'
   gem 'capybara'
+  gem 'poltergeist'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'shoulda-matchers', require: false
   gem 'simplecov', :require => false
-  gem 'poltergeist'
 end
 
 group :development do

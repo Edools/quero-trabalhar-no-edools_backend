@@ -1,0 +1,15 @@
+- content_for :page_header do
+  Listagem de escolas
+
+%table.table
+  %thead
+    %tr
+      %td Nome
+      %td Email de contato
+      %td
+  %tbody
+    -if @schools.empty?
+      %tr
+        %td(colspan="3") Ainda não existem escolas cadastradas
+    - else
+      = render @schools
