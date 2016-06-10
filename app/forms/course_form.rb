@@ -1,0 +1,2 @@
+class CourseForm
+end
