@@ -5,7 +5,6 @@ FactoryGirl.define do
       content {Faker::Company.name}
       duration {Faker::Number.number(1)}
       date_of_creation {Faker::Time.forward(23, :morning)}
-      active_students {Faker::Number.number(3)}
       price {Faker::Commerce.price }
       school_id {Faker::Number.number(1)}
 
@@ -15,7 +14,6 @@ FactoryGirl.define do
         content nil
         duration nil
         date_of_creation nil
-        active_students nil
         price nil
         school_id nil
       end
