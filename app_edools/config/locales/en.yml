@@ -57,25 +57,34 @@ en:
     student_destroy: The student was removed successfully!
     student_update: The student was updated successfully!
   placeholders:
-    full_name: Full name of Student
-    full_address: Full address
-    phone: Phone (xx)xxxxx-xxxx
-    document: Document - xxx.xxx.xxx-xx
-    title: Course title
-    description: Course description
     content: Program content
+    description: Course description
+    document: Document - xxx.xxx.xxx-xx
     duration: Duration
-    price: Price in US dollars
-    name: School name
     email: Email responsible for school email@example.com
+    full_address: Full address
+    full_name: Full name of Student
+    name: School name
+    phone: Phone (xx)xxxxx-xxxx
+    price: Price in US dollars
+    search_course: Search course name
+    search_school: Search school name
+    search_student: Search student name
     subdomain: Subdomain must have the format example-example.edools.com
+    title: Course title
   table_titles:
     address: Address
+    content: Content
+    created_at: Created at
+    delete: Delete
+    description: Description
     document: Document
+    duration: Duration
     edit: Edit
     name: Name
+    course_name: Course Name
     phone: Phone
-    delete: Delete
+    price: Price
   time:
     formats:
       long: "%Y-%m-%d"
@@ -89,5 +98,7 @@ en:
     new_course: New Course
     new_school: New School
     new_student: New Student
+    options: Options
     students_list: Students List
+    school: School
     school_list: Schools Control

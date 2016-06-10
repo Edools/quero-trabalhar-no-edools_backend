@@ -1,6 +1,6 @@
 %h1= t('titles.school_list')
 
-%input#search.form-control{:placeholder => "Busca por escolas", :type => "search", :value => ""}/
+%input#search.form-control{:placeholder => t('placeholders.search_school'), :type => "search", :value => ""}/
 
 %table.table#table
   - @schools.each do |school|

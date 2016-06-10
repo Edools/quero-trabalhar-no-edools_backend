@@ -1,5 +1,5 @@
 %h1.title
-  Escola
+  = t('titles.school')
   = @school.name
 
 %table.table
@@ -10,26 +10,25 @@
       =@school.email_responsible
 
     %td{:align => "right", :rowspan => "5", :width => "200px"}
-      %h4 Opções
-      %br
+      %h4= t('titles.options')
+      %p
       %button.btn.btn-default
         = link_to t('links.new_course'), new_school_course_path(@school)
-      %br
+      %p
       %button.btn.btn-default
         = link_to t('links.new_student'), new_school_student_path(@school)
-      %br
+      %p
       %button.btn.btn-default
         = link_to t('links.students_list'), school_students_path(@school)
-      %br
+      %p
       %button.btn.btn-default
         = link_to t('links.back'), root_path
-      %br
+      %p
       %button.btn.btn-default
         = link_to t('links.edit'), edit_school_path(@school)
-      %br
+      %p
       %button.btn.btn-danger
         = link_to t('links.delete'), school_path(@school), method: :delete, data: { confirm: t('messages.confirm') }
-      %br
 
   %tr
     %td
@@ -50,7 +49,7 @@
       = time_tag @school.created_at
 
 %h1= t('titles.joined_courses')
-%input#search.form-control{:placeholder => "Busca por cursos", :type => "search", :value => ""}/
+%input#search.form-control{:placeholder => t('placeholders.search_course'), :type => "search", :value => ""}/
 
 %br
 %table.table.table-striped#table
