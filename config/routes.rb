@@ -54,5 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :schools
+  resources :schools do
+    resources :courses
+  end
 end
