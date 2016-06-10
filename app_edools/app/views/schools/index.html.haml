@@ -3,7 +3,23 @@
 %input#search.form-control{:placeholder => t('placeholders.search_school'), :type => "search", :value => ""}/
 
 %table.table#table
-  - @schools.each do |school|
+  %thead
     %tr
-      %td
-        %h3= link_to school.name, school
+      %th= t('table_titles.school_name')
+      %th= t('table_titles.created_at')
+      %th= t('table_titles.email_responsible')
+      %th= t('table_titles.subdomain')
+  - @schools.each do |school|
+    %tbody
+      %tr
+        %td
+          = link_to school.name, school
+
+        %td
+          = time_tag school.created_at
+
+        %td
+          = school.email_responsible
+
+        %td
+          = school.subdomain

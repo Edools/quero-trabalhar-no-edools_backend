@@ -81,10 +81,13 @@ en:
     document: Document
     duration: Duration
     edit: Edit
+    email_responsible: Email Responsible
     name: Name
     course_name: Course Name
     phone: Phone
     price: Price
+    school_name: School Name
+    subdomain: Subdomain
   time:
     formats:
       long: "%Y-%m-%d"

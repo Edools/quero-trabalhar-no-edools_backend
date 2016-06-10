@@ -81,10 +81,13 @@ pt-BR:
     document: CPF
     duration: Duração
     edit: Editar
+    email_responsible: Email do Responsável
     name: Nome
     name_course: Nome do Curso
     phone: Telefone
     price: Preço
+    school_name: Nome da Escola
+    subdomain: Subdominio
   time:
     formats:
       long: "%d-%m-%Y"

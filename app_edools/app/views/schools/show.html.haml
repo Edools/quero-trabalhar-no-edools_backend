@@ -55,14 +55,14 @@
 %table.table.table-striped#table
   %thead
     %tr
-      %th Nome do Curso
-      %th Criado em
-      %th Descrição
-      %th Conteúdo
-      %th Duração
-      %th Valor
-      %th Editar
-      %th Apagar
+      %th= t('table_titles.name_course')
+      %th= t('table_titles.created_at')
+      %th= t('table_titles.description')
+      %th= t('table_titles.content')
+      %th= t('table_titles.duration')
+      %th= t('table_titles.price')
+      %th= t('table_titles.edit')
+      %th= t('table_titles.delete')
   %tbody
   - @school.courses.each do |course|
     %tr
