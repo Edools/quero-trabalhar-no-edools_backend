@@ -30,7 +30,7 @@ class CoursesController < ApplicationController
       if @course.update(course_params)
         redirect_to school_path(@school)
       else
-        render 'edit'
+        render 'edit', status: :bad_request
       end
     end
 

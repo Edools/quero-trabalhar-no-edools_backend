@@ -13,7 +13,6 @@ RSpec.describe SchoolsController, type: :controller do
   describe "GET index", :type => :controller do
     it "renders the index template" do
       get :index
-      #expect(response).to have_http_status(200)
       expect(response).to be_success
       expect(response).to render_template(:index)
     end
@@ -63,6 +62,24 @@ RSpec.describe SchoolsController, type: :controller do
       delete :destroy, id: @school.id
       expect(School.count).to eq(0)
       expect(response).to redirect_to(schools_path)
+    end
+  end
+
+  describe "Invalid school" do
+    it "should not create a school" do
+      post :create, school: attributes_for(:invalid_school)
+      expect(School.count).to eq(0)
+      expect(response).to have_http_status(400)
+      expect(response).to render_template(:new)
+    end
+
+    it "should not update a school" do
+      @school = create(:school)
+
+      patch :update, id: @school.id, school: attributes_for(:invalid_school, name: "updated")
+      expect(@school.reload.name).not_to eq("updated")
+      expect(response).to have_http_status(400)
+      expect(response).to render_template(:edit)
     end
   end
 

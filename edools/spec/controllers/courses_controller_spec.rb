@@ -66,4 +66,22 @@ RSpec.describe CoursesController, type: :controller do
     end
   end
 
+  describe "Invalid course" do
+    it "should not create a course" do
+      post :create, {school_id: @school.id, course: attributes_for(:invalid_course, school_id: @school.id)}
+      expect(Course.count).to eq(0)
+      expect(@school.reload.courses.size).to eq(0)
+      expect(response).to redirect_to(school_path(@school.id))
+    end
+
+    it "should not update a course" do
+      @course = create(:course)
+
+      patch :update, {school_id: @school.id, id: @course.id, course: attributes_for(:invalid_course, title: "updated", school_id: @school.id)}
+      expect(@school.reload.name).not_to eq("updated")
+      expect(response).to have_http_status(400)
+      expect(response).to render_template(:edit)
+    end
+  end
+
 end

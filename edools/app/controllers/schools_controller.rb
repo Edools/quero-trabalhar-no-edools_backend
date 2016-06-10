@@ -19,10 +19,12 @@ class SchoolsController < ApplicationController
 
     def create
       @school = School.new(school_params)
-      if @school.save
+      if @school.invalid?
+        render 'new', status: :bad_request
+      elsif @school.save
         redirect_to @school
       else
-        render 'new'
+        render 'new', status: :internal_server_error
       end
     end
 
@@ -31,7 +33,7 @@ class SchoolsController < ApplicationController
       if @school.update(school_params)
         redirect_to @school
       else
-        render 'edit'
+        render 'edit', status: :bad_request
       end
     end
 

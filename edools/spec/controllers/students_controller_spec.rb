@@ -66,4 +66,22 @@ RSpec.describe StudentsController, type: :controller do
     end
   end
 
+  describe "Invalid student" do
+    it "should not create a student" do
+      post :create, {school_id: @school.id, student: attributes_for(:invalid_student, school_id: @school.id)}
+      expect(Student.count).to eq(0)
+      expect(@school.reload.students.size).to eq(0)
+      expect(response).to redirect_to(school_path(@school.id))
+    end
+
+    it "should not update a student" do
+      @student = create(:student)
+
+      patch :update, {school_id: @school.id, id: @student.id, student: attributes_for(:invalid_student, title: "updated", school_id: @school.id)}
+      expect(@school.reload.name).not_to eq("updated")
+      expect(response).to have_http_status(400)
+      expect(response).to render_template(:edit)
+    end
+  end
+
 end
