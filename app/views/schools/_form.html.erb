@@ -1,28 +1,31 @@
-<%= form_for(@school, html: { class: 'ui form' } ) do |f| %>
+<%= form_for(@school, html: { class: 'ui form' }, url: schools_path ) do |f| %>
   <% if @school.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@school.errors.count, "error") %> prohibited this school from being saved:</h2>
-
-      <ul>
-      <% @school.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div id="error_explanation" >
+      <div class="ui red message">
+        <div class="header">
+          <%= t('forms.error_message') %>
+        </div>
+        <ul class="list">
+        <% @school.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
   <div class="actions">
     <div class="field">
-      <label>Nome da Escola</label>
-      <%= f.text_field :name %>
+      <label><%= t('forms.school.name.name') %></label>
+      <%= f.text_field :name, placeholder: t('forms.school.name.placeholder') %>
     </div>
     <div class="field">
-      <label>Pitch</label>
-      <%= f.text_field :pitch %>
+      <label><%= t('forms.school.pitch.name') %></label>
+      <%= f.text_field :pitch, placeholder: t('forms.school.pitch.placeholder') %>
     </div>
     <div class="field">
-      <label>Subdomínio</label>
-      <%= f.text_field :subdomain %>
+      <label><%= t('forms.school.subdomain.name') %></label>
+      <%= f.text_field :subdomain, placeholder: t('forms.school.subdomain.placeholder') %>
     </div>
     <%= f.submit 'Salvar', class: 'teal ui button' %>
   </div>

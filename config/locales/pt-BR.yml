@@ -1,8 +1,14 @@
 ---
 pt-BR:
   activerecord:
+    models:
+      school: Escola
+    attributes:
+      school:
+        name: "Nome"
     errors:
       messages:
+        uniqueness: deve ser único. o mesmo ja está cadastrado.
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
@@ -216,3 +222,15 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
+  forms:
+    error_message: 'Opa! aconteceram alguns erros em seu formulário :('
+    school:
+      name:
+        name: 'Nome'
+        placeholder: 'Nome da Escola'
+      pitch:
+        name: 'Pitch'
+        placeholder: 'Pitch'
+      subdomain:
+        name: 'Subdomínio'
+        placeholder: 'Subdomínio. Ex. minha-escola'

@@ -13,7 +13,7 @@ class SchoolsController < ApplicationController
   end
 
   def new
-    @school = School.new
+    @school = SchoolForm.new
     respond_with(@school)
   end
 
@@ -21,9 +21,9 @@ class SchoolsController < ApplicationController
   end
 
   def create
-    @school = School.new(school_params)
+    @school = SchoolForm.new(school_params)
     @school.save
-    respond_with(@school)
+    respond_with @school, location: -> { schools_path }
   end
 
   def update
@@ -42,6 +42,6 @@ class SchoolsController < ApplicationController
     end
 
     def school_params
-      params[:school]
+      params.require(:school_form).permit(:name, :pitch, :subdomain)
     end
 end
