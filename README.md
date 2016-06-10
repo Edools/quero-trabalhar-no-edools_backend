@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/nathanpsouza/quero-trabalhar-no-edools_backend.svg?style=svg)](https://circleci.com/gh/nathanpsouza/quero-trabalhar-no-edools_backend)
+
 # O desafio
 
 Neste desafio você terá que construir um sistema básico para manipulação de escolas e cursos. Nosso principal objetivo é conhecer como você aborda os problemas e desenvolve soluções.
