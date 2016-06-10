@@ -1,6 +1,7 @@
 %tr{id: "school_#{school.id}"}
   %td= school.name
   %td= school.contact_email
+  %td= l school.created_at, format: :short
   %td
     = link_to 'Ver', school_path(school), class: 'btn btn-xs btn-primary'
     = link_to 'Cursos', school_courses_path(school), class: 'btn btn-xs btn-primary'

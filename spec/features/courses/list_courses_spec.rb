@@ -1,6 +1,6 @@
 require 'rails_helper'
-feature 'List Schools' do
-  scenario 'See a list of existent schools' do
+feature 'List courses' do
+  scenario 'See a list of existent courses' do
     school = FactoryGirl.create(:school)
     courses = FactoryGirl.create_list(:course, 3, school: school)
 
@@ -17,7 +17,7 @@ feature 'List Schools' do
     end
   end
 
-  scenario 'See a message when there is no schools already added' do
+  scenario 'See a message when there is no course already added' do
     school = FactoryGirl.create(:school)
 
     visit root_path
