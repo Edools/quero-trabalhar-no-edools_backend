@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IsCool - Gerenciador de Escolas</title>
+  <%= stylesheet_link_tag    'auth', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'auth', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="ui middle aligned center aligned grid">
+    <div class="column">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>
