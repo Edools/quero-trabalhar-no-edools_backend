@@ -17,6 +17,27 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ .btn-default{
+   width: 130px;
+   a:hover{
+     text-decoration: none;
+     color: #000000;
+   }
+ }
+
+ .btn-danger{
+   width: 130px;
+   border-color: #FF0000;
+   background-color: #FFFFFF;
+   a{
+     color: #B00000;
+   }
+   a:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+   }
+ }
+
  #logo {
    font-size: 26px;
    font-weight: 700;
