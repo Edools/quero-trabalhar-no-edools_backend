@@ -20,7 +20,12 @@ class StudentsController < ApplicationController
     def create
       @school = School.find(params[:school_id])
       @student = @school.students.create(student_params)
-      redirect_to school_path(@school)
+
+      if @student.invalid?
+        redirect_to school_path(@school), status: :bad_request
+      else
+        redirect_to school_path(@school)
+      end
     end
 
     def update

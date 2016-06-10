@@ -21,7 +21,11 @@ class CoursesController < ApplicationController
     def create
       @school = School.find(params[:school_id])
       @course = @school.courses.create(course_params)
-      redirect_to school_path(@school)
+      if @course.invalid?
+        redirect_to school_path(@school), status: :bad_request
+      else
+        redirect_to school_path(@school)
+      end
     end
 
     def update
