@@ -1,31 +1,34 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Students</h1>
-
-<table>
+<div class="page-header">
+  <h1>Listar Estudantes</h1>
+</div>
+<%= link_to 'Novo Estudante', new_student_path, class: "btn btn-primary btn-sm pull-right" %>
+<table class="table table-stripped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Enrollment</th>
+      <th></th>
+      <th>Nome</th>
+      <th>Matrícula</th>
       <th>Status</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @students.each do |student| %>
       <tr>
+        <td></td>
         <td><%= student.name %></td>
         <td><%= student.enrollment %></td>
         <td><%= student.status %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="pull-right">
+          <%= link_to 'exibir', student, class: "btn btn-info btn-sm" %>
+          <%= link_to 'editar', edit_student_path(student), class: "btn btn-info btn-sm" %>
+          <%= link_to 'deletar', student, class: "btn btn-info btn-sm",  method: :delete, data: { confirm: 'Quer deletar?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Student', new_student_path %>

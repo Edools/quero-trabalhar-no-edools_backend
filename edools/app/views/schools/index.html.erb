@@ -1,16 +1,15 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Schools</h1>
-
-<table>
+<div class="page-header">
+  <h1>Listar Escolas</h1>
+</div>
+<%= link_to 'Nova Escola', new_school_path, class: "btn btn-primary btn-sm pull-right" %>
+<table class="table table-stripped">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nome</th>
       <th>Email</th>
-      <th>Pitch</th>
       <th>Subdomain</th>
-      <th>Date of creation</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -19,17 +18,14 @@
       <tr>
         <td><%= school.name %></td>
         <td><%= school.email %></td>
-        <td><%= school.pitch %></td>
-        <td><%= school.subdomain %></td>
-        <td><%= school.date_of_creation %></td>
-        <td><%= link_to 'Show', school %></td>
-        <td><%= link_to 'Edit', edit_school_path(school) %></td>
-        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= school.subdomain %>
+        <td class="pull-right">
+          <%= link_to 'exibir', school , class: "btn btn-info btn-sm"%>
+          <%= link_to 'editar', edit_school_path(school), class: "btn btn-info btn-sm" %>
+          <%= link_to 'deletar', school, class: "btn btn-info btn-sm" ,method: :delete, data: { confirm: 'Quer deletar?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New School', new_school_path %>
