@@ -1,11 +1,11 @@
 !!!
-%html{"data-ng-app" => "app_edools"}/
+%html
 %head
   %title AppEdools
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
-
+  %script{:src => "jquery.searchable.js"}
 %body
   %header.navbar.navbar-default{:role => "navigation"}
     .navbar-inner

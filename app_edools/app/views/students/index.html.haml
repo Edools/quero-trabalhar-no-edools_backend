@@ -1,21 +1,25 @@
 %h1= t('titles.students_list')
 
-%table.table.table-striped
-  %tr
-    %th= t('table_titles.name')
-    %th= t('table_titles.address')
-    %th= t('table_titles.phone')
-    %th= t('table_titles.document')
-    %th= t('table_titles.edit')
-    %th= t('table_titles.delete')
+%input#search.form-control{:placeholder => "Buscar Alunos", :type => "search", :value => ""}/
+
+%table.table.table-striped#table
+  %thead
+    %tr
+      %th= t('table_titles.name')
+      %th= t('table_titles.address')
+      %th= t('table_titles.phone')
+      %th= t('table_titles.document')
+      %th= t('table_titles.edit')
+      %th= t('table_titles.delete')
 
   - @students.select{|student| student[:status] == true }.each do |student|
-    %tr
-      %td= student.name
-      %td= student.address
-      %td= student.phone
-      %td= student.document
-      %td= link_to t('links.edit'), edit_school_student_path(@school, student.id)
-      %td= link_to t('links.delete'), school_students_path(student), method: :delete, data: { confirm: t('messages.confirm') }
+    %tbody
+      %tr
+        %td= student.name
+        %td= student.address
+        %td= student.phone
+        %td= student.document
+        %td= link_to t('links.edit'), edit_school_student_path(@school, student.id)
+        %td= link_to t('links.delete'), school_students_path(student), method: :delete, data: { confirm: t('messages.confirm') }
 
 = link_to t('links.back'), school_path(@school)

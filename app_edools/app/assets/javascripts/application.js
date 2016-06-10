@@ -13,7 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require angular
-//= require angular-resource
 //= require turbolinks
 //= require_tree .
+
+$(function () {
+  $( '#table' ).searchable({
+    striped: true,
+    oddRow: { 'background-color': '#f5f5f5' },
+    evenRow: { 'background-color': '#fff' },
+    searchType: 'fuzzy'
+  });
+});

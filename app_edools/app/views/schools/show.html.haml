@@ -27,13 +27,27 @@
 = link_to t('links.delete'), school_path(@school), method: :delete, data: { confirm: t('messages.confirm') }
 
 %h1= t('titles.joined_courses')
+%input#search.form-control{:placeholder => "Busca por cursos", :type => "search", :value => ""}/
 
-%table.table.table-striped
-
+%br
+%table.table.table-striped#table
+  %thead
+    %tr
+      %th Nome do Curso
+      %th Criado em
+      %th Descrição
+      %th Conteúdo
+      %th Duração
+      %th Valor
+      %th Editar
+      %th Apagar
+  %tbody
   - @school.courses.each do |course|
     %tr
       %td
         =course.title
+      %td
+        = time_tag course.created_at
       %td
         %button.btn-default{ "data-target" => "#myDescription", "data-toggle" => "modal", type: "button" }=t('buttons.description')
 

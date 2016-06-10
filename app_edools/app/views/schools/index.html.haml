@@ -1,4 +1,9 @@
 %h1= t('titles.school_list')
 
-- @schools.each do |school|
-    %h3= link_to school.name, school
+%input#search.form-control{:placeholder => "Busca por escolas", :type => "search", :value => ""}/
+
+%table.table#table
+  - @schools.each do |school|
+    %tr
+      %td
+        %h3= link_to school.name, school
