@@ -1,0 +1,7 @@
+%tr{id: "course_#{course.id}"}
+  %td= course.title
+  %td= l course.created_at
+  %td
+    = link_to 'Ver', school_course_path(@school, course), class: 'btn btn-xs btn-primary'
+    = link_to 'Editar', edit_school_course_path(@school, course), class: 'btn btn-xs btn-primary'
+    = link_to 'Deletar', school_course_path(@school, course), method: :delete, class: 'btn btn-xs btn-danger'
