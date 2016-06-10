@@ -31,5 +31,17 @@ module TestEdools
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Do not generate specs for views and requests. Also, do not generate assets.
+    config.generators do |g|
+      g.helper false
+      g.view_specs false
+      g.assets false
+      g.integration_tool false
+    end
+
+    config.app_generators do |g|
+      g.test_framework :rspec
+    end
   end
 end
