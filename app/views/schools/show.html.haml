@@ -13,4 +13,12 @@
   %strong Subdomínio:
   = @school.subdomain
 
+%p
+  %strong Criado em:
+  = l @school.created_at, format: :short
+
+%p
+  %strong Última alteração em:
+  = l @school.updated_at, format: :short
+
 = link_to 'Voltar para listagem', schools_path, class: 'btn btn-primary'

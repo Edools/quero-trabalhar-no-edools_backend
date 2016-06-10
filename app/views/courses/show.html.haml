@@ -1,0 +1,32 @@
+- content_for :page_header do
+  = @course.title
+
+%p
+  %strong Descrição:
+  = @course.description
+
+%p
+  %strong Conteúdo:
+  = @course.content
+
+%p
+  %strong Duração:
+  = @course.duration
+
+%p
+  %strong Preço:
+  = number_to_currency @course.price
+
+%p
+  %strong Estudantes ativos:
+  = @course.total_active_students
+
+%p
+  %strong Criado em:
+  = l @course.created_at, format: :short
+
+%p
+  %strong Última alteração em:
+  = l @course.updated_at, format: :short
+
+= link_to 'Voltar para listagem', schools_path, class: 'btn btn-primary'
