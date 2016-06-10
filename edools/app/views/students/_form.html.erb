@@ -12,18 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :Nome %><br>
+    <%= f.text_field :name , class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :enrollment %><br>
-    <%= f.text_field :enrollment %>
+    <%= f.label :Matrícula %><br>
+    <%= f.text_field :enrollment , class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
+    <%= f.label :Status %><br>
+    <%= f.number_field :status, class: "form-control" %>
   </div>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "salvar" ,class: "btn btn-primary btn-sm" %>
   </div>
 <% end %>
