@@ -12,34 +12,35 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :Título %><br>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :Descrição %><br>
+    <%= f.text_field :description ,class: "form-control"%>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= f.label :Conteúdo %><br>
+    <%= f.text_area :content ,class: "form-control"%>
   </div>
   <div class="field">
-    <%= f.label :duration %><br>
-    <%= f.text_field :duration %>
+    <%= f.label "Duração (meses)" %><br>
+    <%= f.number_field :duration ,class: "form-control"%>
   </div>
   <div class="field">
     <%= f.label :date_of_creation %><br>
-    <%= f.datetime_select :date_of_creation %>
+    <%= f.text_field :date_of_creation, :order => [:day, :month ,:year ] ,class: "form-control", type: "date"%>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    <%= f.label :Valor %><br>
+    <%= f.text_field :price ,class: "form-control"%>
   </div>
   <div class="field">
     <%= f.label :school_id %><br>
-    <%= f.number_field :school_id %>
+    <%= f.number_field :school_id ,class: "form-control"%>
   </div>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "salvar" ,class: "btn btn-primary btn-sm"%>
   </div>
 <% end %>
