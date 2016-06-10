@@ -1,23 +1,93 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: Errors in validations
+      models:
+        school:
+          attributes:
+            name:
+              blank: The field name can't be blank
+            email_responsible:
+              blank: The field email can't be blank
+              invalid: Email field is with an invalid format
+            pitch:
+              blank: The field pitch can't be blank
+            subdomain:
+              invalid: Subdomain field is with an invalid format
+
+  buttons:
+    close: Close
+    content: Content
+    description: Description
+  labels:
+    address: Address
+    active: Active
+    content: Content
+    date_school: School creation date
+    description: Description
+    document: Document
+    duration: Duration
+    email: Email
+    inactive: Inactive
+    name: Name
+    phone: Phone
+    pitch: Pitch
+    price: Price
+    subdomain: Subdomain
+    title: Title
+  links:
+    back: Back
+    cancel: Cancel
+    delete: Delete
+    edit: Edit
+    new_course: New Course
+    new_school: New School
+    new_student: New Student
+    students_list: Students List
+  messages:
+    confirm: Are you sure?
+    course_create: The course was registered successfully!
+    course_destroy: The course was removed successfully!
+    course_update: The course was updated successfully!
+    school_create: The school was registered successfully!
+    school_destroy: The school was removed successfully!
+    school_update: The school was updated successfully!
+    student_create: The student was registered successfully!
+    student_destroy: The student was removed successfully!
+    student_update: The student was updated successfully!
+  placeholders:
+    full_name: Full name of Student
+    full_address: Full address
+    phone: Phone (xx)xxxxx-xxxx
+    document: Document - xxx.xxx.xxx-xx
+    title: Course title
+    description: Course description
+    content: Program content
+    duration: Duration
+    price: Price in US dollars
+    name: School name
+    email: Email responsible for school email@example.com
+    subdomain: Subdomain must have the format example-example.edools.com
+  table_titles:
+    address: Address
+    document: Document
+    edit: Edit
+    name: Name
+    phone: Phone
+    delete: Delete
+  time:
+    formats:
+      long: "%Y-%m-%d"
+  titles:
+    content: Content
+    description: Description
+    edit_course: Edit course information
+    edit_school: Edit school information
+    edit_student: Edit student data
+    joined_courses: Joined Courses
+    new_course: New Course
+    new_school: New School
+    new_student: New Student
+    students_list: Students List
+    school_list: Schools Control

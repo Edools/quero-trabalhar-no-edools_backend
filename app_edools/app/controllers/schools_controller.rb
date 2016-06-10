@@ -14,7 +14,7 @@ class SchoolsController < ApplicationController
 
     respond_to do |format|
       if @school.save
-        format.html { redirect_to @school, notice: "Escola cadastrada com sucesso." }
+        format.html { redirect_to @school, notice: t('messages.school_create') }
         format.json { render :show, status: :created, location: @school }
       else
         format.html { render :new }
@@ -32,7 +32,7 @@ class SchoolsController < ApplicationController
   def update
     respond_to do |format|
       if @school.update(school_params)
-        format.html { redirect_to @school, notice: "Escola atualizada com sucesso." }
+        format.html { redirect_to @school, notice: t('messages.school_update') }
         format.json { render :show, status: :ok, location: @school }
       else
         format.html { render :edit }
@@ -45,7 +45,7 @@ class SchoolsController < ApplicationController
     @school.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path, notice: "Escola removida com sucesso." }
+      format.html { redirect_to root_path, notice: t('messages.school_destroy') }
       format.json { head :no_content }
     end
   end

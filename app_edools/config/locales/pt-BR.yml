@@ -47,6 +47,15 @@ pt-BR:
     students_list: Listar Alunos
   messages:
     confirm: Você tem certeza?
+    course_create: Curso cadastrado com sucesso.
+    course_destroy: Curso removido com sucesso.
+    course_update: Curso atualizado com sucesso.
+    school_create: Escola cadastrada com sucesso.
+    school_destroy: Escola removida com sucesso.
+    school_update: Escola atualizada com sucesso.
+    student_create: Aluno cadastrado com sucesso.
+    student_destroy: Aluno removido com sucesso.
+    student_update: Dados do aluno atualizado com sucesso.
   placeholders:
     full_name: Nome completo do Aluno
     full_address: Endereço completo
@@ -76,6 +85,7 @@ pt-BR:
     edit_course: Editar informações do curso
     edit_school: Editar informações da escola
     edit_student: Editar dados do aluno
+    joined_courses: Cursos Cadastrados
     new_course: Novo Curso
     new_school: Nova Escola
     new_student: Novo Aluno

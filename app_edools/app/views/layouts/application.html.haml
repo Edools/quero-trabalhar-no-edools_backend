@@ -16,7 +16,8 @@
             %li= link_to t('links.new_school'), new_school_path
 
   #main_content
-    - flash.each do |name, msg|
-      = content_tag(:div, msg, class: "alert alert-info")
     #content.col-md-9.center-block
+      - flash.each do |name, msg|
+        = content_tag(:div, msg, class: "alert alert-info")
+        
       = yield

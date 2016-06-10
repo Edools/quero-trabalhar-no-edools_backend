@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to school_path(@school), notice: "Aluno cadastrado com sucesso." }
+        format.html { redirect_to school_path(@school), notice: t('messages.student_create') }
         format.json { render :show, status: :created, location: @school }
       else
         format.html { render :new }
@@ -35,7 +35,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.update(student_params)
-        format.html { redirect_to school_students_path(@school), notice: "Dados do aluno atualizado com sucesso." }
+        format.html { redirect_to school_students_path(@school), notice: t('messages.student_update') }
         format.json { render :show, status: :ok, location: @student }
       else
         format.html { render :edit }
@@ -50,7 +50,7 @@ class StudentsController < ApplicationController
     @student.destroy
 
     respond_to do |format|
-      format.html { redirect_to school_students_path(@school), notice: 'Aluno removido com sucesso.' }
+      format.html { redirect_to school_students_path(@school), notice: t('messages.student_destroy') }
       format.json { head :no_content }
     end
   end

@@ -26,7 +26,7 @@
 = link_to t('links.edit'), edit_school_path(@school)
 = link_to t('links.delete'), school_path(@school), method: :delete, data: { confirm: t('messages.confirm') }
 
-%h1 Cursos Cadastrados
+%h1= t('titles.joined_courses')
 
 %table.table.table-striped
 
