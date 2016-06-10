@@ -1,4 +1,4 @@
-<%= form_for(@school) do |f| %>
+<%= form_for(@school, html: { class: 'ui form' } ) do |f| %>
   <% if @school.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@school.errors.count, "error") %> prohibited this school from being saved:</h2>
@@ -12,6 +12,18 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <div class="field">
+      <label>Nome da Escola</label>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <label>Pitch</label>
+      <%= f.text_field :pitch %>
+    </div>
+    <div class="field">
+      <label>Subdomínio</label>
+      <%= f.text_field :subdomain %>
+    </div>
+    <%= f.submit 'Salvar', class: 'teal ui button' %>
   </div>
 <% end %>

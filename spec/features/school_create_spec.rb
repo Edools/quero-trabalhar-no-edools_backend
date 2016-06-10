@@ -3,13 +3,11 @@ require 'rails_helper'
 feature "Create a School" do
   scenario "Creating a valid school" do
     visit '/'
+    click_on 'Nova Escola'
 
-    click_button 'Escolas'
-    click_button 'Nova Escola'
-
-    fill_in 'Name', with: 'My School'
-    fill_in 'Pitch', with: 'My Pitch'
-    fill_in 'Subomain', with: 'my_school'
+    fill_in '#school_name', with: 'My School'
+    fill_in '#school_pitch', with: 'My Pitch'
+    fill_in '#school_subdomain', with: 'my_subdomain'
 
     click_button 'Salvar'
   end
