@@ -14,6 +14,7 @@ class SchoolsController < ApplicationController
     if @school.save
       redirect_to school_path(@school)
     else
+      flash[:notice] = 'Verifique as informações do formulário.'
       render :new
     end
   end
@@ -30,6 +31,7 @@ class SchoolsController < ApplicationController
     if @school.update_attributes(school_params)
       redirect_to school_path(@school)
     else
+      flash[:notice] = 'Verifique as informações do formulário.'
       render :edit
     end
   end

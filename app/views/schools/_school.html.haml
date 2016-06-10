@@ -1,4 +1,5 @@
-%tr
+%tr{id: "school_#{school.id}"}
   %td= school.name
   %td= school.contact_email
   %td
+    = link_to 'Editar', edit_school_path(school), class: 'btn btn-xs btn-primary'

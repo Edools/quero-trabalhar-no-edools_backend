@@ -18,6 +18,12 @@ feature 'Create school' do
   end
 
   scenario 'with invalid do not data create school' do
+    visit root_path
+    click_link 'Escolas'
+    click_link 'Cadastrar nova escola'
 
+    click_button 'Salvar'
+
+    expect(page).to have_content('Verifique as informações do formulário.')
   end
 end

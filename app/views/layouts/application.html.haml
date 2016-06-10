@@ -23,6 +23,9 @@
         = render 'shared/navbar_top'
         = render 'shared/sidebar'
       #page-wrapper
+        - if flash[:notice]
+          .alert.alert-info
+            = flash[:notice]
         .container-fluid
           .row
             .col-lg-12
