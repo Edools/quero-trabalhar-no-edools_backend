@@ -1,14 +1,14 @@
 <h1>Novo Aluno</h1>
 
-<%= form_for :student, url: students_path do |f| %>
+<%= form_for([@school, @school.students.build]) do |f| %>
 
-<p>
-    <%= f.label :name, "Nome" %><br>
-    <%= f.text_field :name %>
-</p>
+<div class="form-group">
+    <%= f.label :name, "Nome", for: "name" %><br>
+    <%= f.text_field :name, id: "name", class: "form-control", placeholder: "Nome" %>
+</div>
 
-<p>
-    <%= f.submit "Salvar" %>
-</p>
+<div>
+    <%= f.submit "Salvar", class: "btn btn-default" %>
+</div>
 
 <% end %>

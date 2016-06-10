@@ -1,44 +1,34 @@
 <h1>Novo curso</h1>
 
-<%= form_for :course, url: courses_path do |f| %>
+<%= form_for([@school, @school.courses.build]) do |f| %>
 
-<p>
-    <%= f.label :title, "Título" %><br>
-    <%= f.text_field :title %>
-</p>
+<div class="form-group">
+    <%= f.label :title, "Título", for: "title" %><br>
+    <%= f.text_field :title, id: "title", class: "form-control", placeholder: "Título" %>
+</div>
 
-<p>
-    <%= f.label :school, "Escola" %><br>
-    <%= f.text_field :school %>
-</p>
+<div class="form-group">
+    <%= f.label :description, "Descrição", for: "description" %><br>
+    <%= f.text_area :description, id: "description", class: "form-control", placeholder: "Descrição" %>
+</div>
 
-<p>
-    <%= f.label :description, "Descrição" %><br>
-    <%= f.text_area :description %>
-</p>
+<div class="form-group">
+    <%= f.label :content, "Conteúdo", for: "content" %><br>
+    <%= f.text_area :content, id: "content", class: "form-control", placeholder: "Conteúdo" %>
+</div>
 
-<p>
-    <%= f.label :content, "Conteúdo" %><br>
-    <%= f.text_area :content %>
-</p>
+<div class="form-group">
+    <%= f.label :duration, "Duração", for: "duration" %><br>
+    <%= f.text_field :duration, id: "duration", class: "form-control", placeholder: "Duração" %>
+</div>
 
-<p>
-    <%= f.label :duration, "Duração" %><br>
-    <%= f.text_field :duration %>
-</p>
+<div class="form-group">
+    <%= f.label :price, "Preço", for: "price" %><br>
+    <%= f.text_field :price, id: "price", class: "form-control", placeholder: "Preço" %>
+</div>
 
-<p>
-    <%= f.label :active_students, "Alunos ativos" %><br>
-    <%= f.number_field :active_students, min: 0 %>
-</p>
-
-<p>
-    <%= f.label :price, "Preço" %><br>
-    <%= f.text_field :price %>
-</p>
-
-<p>
-    <%= f.submit "Salvar" %>
-</p>
+<div>
+    <%= f.submit "Salvar", class: "btn btn-default" %>
+</div>
 
 <% end %>

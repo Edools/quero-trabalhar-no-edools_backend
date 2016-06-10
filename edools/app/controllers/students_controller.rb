@@ -11,6 +11,7 @@ class StudentsController < ApplicationController
     end
 
     def new
+      @school = School.find(params[:school_id])
     end
 
     def edit
