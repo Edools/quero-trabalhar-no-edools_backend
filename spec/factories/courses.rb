@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :course do
-    title { Faker::Lorem.sentence(2) }
+    title { Faker::Lorem.sentence }
     school
     description { Faker::Lorem.paragraph }
     content { Faker::Lorem.paragraph }
