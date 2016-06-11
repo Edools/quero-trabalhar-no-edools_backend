@@ -10,5 +10,7 @@ RSpec.describe CoursesController, type: :routing do
     it { should route(:patch, '/cursos/1').to(action: :update, id: 1) }
     it { should route(:put,   '/cursos/1').to(action: :update, id: 1) }
     it { should route(:delete, '/cursos/1').to(action: :destroy, id: 1) }
+    it { should route(:get, '/cursos/filtrar').to(action: :filter) }    
+
   end
 end

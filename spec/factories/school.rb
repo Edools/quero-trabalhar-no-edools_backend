@@ -3,7 +3,7 @@ FactoryGirl.define do
     name { Faker::Name.name }
     owner_email { Faker::Internet.email }
     pitch { Faker::Lorem.word }
-    subdomain { Faker::Internet.url("#{Faker::Internet.domain_word}.edools.com", nil) }
+    subdomain { "#{Faker::Internet.domain_word}.edools.com" }
     trait :empty do
       name nil
       owner_email nil

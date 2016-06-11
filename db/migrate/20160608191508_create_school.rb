@@ -8,5 +8,6 @@ class CreateSchool < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :school, :owner_email, unique: true
   end
 end

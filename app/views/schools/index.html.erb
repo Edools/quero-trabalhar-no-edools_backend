@@ -1,20 +1,29 @@
 <div class="well">
   <h1><%= t('helpers.titles.listing', {model: School.model_name.human})%></h1>
 </div>
+<%= search_form_for @q, method: :get, remote: true, class: 'form-inline' do |f|%>
+  <div class="form-group">
+    <div class="input-group">
+      <%= f.search_field :name_cont, class: 'form-control', placeholder: t('helpers.placeholders.search') %>
+      <div class="input-group-addon"><i class="fa fa-search"></i></div>
+    </div>
+  </div>
+<% end %>
+<hr />
 <%= link_to t('helpers.links.new', {model: School.model_name.human}), new_school_path, class: 'pull-right btn btn-primary' %>
-<br />
 <div class="table-responsive">
   <table class="table table-striped table-hover">
     <thead>
       <tr>
-        <th><%= School.human_attribute_name('name')%></th>
-        <th><%= School.human_attribute_name('owner_email')%></th>
-        <th><%= School.human_attribute_name('subdomain')%></th>
+        <th><%= sort_link(@q, :name,        School.human_attribute_name('name'))%></th>
+        <th><%= sort_link(@q, :owner_email, School.human_attribute_name('owner_email'))%></th>
+        <th><%= sort_link(@q, :subdomain,   School.human_attribute_name('subdomain'))%></th>
+        <th><%= sort_link(@q, :created_at,  School.human_attribute_name('created_at'))%></th>
         <th colspan="3"></th>
       </tr>
     </thead>
     <tbody>
-      <%= render @schools%>
+      <%= (render @schools) || t('.no_record.html')%>
     </tbody>
   </table>
 </div>

@@ -9,7 +9,15 @@ RSpec.describe School, type: :model do
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:owner_email) }
+    it { is_expected.to validate_uniqueness_of(:owner_email) }
+    it { is_expected.to allow_value('teste@gmail.com').for(:owner_email) }
+    it { is_expected.not_to allow_value('teste.com.br').for(:owner_email) }
+    it { is_expected.not_to allow_value('@').for(:owner_email) }
     it { is_expected.to validate_presence_of(:subdomain) }
+    it { is_expected.to allow_value('minha-escola.edools.com').for(:subdomain) }
+    it { is_expected.not_to allow_value('escola.com.br').for(:subdomain) }
+    it { is_expected.not_to allow_value('edools.com').for(:subdomain) }
+
   end
 
   describe 'associations' do

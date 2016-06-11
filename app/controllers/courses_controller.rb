@@ -2,7 +2,14 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
-    @courses = Course.includes(:school).order('created_at')
+    @q       = Course.ransack(params[:q])
+    @courses = @q.result.includes(:school)
+  end
+
+  def filter
+    @courses = Course.order('title')
+    @courses = @courses.where('school_id = ?', params[:q]) if params[:q].to_i != 0
+    render :index
   end
 
   def show

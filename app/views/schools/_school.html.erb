@@ -2,6 +2,7 @@
   <td><%= school.name %></td>
   <td><%= school.owner_email %></td>
   <td><%= school.subdomain %></td>
+  <td><%= l school.created_at, format: :complete %></td>  
   <td class="text-center">
     <div class="btn-group pull-right" role="group">
       <%= link_to school do%>

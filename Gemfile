@@ -33,6 +33,7 @@ gem 'puma', '~> 3.4'
 gem 'simple_form', '~> 3.2.1'
 gem 'responders', '~> 2.2'
 gem 'brdinheiro', '~> 3.3'
+gem 'ransack', '~> 1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

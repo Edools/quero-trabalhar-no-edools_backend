@@ -21,6 +21,13 @@ RSpec.describe CoursesController, type: :controller do
     it('should assigns all courses as @courses') { expect(assigns(:courses)).to match_array([@course]) }
   end
 
+  describe 'GET #filter' do
+    before { xhr :get, :filter, q: @course.school.id }
+    it { is_expected.to have_http_status(:success) }
+    it { is_expected.to render_template :index }
+    it('should assigns all courses that belongs to a school as @courses') { expect(assigns(:courses)).to match_array([@course]) }
+  end
+
   describe 'GET #show' do
     before { get :show, id: @course }
     it { is_expected.to have_http_status(:success) }

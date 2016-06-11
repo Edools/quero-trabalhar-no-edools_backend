@@ -2,7 +2,8 @@ class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
 
   def index
-    @schools = School.all
+    @q       = School.ransack(params[:q])
+    @schools = @q.result
   end
 
   def show
