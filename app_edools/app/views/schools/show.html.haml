@@ -12,23 +12,17 @@
     %td{:align => "right", :rowspan => "5", :width => "200px"}
       %h4= t('titles.options')
       %p
-      %button.btn.btn-default
-        = link_to t('links.new_course'), new_school_course_path(@school)
+        = link_to t('links.new_course'), new_school_course_path(@school), class: "btn btn-default"
       %p
-      %button.btn.btn-default
-        = link_to t('links.new_student'), new_school_student_path(@school)
+        = link_to t('links.new_student'), new_school_student_path(@school), class: "btn btn-default"
       %p
-      %button.btn.btn-default
-        = link_to t('links.students_list'), school_students_path(@school)
+        = link_to t('links.students_list'), school_students_path(@school), class: "btn btn-default"
       %p
-      %button.btn.btn-default
-        = link_to t('links.back'), root_path
+        = link_to t('links.back'), root_path, class: "btn btn-default"
       %p
-      %button.btn.btn-default
-        = link_to t('links.edit'), edit_school_path(@school)
+        = link_to t('links.edit'), edit_school_path(@school), class: "btn btn-default"
       %p
-      %button.btn.btn-danger
-        = link_to t('links.delete'), school_path(@school), method: :delete, data: { confirm: t('messages.confirm') }
+        = link_to t('links.delete'), school_path(@school), method: :delete, data: { confirm: t('messages.confirm') }, class: "btn btn-danger"
 
   %tr
     %td

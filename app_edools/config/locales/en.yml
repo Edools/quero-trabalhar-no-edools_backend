@@ -8,13 +8,16 @@ en:
           attributes:
             name:
               blank: The field name can't be blank
+              taken: Name already being used
             email_responsible:
-              blank: The field email can't be blank
-              invalid: Email field is with an invalid format
+              blank: The field mail can't be blank
+              invalid: Mail field is with an invalid format
+              taken: Mail already being used
             pitch:
               blank: The field pitch can't be blank
             subdomain:
               invalid: Subdomain field is with an invalid format
+              taken: Subdomain already being used
 
   buttons:
     close: Close

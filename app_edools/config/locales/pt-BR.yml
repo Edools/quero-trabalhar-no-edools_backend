@@ -8,13 +8,16 @@ pt-BR:
           attributes:
             name:
               blank: O campo nome não pode ficar em branco
+              taken: O nome já está sendo utilizado
             email_responsible:
               blank: O campo email não pode ficar em branco
               invalid: O campo email está com um formato inválido
+              taken: O email já está sendo utilizado
             pitch:
               blank: O campo pitch não pode ficar em branco
             subdomain:
-              invalid: O campo subdomain está com um formato inválido
+              invalid: O campo subdominio está com um formato inválido
+              taken: Este subdominio já foi escolhido
 
   buttons:
     close: Fechar
