@@ -25,7 +25,6 @@ describe "when access courses pages", js: true do
     new_course
     visit '/'
     click_on 'New School'
-    byebug
     within('tr', text: 'Ruby on Rails') do
       click_on 'Editar'
     end
@@ -34,6 +33,16 @@ describe "when access courses pages", js: true do
     click_on 'Update Course'
 
     expect(page).to have_content('Curso atualizado com sucesso.')
+  end
+
+  it "view description course" do
+    new_school
+    new_course
+    visit '/'
+    click_on 'New School'
+    click_on "Descrição"
+
+    expect(page).to have_content('Curso completo de Ruby on Rails')
   end
 
   xit "delete a course" do
