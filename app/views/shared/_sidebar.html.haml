@@ -4,9 +4,9 @@
       %li.sidebar-search
         %form{action: search_path, method: :get}
           .input-group.custom-search-form
-            %input.form-control{:placeholder => "Buscar...", :type => "text", name: 'q', value: params[:q]}
+            %input.form-control{:placeholder => "Buscar...", :type => "text", name: 'q', id: 'q', value: params[:q]}
             %span.input-group-btn
-              %button.btn.btn-default{:type => "submit"}
+              %button#do-search.btn.btn-default{:type => "submit"}
                 %i.fa.fa-search
       %li
         = link_to root_path do
