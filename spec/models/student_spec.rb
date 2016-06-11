@@ -15,5 +15,7 @@ RSpec.describe Student, type: :model do
 
   context 'relations' do
     # it {is_expected.to have_and_belongs_to_many(:courses)}
+    it {is_expected.to have_many(:enrollments)}
+    it {is_expected.to have_many(:courses).through(:enrollments)}
   end
 end
