@@ -1,27 +1,30 @@
 <h1><%= @school.name %> - <%= @course.title %></h1>
 
+<% if flash[:notice] != nil %>
 <div class="row">
     <div class="col-sm-12">
         <div class="alert alert-success" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>          
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <%= flash[:notice] %>
         </div>
     </div>
 </div>
+<% end %>
+
 
 <div class="row">
   <div class="col-sm-12">
-    <h4>Descrição</h4>
+    <p><strong>Descrição</strong></p>
     <p><%= @course.description %></p>
 
-    <h4>Conteúdo</h4>
+    <p><strong>Conteúdo</strong></p>
     <p><%= @course.content %></p>
 
-    <h4>Duração</h4>
+    <p><strong>Duração</strong></p>
     <p><%= @course.duration %></p>
 
-    <h4>Price</h4>
-    <p><%= @course.price %></p>
+    <p><strong>Price</strong></p>
+    <p><%= number_to_currency(@course.price, locale: :"pt-BR") %></p>
   </div>
 </div>
 
