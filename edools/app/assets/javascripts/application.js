@@ -24,17 +24,39 @@ $(document).on('page:load', function() {
 Paloma.controller('Courses', {
     management: function() {
 
+        //get the hidden that stores the ids of students
         var hidden = $("#students_ids");
 
+        //get the value = "{:value=>[1, 2]}"
+        var str = hidden.val();
+
+        //extract only ids
+        var ids = str.substring(str.lastIndexOf('[') + 1, str.lastIndexOf(']'));
+
+        //remove spaces
+        ids = ids.replace(" ", "");
+
+        //set the hidden value
+        hidden.val(ids);
+
         $(".add-student").on('click', function() {
+
+            //get the ids in the hidden and convert to array
             var ids = $("#students_ids").val().split(",").filter(Boolean);
+
+            //get the id of selected student
             var id = $(this).attr("data-student-id");
 
+            //check if the id exists in the ids array
             var index = ids.indexOf(id);
 
+            //if it does, adds the id
             if (index == -1) ids.push(id);
+
+            //otherwise, removes it
             else ids.splice(index, 1);
 
+            //set the hidden value
             hidden.val(ids);
         });
     }

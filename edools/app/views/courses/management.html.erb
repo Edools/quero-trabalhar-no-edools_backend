@@ -1,14 +1,12 @@
 <h1>Select students</h1>
 
 <%= form_for :course, url: enroll_school_course_path(@school, @course), method: :patch do |f| %>
-  <%= hidden_field_tag 'students_ids' %>
+  <%= hidden_field_tag 'students_ids', value: @ids %>
 
   <div>
     <%= f.submit "Salvar", class: "btn btn-default" %>
   </div>
 <% end %>
-
-<!-- <input type="hidden" id="students_ids"/> -->
 
 <div class="row">
     <div class="col-sm-12">

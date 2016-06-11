@@ -45,14 +45,15 @@ class CoursesController < ApplicationController
       @school = School.find(params[:school_id])
       @course = @school.courses.find(params[:id])
       @course.destroy
-      #redirect_to school_path(@school)
-      redirect_to action: "index", school_id: @school.id      
+      redirect_to action: "index", school_id: @school.id
     end
 
     def management
       @school = School.find(params[:school_id])
       @course = @school.courses.find(params[:id])
       @students = Student.all
+      @ids = @course.students.pluck(:id)
+      p @ids
     end
 
     def enroll
