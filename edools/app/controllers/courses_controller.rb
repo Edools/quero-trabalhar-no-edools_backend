@@ -28,6 +28,7 @@ class CoursesController < ApplicationController
       if @course.invalid?
         render 'new', status: :bad_request
       else
+        flash[:notice] = "Curso criado com sucesso!"
         redirect_to action: "show", school_id: @school.id, id: @course.id
       end
     end
@@ -36,6 +37,7 @@ class CoursesController < ApplicationController
       @school = School.find(params[:school_id])
       @course = Course.find(params[:id])
       if @course.update(course_params)
+        flash[:notice] = "Curso atualizado com sucesso!"                
         redirect_to action: "show", school_id: @school.id, id: @course.id
       else
         render 'edit', status: :bad_request

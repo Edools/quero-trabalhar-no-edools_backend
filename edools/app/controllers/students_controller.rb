@@ -28,6 +28,7 @@ class StudentsController < ApplicationController
       if @student.invalid?
         render 'new', status: :bad_request
       else
+        flash[:notice] = "Aluno criado com sucesso!"
         redirect_to school_students_path(@school)
       end
     end
@@ -36,6 +37,7 @@ class StudentsController < ApplicationController
       @school = School.find(params[:school_id])
       @student = Student.find(params[:id])
       if @student.update(student_params)
+        flash[:notice] = "Aluno atualizado com sucesso!"
         redirect_to school_students_path(@school)
       else
         render 'edit', status: :bad_request

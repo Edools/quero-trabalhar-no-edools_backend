@@ -1,16 +1,25 @@
 <h1><%= @school.name %></h1>
 
 <div class="row">
-  <div class="col-sm-12">
+    <div class="col-sm-12">
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
+            <%= flash[:notice] %>
+        </div>
+    </div>
+</div>
 
-    <h4>Subdomínio</h4>
-    <p><%= @school.subdomain %></p>
+<div class="row">
+    <div class="col-sm-12">
 
-    <h4>Email do dono</h4>
-    <p><%= @school.owner_email %></p>
+        <h4>Subdomínio</h4>
+        <p><%= @school.subdomain %></p>
 
-    <h4>Pitch</h4>
-    <p><%= @school.pitch %></p>
+        <h4>Email do dono</h4>
+        <p><%= @school.owner_email %></p>
 
-  </div>
+        <h4>Pitch</h4>
+        <p><%= @school.pitch %></p>
+
+    </div>
 </div>

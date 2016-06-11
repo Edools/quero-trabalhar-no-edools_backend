@@ -23,6 +23,7 @@ class SchoolsController < ApplicationController
       if @school.invalid?
         render 'new', status: :bad_request
       elsif @school.save
+        flash[:notice] = "Escola criada com sucesso!"
         redirect_to @school
       else
         render 'new', status: :internal_server_error
@@ -32,6 +33,7 @@ class SchoolsController < ApplicationController
     def update
       @school = School.find(params[:id])
       if @school.update(school_params)
+        flash[:notice] = "Escola atualizada com sucesso!"
         redirect_to @school
       else
         render 'edit', status: :bad_request
