@@ -21,6 +21,7 @@
 
 class Enrollment < ActiveRecord::Base
   validates :student, :course, presence: true
+
   belongs_to :course, counter_cache: :total_active_students
   belongs_to :student
 end

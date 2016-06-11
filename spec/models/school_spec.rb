@@ -5,6 +5,11 @@ RSpec.describe School, type: :model do
   context 'validations' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:subdomain) }
+    it { is_expected.to allow_value('sub').for(:subdomain) }
+    it { is_expected.to allow_value('sub-domain').for(:subdomain) }
+    it { is_expected.to_not allow_value('teste.com').for(:subdomain) }
+    it { is_expected.to_not allow_value('test@').for(:subdomain) }
+    it { is_expected.to validate_uniqueness_of(:subdomain).case_insensitive }
     it { is_expected.to validate_presence_of(:contact_email) }
     it { is_expected.to allow_value('test@test.com').for(:contact_email) }
     it { is_expected.to allow_value('test@test.com.br').for(:contact_email) }

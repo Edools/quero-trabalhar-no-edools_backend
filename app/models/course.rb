@@ -29,7 +29,7 @@ class Course < ActiveRecord::Base
   validates :title, length: { in: 3..65 }
   validates :price, numericality: true
 
-  has_many :enrollments
+  has_many :enrollments, :dependent => :delete_all
   has_many :students, through: :enrollments
 
   searchable do

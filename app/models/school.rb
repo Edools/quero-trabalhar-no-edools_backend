@@ -21,7 +21,10 @@ class School < ActiveRecord::Base
   validates :contact_email, uniqueness: { case_sensitive: false },
             format: /\A(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Z‌​a-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}\z/i
 
-  has_many :courses
+  validates :subdomain, uniqueness: { case_sensitive: false },
+            format: /\A[a-z\d]+(-[a-z\d]+)*\z/i
+
+  has_many :courses, :dependent => :delete_all
   has_many :enrollments, through: :courses
   has_many :students, through: :courses
 
