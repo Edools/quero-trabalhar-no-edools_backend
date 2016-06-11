@@ -38,6 +38,7 @@ gem 'simple_form'
 gem 'friendly_id', '~> 5.1.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails'
+gem 'sunspot_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
+  gem 'sunspot_solr'
 end
 
 group :test do
