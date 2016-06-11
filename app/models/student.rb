@@ -19,4 +19,8 @@ class Student < ActiveRecord::Base
   validates :name, :email, :birthday, presence: true
   validates :email, uniqueness: { case_sensitive: false },
             format: /\A(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Z‌​a-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}\z/i
+
+  searchable do
+    text :name, :email
+  end
 end

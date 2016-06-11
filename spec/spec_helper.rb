@@ -97,4 +97,11 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  # Sunspot options for testing
+  # config.before do
+  #   Sunspot.session = SunspotMatchers::SunspotSessionSpy.new(Sunspot.session)
+  # end
+  #
+  # config.include SunspotMatchers
 end

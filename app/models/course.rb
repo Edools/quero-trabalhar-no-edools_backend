@@ -28,4 +28,8 @@ class Course < ActiveRecord::Base
   validates :title, :school, :price, presence: true
   validates :title, length: { in: 3..65 }
   validates :price, numericality: true
+
+  searchable do
+    text :title, :description, :content
+  end
 end

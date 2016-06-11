@@ -57,6 +57,8 @@ Rails.application.routes.draw do
   #   end
 
   root to: 'home#index'
+  get 'search' => 'home#search', as: :search
+
   resources :students
   resources :schools do
     resources :courses

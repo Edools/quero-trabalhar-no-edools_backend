@@ -1,4 +1,21 @@
-[![CircleCI](https://circleci.com/gh/nathanpsouza/quero-trabalhar-no-edools_backend.svg?style=svg)](https://circleci.com/gh/nathanpsouza/quero-trabalhar-no-edools_backend)
+build: [![CircleCI](https://circleci.com/gh/nathanpsouza/quero-trabalhar-no-edools_backend.svg?style=svg)](https://circleci.com/gh/nathanpsouza/quero-trabalhar-no-edools_backend)
+
+# instruções
+
+O projeto utiliza o banco de dados postgres e a engine de buscas solr, através da biblioteca sunspot. Para executar o mesmo, é necessário ter o java e postgres instalado na máquina.
+
+Antes de executar os testes, é necessário rodar o solr para o ambiente de test com o comando:
+rake sunspot:solr:run RAILS_ENV=test
+
+para subir o servidor o servidor de busca em desenvolvimento, execute:
+rake sunspot:solr:run
+
+rode a suite de testes com:
+bundle exec rspec spec
+
+ps: No estágio atual, o sunspot rodará ou para test ou para development, não sendo possível executar as duas instâncias simultaneamente.
+
+
 
 # O desafio
 

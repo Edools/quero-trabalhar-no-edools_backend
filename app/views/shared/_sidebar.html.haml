@@ -2,11 +2,12 @@
   .sidebar-nav.navbar-collapse
     %ul#side-menu.nav
       %li.sidebar-search
-        .input-group.custom-search-form
-          %input.form-control{:placeholder => "Search...", :type => "text"}/
-          %span.input-group-btn
-            %button.btn.btn-default{:type => "button"}
-              %i.fa.fa-search
+        %form{action: search_path, method: :get}
+          .input-group.custom-search-form
+            %input.form-control{:placeholder => "Buscar...", :type => "text", name: 'q', id: 'q', value: params[:q]}
+            %span.input-group-btn
+              %button#do-search.btn.btn-default{:type => "submit"}
+                %i.fa.fa-search
       %li
         = link_to root_path do
           %i.fa.fa-dashboard.fa-fw
