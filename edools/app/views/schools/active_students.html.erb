@@ -1,0 +1,17 @@
+<h1>Alunos ativos</h1>
+
+<div class="row">
+    <div class="col-sm-12">
+
+      <% @school.courses.each do |course| %>
+
+      <h2><%= course.title %></h2>
+
+      <% course.students.each do |student| %>
+        <p><%= student.name %></p>
+      <% end %>
+
+      <% end %>
+
+    </div>
+</div>

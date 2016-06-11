@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   resources :schools do
     resources :students
+    member do
+      get 'active_students'
+    end
     resources :courses do
       resources :students
       member do
