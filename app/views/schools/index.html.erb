@@ -10,15 +10,22 @@
       <th>Pitch</th>
       <th>Subdomínio</th>
       <th>Criada em</th>
+      <th>Operações</th>
     </tr>
   </thead>
 
   <tbody>
     <% @schools.each do |school| %>
       <tr>
-        <td><%= link_to 'Show', school %></td>
-        <td><%= link_to 'Edit', edit_school_path(school) %></td>
-        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= school.name %></td>
+        <td><%= school.pitch %></td>
+        <td><%= school.subdomain %></td>
+        <td><%= school.created_at %></td>
+        <td>
+          <%= link_to 'Visualizar', school, class: 'primary ui button' %>
+          <%= link_to 'Editar', edit_school_path(school), class: 'yellow ui button' %>
+          <%= link_to 'Remover', school, method: :delete, data: { confirm: 'Are you sure?' }, class: 'red ui button' %>
+        </td>
       </tr>
     <% end %>
   </tbody>

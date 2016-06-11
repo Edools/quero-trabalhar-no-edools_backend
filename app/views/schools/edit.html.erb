@@ -1,6 +1,8 @@
-<h1>Editing School</h1>
+<h1>Editar escola</h1>
 
-<%= render 'form' %>
+<%= form_for @school, html: { class: 'ui form' }, url: school_path  do |f| %>
+  <%= render partial: 'form', locals: { f: f } %>
+<% end %>
 
 <%= link_to 'Show', @school %> |
 <%= link_to 'Back', schools_path %>

@@ -27,8 +27,9 @@ class SchoolsController < ApplicationController
   end
 
   def update
-    @school.update(school_params)
-    respond_with(@school)
+    @school_form = SchoolForm.new(school_params)
+    @school_form.update(@school)
+    respond_withx @school, location: -> { schools_path  }
   end
 
   def destroy
