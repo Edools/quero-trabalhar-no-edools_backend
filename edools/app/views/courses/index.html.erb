@@ -1,6 +1,17 @@
 <div class="row">
     <div class="col-sm-12">
-        <%= link_to 'Adicionar', new_school_course_path(@school), class: "btn btn-primary btn-lg" %>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+      <%= form_tag("/schools/#{@school.id}/courses", method: "get", class: "navbar-form navbar-left", role: "search") do%>
+          <div class="form-group">
+            <%= text_field_tag "search", nil, placeholder: "Título", class: "form-control" %>
+          </div>
+          <%= submit_tag("Pesquisar", class: "btn btn-default") %>
+          <%= link_to 'Adicionar', new_school_course_path(@school), class: "btn btn-primary" %>
+      <% end %>
     </div>
 </div>
 

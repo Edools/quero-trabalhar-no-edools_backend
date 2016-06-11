@@ -3,8 +3,15 @@ class CoursesController < ApplicationController
     #index, show, new, edit, create, update, destroy
 
     def index
+      search = params[:search]
       @school = School.find(params[:school_id])
-      @courses = @school.courses
+
+      if search != nil
+        @courses = @school.courses.where("title LIKE ?", "%#{search}%")      
+      else
+        @courses = @school.courses
+      end
+
     end
 
     def show
@@ -37,7 +44,7 @@ class CoursesController < ApplicationController
       @school = School.find(params[:school_id])
       @course = Course.find(params[:id])
       if @course.update(course_params)
-        flash[:notice] = "Curso atualizado com sucesso!"                
+        flash[:notice] = "Curso atualizado com sucesso!"
         redirect_to action: "show", school_id: @school.id, id: @course.id
       else
         render 'edit', status: :bad_request

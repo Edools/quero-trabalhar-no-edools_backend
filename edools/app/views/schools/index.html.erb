@@ -2,7 +2,13 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <%= link_to 'Adicionar', new_school_path, class: "btn btn-primary btn-lg" %>
+      <%= form_tag("/schools", method: "get", class: "navbar-form navbar-left", role: "search") do%>
+          <div class="form-group">
+            <%= text_field_tag "search", nil, placeholder: "Nome", class: "form-control" %>
+          </div>
+          <%= submit_tag("Pesquisar", class: "btn btn-default") %>
+          <%= link_to 'Adicionar', new_school_path, class: "btn btn-primary" %>
+      <% end %>
     </div>
 </div>
 

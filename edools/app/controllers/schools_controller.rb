@@ -3,7 +3,12 @@ class SchoolsController < ApplicationController
     #index, show, new, edit, create, update, destroy
 
     def index
-      @schools = School.all
+      search = params[:search]
+      if search != nil
+        @schools = School.where("name LIKE ?", "%#{search}%")
+      else
+        @schools = School.all
+      end
     end
 
     def show
