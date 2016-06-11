@@ -17,6 +17,8 @@ Things you may want to cover:
 
 * How to run the test suite: $bundle exec rspec spec
 
+* How to run the app: $ rails server
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
