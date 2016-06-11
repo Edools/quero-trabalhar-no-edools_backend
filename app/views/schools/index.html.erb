@@ -1,33 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Schools</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Owner email</th>
-      <th>Pitch</th>
-      <th>Subdomain</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @schools.each do |school| %>
+<div class="well">
+  <h1><%= t('helpers.titles.listing', {model: School.model_name.human})%></h1>
+</div>
+<%= link_to t('helpers.links.new', {model: School.model_name.human}), new_school_path, class: 'pull-right btn btn-primary' %>
+<br />
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
       <tr>
-        <td><%= school.name %></td>
-        <td><%= school.owner_email %></td>
-        <td><%= school.pitch %></td>
-        <td><%= school.subdomain %></td>
-        <td><%= link_to 'Show', school %></td>
-        <td><%= link_to 'Edit', edit_school_path(school) %></td>
-        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><%= School.human_attribute_name('name')%></th>
+        <th><%= School.human_attribute_name('owner_email')%></th>
+        <th><%= School.human_attribute_name('subdomain')%></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New School', new_school_path %>
+    </thead>
+    <tbody>
+      <%= render @schools%>
+    </tbody>
+  </table>
+</div>

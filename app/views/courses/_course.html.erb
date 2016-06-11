@@ -1,0 +1,21 @@
+<tr>
+  <td><%= course.title %></td>
+  <td><%= course.school.name %></td>
+  <td><%= course.duration %></td>
+  <td><%= course.active_students %></td>
+  <td class="text-right"><%= number_to_currency course.price %></td>
+  <td><%= l course.created_at, format: :complete %></td>
+  <td class="text-center">
+    <div class="btn-group pull-right" role="group">
+      <%= link_to course do%>
+        <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
+      <% end %>
+      <%= link_to edit_course_path(course) do%>
+        <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
+      <% end %>
+      <%= link_to course, method: :delete, data: { confirm: t('helpers.links.confirm') } do %>
+        <button class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button>
+      <% end %>
+    </div>
+  </td>
+</tr>

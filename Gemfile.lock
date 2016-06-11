@@ -39,6 +39,11 @@ GEM
     arel (6.0.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    brdinheiro (3.3.0)
+      actionpack (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      brnumeros (= 3.3.0)
+    brnumeros (3.3.0)
     builder (3.2.2)
     bullet (5.1.0)
       activesupport (>= 3.0.0)
@@ -237,6 +242,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  brdinheiro (~> 3.3)
   bullet (~> 5.1.0)
   byebug
   coffee-rails (~> 4.1.0)

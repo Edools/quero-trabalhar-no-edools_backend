@@ -1,49 +1,43 @@
 pt:
   simple_form:
-    "yes": 'Yes'
-    "no": 'No'
+    "yes": 'Sim'
+    "no": 'Não'
     required:
-      text: 'required'
+      text: 'obrigatório'
       mark: '*'
     error_notification:
-      default_message: "Please review the problems below:"
+      default_message: "Revise os problemas abaixo:"
     labels:
       defaults:
-        password: 'Password'
-      user:
-        new:
-          email: 'E-mail to sign in.'
-        edit:
-          email: 'E-mail.'
     hints:
       defaults:
-        username: 'User name to sign in.'
-        password: 'No special characters, please.'
+      course:
+        duration: Em horas
     include_blanks:
       defaults:
-        age: 'Rather not say'
     prompts:
       defaults:
-        age: 'Select your age'
   breadcrumbs:
     application:
-      root: "Index"
     pages:
-      pages: "Pages"
   helpers:
-    actions: "Actions"
+    submit:
+      create: Salvar
+      update: Atualizar
     links:
-      back: "Back"
-      cancel: "Cancel"
-      confirm: "Are you sure?"
-      destroy: "Delete"
-      new: "New"
-      edit: "Edit"
+      back: Retornar
+      cancel: Cancelar
+      confirm: Tem certeza?
+      destroy: Excluir
+      new: Novo(a) %{model}
+      edit: Editar
+      show: Exibir
     titles:
-      edit: "Edit %{model}"
-      save: "Save %{model}"
-      new: "New %{model}"
-      delete: "Delete %{model}"
+      edit: "Editar %{model}"
+      save: "Salvar %{model}"
+      new: "Novo(a) %{model}"
+      delete: "Excluir %{model}"
+      listing: Lista de %{model}
   flash:
     actions:
       create:
@@ -93,3 +87,204 @@ pt:
       school:
         one: Escola
         other: Escolas
+    attributes:
+      school:
+        name: Nome
+        owner_email: Email do dono
+        pitch: Pitch
+        subdomain: Subdomínio
+        created_at: Criado em
+      course:
+        title: Título
+        school: Escola
+        price: Preço
+        duration: Duração
+        active_students: Estudantes ativos
+        description: Descrição
+        content: Conteúdo
+        created_at: Criado em
+  layouts:
+    application:
+      project:
+        title: EDOOLS
+      menu:
+        title: Menu
+        subtitle: Opções
+        schools: Escolas
+        courses: Cursos
+  schools:
+    index:
+      button:
+        new: Nova escola
+    new:
+      title: Nova escola
+      button:
+        back: Retornar
+  date:
+    abbr_day_names:
+    - Dom
+    - Seg
+    - Ter
+    - Qua
+    - Qui
+    - Sex
+    - Sáb
+    abbr_month_names:
+    -
+    - Jan
+    - Fev
+    - Mar
+    - Abr
+    - Mai
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Out
+    - Nov
+    - Dez
+    day_names:
+    - Domingo
+    - Segunda
+    - Terça
+    - Quarta
+    - Quinta
+    - Sexta
+    - Sábado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %B"
+      date: "%d/%m/%Y"
+      reference: '%B/%Y'
+    month_names:
+    -
+    - Janeiro
+    - Fevereiro
+    - Março
+    - Abril
+    - Maio
+    - Junho
+    - Julho
+    - Agosto
+    - Setembro
+    - Outubro
+    - Novembro
+    - Dezembro
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: há 1 hora
+        other: há quase %{count} horas
+      about_x_months:
+        one: há 1 mês
+        other: há quase %{count} meses
+      about_x_years:
+        one: há 1 ano
+        other: há quase %{count} anos
+      almost_x_years:
+        one: há quase 1 ano
+        other: há quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      x_days:
+        one: 1 dia
+        other: "%{count} dias"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mês
+        other: "%{count} meses"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%u %n"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R$
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            one: bilhão
+            other: bilhões
+          million:
+            one: milhão
+            other: milhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+          thousand: mil
+          trillion:
+            one: trilhão
+            other: trilhões
+          unit: ''
+      format:
+        delimiter: "."
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: "."
+        format: "%n%"
+    precision:
+      format:
+        delimiter: "."
+  support:
+    array:
+      last_word_connector: " e "
+      two_words_connector: " e "
+      words_connector: ", "
+  time:
+    am: ''
+    formats:
+      default: "%a, %d de %B de %Y, %H:%M:%S %z"
+      long: "%d de %B de %Y, %H:%M"
+      complete: "%d/%m/%Y, %H:%M"
+      short: "%d de %B, %H:%M"
+      date: "%d/%m/%Y"
+      reference: '%B/%Y'        
