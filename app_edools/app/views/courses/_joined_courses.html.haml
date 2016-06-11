@@ -1,0 +1,65 @@
+%h1= t('titles.joined_courses')
+%input#search.form-control{:placeholder => t('placeholders.search_course'), :type => "search", :value => ""}/
+
+%br
+%table.table.table-striped#table
+  %thead
+    %tr
+      %th= t('table_titles.name_course')
+      %th= t('table_titles.created_at')
+      %th= t('table_titles.description')
+      %th= t('table_titles.content')
+      %th= t('table_titles.duration')
+      %th= t('table_titles.price')
+      %th= t('table_titles.edit')
+      %th= t('table_titles.delete')
+  %tbody
+  - @school.courses.each do |course|
+    %tr
+      %td
+        =course.title
+      %td
+        = time_tag course.created_at
+      %td
+        %button.btn-default{ "data-target" => "#myDescription", "data-toggle" => "modal", type: "button" }=t('buttons.description')
+
+        #myDescription.modal.fade{ :role => "dialog" }
+          .modal-dialog
+            .modal-content
+              .modal-header
+                %button.close{ "data-dismiss" => "modal", :type => "button" } &times;
+                %h4.modal-title= t('titles.description')
+
+              .modal-body
+                %p= simple_format(course.description)
+
+              .modal-footer
+                %button.btn.btn-default{ "data-dismiss" => "modal", :type => "button" }= t('buttons.close')
+
+      %td
+        %button.btn-default{ "data-toggle" => "modal", "data-target" => "#myModal", :type => "button" }= t('buttons.content')
+
+        #myModal.modal.fade{ :role => "dialog" }
+          .modal-dialog
+            .modal-content
+              .modal-header
+                %button.close{ "data-dismiss" => "modal", :type => "button" } &times;
+                %h4.modal-title= t('titles.content')
+
+              .modal-body
+                %p= simple_format(course.content)
+
+              .modal-footer
+                %button.btn.btn-default{ "data-dismiss" => "modal", :type => "button" }= t('buttons.close')
+
+      %td
+        = course.duration
+
+      %td
+        = number_to_currency(course.price, unit: "R$ ", separator:",", delimiter:" ")
+
+      %td
+        = link_to t('links.edit'), edit_school_course_path(@school.id, course.id)
+
+      %td
+        = link_to t('links.delete'), school_course_path(@school.id, course.id), method: :delete, data: { confirm: t('messages.confirm') }
