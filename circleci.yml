@@ -1,4 +1,9 @@
 database:
   override:
-    - cp config/sunspot.ci.yml config/sunspot.yml
-    - bundle exec rake db:create db:schema:load sunspot:solr:start
+#    - cp config/sunspot.ci.yml config/sunspot.yml
+#    - bundle exec rake db:create db:schema:load sunspot:solr:start
+    - RAILS_ENV=test bundle exec rake db:create
+    - RAILS_ENV=test bundle exec rake db:migrate
+    # you'd move your sunspot start command here
+    - RAILS_ENV=test bundle exec rake sunspot:solr:start
+    - RAILS_ENV=test bundle exec rake db:seed
