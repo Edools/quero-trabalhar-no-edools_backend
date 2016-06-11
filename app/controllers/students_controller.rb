@@ -4,7 +4,8 @@ class StudentsController < ApplicationController
   respond_to :html
 
   def index
-    @students = Student.all
+    students_to_decorate = Student.with_user(current_user)
+    @students = StudentDecorator.decorate_collection(students_to_decorate)
     respond_with(@students)
   end
 
@@ -13,7 +14,7 @@ class StudentsController < ApplicationController
   end
 
   def new
-    @student = Student.new
+    @student = StudentForm.new
     respond_with(@student)
   end
 
@@ -21,14 +22,15 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_params)
+    @student = StudentForm.new(params[:student_form], current_user)
     @student.save
-    respond_with(@student)
+    respond_with @student, location: -> { students_path }
   end
 
   def update
-    @student.update(student_params)
-    respond_with(@student)
+    @student_form = StudentForm.new(params, current_user, @student)
+    @student_form.update
+    respond_with @student, location: -> { students_path }
   end
 
   def destroy
@@ -39,9 +41,5 @@ class StudentsController < ApplicationController
   private
     def set_student
       @student = Student.find(params[:id])
-    end
-
-    def student_params
-      params[:student]
     end
 end

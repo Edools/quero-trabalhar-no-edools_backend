@@ -3,9 +3,14 @@ pt-BR:
   activerecord:
     models:
       school: Escola
+      student: Aluno
     attributes:
       school:
-        name: "Nome"
+        subdomain: Subdomínio
+        name: Nome
+      student:
+        active: ativo
+        inactive: inativo
     errors:
       messages:
         uniqueness: deve ser único. o mesmo ja está cadastrado.

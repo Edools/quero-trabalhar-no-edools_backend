@@ -1,25 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Students</h1>
+<h1>Alunos</h1>
 
-<table>
+<div class="ui right aligned grid">
+<div class="right floated righ aligned four wide column">
+  <%= link_to 'Novo aluno', new_student_path, class: 'teal ui button' %>
+  <%= link_to 'Voltar', schools_path, class: 'primary ui button' %>
+  </div>
+</div>
+
+<table class="ui celled striped table">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Nome</th>
+      <th>Reg. Aluno</th>
+      <th>Status</th>
+      <th>Criado em</th>
+      <th>Operações</th>
     </tr>
   </thead>
 
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= student.name %></td>
+        <td><%= student.register_number %></td>
+        <td><%= student.status %></td>
+        <td><%= student.created_at %></td>
+        <td>
+          <%= link_to 'Editar', edit_student_path(student), class: 'yellow ui button' %>
+          <%= link_to 'Remover', student_path(student), method: :delete, data: { confirm: 'você tem certeza?' }, class: 'red ui button' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Student', new_student_path %>
