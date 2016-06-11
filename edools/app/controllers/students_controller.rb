@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
     end
 
     def new
-      @school = School.find(params[:school_id])      
+      @school = School.find(params[:school_id])
     end
 
     def edit
@@ -25,9 +25,9 @@ class StudentsController < ApplicationController
       @student = @school.students.create(student_params)
 
       if @student.invalid?
-        redirect_to school_path(@school), status: :bad_request
+        render 'new', status: :bad_request
       else
-        redirect_to school_path(@school)
+        redirect_to school_students_path(@school)
       end
     end
 
@@ -35,7 +35,7 @@ class StudentsController < ApplicationController
       @school = School.find(params[:school_id])
       @student = Student.find(params[:id])
       if @student.update(student_params)
-        redirect_to school_path(@school)
+        redirect_to school_students_path(@school)
       else
         render 'edit', status: :bad_request
       end
@@ -45,7 +45,7 @@ class StudentsController < ApplicationController
       @school = School.find(params[:school_id])
       @student = @school.students.find(params[:id])
       @student.destroy
-      redirect_to school_path(@school)
+      redirect_to school_students_path(@school)
     end
 
     private
