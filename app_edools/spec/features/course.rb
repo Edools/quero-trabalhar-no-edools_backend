@@ -35,16 +35,6 @@ describe "when access courses pages", js: true do
     expect(page).to have_content('Curso atualizado com sucesso.')
   end
 
-  it "view description course" do
-    new_school
-    new_course
-    visit '/'
-    click_on 'New School'
-    click_on "Descrição"
-
-    expect(page).to have_content('Curso completo de Ruby on Rails')
-  end
-
   xit "delete a course" do
     new_school
     new_course
