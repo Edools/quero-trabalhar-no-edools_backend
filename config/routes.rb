@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-
-  root 'welcome#index', path: 'bem-vindo'
-  get 'reports',        path: 'relatorios', to: 'reports#index'    
+  root 'welcome#index'
+  get 'reports',  path: 'relatorios', to: 'reports#index'
 
   scope(path_names: { new: 'novo', edit: 'editar' }) do
     resources :schools, path: 'escolas'

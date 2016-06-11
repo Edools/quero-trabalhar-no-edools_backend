@@ -68,7 +68,7 @@ CREATE TABLE course (
     content text,
     duration integer NOT NULL,
     active_students integer NOT NULL,
-    price numeric NOT NULL,
+    price numeric(8,2) NOT NULL,
     school_id integer NOT NULL,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
@@ -172,6 +172,13 @@ ALTER TABLE ONLY school
 --
 
 CREATE INDEX index_course_on_school_id ON course USING btree (school_id);
+
+
+--
+-- Name: index_school_on_owner_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_school_on_owner_email ON school USING btree (owner_email);
 
 
 --
