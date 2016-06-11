@@ -11,10 +11,10 @@
     </div>
   <% end %>
     <div class="jumbotron">
-      <div class="field">
+      <!-- <div class="field">
         <%= f.label "Nome da turma" %><br>
         <%= f.text_field :name, class: 'form-control' %>
-      </div>
+      </div> -->
       <div class="field">
         <%= f.label :Curso %><br>
         <%= f.collection_select :course_id, @courses, :id, :title, {prompt: "Select a category"}, {class: "form-control"} %>
