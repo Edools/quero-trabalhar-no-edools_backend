@@ -1,0 +1,32 @@
+<div class="col-sm-5 col-sm-offset-3">
+  <h2>Cadastre-se</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <div class= "col-sm-8">
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true , class:"form-control"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :Senha %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> caracteres ,no mínimo)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label "confirme a senha"  %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off",class:"form-control" %>
+      </div>
+    </br>
+      <div class="actions">
+        <%= f.submit "cadastrar", class: "btn btn-primary btn-sm" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= render "devise/shared/links" %>
