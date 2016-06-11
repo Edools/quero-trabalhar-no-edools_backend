@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-
+  before_action :status_define
 
   def index
     @students = Student.all
@@ -42,6 +42,11 @@ class StudentsController < ApplicationController
   end
 
   private
+
+    def status_define
+      @status = Student.statuses.keys.map{|status| [ status.titleize, status]}
+    end
+
     def set_student
       @student = Student.find(params[:id])
     end
