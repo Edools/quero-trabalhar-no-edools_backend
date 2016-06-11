@@ -67,5 +67,9 @@ Rails.application.routes.draw do
   end
   resources :schools do
     resources :courses
+
+    member do
+      get :students_report
+    end
   end
 end

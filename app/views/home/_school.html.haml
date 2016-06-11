@@ -1,1 +1,3 @@
-%li= record.name
+%li.list-group-item
+  %p= link_to record.name, school_path(record)
+  %p= link_to "Ver cursos", school_courses_path(record)

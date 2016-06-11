@@ -211,4 +211,23 @@ RSpec.describe SchoolsController, type: :controller do
       end
     end
   end
+
+  describe 'GET #students_report' do
+    let(:school) { FactoryGirl.create(:school) }
+
+    it 'assigns school to @school' do
+      get :students_report, id: school.id
+      expect(assigns[:school]).to eq(school)
+    end
+
+    it 'render template students_report' do
+      get :students_report, id: school.id
+      expect(response).to render_template(:students_report)
+    end
+
+    it 'return http status ok' do
+      get :students_report, id: school.id
+      expect(response).to have_http_status(:ok)
+    end
+  end
 end

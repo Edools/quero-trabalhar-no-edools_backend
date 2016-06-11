@@ -1,0 +1,19 @@
+- content_for :page_header do
+  Relatório de alunos em todos os cursos
+
+%table.table
+  %thead
+    %tr
+      %th Nome
+      %th email
+      %th curso
+  %tbody
+    - if @enrollments.empty?
+      %tr
+        %td(colspan="3" ) Ainda não existem alunos matriculados
+    - else
+      - @enrollments.each do |enrollment|
+        %tr
+          %td= link_to enrollment.student.name, student_path(enrollment.student), target: :blank
+          %td= enrollment.student.email
+          %td= link_to enrollment.course.title, school_course_path(@school, enrollment.course), target: :blank

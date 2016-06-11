@@ -18,3 +18,5 @@
 
 /solr/development
 /solr/test
+
+/.byebug_history

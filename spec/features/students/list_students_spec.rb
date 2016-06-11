@@ -1,5 +1,5 @@
 require 'rails_helper'
-feature 'List Schools' do
+feature 'List Students' do
   scenario 'See a list of existent students' do
     students = FactoryGirl.create_list(:student, 3)
     visit root_path
