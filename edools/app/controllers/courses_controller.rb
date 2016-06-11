@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
     end
 
     def new
-      @school = School.find(params[:school_id])      
+      @school = School.find(params[:school_id])
     end
 
     def edit
@@ -44,6 +44,12 @@ class CoursesController < ApplicationController
       @course = @school.courses.find(params[:id])
       @course.destroy
       redirect_to school_path(@school)
+    end
+
+    def management
+      @school = School.find(params[:school_id])
+      @course = @school.courses.find(params[:id])
+      @students = Student.all
     end
 
     private

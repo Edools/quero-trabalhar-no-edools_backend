@@ -11,7 +11,7 @@
                 <td><%= course.title %></td>
                 <td class="col-sm-3">
                   <div class="btn-group">
-                    <%= link_to new_school_course_student_path(@school, course), class: "btn btn-default" do%>
+                    <%= link_to management_school_course_path(@school, course), class: "btn btn-default" do%>
                       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                       Alunos
                     <% end %>

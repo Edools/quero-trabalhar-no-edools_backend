@@ -21,8 +21,9 @@ $(document).on('page:load', function() {
     Paloma.start();
 });
 
-Paloma.controller('Students', {
-    new: function() {
+Paloma.controller('Courses', {
+    management: function() {
+
         var hidden = $("#students_ids");
 
         $(".add-student").on('click', function() {
