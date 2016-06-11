@@ -1,0 +1,27 @@
+<h1>select students</h1>
+
+<input type="hidden" id="students_ids"/>
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <tr>
+                <th>Título</th>
+                <th></th>
+            </tr>
+
+            <% @students.each do |student| %>
+            <tr>
+                <td><%= student.name %></td>
+                <td class="col-sm-3">
+                  <div class="btn-group">
+                    <%= button_tag(type: "button", data: { student_id: student.id }, class: "btn btn-default add-student") do%>
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    <% end %>
+                  </div>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+</div>

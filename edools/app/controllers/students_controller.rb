@@ -12,6 +12,13 @@ class StudentsController < ApplicationController
 
     def new
       @school = School.find(params[:school_id])
+      course_id = params[:course_id]
+      if course_id == nil
+        render 'new'
+      else
+        @students = Student.all
+        render 'select'
+      end
     end
 
     def edit
