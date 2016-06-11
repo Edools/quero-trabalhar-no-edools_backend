@@ -26,8 +26,8 @@ RSpec.describe CourseStudentsController, type: :controller do
         expect(assigns(:course_student)).to be_a(CourseStudent)
       end
 
-      it "redirect to show course" do
-        expect(response).to redirect_to action: :show, id: assigns(:course_student).id
+      it "redirect to show course_student" do
+          expect(response).to redirect_to action: :show, id: assigns(:course_student).id
       end
     end
 

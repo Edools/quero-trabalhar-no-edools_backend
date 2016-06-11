@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <strong>School:</strong>
-  <%= @course_student.school_id %>
+  <strong>Nome:</strong>
+  <%= @course_student.name %>
+</p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @course_student.course_id %>
 </p>
 
 <p>
@@ -10,5 +16,4 @@
   <%= @course_student.student_id %>
 </p>
 
-<%= link_to 'Edit', edit_course_student_path(@course_student) %> |
-<%= link_to 'Back', course_students_path %>
+<%= link_to 'editar', edit_course_student_path(@course_student), , class: "btn btn-primary btn-sm" %> |

@@ -10,16 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :school_id %><br>
-    <%= f.number_field :school_id %>
-  </div>
-  <div class="field">
-    <%= f.label :student_id %><br>
-    <%= f.number_field :student_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    <div class="jumbotron">
+      <div class="field">
+        <%= f.label "Nome da turma" %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :Curso %><br>
+        <%= f.number_field :course_id, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :Estudante %><br>
+        <%= f.number_field :student_id, class: 'form-control' %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit "salvar" ,class: "btn btn-primary btn-sm" %>
+      </div>
   </div>
 <% end %>
