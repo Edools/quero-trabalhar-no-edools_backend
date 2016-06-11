@@ -5,6 +5,7 @@ require 'capybara/rspec'
 Capybara.javascript_driver = :selenium
 
 describe "when access schools page", js: true do
+
   it "create a new school" do
     visit '/'
     click_on 'Nova Escola'
