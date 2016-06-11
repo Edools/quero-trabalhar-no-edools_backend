@@ -2,7 +2,11 @@
 <div class="page-header">
   <h1>Listar Cursos</h1>
 </div>
-<%= link_to 'Novo Curso', new_course_path ,  class: "btn btn-primary btn-sm pull-right" %>
+  <%= link_to 'Novo Curso', new_course_path ,  class: "btn btn-primary btn-sm pull-right" %>
+  <%= form_tag courses_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "buscar", :name => nil, class: "btn btn-warning btn-xs" %>
+  <% end %>
 <table class="table table-hover">
   <thead>
     <tr>
