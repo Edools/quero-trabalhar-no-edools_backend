@@ -4,7 +4,8 @@ class SchoolsController < ApplicationController
   respond_to :html
 
   def index
-    @schools = School.all
+    schools_to_decorate = School.with_user(current_user)
+    @schools = SchoolDecorator.decorate_collection(schools_to_decorate)
     respond_with(@schools)
   end
 
@@ -22,14 +23,14 @@ class SchoolsController < ApplicationController
 
   def create
     @school = SchoolForm.new(school_params)
-    @school.save
+    @school.save_with_user(current_user)
     respond_with @school, location: -> { schools_path }
   end
 
   def update
-    @school_form = SchoolForm.new(school_params)
-    @school_form.update(@school)
-    respond_withx @school, location: -> { schools_path  }
+    @school_form = SchoolForm.new(params)
+    @school_form.update
+    respond_with @school, location: -> { schools_path  }
   end
 
   def destroy
@@ -43,6 +44,6 @@ class SchoolsController < ApplicationController
     end
 
     def school_params
-      params.require(:school_form).permit(:name, :pitch, :subdomain)
+      params.require(:school_form).permit(:name, :pitch, :subdomain, :user_id)
     end
 end

@@ -3,27 +3,27 @@ require 'rails_helper'
 RSpec.describe SchoolsController, type: :controller do
 
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { name: 'My school', pitch: 'Picth', subdomain: 'my-subdomain'  }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { name: 'My school', pitch: 'Picth', subdomain: ''  }
   }
 
-  let(:valid_session) { {} }
+  let(:valid_session) { sign_in create(:user)  }
 
   describe "GET #index" do
+    let(:schools) { build_list(:school, 3)  }
     it "assigns all schools as @schools" do
-      school = School.create! valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:schools)).to eq([school])
+      expect(assigns(:schools)).to be_decorated
     end
   end
 
   describe "GET #show" do
+    let(:school) { create(:school)  }
     it "assigns the requested school as @school" do
-      school = School.create! valid_attributes
-      get :show, {:id => school.to_param}, valid_session
+      get :show, { id: school.id }, valid_session
       expect(assigns(:school)).to eq(school)
     end
   end
@@ -31,7 +31,7 @@ RSpec.describe SchoolsController, type: :controller do
   describe "GET #new" do
     it "assigns a new school as @school" do
       get :new, {}, valid_session
-      expect(assigns(:school)).to be_a_new(School)
+      expect(assigns(:school)).to be_a(SchoolForm)
     end
   end
 

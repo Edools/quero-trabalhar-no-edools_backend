@@ -5,6 +5,7 @@ class SchoolForm
   attr_reader :school
 
   attribute :id, Integer
+  attribute :user_id, Integer
   attribute :name, String
   attribute :pitch, String
   attribute :subdomain, String
@@ -13,16 +14,21 @@ class SchoolForm
   validates :subdomain, presence: true, format: {with: /\A[a-z\d]+(-[a-z\d]+)*\z/i}
 
   def initialize(attr = {})
-    @school = School.find(attr['id']) if attr['id'].present?
-    super(attr)
+    if attr['id'].present?
+      @school = School.find(attr['id'])
+      super(attr['school'])
+    else
+      super(attr)
+    end
   end
 
   def persisted?
     @school.nil? ? false : @school.persisted?
   end
 
-  def save
+  def save_with_user(user)
     if valid?
+      @user = User.find(user)
       create_school
     end
   rescue ActiveRecord::RecordNotUnique
@@ -38,11 +44,11 @@ class SchoolForm
   private
 
   def create_school
-    School.create(name: name, pitch: pitch, subdomain: subdomain)
+    School.create(name: name, pitch: pitch, subdomain: subdomain, user: @user)
   end
 
   def update_school
-    @school.update(self)
+    @school.update(name: name, pitch: pitch, subdomain: subdomain)
   end
 
 end

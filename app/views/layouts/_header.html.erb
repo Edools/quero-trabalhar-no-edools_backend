@@ -4,8 +4,6 @@
   </div>
   <%= link_to 'Escolas', schools_path, class: 'item' %>
   <div class="right menu">
-    <a class="ui item">
-      Logout
-    </a>
+    <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'ui item' %>
   </div>
 </div>
