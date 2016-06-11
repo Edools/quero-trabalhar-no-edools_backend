@@ -8,12 +8,12 @@
 
 <p>
   <strong>Curso:</strong>
-  <%= @course_student.course_id %>
+  <%= @course_student.course.title %>
 </p>
 
 <p>
   <strong>Student:</strong>
-  <%= @course_student.student_id %>
+  <%= @course_student.student.name %>
 </p>
 
 <%= link_to 'editar', edit_course_student_path(@course_student), class: "btn btn-primary btn-sm" %> |

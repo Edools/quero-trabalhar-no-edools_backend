@@ -1,5 +1,7 @@
 class CourseStudentsController < ApplicationController
   before_action :set_course_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_students
+  before_action :set_courses
 
   def index
     @course_students = CourseStudent.all
@@ -41,6 +43,13 @@ class CourseStudentsController < ApplicationController
   end
 
   private
+    def set_courses
+      @courses = Course.all
+    end
+
+    def set_students
+      @students = Student.all
+    end
 
     def set_course_student
       @course_student = CourseStudent.find(params[:id])
