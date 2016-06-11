@@ -82,9 +82,15 @@ RSpec.describe StudentsController, type: :controller do
   describe 'GET #show' do
     context 'when student exist' do
       let(:student) {FactoryGirl.create(:student)}
+      let(:courses) {FactoryGirl.create_list(:course, 3)}
       it 'assigns loaded student to @student' do
         get :show, id: student.id
         expect(assigns[:student]).to eq(student)
+      end
+
+      it 'assigns courses to @courses' do
+        get :show, id: student.id
+        expect(assigns[:courses]).to match_array(courses)
       end
 
       it 'render template show' do
@@ -208,6 +214,52 @@ RSpec.describe StudentsController, type: :controller do
           delete :destroy, id: -9999
         }.to raise_error(ActiveRecord::RecordNotFound)
       end
+    end
+  end
+
+  describe 'GET #enroll' do
+    let(:student) { FactoryGirl.create(:student) }
+    let(:course) { FactoryGirl.create(:course) }
+
+    it 'assign student to @student' do
+      get :enroll, id: student.id, course_id: course.id
+      expect(assigns[:student]).to eq(student)
+    end
+
+    it 'it redirect to student show' do
+      get :enroll, id: student.id, course_id: course.id
+      expect(response).to redirect_to(student_path(student))
+    end
+
+    it 'enroll student on course' do
+      get :enroll, id: student.id, course_id: course.id
+      student.reload
+      expect(student.courses).to include(course)
+    end
+  end
+
+  describe 'GET #unenroll' do
+    let(:student) { FactoryGirl.create(:student) }
+    let(:course) { FactoryGirl.create(:course) }
+
+    before do
+      student.courses << course
+    end
+
+    it 'assign student to @student' do
+      get :unenroll, id: student.id, course_id: course.id
+      expect(assigns[:student]).to eq(student)
+    end
+
+    it 'it redirect to student show' do
+      get :unenroll, id: student.id, course_id: course.id
+      expect(response).to redirect_to(student_path(student))
+    end
+
+    it 'unenroll student on course' do
+      get :unenroll, id: student.id, course_id: course.id
+      student.reload
+      expect(student.courses).to_not include(course)
     end
   end
 end

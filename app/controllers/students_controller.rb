@@ -20,7 +20,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-
+    @courses = Course.all
   end
 
   def edit
@@ -39,6 +39,24 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     redirect_to students_path
+  end
+
+  def enroll
+    redirect_to student_path(@student) unless params[:course_id]
+    @course = Course.find(params[:course_id])
+    service = EnrollStudentService.new
+    service.enroll(@student, @course)
+
+    redirect_to student_path(@student)
+  end
+
+  def unenroll
+    redirect_to student_path(@student) unless params[:course_id]
+    @course = Course.find(params[:course_id])
+    service = EnrollStudentService.new
+    service.unenroll(@student, @course)
+
+    redirect_to student_path(@student)
   end
 
   private
