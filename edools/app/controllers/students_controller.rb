@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
 
     def index
       @school = School.find(params[:school_id])
-      @students = Student.all
+      @students = @school.students.all
     end
 
     def show
