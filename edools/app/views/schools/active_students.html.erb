@@ -1,6 +1,44 @@
-<h1>Alunos ativos</h1>
-
 <div class="row">
+    <div class="col-md-6">
+        <div class="active-students">
+            <h4>
+              <%= pluralize(@active_students.size, "Aluno ativo", "Alunos ativos") %>
+            </h4>
+
+            <% @active_students.each do |student| %>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p><%= student.name %></p>
+                </div>
+
+                <div class="col-sm-6 right">
+                  <span class="active-students-courses"><%= student.courses.pluck(:title).join(" / ")%></span>
+                </div>
+            </div>
+            <% end %>
+
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="active-students">
+            <h4>
+              <%= pluralize(@inactive_students.size, "Aluno inativo", "Alunos inativos") %>
+            </h4>
+            <% @inactive_students.each do |student| %>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <p><%= student.name %></p>
+                </div>
+            </div>
+            
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row">
     <div class="col-sm-12">
 
       <% @school.courses.each do |course| %>
@@ -25,4 +63,4 @@
       <% end %>
 
     </div>
-</div>
+</div> -->
