@@ -1,8 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Escolas</h1>
+<div class="ui category search six wide column">
+  <%= form_tag schools_path, method: :get do %>
+    <div class="ui icon input">
+      <%= text_field_tag :school_name, params[:school_name], class: 'prompt', placeholder: 'Buscar escola...' %>
+    </div>
+    <%= submit_tag "Buscar", class: 'primary ui button'%>
+    <%= link_to 'Nova Escola', new_school_path, class: 'teal ui right floated button' %>
+  <% end %>
+</div>
 
-<%= link_to 'Nova Escola', new_school_path, class: 'teal ui button' %>
 <table class="ui celled striped table">
   <thead>
     <tr>

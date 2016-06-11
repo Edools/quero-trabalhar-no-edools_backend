@@ -16,6 +16,7 @@ gem 'responders'
 gem 'devise'
 gem 'virtus'
 gem 'draper', '~> 1.3'
+gem 'pg_search'
 
 group :development, :test do
   gem 'dotenv-rails'

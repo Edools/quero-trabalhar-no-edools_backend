@@ -4,7 +4,13 @@ class SchoolsController < ApplicationController
   respond_to :html
 
   def index
-    schools_to_decorate = School.with_user(current_user)
+    if params[:school_name].present?
+      schools_to_decorate = School
+                              .search_by_name(params[:school_name])
+                              .with_user(current_user)
+    else
+      schools_to_decorate = School.with_user(current_user)
+    end
     @schools = SchoolDecorator.decorate_collection(schools_to_decorate)
     respond_with(@schools)
   end

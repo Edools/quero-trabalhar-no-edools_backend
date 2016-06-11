@@ -121,6 +121,10 @@ GEM
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    pg_search (1.0.6)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     pkg-config (1.1.7)
     puma (3.4.0)
     rack (1.6.4)
@@ -233,6 +237,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.15)
+  pg_search
   puma
   rails (= 4.2.6)
   responders

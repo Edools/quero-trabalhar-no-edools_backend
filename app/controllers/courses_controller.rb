@@ -5,7 +5,11 @@ class CoursesController < ApplicationController
   respond_to :html
 
   def index
-    courses_to_decorate = Course.with_schools(@school)
+    if params[:course_name].present?
+      courses_to_decorate = Course.search_by_name(params[:course_name]).with_schools(@school)
+    else
+      courses_to_decorate = Course.with_schools(@school)
+    end
     @courses = CourseDecorator.decorate_collection(courses_to_decorate)
     respond_with(@courses)
   end
