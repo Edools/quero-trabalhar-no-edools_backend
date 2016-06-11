@@ -1,0 +1,17 @@
+- content_for :page_header do
+  Listagem de cursos da escola #{@school.name}
+= link_to 'Cadastrar curso', new_school_course_path(@school), class: 'btn btn-primary'
+= link_to 'Listagem de escolas', schools_path, class: 'btn btn-default'
+%table.table
+  %thead
+    %tr
+      %td Título
+      %td Criado em
+      %td
+  %tbody
+    -if @courses.empty?
+      %tr
+        %td(colspan="3") Ainda não existem cursos cadastradas
+    - else
+      = render @courses
+= paginate @courses

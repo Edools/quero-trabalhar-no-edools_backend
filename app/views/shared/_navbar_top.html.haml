@@ -1,0 +1,26 @@
+.navbar-header
+  %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+    %span.sr-only Toggle navigation
+    %span.icon-bar
+    %span.icon-bar
+    %span.icon-bar
+  = link_to "Quero trabalhar na edools!", root_path, class: 'navbar-brand'
+%ul.nav.navbar-top-links.navbar-right
+  %li.dropdown
+    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      %i.fa.fa-user.fa-fw
+      %i.fa.fa-caret-down
+    %ul.dropdown-menu.dropdown-user
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-user.fa-fw
+          Perfil
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-gear.fa-fw
+          Configurações
+      %li.divider
+      %li
+        %a{:href => "login.html"}
+          %i.fa.fa-sign-out.fa-fw
+          Sair

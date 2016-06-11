@@ -1,0 +1,46 @@
+- content_for :page_header do
+  Aluno #{@student.name}
+
+%p
+  %strong Email de contato:
+  = @student.email
+
+%p
+  %strong Data de nascimento:
+  = @student.birthday
+
+%p
+  %strong Criado em:
+  = l @student.created_at, format: :short
+
+%p
+  %strong Última alteração em:
+  = l @student.updated_at, format: :short
+
+%h2 Matricular o aluno à um curso
+
+%table.table
+  %thead
+    %tr
+      %th Curso
+      %th Escola
+      %th
+  %tbody
+    - if @courses
+      - @courses.each do |course|
+        %tr{id: "course_#{course.id}"}
+          %td= link_to course.title, school_course_path(course.school, course), target: :blank
+          %td= link_to course.school.name, school_path(course.school), target: :blank
+          %td
+            - if @student.courses.include?(course)
+              = link_to 'Cancelar matrícula', unenroll_student_path(@student, course_id: course), class: 'btn btn-danger btn-xs'
+            - else
+              = link_to 'Matricular', enroll_student_path(@student, course_id: course), class: 'btn btn-primary btn-xs'
+    - else
+      %tr
+        %td(colspan='3')
+          Ainda não existem cursos cadastrados.
+
+
+
+= link_to 'Voltar para listagem', students_path, class: 'btn btn-primary'

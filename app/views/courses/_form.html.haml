@@ -1,0 +1,8 @@
+= simple_form_for([@school, @course]) do |f|
+  = f.input :title
+  = f.input :description
+  = f.input :content
+  = f.input :duration
+  = f.input :price
+  = f.submit 'Salvar', class: 'btn btn-primary'
+  = link_to 'Voltar para listagem', school_courses_path(@school), class: 'btn btn-default'

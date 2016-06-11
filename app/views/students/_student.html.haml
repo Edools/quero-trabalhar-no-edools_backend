@@ -1,0 +1,8 @@
+%tr{id: "student_#{student.id}"}
+  %td= student.name
+  %td= student.email
+  %td= l student.birthday, format: :short
+  %td
+    = link_to 'Ver', student_path(student), class: 'btn btn-xs btn-primary'
+    = link_to 'Editar', edit_student_path(student), class: 'btn btn-xs btn-primary'
+    = link_to 'Deletar', student_path(student), method: :delete, class: 'btn btn-xs btn-danger'

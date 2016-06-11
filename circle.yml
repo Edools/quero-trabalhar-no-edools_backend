@@ -1,0 +1,5 @@
+database:
+  override:
+    - cp config/database.ci.yml config/database.yml
+    - cp config/sunspot.ci.yml config/sunspot.yml
+    - bundle exec rake db:create db:schema:load sunspot:solr:start

@@ -1,0 +1,8 @@
+- content_for :page_header do
+  Resultados para "#{params[:q]}"
+%ul.list-group
+  - if @results.empty?
+    %li.list-group-item Nenhum resultado para ser exibido
+  - else
+    - @results.each do |result|
+      = render partial: result.class.name.tableize.singularize, locals: {record: result}

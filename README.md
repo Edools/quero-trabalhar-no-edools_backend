@@ -1,54 +1,28 @@
-# O desafio
+build: [![CircleCI](https://circleci.com/gh/nathanpsouza/quero-trabalhar-no-edools_backend.svg?style=svg)](https://circleci.com/gh/nathanpsouza/quero-trabalhar-no-edools_backend)
 
-Neste desafio você terá que construir um sistema básico para manipulação de escolas e cursos. Nosso principal objetivo é conhecer como você aborda os problemas e desenvolve soluções.
+# Teste backend Edools
 
-Uma especificação básica segue abaixo. Tudo que não foi especificado deve ser decidido por você, isso também será avaliado.
+## Dependências
 
-## CRUD de Escolas e Cursos
+* Postgresql
+* Java (para rodar o solr
 
-- Escolas
- - Nome
- - Email do Dono
- - Pitch
- - Subdomínio
- - Data de Criação
+## Rodando a aplicação
+Copie o arquivo `config/database.example.yml` para `config/database.yml` e configure de acordo com os dados da sua instância do postgresql.
 
-- Cursos
- - Título
- - Escola
- - Descrição
- - Conteúdo
- - Duração
- - Data de Criação
- - Alunos Ativos
- - Preço
+`$ bundle install`
 
-## Relacionamentos
+`$ rake db:create db:migrate`
 
-- Uma escola pode possuir diversos cursos
-- Um curso só pode pertencer a uma escola
+`$ foreman start`
 
-## Features
+## Considerações
+Antes de executar os testes, é necessário rodar o solr para o ambiente de test com o comando:
 
-- Buscar Curso e Escola por Nome e filtrar cursos por escola
-- Relatório de Alunos Ativos por escola
-- Adicionar validação no atributo Subdomínio da Escola, para que este possa ser usado para criar subdomínios do Edools (Ex: academia-bizstart.edools.com)
+`$ rake sunspot:solr:run RAILS_ENV=test`
 
-## Boas práticas
+rode a suíte de testes com:
 
-Não vamos definir quais práticas desejamos. Afinal, queremos conhecer melhor as suas :-).
+`$ bundle exec rspec spec`
 
-Siga as boas práticas que adota normalmente nos projetos que desenvolve.
-
-## Restrições Técnicas
-
-- Rails 4
-- Ruby 2
-
-# Recomendações finais
-
-- Nossa avaliação não será apenas em cima de produtividade, daremos grande valor a qualidade do código escrito.
-- Não iremos considerar entregas após o prazo combinado.
-- O horário do pull-request será o horário considerado para a entrega.
-
-*We wish you good luck, and may the Quality be with you!*
+ps: No estágio atual, o sunspot rodará ou para test ou para development, não sendo possível executar as duas instâncias simultaneamente.

@@ -1,0 +1,34 @@
+.navbar-default.sidebar{:role => "navigation"}
+  .sidebar-nav.navbar-collapse
+    %ul#side-menu.nav
+      %li.sidebar-search
+        %form{action: search_path, method: :get}
+          .input-group.custom-search-form
+            %input.form-control{:placeholder => "Buscar...", :type => "text", name: 'q', id: 'q', value: params[:q]}
+            %span.input-group-btn
+              %button#do-search.btn.btn-default{:type => "submit"}
+                %i.fa.fa-search
+      %li
+        = link_to root_path do
+          %i.fa.fa-dashboard.fa-fw
+          Dashboard
+      %li
+        = link_to "#" do
+          %i.fa.fa-building.fa-fw
+          Escolas
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            = link_to "Ver todas", schools_path
+          %li
+            = link_to "Cadastrar nova escola", new_school_path
+      %li
+        = link_to "#" do
+          %i.fa.fa-user.fa-fw
+          Alunos
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            = link_to "Ver todos", students_path
+          %li
+            = link_to "Cadastrar novo aluno", new_student_path
