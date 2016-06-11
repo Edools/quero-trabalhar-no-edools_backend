@@ -16,4 +16,5 @@
 //= require bootstrap-sprockets
 //= require sb-admin-2
 //= require metisMenu.min
+//= require jquery.mask.min
 //= require_tree .

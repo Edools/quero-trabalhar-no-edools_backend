@@ -12,10 +12,12 @@
 #  total_active_students :integer          default(0)
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
+#  slug                  :string
 #
 # Indexes
 #
 #  index_courses_on_school_id  (school_id)
+#  index_courses_on_slug       (slug) UNIQUE
 #
 # Foreign Keys
 #
@@ -35,4 +37,7 @@ class Course < ActiveRecord::Base
   searchable do
     text :title, :description, :content
   end
+
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
 end
