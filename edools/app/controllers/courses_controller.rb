@@ -55,7 +55,8 @@ class CoursesController < ApplicationController
     def enroll
       @school = School.find(params[:school_id])
       @course = @school.courses.find(params[:id])
-      p params
+      @course.students.clear
+
       students_ids = params[:students_ids].split(",")
 
       #if students_ids != nil
