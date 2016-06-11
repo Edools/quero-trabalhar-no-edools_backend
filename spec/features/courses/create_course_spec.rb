@@ -20,7 +20,6 @@ feature 'Create course' do
     fill_in 'Content', with: course[:content]
     fill_in 'Duration', with: course[:duration]
     fill_in 'Price', with: course[:price]
-    fill_in 'Total active students', with: course[:total_active_students]
 
 
     click_button 'Salvar'
