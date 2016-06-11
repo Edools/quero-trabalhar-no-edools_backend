@@ -91,6 +91,7 @@ GEM
     nokogiri (1.6.8-x64-mingw32)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    paloma (5.0.0)
     pkg-config (1.1.7)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -192,6 +193,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   jbuilder (~> 2.0)
   jquery-rails
+  paloma (~> 5.0.0)
   rails (= 4.2.6)
   rails-i18n (~> 4.0.0)
   rspec-rails (~> 3.4)
