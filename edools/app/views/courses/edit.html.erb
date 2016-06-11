@@ -1,0 +1,34 @@
+<h1>Editar curso</h1>
+
+<%= form_for :course, url: school_course_path(@school, @course), method: :patch do |f| %>
+
+<div class="form-group">
+    <%= f.label :title, "Título", for: "title" %><br>
+    <%= f.text_field :title, id: "title", class: "form-control", placeholder: "Título" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :description, "Descrição", for: "description" %><br>
+    <%= f.text_area :description, id: "description", class: "form-control", placeholder: "Descrição" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :content, "Conteúdo", for: "content" %><br>
+    <%= f.text_area :content, id: "content", class: "form-control", placeholder: "Conteúdo" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :duration, "Duração", for: "duration" %><br>
+    <%= f.text_field :duration, id: "duration", class: "form-control", placeholder: "Duração" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :price, "Preço", for: "price" %><br>
+    <%= f.text_field :price, id: "price", class: "form-control", placeholder: "Preço" %>
+</div>
+
+<div>
+    <%= f.submit "Salvar", class: "btn btn-default" %>
+</div>
+
+<% end %>

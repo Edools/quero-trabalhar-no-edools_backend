@@ -1,0 +1,29 @@
+<h1>Editar Escola</h1>
+
+<%= form_for :school, url: school_path(@school), method: :patch do |f| %>
+
+<div class="form-group">
+  <%= f.label :name, "Nome", for: "name" %>
+  <%= f.text_field :name, id: "name", class: "form-control", placeholder: "Nome" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :owner_email, "Email do dono", for: "email" %>
+  <%= f.text_field :owner_email, id: "email", class: "form-control", placeholder: "Email do dono", type: "email" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :pitch, "Pitch", for: "pitch" %>
+    <%= f.text_area :pitch, id: "pitch", class: "form-control", placeholder: "Pitch" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :subdomain, "Subdomínio", for: "subdomain" %>
+    <%= f.text_field :subdomain, id: "subdomain", class: "form-control", placeholder: "Subdomínio" %>
+</div>
+
+<div>
+    <%= f.submit "Salvar", class: "btn btn-default" %>
+</div>
+
+<% end %>

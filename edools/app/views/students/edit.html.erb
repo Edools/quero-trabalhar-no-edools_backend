@@ -1,0 +1,14 @@
+<h1>Editar Aluno</h1>
+
+<%= form_for :student, url: school_student_path(@school, @student), method: :patch do |f| %>
+
+<div class="form-group">
+    <%= f.label :name, "Nome", for: "name" %><br>
+    <%= f.text_field :name, id: "name", class: "form-control", placeholder: "Nome" %>
+</div>
+
+<div>
+    <%= f.submit "Salvar", class: "btn btn-default" %>
+</div>
+
+<% end %>

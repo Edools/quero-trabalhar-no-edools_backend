@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
   #index, show, new, edit, create, update, destroy
 
     def index
+      @school = School.find(params[:school_id])
       @students = Student.all
     end
 
@@ -11,17 +12,11 @@ class StudentsController < ApplicationController
     end
 
     def new
-      @school = School.find(params[:school_id])
-      course_id = params[:course_id]
-      if course_id == nil
-        render 'new'
-      else
-        @students = Student.all
-        render 'select'
-      end
+      @school = School.find(params[:school_id])      
     end
 
     def edit
+      @school = School.find(params[:school_id])
       @student = Student.find(params[:id])
     end
 
