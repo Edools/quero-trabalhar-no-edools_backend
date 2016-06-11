@@ -5,4 +5,5 @@ database:
     - cp solr/configsets/sunspot/conf/solrconfig.xml $HOME/solr/example/solr/collection1/conf
     - cd $HOME/solr/example; java -jar start.jar >> $HOME/solr.log:
         background: true
-
+  override:
+    - cp config/sunspot.ci.yml config/sunspot.yml
