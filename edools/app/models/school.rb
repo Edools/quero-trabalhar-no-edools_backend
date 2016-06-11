@@ -3,7 +3,7 @@ class School < ActiveRecord::Base
   has_many :courses
 
   validates :name, presence: true, uniqueness: true
-  validates_email_format_of :owner_email, :message => 'is not looking good'
+  validates_email_format_of :owner_email
   validates_presence_of :pitch
-  validates :subdomain, format: { with: /\A[a-zA-Z0-9-]+.edools.com\z/, message: "only allows letters" }
+  validates :subdomain, format: { with: /\A[a-zA-Z0-9-]+.edools.com\z/ }
 end

@@ -3,7 +3,7 @@ pt-BR:
   activerecord:
     errors:
       messages:
-        invalid_email_address: 'Email inválido'
+        invalid_email_address: 'não é válido'
         email_address_not_routable: 'Email não roteável'
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:
