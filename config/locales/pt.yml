@@ -116,6 +116,7 @@ pt:
         subtitle: Opções
         schools: Escolas
         courses: Cursos
+        report: Relatório
   schools:
     index:
       button:
@@ -132,6 +133,14 @@ pt:
         html: '<tr><td colspan="9" class="text-center">Nenhuma curso encontrado.</td></tr>'
       option:
         filter: Filtrar por escola
+  reports:
+    index:
+      title: Relatórios
+      description: Alunos ativos por escola
+  welcome:
+    index:
+      title: Seja, bem-vindo.
+      description: Para começar, clique em "Escolas" no menu ao lado direito.
   date:
     abbr_day_names:
     - Dom

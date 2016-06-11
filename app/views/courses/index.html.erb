@@ -25,12 +25,10 @@
   <table class="table table-striped table-hover">
     <thead>
       <tr>
-        <th><%= sort_link(@q, :title,           Course.human_attribute_name('title'))%></th>
-        <th><%= sort_link(@q, :school,          Course.human_attribute_name('school'))%></th>
-        <th><%= sort_link(@q, :duration,        Course.human_attribute_name('duration'))%></th>
-        <th><%= sort_link(@q, :active_students, Course.human_attribute_name('active_students'))%></th>
-        <th><%= sort_link(@q, :price,           Course.human_attribute_name('price'))%></th>
-        <th><%= sort_link(@q, :created_at,      Course.human_attribute_name('created_at'))%></th>
+        <th><%= sort_link(@q, :title, Course.human_attribute_name('title'))%></th>
+        <th><%= sort_link(@q, :school, Course.human_attribute_name('school'))%></th>
+        <th class="text-right"><%= sort_link(@q, :price, Course.human_attribute_name('price'))%></th>
+        <th><%= sort_link(@q, :created_at, Course.human_attribute_name('created_at'))%></th>
         <th colspan="3"></th>
       </tr>
     </thead>

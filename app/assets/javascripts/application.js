@@ -17,4 +17,5 @@
 //= require nprogress-turbolinks
 //= require turbolinks
 //= require jquery.turbolinks
+//= require jquery.mask
 //= require_tree .

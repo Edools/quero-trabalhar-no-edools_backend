@@ -1,8 +1,6 @@
 <tr>
   <td><%= course.title %></td>
   <td><%= course.school.name %></td>
-  <td><%= course.duration %></td>
-  <td><%= course.active_students %></td>
   <td class="text-right"><%= number_to_currency course.price %></td>
   <td><%= l course.created_at, format: :complete %></td>
   <td class="text-center">

@@ -6,7 +6,7 @@ class CreateCourse < ActiveRecord::Migration
       t.text :content
       t.integer :duration,        null: false
       t.integer :active_students, null: false
-      t.decimal :price,           null: false
+      t.decimal :price,           null: false, precision: 8, scale: 2
       t.references :school, index: true, foreign_key: true, null: false
 
       t.timestamps null: false
