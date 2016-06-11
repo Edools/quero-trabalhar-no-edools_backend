@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   before_action :load_course, except: [:index, :new, :create]
 
   def index
-    @courses = @school.courses
+    @courses = @school.courses.page(params[:page])
   end
 
   def new

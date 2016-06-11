@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   before_action :load_student, except: [:index, :new, :create]
 
   def index
-    @students = Student.all
+    @students = Student.page params[:page]
   end
 
   def new

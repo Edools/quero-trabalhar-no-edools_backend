@@ -2,7 +2,7 @@ class SchoolsController < ApplicationController
   before_action :load_school, except: [:index, :new, :create]
 
   def index
-    @schools = School.all
+    @schools = School.page params[:page]
   end
 
   def new
