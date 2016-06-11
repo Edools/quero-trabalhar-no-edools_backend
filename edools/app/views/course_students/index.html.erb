@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Course Students</h1>
-
-<table>
+<div class="page-header">
+  <h1>Listagem de Turmas</h1>
+</div>
+<%= link_to 'Nova Turma', new_course_student_path,  class: "btn btn-primary btn-sm pull-right" %>
+<table class="table table-stripped">
   <thead>
     <tr>
       <th>Curso</th>
@@ -14,16 +15,16 @@
   <tbody>
     <% @course_students.each do |course_student| %>
       <tr>
+        <td><%= course_student.name %></td>
         <td><%= course_student.course.title %></td>
-        <td><%= course_student.student.name %></td>
-        <td><%= link_to 'Show', course_student %></td>
-        <td><%= link_to 'Edit', edit_course_student_path(course_student) %></td>
-        <td><%= link_to 'Destroy', course_student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'exibir', course_student, class: "btn btn-info btn-sm" %>
+          <%= link_to 'editar', edit_course_student_path(course_student), class: "btn btn-info btn-sm" %>
+          <%= link_to 'deletar', course_student,class: "btn btn-info btn-sm", method: :delete, data: { confirm: 'Quer deletar?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Course student', new_course_student_path %>
