@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
   belongs_to :school
+  has_and_belongs_to_many :students
 
-  scope :with_schools, -> (school) { joins(:school).where(school: school) }
+  scope :with_schools, -> (school) { where(school: school) }
 end

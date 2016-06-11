@@ -1,5 +1,6 @@
 <h1>Novo curso</h1>
 
-<%= render 'form' %>
+<%= form_for @course, url: school_courses_path(@school), html: { class: 'ui form'  } do |f| %>
+  <%= render partial: 'form', locals: { f: f  } %>
+<% end %>
 
-<%= link_to 'Back', courses_path %>

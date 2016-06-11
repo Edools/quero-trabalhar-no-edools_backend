@@ -26,5 +26,6 @@
     <label><%= t('forms.school.subdomain.name') %></label>
     <%= f.text_field :subdomain, placeholder: t('forms.school.subdomain.placeholder') %>
   </div>
-  <%= f.submit 'Salvar', class: 'teal ui button' %>
+  <%= f.submit 'Salvar', class: 'teal ui left floated button' %>
+  <%= link_to 'voltar', schools_path, class: 'primary ui left floated button' %>
 </div>

@@ -1,17 +1,39 @@
-<%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
-
-      <ul>
-      <% @course.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<% if @course.errors.any? %>
+<div id="error_explanation" >
+  <div class="ui red message">
+    <div class="header">
+      <%= t('forms.error_message') %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+    <ul class="list">
+    <% @course.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
   </div>
+</div>
 <% end %>
+
+<div class="actions">
+  <div class="field">
+    <label>Titulo</label>
+    <%= f.text_field :title, placeholder: 'Titulo do curso' %>
+  </div>
+  <div class="field">
+    <label>Descrição</label>
+    <%= f.text_area :description, placeholder: 'Descrição do curso' %>
+  </div>
+  <div class="field">
+    <label>Conteúdo</label>
+    <%= f.text_area :content, placeholder: 'Conteúdo do curso' %>
+  </div>
+  <div class="field">
+    <label>Duração</label>
+    <%= f.text_field :duration, placeholder: 'Duração do curso' %>
+  </div>
+  <div class="field">
+    <label>Preço</label>
+    <%= f.text_field :price, placeholder: 'Preço do curso' %>
+  </div>
+  <%= f.submit 'Salvar', class: 'teal ui left floated button' %>
+  <%= link_to 'Voltar', school_courses_path(@school), class: 'primary ui left floated button' %>
+</div>

@@ -20,12 +20,13 @@
       <tr>
         <td><%= course.title %></td>
         <td><%= course.description %></td>
-        <td><%= school.duration %></td>
-        <td><%= school.price %></td>
+        <td><%= course.duration %></td>
+        <td><%= course.price %></td>
         <td>
-          <%= link_to 'Alunos matriculados', course, class: 'primary ui button' %>
-          <%= link_to 'Editar', edit_school_course_path(course), class: 'yellow ui button' %>
-          <%= link_to 'Remover', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'red ui button' %>
+          <%= link_to 'Alunos matriculados', school_course_path(@school, course), class: 'primary ui button' %>
+          <%= link_to 'Matricular alunos', school_course_path(@school, course), class: 'olive ui button' %>
+          <%= link_to 'Editar', edit_school_course_path(@school, course), class: 'yellow ui button' %>
+          <%= link_to 'Remover', school_course_path(@school, course), method: :delete, data: { confirm: 'você tem certeza?' }, class: 'red ui button' %>
         </td>
       </tr>
     <% end %>
