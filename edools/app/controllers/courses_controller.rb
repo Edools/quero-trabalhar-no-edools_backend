@@ -8,6 +8,7 @@ class CoursesController < ApplicationController
     end
 
     def show
+      @school = School.find(params[:school_id])
       @course = Course.find(params[:id])
     end
 
@@ -16,7 +17,7 @@ class CoursesController < ApplicationController
     end
 
     def edit
-      @school = School.find(params[:school_id])      
+      @school = School.find(params[:school_id])
       @course = Course.find(params[:id])
     end
 
@@ -24,9 +25,9 @@ class CoursesController < ApplicationController
       @school = School.find(params[:school_id])
       @course = @school.courses.create(course_params)
       if @course.invalid?
-        redirect_to school_path(@school), status: :bad_request
+        render 'new', status: :bad_request
       else
-        redirect_to school_path(@school)
+        redirect_to action: "show", school_id: @school.id, id: @course.id
       end
     end
 
@@ -34,7 +35,7 @@ class CoursesController < ApplicationController
       @school = School.find(params[:school_id])
       @course = Course.find(params[:id])
       if @course.update(course_params)
-        redirect_to school_path(@school)
+        redirect_to action: "show", school_id: @school.id, id: @course.id
       else
         render 'edit', status: :bad_request
       end
@@ -44,7 +45,8 @@ class CoursesController < ApplicationController
       @school = School.find(params[:school_id])
       @course = @school.courses.find(params[:id])
       @course.destroy
-      redirect_to school_path(@school)
+      #redirect_to school_path(@school)
+      redirect_to action: "index", school_id: @school.id      
     end
 
     def management
@@ -60,13 +62,13 @@ class CoursesController < ApplicationController
 
       students_ids = params[:students_ids].split(",")
 
-      #if students_ids != nil
+      if students_ids != nil
         students_ids.each do |id|
           student = Student.find(id)
           @course.students << student
         end
         redirect_to school_path(@school)
-      #end
+      end
     end
 
     private

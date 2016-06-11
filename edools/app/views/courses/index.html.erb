@@ -27,6 +27,9 @@
                     <%= link_to school_course_path(@school, course), class: "btn btn-default", method: :delete, data: { confirm: 'Tem certeza de que deseja excluir?' } do%>
                       <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     <% end %>
+                    <%= link_to school_course_path(@school, course), class: "btn btn-default" do%>
+                      <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    <% end %>
                   </div>
                 </td>
             </tr>

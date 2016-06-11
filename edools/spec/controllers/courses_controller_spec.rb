@@ -33,14 +33,14 @@ RSpec.describe CoursesController, type: :controller do
       post :create, {school_id: @school.id, course: attributes_for(:course, school_id: @school.id)}
       expect(Course.count).to eq(1)
       expect(@school.reload.courses.size).to eq(1)
-      expect(response).to redirect_to(school_path(@school.id))
+      expect(response).to redirect_to(school_course_path(@school.id, @school.courses.first.id))
 
       @course = @school.courses.first
 
       delete :destroy, {school_id: @school.id, id: @course.id}
       expect(Course.count).to eq(0)
       expect(@school.reload.courses.size).to eq(0)
-      expect(response).to redirect_to(school_path(@school.id))
+      expect(response).to redirect_to(school_courses_path(@school.id))
     end
 
     it "renders the course's page" do
@@ -62,7 +62,8 @@ RSpec.describe CoursesController, type: :controller do
 
       patch :update, {school_id: @school.id, id: @course.id, course: attributes_for(:course, title: "updated", school_id: @school.id)}
       expect(@course.reload.title).to eq("updated")
-      expect(response).to redirect_to(school_path(@school.id))
+      expect(response).to redirect_to(school_course_path(@school.id, @course.id))
+
     end
   end
 
