@@ -8,6 +8,8 @@ build: [![CircleCI](https://circleci.com/gh/nathanpsouza/quero-trabalhar-no-edoo
 * Java (para rodar o solr
 
 ## Rodando a aplicação
+Copie o arquivo `config/database.example.yml` para `config/database.yml` e configure de acordo com os dados da sua instância do postgresql.
+
 `$ bundle install`
 
 `$ rake db:create db:migrate`
