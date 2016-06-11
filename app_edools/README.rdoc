@@ -5,23 +5,19 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.0.0
 
-* System dependencies
+* System dependencies: Rails 4
+  
+* Configuration: $ bundle install
+  
+* Database creation: Postgres
 
-* Configuration
+* Database initialization: $ rake db:migrate and $ rake db:migrate RAILS_ENV=test
 
-* Database creation
+* How to run the test suite: $bundle exec rspec spec
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Heroku Address: [AppEdools](https://fast-dawn-71420.herokuapp.com/)
 
 
 Please feel free to use a different markup language if you do not plan to run
