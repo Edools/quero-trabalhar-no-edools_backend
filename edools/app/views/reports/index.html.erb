@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <div class="col-sm-offset-1">
+      <h1>Buscar alunos por Escola</h1>
+      <%= form_tag reports_path, :method => 'get', :target => "_blank" do %>
+          <%= select_tag :search, options_from_collection_for_select(@schools, "id", "name") {}, {class: "form form-group form-control"} %>
+          <%= submit_tag "buscar", :name => nil, class: "btn btn-warning btn-xs", target:"_blank" %>
+      <% end %>
+    </div>
+  <div>
+<br>
