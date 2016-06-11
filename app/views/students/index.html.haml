@@ -1,0 +1,16 @@
+- content_for :page_header do
+  Listagem de alunos
+
+%table.table
+  %thead
+    %tr
+      %td Nome
+      %td Email
+      %td Data de nascimento
+      %td
+  %tbody
+    -if @students.empty?
+      %tr
+        %td(colspan="3") Ainda não existem alunos cadastradas
+    - else
+      = render @students

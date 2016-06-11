@@ -1,0 +1,6 @@
+= simple_form_for(@student) do |f|
+  = f.input :name
+  = f.input :email
+  = f.input :birthday, as: :string
+  = f.submit 'Salvar', class: 'btn btn-primary'
+  = link_to 'Voltar para listagem', students_path, class: 'btn btn-primary'

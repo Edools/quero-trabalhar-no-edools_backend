@@ -1,0 +1,20 @@
+- content_for :page_header do
+  Aluno #{@student.name}
+
+%p
+  %strong Email de contato:
+  = @student.email
+
+%p
+  %strong Data de nascimento:
+  = @student.birthday
+
+%p
+  %strong Criado em:
+  = l @student.created_at, format: :short
+
+%p
+  %strong Última alteração em:
+  = l @student.updated_at, format: :short
+
+= link_to 'Voltar para listagem', students_path, class: 'btn btn-primary'

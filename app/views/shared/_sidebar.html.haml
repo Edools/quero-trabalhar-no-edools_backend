@@ -21,3 +21,13 @@
             = link_to "Ver todas", schools_path
           %li
             = link_to "Cadastrar nova escola", new_school_path
+      %li
+        = link_to "#" do
+          %i.fa.fa-user.fa-fw
+          Alunos
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            = link_to "Ver todos", students_path
+          %li
+            = link_to "Cadastrar novo aluno", new_student_path
