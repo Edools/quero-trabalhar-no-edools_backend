@@ -15,3 +15,26 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+//= require paloma
+
+$(document).on('page:load', function() {
+    Paloma.start();
+});
+
+Paloma.controller('Students', {
+    new: function() {
+        var hidden = $("#students_ids");
+
+        $(".add-student").on('click', function() {
+            var ids = $("#students_ids").val().split(",").filter(Boolean);
+            var id = $(this).attr("data-student-id");
+
+            var index = ids.indexOf(id);
+
+            if (index == -1) ids.push(id);
+            else ids.splice(index, 1);
+
+            hidden.val(ids);
+        });
+    }
+});
