@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-12">
-        <%= link_to 'Adicionar', new_school_course_path(@school), class: "btn btn-default btn-lg" %>
+        <%= link_to 'Adicionar', new_school_course_path(@school), class: "btn btn-primary btn-lg" %>
     </div>
 </div>
 
@@ -15,12 +15,12 @@
             <% @courses.each do |course| %>
             <tr>
                 <td><%= course.title %></td>
-                <td class="col-sm-3">
+                <td class="col-sm-3 right">
+                  <%= link_to management_school_course_path(@school, course), class: "btn btn-default" do%>
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    Alunos
+                  <% end %>
                   <div class="btn-group">
-                    <%= link_to management_school_course_path(@school, course), class: "btn btn-default" do%>
-                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                      Alunos
-                    <% end %>
                     <%= link_to edit_school_course_path(@school, course), class: "btn btn-default" do%>
                       <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                     <% end %>

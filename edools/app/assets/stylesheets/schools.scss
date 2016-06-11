@@ -1,3 +1,17 @@
 // Place all the styles related to the schools controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "helpers/variables";
+
+.active-students{
+  border: 1px solid $border-color;
+  background: $control-background-color;
+  margin: 15px 0;
+  padding: 10px 20px;
+
+  h4{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+  }
+}

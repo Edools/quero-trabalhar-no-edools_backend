@@ -9,8 +9,16 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- * 
+ *
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "helpers/*";
+ @import "layout/*";
+ @import "schools";
+
+ //font-family: 'Coming Soon', cursive;
+ //font-family: 'Glegoo', serif;
+ //font-family: 'Oswald', sans-serif;
+ //font-family: 'Roboto Condensed', sans-serif;

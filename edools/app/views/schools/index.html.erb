@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <%= link_to 'Adicionar', new_school_path, class: "btn btn-default btn-lg" %>
+        <%= link_to 'Adicionar', new_school_path, class: "btn btn-primary btn-lg" %>
     </div>
 </div>
 
@@ -17,11 +17,11 @@
             <% @schools.each do |school| %>
             <tr>
                 <td><%= school.name %></td>
-                <td class="col-sm-4">
+                <td class="col-sm-5 right">
+                  <%= link_to "Cursos", school_courses_path(school), class: "btn btn-default"%>
+                  <%= link_to "Alunos", school_students_path(school), class: "btn btn-default"%>
+                  <%= link_to 'Alunos ativos', active_students_school_path(school), class: "btn btn-default" %>
                   <div class="btn-group">
-                    <%= link_to "Cursos", school_courses_path(school), class: "btn btn-default"%>
-                    <%= link_to "Alunos", school_students_path(school), class: "btn btn-default"%>
-                    <%= link_to 'Alunos ativos', active_students_school_path(school), class: "btn btn-default" %>
                     <%= link_to edit_school_path(school), class: "btn btn-default" do%>
                       <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                     <% end %>

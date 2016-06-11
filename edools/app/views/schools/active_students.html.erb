@@ -5,11 +5,22 @@
 
       <% @school.courses.each do |course| %>
 
-      <h2><%= course.title %></h2>
+      <div class="active-students">
 
-      <% course.students.each do |student| %>
-        <p><%= student.name %></p>
-      <% end %>
+        <h4><%= course.title %></h4>
+
+        <ol class="list-group">
+          <% course.students.each do |student| %>
+            <li class="list-group-item"><%= student.name %></li>
+          <% end %>
+
+          <% if course.students.size == 0 %>
+            <p>Nenhum aluno matriculado.</p>
+          <% end %>
+
+        </ol>
+
+      </div>
 
       <% end %>
 
