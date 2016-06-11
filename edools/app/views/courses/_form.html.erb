@@ -23,22 +23,24 @@
         <%= f.label :Conteúdo %><br>
         <%= f.text_area :content ,class: "form-control"%>
       </div>
-      <div class="field">
-        <%= f.label "Duração (meses)" %><br>
-        <%= f.number_field :duration ,class: "form-control"%>
-      </div>
-      <div class="field">
-        <%= f.label :date_of_creation %><br>
-        <%= f.text_field :date_of_creation, :order => [:day, :month ,:year ] ,class: "form-control", type: "date"%>
-      </div>
-      <div class="field">
-        <%= f.label :Valor %><br>
-        <%= f.text_field :price ,class: "form-control"%>
-      </div>
-      <div class="field">
-        <%= f.label :school_id %><br>
-        <%= f.number_field :school_id ,class: "form-control"%>
-      </div>
+        <div class="row">
+            <div class="col-sm-3">
+              <%= f.label "Duração (meses)" %><br>
+              <%= f.number_field :duration ,class: "form-control"%>
+            </div>
+            <div class="col-sm-3">
+              <%= f.label :Valor %><br>
+              <%= f.text_field :price ,class: "form-control"%>
+            </div>
+            <div class="col-sm-3">
+              <%= f.label :Escola %><br>
+              <%= f.collection_select :school_id, School.all, :id, :name, {prompt: "Select a category"}, {class: "form-control"} %>
+            </div>
+            <div class="col-sm-3">
+              <%= f.label :"Criação do Curso" %><br>
+              <%= f.text_field :date_of_creation, :order => [:day, :month ,:year ] ,class: "form-control", type: "date"%>
+            </div>
+        </div>
       <br>
       <div class="actions">
         <%= f.submit "salvar" ,class: "btn btn-primary btn-sm"%>

@@ -3,14 +3,14 @@
   <h1>Listar Cursos</h1>
 </div>
 <%= link_to 'Novo Curso', new_course_path ,  class: "btn btn-primary btn-sm pull-right" %>
-<table class="table table-stripped">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Nome</th>
       <th>Duração</th>
       <th>Valor</th>
       <th>Escola</th>
-      <th ></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -20,7 +20,7 @@
         <td><%= course.title %></td>
         <td><%= "#{course.duration.to_i} meses "%></td>
         <td><%= "R$ #{course.price}" %></td>
-        <td><%= course.school_id %></td>
+        <td><%= course.school.name %></td>
         <td class="pull-right">
           <%= link_to 'exibir', course, class: "btn btn-info btn-sm" %>
           <%= link_to 'editar', edit_course_path(course), class: "btn btn-info btn-sm" %>
