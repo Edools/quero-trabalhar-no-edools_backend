@@ -7,10 +7,10 @@ feature 'Create school' do
 
     school = FactoryGirl.attributes_for(:school)
 
-    fill_in 'Name', with: school[:name]
-    fill_in 'Contact email', with: school[:contact_email]
+    fill_in 'Nome', with: school[:name]
+    fill_in 'Email de contato', with: school[:contact_email]
     fill_in 'Pitch', with: school[:pitch]
-    fill_in 'Subdomain', with: school[:subdomain]
+    fill_in 'Subdomínio', with: school[:subdomain]
 
     click_button 'Salvar'
 

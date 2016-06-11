@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      student:
+        one: Aluno
+        other: Alunos
+    attributes:
+      student:
+        name: Nome
+        email: Email
+        birthday: Data de nascimento

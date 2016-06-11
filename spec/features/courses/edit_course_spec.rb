@@ -16,7 +16,7 @@ feature 'Create course' do
       click_link 'Editar'
     end
 
-    fill_in 'Title', with: 'New title for course'
+    fill_in 'Título', with: 'New title for course'
 
     click_button 'Salvar'
 
@@ -39,7 +39,7 @@ feature 'Create course' do
       click_link 'Editar'
     end
 
-    fill_in 'Title', with: ''
+    fill_in 'Título', with: ''
 
     click_button 'Salvar'
 

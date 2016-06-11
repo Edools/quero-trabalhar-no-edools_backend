@@ -15,11 +15,11 @@ feature 'Create course' do
 
     course = FactoryGirl.attributes_for(:school)
 
-    fill_in 'Title', with: course[:title]
-    fill_in 'Description', with: course[:description]
-    fill_in 'Content', with: course[:content]
-    fill_in 'Duration', with: course[:duration]
-    fill_in 'Price', with: course[:price]
+    fill_in 'Título', with: course[:title]
+    fill_in 'Descrição', with: course[:description]
+    fill_in 'Conteúdo', with: course[:content]
+    fill_in 'Duração', with: course[:duration]
+    fill_in 'Valor', with: course[:price]
 
 
     click_button 'Salvar'

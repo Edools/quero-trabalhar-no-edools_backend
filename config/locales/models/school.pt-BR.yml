@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      school:
+        one: Escola
+        other: Escolas
+    attributes:
+      school:
+        name: Nome
+        contact_email: Email de contato
+        subdomain: Subdomínio

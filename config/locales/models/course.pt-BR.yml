@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      course:
+        one: Curso
+        other: Cursos
+    attributes:
+      course:
+        title: Título
+        description: Descrição
+        content: Conteúdo
+        duration: Duração
+        price: Valor

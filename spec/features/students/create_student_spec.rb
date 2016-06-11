@@ -7,9 +7,9 @@ feature 'Create student' do
 
     student = FactoryGirl.attributes_for(:student)
 
-    fill_in 'Name', with: student[:name]
+    fill_in 'Nome', with: student[:name]
     fill_in 'Email', with: student[:email]
-    fill_in 'Birthday', with: student[:birthday]
+    fill_in 'Data de nascimento', with: student[:birthday]
 
     click_button 'Salvar'
 

@@ -10,7 +10,7 @@ feature 'Edit school' do
       click_link 'Editar'
     end
 
-    fill_in 'Name', with: 'New name for school'
+    fill_in 'Nome', with: 'New name for school'
 
     click_button 'Salvar'
 
@@ -27,7 +27,7 @@ feature 'Edit school' do
       click_link 'Editar'
     end
 
-    fill_in 'Name', with: ''
+    fill_in 'Nome', with: ''
 
     click_button 'Salvar'
 
