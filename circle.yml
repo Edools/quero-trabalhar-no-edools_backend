@@ -1,4 +1,9 @@
 database:
   override:
-    - cp config/sunspot.ci.yml config/sunspot.yml
-    - bundle exec rake db:create db:schema:load sunspot:solr:start
+    - Generate sunspot.yml:
+      mkdir -p config
+      echo 'test:
+        solr:
+          hostname: localhost
+          port: 8981
+      ' > config/sunspot.yml
