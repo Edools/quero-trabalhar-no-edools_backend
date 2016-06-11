@@ -52,6 +52,21 @@ class CoursesController < ApplicationController
       @students = Student.all
     end
 
+    def enroll
+      @school = School.find(params[:school_id])
+      @course = @school.courses.find(params[:id])
+      p params
+      students_ids = params[:students_ids].split(",")
+
+      #if students_ids != nil
+        students_ids.each do |id|
+          student = Student.find(id)
+          @course.students << student
+        end
+        redirect_to school_path(@school)
+      #end
+    end
+
     private
       def course_params
         params.require(:course).permit(:title, :description, :content, :duration, :price, :school_id)

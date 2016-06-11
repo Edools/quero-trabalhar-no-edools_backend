@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :students
       member do
         get 'management'
+        patch 'enroll'
       end
     end
   end
