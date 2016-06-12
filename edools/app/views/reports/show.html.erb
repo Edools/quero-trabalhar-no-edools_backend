@@ -1,3 +1,9 @@
-<% @schools.each do |school| %>
- <%= school.courses.first.students.name %>
-<% end %>
+<h1>Alunos Ativos em <strong> <%= "#{@school.name}" %> </strong>  </h1>
+<table class="table table-condensed">
+  <tr>nome</tr>
+  <% @schools.each do |school| %>
+   <tr>
+        <td><%= school.name %></td> 
+   <tr>
+  <% end %>
+</table>

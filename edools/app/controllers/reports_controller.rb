@@ -10,8 +10,9 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @schools = School.where(id: params[:id])
-    render layout: false
+    @schools = School.report_student_active(params[:id])
+    @school = School.find(params[:id])
+    #render layout: false
   end
 
   private
