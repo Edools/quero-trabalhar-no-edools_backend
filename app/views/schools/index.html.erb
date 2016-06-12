@@ -31,6 +31,7 @@
         <td><%= school.created_at %></td>
         <td>
           <%= link_to 'cursos', school_courses_path(school), class: 'primary ui button' %>
+          <%= link_to 'Alunos ativos', active_students_path, class: 'teal ui button' %>
           <%= link_to 'Editar', edit_school_path(school), class: 'yellow ui button' %>
           <%= link_to 'Remover', school, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'red ui button' %>
         </td>
