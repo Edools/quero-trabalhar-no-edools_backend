@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :schools
+  resources :schools, except: :show
 
   root 'schools#index'
 
