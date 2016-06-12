@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      course:
+        one: Curso
+        other: Cursos
+    attributes:
+      course:
+        title: Título
+        content: Conteúdo
+        duration: Duração
+        description: Descrição
+        school: Escola
+        created_at: Data de Criação

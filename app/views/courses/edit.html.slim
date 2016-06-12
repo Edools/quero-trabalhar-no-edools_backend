@@ -1,0 +1,6 @@
+.row
+  .columns.small-6.small-centered
+    h1 = t('.title')
+
+    = simple_form_for(@course, url: school_course_path(school_id: @school)) do |f|
+      == render partial: 'form', locals: {f: f}

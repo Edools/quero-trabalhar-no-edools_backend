@@ -9,4 +9,18 @@ module CrudHelper
       html
     end
   end
+
+  def link_to_edit(url, html_options = {})
+    html_options.reverse_merge!(class: 'edit')
+
+    link_to t('views.crud.edit'), url, html_options
+  end
+
+  def link_to_destroy(url, html_options = {})
+    html_options.reverse_merge!(data: { confirm: t('views.crud.confirm') },
+                                  method: :delete,
+                                  class: 'delete')
+
+    link_to t('views.crud.destroy'), url, html_options
+  end
 end

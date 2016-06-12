@@ -18,7 +18,7 @@
       tbody
         - @schools.each do |school|
           tr
-            td = link_to school.name, school
+            td = link_to school.name, school_courses_path(school_id: school)
             td = school.owner_email
             td = school.pitch
             td = school.subdomain

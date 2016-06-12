@@ -1,0 +1,35 @@
+.row
+  .columns.small
+    h1 = t '.title'
+
+.row
+  .columns.small
+    table
+      thead
+        tr
+          th = ta Course, :title
+          th = ta Course, :school
+          th = ta Course, :description
+          th = ta Course, :content
+          th = ta Course, :duration
+          th = ta Course, :price
+          th = ta Course, :created_at
+          th
+          th
+
+      tbody
+        - @courses.each do |course|
+          tr
+            td = course.title
+            td = course.school
+            td = course.description
+            td = course.content
+            td = course.duration
+            td = course.price
+            td = l course.created_at
+            td = link_to_edit edit_school_course_path(course, school_id: @school)
+            td = link_to_destroy school_course_path(course, school_id: @school), data: { confirm: 'Are you sure?' }, method: :delete
+
+.row
+  .columns.small
+    = link_to_new Course, new_school_course_path

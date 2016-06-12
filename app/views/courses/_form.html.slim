@@ -1,0 +1,13 @@
+= f.error_notification
+
+.form-inputs
+  = f.input :school, disabled: true, required: false
+  = f.input :title
+  = f.input :description
+  = f.input :content
+  = f.input :duration
+  = f.input :price
+
+.form-actions
+  = f.button :submit
+  = link_to t('layouts.application.back'), school_courses_path(school_id: @school)
