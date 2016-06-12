@@ -1,0 +1,8 @@
+pt-BR:
+  schools:
+    index:
+      title: Escolas
+    new:
+      title: Cadastrar Escola
+    edit:
+      title: Editar Escola

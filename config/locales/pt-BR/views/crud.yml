@@ -1,0 +1,16 @@
+pt-BR:
+  views:
+    crud:
+      new: '%{model}'
+      edit: Editar
+      show: Detalhes
+      destroy: Apagar
+      confirm: 'Tem certeza?'
+      cancel: Cancelar
+      back: Voltar
+      exit: Sair
+      search: Buscar
+      abandon: Desistir
+      next: Avançar
+      not_found: '%{model} não encontrados'
+      search_by: "na busca por: '%{term}'"

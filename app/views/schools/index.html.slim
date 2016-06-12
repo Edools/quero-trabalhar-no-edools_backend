@@ -1,0 +1,30 @@
+.row
+  .columns.small-6
+    h1 = t('.title')
+
+.row
+  .columns.small-12
+    table
+      thead
+        tr
+          th = ta School, :name
+          th = ta School, :owner_email
+          th = ta School, :pitch
+          th = ta School, :subdomain
+          th.text-center = ta School, :created_at
+          th
+          th
+
+      tbody
+        - @schools.each do |school|
+          tr
+            td = link_to school.name, school
+            td = school.owner_email
+            td = school.pitch
+            td = school.subdomain
+            td.text-center = l school.created_at
+            td = link_to 'Edit', edit_school_path(school)
+            td = link_to 'Destroy', school, data: { confirm: 'Are you sure?' }, method: :delete
+.row
+  .columns.small-12            
+    = link_to_new School, new_school_path

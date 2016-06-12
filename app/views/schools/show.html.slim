@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @school.name
+p
+  strong Owner email:
+  = @school.owner_email
+p
+  strong Pitch:
+  = @school.pitch
+p
+  strong Subdomain:
+  = @school.subdomain
+
+= link_to 'Edit', edit_school_path(@school)
+'|
+= link_to 'Back', schools_path

@@ -1,0 +1,13 @@
+= simple_form_for(@school) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :owner_email
+    = f.input :pitch
+    = f.input :subdomain
+
+  .form-actions
+    = f.button :submit
+
+  = link_to t('layouts.application.back'), schools_path

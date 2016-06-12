@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      school:
+        one: Escola
+        other: Escolas
+    attributes:
+      school:
+        name: Nome
+        owner_email: Email do Dono
+        pitch: Pitch
+        subdomain: Subdomínio
+        created_at: Data de Criação
