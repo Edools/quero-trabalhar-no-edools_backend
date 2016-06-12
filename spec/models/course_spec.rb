@@ -1,20 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe Course, type: :model do
-    context 'associations' do
-      it { is_expected.to belong_to(:school) }
-    end
+  context 'associations' do
+    it { is_expected.to belong_to(:school) }
+    it { is_expected.to have_many(:students).dependent(:restrict_with_error) }
+  end
 
-    context 'model validations' do
-    	it { is_expected.to validate_presence_of(:title) }
-    	it { is_expected.to validate_presence_of(:school) }
-    	it { is_expected.to validate_presence_of(:content) }
-    	it { is_expected.to validate_presence_of(:duration) }
-    	it { is_expected.to validate_presence_of(:price) }
-    end
+  context 'model validations' do
+    it { is_expected.to validate_presence_of(:title) }
+    it { is_expected.to validate_presence_of(:school) }
+    it { is_expected.to validate_presence_of(:content) }
+    it { is_expected.to validate_presence_of(:duration) }
+    it { is_expected.to validate_presence_of(:price) }
+  end
 
   context 'table fields' do
-    it { is_expected.to have_db_column(:title	).of_type(:string) }
+    it { is_expected.to have_db_column(:title).of_type(:string) }
     it { is_expected.to have_db_column(:content).of_type(:string) }
     it { is_expected.to have_db_column(:duration).of_type(:string) }
     it { is_expected.to have_db_column(:description).of_type(:text) }

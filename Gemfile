@@ -13,15 +13,15 @@ gem 'jbuilder'
 gem 'therubyracer', platforms: :ruby
 
 gem 'simple_form'
-gem "slim-rails"
+gem 'slim-rails'
 
 gem 'enumerate_it'
 gem 'pg'
 
-gem "sass-rails"
+gem 'sass-rails'
 gem 'foundation-rails'
-gem "font-awesome-rails"
-gem "rails_12factor"
+gem 'font-awesome-rails'
+gem 'rails_12factor'
 gem 'puma'
 
 group :doc do
@@ -39,6 +39,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-livereload'
   gem 'guard-migrate'
+  gem 'rubocop'
 end
 
 group :development, :test do
@@ -56,7 +57,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'forgery'
   gem 'fakeweb'
-  gem "accept_values_for"
+  gem 'accept_values_for'
 end
 
 group :production do

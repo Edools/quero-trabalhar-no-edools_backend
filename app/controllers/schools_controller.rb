@@ -5,7 +5,6 @@ class SchoolsController < ApplicationController
     @schools = School.all
   end
 
-
   def new
     @school = School.new
   end

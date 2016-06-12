@@ -18,8 +18,8 @@ module CrudHelper
 
   def link_to_destroy(url, html_options = {})
     html_options.reverse_merge!(data: { confirm: t('views.crud.confirm') },
-                                  method: :delete,
-                                  class: 'delete')
+                                method: :delete,
+                                class: 'delete')
 
     link_to t('views.crud.destroy'), url, html_options
   end
