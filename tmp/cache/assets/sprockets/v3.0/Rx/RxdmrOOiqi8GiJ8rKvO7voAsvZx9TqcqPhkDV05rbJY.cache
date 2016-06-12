@@ -1,0 +1,17 @@
+{:uriI"file://app/assets/bower_components/datatables-responsive/bower.json?type=application/json&id=ea1d42b18145be8a7bf20673b20f95ff9a0a6e5b98512f1101022efb5d96d6f1:ET:load_pathI" app/assets/bower_components;T:filenameI"Aapp/assets/bower_components/datatables-responsive/bower.json;T:	nameI" datatables-responsive/bower;T:logical_pathI"%datatables-responsive/bower.json;T:content_typeI"application/json;T:sourceI"Ö{
+	"name": "datatables-responsive",
+	"version": "1.0.7",
+	"main": [
+		"js/dataTables.responsive.js",
+		"css/responsive.dataTables.scss"
+	],
+	"dependencies": {
+		"jquery": ">=1.7.0",
+		"datatables": ">=1.10.1"
+	}
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Ofile-digest://app/assets/bower_components/datatables-responsive/bower.json;TTF:charsetI"
+utf-8;F:digest"%q¸g°guZ âÇ=U¸]bK7#Š¼ÙŞ>©A:lengthiÖ:dependencies_digest"%:&¥9¸2º.<û·Õ´”(îs‡‰åa+şz¤4ñÈC:idI"Eea1d42b18145be8a7bf20673b20f95ff9a0a6e5b98512f1101022efb5d96d6f1;F:
+mtimel+¦ïYV

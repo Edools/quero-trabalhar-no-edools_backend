@@ -1,0 +1,43 @@
+{:uriI"ùfile://app/assets/bower_components/morrisjs/examples/diagonal-xlabels.html?type=text/html&id=7c8d1849e23c84d777fad118325f8a94af0b5d54e41f898236794c858d01e935:ET:load_pathI" app/assets/bower_components;T:filenameI"Happ/assets/bower_components/morrisjs/examples/diagonal-xlabels.html;T:	nameI"'morrisjs/examples/diagonal-xlabels;T:logical_pathI",morrisjs/examples/diagonal-xlabels.html;T:content_typeI"text/html;T:sourceI"'<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+</head>
+<body>
+<h1>Displaying X Labels Diagonally</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+/* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */
+var day_data = [
+  {"period": "2012-10-30", "licensed": 3407, "sorned": 660},
+  {"period": "2012-09-30", "licensed": 3351, "sorned": 629},
+  {"period": "2012-09-29", "licensed": 3269, "sorned": 618},
+  {"period": "2012-09-20", "licensed": 3246, "sorned": 661},
+  {"period": "2012-09-19", "licensed": 3257, "sorned": 667},
+  {"period": "2012-09-18", "licensed": 3248, "sorned": 627},
+  {"period": "2012-09-17", "licensed": 3171, "sorned": 660},
+  {"period": "2012-09-16", "licensed": 3171, "sorned": 676},
+  {"period": "2012-09-15", "licensed": 3201, "sorned": 656},
+  {"period": "2012-09-10", "licensed": 3215, "sorned": 622}
+];
+Morris.Line({
+  element: 'graph',
+  data: day_data,
+  xkey: 'period',
+  ykeys: ['licensed', 'sorned'],
+  labels: ['Licensed', 'SORN'],
+  xLabelAngle: 60
+});
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Vfile-digest://app/assets/bower_components/morrisjs/examples/diagonal-xlabels.html;TTF:charsetI"
+utf-8;F:digest"%“†–£ÜnÌ◊ºıW‰¨X¶∫W\¶zﬁC•M£6≥kûÒ:lengthi':dependencies_digest"%ÇÑgSõÛG|°wûˇﬂ∂ÔÎÛÈÚ‰‹DÄ8A"n…:idI"E7c8d1849e23c84d777fad118325f8a94af0b5d54e41f898236794c858d01e935;F:
+mtimel+¶ÔYV

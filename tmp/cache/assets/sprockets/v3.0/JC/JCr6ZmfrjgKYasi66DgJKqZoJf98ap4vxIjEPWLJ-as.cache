@@ -1,0 +1,23 @@
+{:uriI"–file://app/assets/bower_components/morrisjs/examples/_template.html?type=text/html&id=798061ad0ab5e5b6ff00b5ff48247ae7aa978e524eaca36496493f36f480b98e:ET:load_pathI" app/assets/bower_components;T:filenameI"Aapp/assets/bower_components/morrisjs/examples/_template.html;T:	nameI" morrisjs/examples/_template;T:logical_pathI"%morrisjs/examples/_template.html;T:content_typeI"text/html;T:sourceI"Ä<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+</head>
+<body>
+<h1>Title</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+// Insert code here:
+// it'll get eval()-ed and prettyprinted.
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Ofile-digest://app/assets/bower_components/morrisjs/examples/_template.html;TTF:charsetI"
+utf-8;F:digest"%Ñ{_LI;ÂJ«[ˆˆXD(ƒXd´™¶»ûGû:lengthiÄ:dependencies_digest"%j@]gVâBO[{ˆÊXŞã¥%…Gê’$Ë‚B}ì§:idI"E798061ad0ab5e5b6ff00b5ff48247ae7aa978e524eaca36496493f36f480b98e;F:
+mtimel+¦ïYV

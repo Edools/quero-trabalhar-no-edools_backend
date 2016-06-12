@@ -1,0 +1,33 @@
+{:uriI"’file://app/assets/bower_components/flot/flot.jquery.json?type=application/json&id=987ed44e8a9e826839460e3831b2039bb9362d82bd244ffca2ded141fe815160:ET:load_pathI" app/assets/bower_components;T:filenameI"6app/assets/bower_components/flot/flot.jquery.json;T:	nameI"flot/flot.jquery;T:logical_pathI"flot/flot.jquery.json;T:content_typeI"application/json;T:sourceI"E{
+	"name": "flot",
+	"version": "0.8.3",
+	"title": "Flot",
+	"author": {
+		"name": "Ole Laursen",
+		"url": "https://github.com/OleLaursen"
+	},
+	"licenses": [{
+		"type": "MIT",
+		"url": "http://github.com/flot/flot/blob/master/LICENSE.txt"
+	}],
+	"dependencies": {
+		"jquery": ">=1.2.6"
+	},
+	"description": "Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.",
+	"keywords": ["plot", "chart", "graph", "visualization", "canvas", "graphics"],
+	"homepage": "http://www.flotcharts.org",
+	"docs": "http://github.com/flot/flot/blob/master/API.md",
+	"demo": "http://www.flotcharts.org/flot/examples/",
+	"bugs": "http://github.com/flot/flot/issues",
+	"maintainers": [{
+		"name": "David Schnur",
+		"email": "dnschnur@gmail.com",
+		"url": "http://github.com/dnschnur"
+	}]
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Dfile-digest://app/assets/bower_components/flot/flot.jquery.json;TTF:charsetI"
+utf-8;F:digest"%”+®6HšP—Ğ>Qó0\i •İŸ‘óĞå:lengthiE:dependencies_digest"%ñX
+9p&?§=\¢[t[£ÖoõÍx)!CÇÆc	]3:idI"E987ed44e8a9e826839460e3831b2039bb9362d82bd244ffca2ded141fe815160;F:
+mtimel+¦ïYV

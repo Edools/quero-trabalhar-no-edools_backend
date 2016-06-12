@@ -1,0 +1,9 @@
+{:uriI"¨file://app/assets/bower_components/flot/examples/ajax/data-usa-gdp-growth.json?type=application/json&id=919608abcb49f41d96668758c5443f333e1347694be6cdf5e3ccf4f71ec86ae2:ET:load_pathI" app/assets/bower_components;T:filenameI"Lapp/assets/bower_components/flot/examples/ajax/data-usa-gdp-growth.json;T:	nameI"+flot/examples/ajax/data-usa-gdp-growth;T:logical_pathI"0flot/examples/ajax/data-usa-gdp-growth.json;T:content_typeI"application/json;T:sourceI"§{
+    "label": "USA",
+    "data": [[1999, 4.4], [2000, 3.7], [2001, 0.8], [2002, 1.6], [2003, 2.5], [2004, 3.6], [2005, 2.9], [2006, 2.8], [2007, 2.0], [2008, 1.1]]
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Zfile-digest://app/assets/bower_components/flot/examples/ajax/data-usa-gdp-growth.json;TTF:charsetI"
+utf-8;F:digest"%ˆ¾Á%Âa…>Í{S”JG›Uwî(3ğ#†')±øõ:lengthi§:dependencies_digest"%ß«-ª‰_î‹uôğŞœ¢jÉãğ"›D9İ"\ce:idI"E919608abcb49f41d96668758c5443f333e1347694be6cdf5e3ccf4f71ec86ae2;F:
+mtimel+¦ïYV

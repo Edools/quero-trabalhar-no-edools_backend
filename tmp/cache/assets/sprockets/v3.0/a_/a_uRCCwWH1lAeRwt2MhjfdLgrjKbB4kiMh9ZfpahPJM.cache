@@ -1,0 +1,45 @@
+{:uriI"ôfile://app/assets/bower_components/morrisjs/examples/donut-colors.html?type=text/html&id=3c5df832f0d05a3222a667b5d674d1025c2120f6d290d6ce8c7213dfaa119f77:ET:load_pathI" app/assets/bower_components;T:filenameI"Dapp/assets/bower_components/morrisjs/examples/donut-colors.html;T:	nameI"#morrisjs/examples/donut-colors;T:logical_pathI"(morrisjs/examples/donut-colors.html;T:content_typeI"text/html;T:sourceI"]<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+  <style>
+    body { background:#ccc; }
+  </style>
+</head>
+<body>
+<h1>Donut Chart</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+Morris.Donut({
+  element: 'graph',
+  data: [
+    {value: 70, label: 'foo'},
+    {value: 15, label: 'bar'},
+    {value: 10, label: 'baz'},
+    {value: 5, label: 'A really really long label'}
+  ],
+  backgroundColor: '#ccc',
+  labelColor: '#060',
+  colors: [
+    '#0BA462',
+    '#39B580',
+    '#67C69D',
+    '#95D7BB'
+  ],
+  formatter: function (x) { return x + "%"}
+});
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Rfile-digest://app/assets/bower_components/morrisjs/examples/donut-colors.html;TTF:charsetI"
+utf-8;F:digest"%ﬁéõ v&P“ùYºµLEç¡á@AtÙ≈)ÂnÂ£Ö
+:lengthi]:dependencies_digest"%KT"+åE™Ä
+˙ãB-¶Å§<⁄èïîe7dïë¶X‡æº∆:idI"E3c5df832f0d05a3222a667b5d674d1025c2120f6d290d6ce8c7213dfaa119f77;F:
+mtimel+¶ÔYV

@@ -1,0 +1,39 @@
+{:uriI"Žfile://app/assets/bower_components/morrisjs/spec/specs.html?type=text/html&id=37bd399a0c717d48c95919e3e6b3a59f7c753c03b73d7d8b1c8e53af719c12c0:ET:load_pathI" app/assets/bower_components;T:filenameI"9app/assets/bower_components/morrisjs/spec/specs.html;T:	nameI"morrisjs/spec/specs;T:logical_pathI"morrisjs/spec/specs.html;T:content_typeI"text/html;T:sourceI"¥<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>morris.js tests</title>
+  <link rel="stylesheet" href="../bower_components/mocha/mocha.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../morris.css" type="text/css" media="screen" />
+  <!-- jQuery packaging changed for 2.1.0, so try to load both paths, one will work. -->
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="../bower_components/raphael/raphael-min.js"></script>
+</head>
+<body>
+  <div id="mocha"></div>
+
+  <script type="text/javascript" src="../bower_components/mocha/mocha.js"></script>
+  <script type="text/javascript" src="../bower_components/chai/chai.js"></script>
+  <script type="text/javascript" src="../bower_components/chai-jquery/chai-jquery.js"></script>
+  <script type="text/javascript" src="../bower_components/sinon/index.js"></script>
+  <script type="text/javascript" src="../bower_components/sinon-chai/lib/sinon-chai.js"></script>
+  <script>
+    mocha.setup('bdd');
+    should = chai.should();
+  </script>
+
+  <script type="text/javascript" src="../morris.js"></script>
+  <script type="text/javascript" src="../build/spec.js"></script>
+  <div id="test" style="width: 400px; height: 200px;"></div>
+  <script>
+    if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+      mocha.run();
+    }
+  </script>
+</body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Gfile-digest://app/assets/bower_components/morrisjs/spec/specs.html;TTF:charsetI"
+utf-8;F:digest"%øœ÷AŸ¿qÞÿ8Ý¿R?ÿýjh.µ=ŠÿP.õVä*:lengthi¥:dependencies_digest"%µL~ÐµÁš¼æþGTøGWx4{Ñßd\m±$Ã(Aì:idI"E37bd399a0c717d48c95919e3e6b3a59f7c753c03b73d7d8b1c8e53af719c12c0;F:
+mtimel+¦ïYV

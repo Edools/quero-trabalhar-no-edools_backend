@@ -1,0 +1,41 @@
+{:uriI"‘file://app/assets/bower_components/metisMenu/bower.json?type=application/json&id=51bab09fd86e2b2cf8a5c8cbb47b7261350f3c9858960e443e88fcd6193c0c70:ET:load_pathI" app/assets/bower_components;T:filenameI"5app/assets/bower_components/metisMenu/bower.json;T:	nameI"metisMenu/bower;T:logical_pathI"metisMenu/bower.json;T:content_typeI"application/json;T:sourceI"h{
+  "name": "metisMenu",
+  "version": "1.1.3",
+  "homepage": "https://github.com/onokumus/metisMenu",
+  "authors": [
+    "onokumus <onokumus@gmail.com>"
+  ],
+  "description": "Easy menu jQuery plugin for Twitter Bootstrap 3",
+  "main": [
+    "dist/metisMenu.js",
+    "dist/metisMenu.css"
+  ],
+  "keywords": [
+    "twitter",
+    "bootstrap",
+    "twbs",
+    "jquery",
+    "menu",
+    "accordion",
+    "toggle",
+    "metis",
+    "metisMenu"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.0"
+  }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Cfile-digest://app/assets/bower_components/metisMenu/bower.json;TTF:charsetI"
+utf-8;F:digest"%µô¡”ž8ˆ$?è=à!Ú¶W
+D+lHC¡#û»›:lengthih:dependencies_digest"%–WêÍª}‹>««µöG^õq ‡Ñb4(Ó‡þ¼[í4:idI"E51bab09fd86e2b2cf8a5c8cbb47b7261350f3c9858960e443e88fcd6193c0c70;F:
+mtimel+¦ïYV

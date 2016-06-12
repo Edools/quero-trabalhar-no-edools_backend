@@ -1,0 +1,43 @@
+{:uriI"”file://app/assets/bower_components/morrisjs/examples/no-grid.html?type=text/html&id=6f55ff88d00f2db745e8c72e98a07a70592b280bebc8c0cf27a7eb1e0797a545:ET:load_pathI" app/assets/bower_components;T:filenameI"?app/assets/bower_components/morrisjs/examples/no-grid.html;T:	nameI"morrisjs/examples/no-grid;T:logical_pathI"#morrisjs/examples/no-grid.html;T:content_typeI"text/html;T:sourceI" <!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+</head>
+<body>
+<h1>Formatting Dates YYYY-MM-DD</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+/* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */
+var day_data = [
+  {"period": "2012-10-01", "licensed": 3407, "sorned": 660},
+  {"period": "2012-09-30", "licensed": 3351, "sorned": 629},
+  {"period": "2012-09-29", "licensed": 3269, "sorned": 618},
+  {"period": "2012-09-20", "licensed": 3246, "sorned": 661},
+  {"period": "2012-09-19", "licensed": 3257, "sorned": 667},
+  {"period": "2012-09-18", "licensed": 3248, "sorned": 627},
+  {"period": "2012-09-17", "licensed": 3171, "sorned": 660},
+  {"period": "2012-09-16", "licensed": 3171, "sorned": 676},
+  {"period": "2012-09-15", "licensed": 3201, "sorned": 656},
+  {"period": "2012-09-10", "licensed": 3215, "sorned": 622}
+];
+Morris.Line({
+  element: 'graph',
+  grid: false,
+  data: day_data,
+  xkey: 'period',
+  ykeys: ['licensed', 'sorned'],
+  labels: ['Licensed', 'SORN']
+});
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Mfile-digest://app/assets/bower_components/morrisjs/examples/no-grid.html;TTF:charsetI"
+utf-8;F:digest"%é¨ªÕË¤K©y>Ì¢Î¸k‘®¥*ƒhJlv¶|Ï¾kr:lengthi :dependencies_digest"%s¤Ûh3A>Ýé¶ì®“[=³¨ÿ[Î²ŽÏmmshñt:idI"E6f55ff88d00f2db745e8c72e98a07a70592b280bebc8c0cf27a7eb1e0797a545;F:
+mtimel+¦ïYV
