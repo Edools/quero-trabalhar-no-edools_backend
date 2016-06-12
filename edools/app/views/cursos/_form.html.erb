@@ -1,0 +1,42 @@
+<%= form_for @curso, :html => {:class => "form-horizontal"} do |f| %>
+  <%= render 'cursos/errors' if @curso.errors.any?  %>
+
+  <div class="form-group">
+    <%= f.label :titulo, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.text_field :titulo, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :escola_id, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.select :escola_id, options_for_select(@escolas.map{ |e| [e.nome, e.id] }), { class: 'form-control' } %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :descricao, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.text_field :descricao, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :conteudo, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.text_field :conteudo, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :duracao, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.number_field :duracao, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :preco, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.number_field :preco, class: 'form-control' %>
+    </div>
+  </div>
+  <%= f.submit t('actions.save'), class: 'btn btn-success col-md-3 col-md-offset-2' %>
+  <%= link_to 'Back', cursos_path, class: 'btn btn-default col-md-3' %>
+<% end %>

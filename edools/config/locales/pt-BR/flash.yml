@@ -1,0 +1,17 @@
+pt-BR:
+  flash:
+    escola:
+      create:
+        notice: 'Escola cadastrada com sucesso!'
+      update:
+        notice: 'Escola atualizada com sucesso!'
+      remove:
+        notice: 'Escola removida com sucesso!'
+
+    curso:
+      create:
+        notice: 'Curso cadastrado com sucesso!'
+      update:
+        notice: 'Curso atualizado com sucesso!'
+      remove:
+        notice: 'Curso removido com sucesso!'

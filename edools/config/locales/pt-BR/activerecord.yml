@@ -1,0 +1,58 @@
+pt-BR:
+  activerecord:
+    attributes:
+      escola:
+        nome: Nome
+        email: E-mail
+        pitch: Pitch
+        subdominio: Subdomínio
+        data_criacao: Data de criação
+
+      curso:
+        titulo: Título
+        escola: Escola
+        descricao: Descrição
+        conteudo: Conteúdo
+        duracao: Duração
+        data_criacao: Data de criação
+        alunos_ativos: Alunos ativos
+        preco: Preço
+
+      aluno:
+        nome: Nome
+        email: E-mail
+        ativo: Ativo
+        curso: Curso
+        escola: Escola
+
+    errors:
+      models:
+        escola:
+          attributes:
+            nome:
+              blank: não pode ser nulo
+            subdominio:
+              invalid: não está em um formato válido
+              blank: não pode ser nulo
+            email:
+              blank: não pode ser nulo
+              invalid: não está em um formato aceitável
+
+        curso:
+          attributes:
+            titulo:
+              blank: não pode ser nulo
+            duracao:
+              blank: não pode ser nulo
+              not_a_number: deve ser preenchido apenas com números
+            preco:
+              blank: não pode ser nulo
+              not_a_number: deve ser preenchido apenas com números
+
+        aluno:
+          attributes:
+            nome:
+              blank: não pode ser nulo
+            email:
+              blank: não pode ser nulo
+              invalid: não está em um formato aceitável

@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to t('menu.home'), root_path, class: 'navbar-brand' %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to t('menu.escolas'), escolas_path %></li>
+        <li><%= link_to t('menu.cursos'), cursos_path %></li>
+        <li><%= link_to t('menu.alunos'), alunos_path %></li>
+        <li><%= link_to t('menu.relatorios'), relatorios_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
