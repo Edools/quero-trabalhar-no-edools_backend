@@ -1,10 +1,28 @@
 <%= form_for(school) do |f| %>
+<p>
+  <%= f.label :nome, "Nome da Escola" %><br />
+  <%= f.text_field :nome%>
+</p>
+<p>
+  <%= f.label :email_dono, "Email do Dono" %><br />
+  <%= f.text_field :email_dono%>
+</p>
 
-<%= f.text_field :nome%>
-<%= f.text_field :email_dono%>
-<%= f.text_area :pitch%>
-<%= f.text_field :sub_dominio%>
-<%= f.date_field :data_criacao%>
+<p>
+  <%= f.label :pitch, "Pitch" %><br />
+  <%= f.text_area :pitch%>
+</p>
+
+<p>
+  <%= f.label :sub_dominio, "Subdomínio" %><br />
+  <%= f.text_field :sub_dominio%>
+</p>
+
+<p>
+  <%= f.label :data_criacao, "Data de Criação" %><br />
+  <%= f.date_field :data_criacao%>
+</p>
+
 <%= f.button "Cadastrar Escola"%>
 
 <% end %>
