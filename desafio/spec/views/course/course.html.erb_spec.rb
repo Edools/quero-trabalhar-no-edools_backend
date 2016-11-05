@@ -4,7 +4,7 @@ feature 'Criando Curso' do
   scenario "posso criar um curso" do
     visit '/'
 
-    click_link 'Cadastrar Curso'
+    click_link 'Criar Curso'
 
     fill_in 'Título do curso', with: 'Introdução a programação com Rails'
     fill_in 'Escola', with: 1 #ID da escola

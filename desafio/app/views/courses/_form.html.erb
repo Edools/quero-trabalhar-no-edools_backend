@@ -1,0 +1,38 @@
+<%= form_for(course) do |f| %>
+<p>
+  <%= f.label :titulo, "Título do curso" %><br />
+  <%= f.text_field :titulo%>
+</p>
+<p>
+  <%= f.label :escola_id, "Escola" %><br />
+  <%= f.text_field :escola_id%>
+</p>
+
+<p>
+  <%= f.label :descricao, "Descrição" %><br />
+  <%= f.text_area :descricao%>
+</p>
+
+<p>
+  <%= f.label :duracao, "Duração" %><br />
+  <%= f.text_field :duracao%>
+</p>
+
+<p>
+  <%= f.label :data_criacao, "Data de Criação" %><br />
+  <%= f.date_field :data_criacao%>
+</p>
+
+<p>
+  <%= f.label :alunos_ativos, "Alunos Ativos" %><br />
+  <%= f.text_field :alunos_ativos%>
+</p>
+
+<p>
+  <%= f.label :preco, "Preço" %><br />
+  <%= f.text_field :preco%>
+</p>
+
+<%= f.button "Criar Curso"%>
+
+<% end %>
