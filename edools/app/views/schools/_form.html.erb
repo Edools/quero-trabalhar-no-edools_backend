@@ -1,0 +1,31 @@
+<%= form_for @school do |f| %>
+  <% if @school.errors.any? %>
+    <div id="errors">
+      <ul>
+        <% @school.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :owner_email %>
+    <%= f.text_field :owner_email %>
+  </p>
+  <p>
+    <%= f.label :pitch %>
+    <%= f.text_field :pitch %>
+  </p>
+  <p>
+    <%= f.label :subdomain %>
+    <%= f.text_field :subdomain %>
+  </p>
+  <p>
+    <%= f.submit :id => 'submit' %>
+  </p>
+<% end %>
+  
