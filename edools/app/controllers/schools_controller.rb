@@ -55,24 +55,27 @@ class SchoolsController < ApplicationController
     def active_students
       @school = School.find(params[:id])
 
+      #create an array for inactive students
+      @inactive_students = []
+
       #create an array for active students
-      @active_students = Array.new
+      @active_students = []
 
-      #get all school students
-      @inactive_students = @school.students
-
-      #get all students which are enrolled in courses
-      @school.courses.each do |c|
-        c.students.each do |s|
-          @active_students << s
+      if @school.students.count > 0
+        #get all students which are enrolled in courses
+        @school.courses.each do |c|
+          @active_students += c.students
         end
+
+        #remove duplicates
+        @active_students = @active_students.uniq
+
+        #get all school students
+        @inactive_students = @school.students
+
+        #remove active students of the array with all students
+        @inactive_students = @inactive_students - @active_students
       end
-
-      #remove duplicates
-      @active_students = @active_students.uniq!
-
-      #remove active students of the array with all students
-      @inactive_students = @inactive_students - @active_students
 
     end
 
