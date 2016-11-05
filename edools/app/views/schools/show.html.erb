@@ -1,0 +1,31 @@
+<h1><%= t('.title') %></h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <td><%= @school.id %></td>
+    <tr>
+        <th>Name</th>
+        <td><%= @school.name %></td>
+    </tr>
+    <tr>
+        <th>Owner Email</th>
+        <td><%= @school.owner_email %></td>
+    </tr>
+    <tr>
+        <th>Pitch</th>
+        <td><%= @school.pitch %></td>
+    </tr>
+    <tr>
+        <th>Subdomain</th>
+        <td><%= @school.subdomain %></td>
+    </tr>
+    <tr>
+        <th>Creation Date</th>
+        <td><%= @school.created_at %></td>
+    </tr>
+
+    
+</table>
+
+<p><%= link_to "new course", new_course_path(:school_id => @school.id) %> </p>
