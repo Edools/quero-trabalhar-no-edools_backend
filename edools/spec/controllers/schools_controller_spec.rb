@@ -83,4 +83,25 @@ RSpec.describe SchoolsController, type: :controller do
     end
   end
 
+  describe "Active students" do
+    it "should not get active students" do
+      @school = create(:school)
+
+      get :active_students, id: @school.id
+      expect(response).to have_http_status(:ok)
+      expect(response).to render_template(:active_students)
+    end
+
+    it "should get active students" do
+      @school = create(:school)
+      @course = @school.courses.create(attributes_for(:course))
+      @student = @school.students.create(attributes_for(:student))
+      @course.students << @student
+
+      get :active_students, id: @school.id
+      expect(response).to have_http_status(:ok)
+      expect(response).to render_template(:active_students)
+    end
+  end
+
 end
