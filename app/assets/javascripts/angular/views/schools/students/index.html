@@ -1,0 +1,31 @@
+<div class="card-header">
+  <h2>Alunos</h2>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <a href="/#/schools/{{ vm.school_id }}/students/new" class="btn btn-primary waves-effect pull-right">Adicionar aluno</a>
+    </div>
+  </div>
+</div>
+<div class="card-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="student in vm.students">
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.phone }}</td>
+        <td><span class="label label-{{ student.ative ? 'success' : 'danger' }}">Ativo</span></td>
+        <th><a href="/#/students/{{ student.id }}/edit">Editar</a></th>
+      </tr>
+    </tbody>
+  </table>
+</div>

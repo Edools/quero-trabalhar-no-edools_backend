@@ -16,9 +16,14 @@
 //= require angular/angular
 //= require angular-route/angular-route
 //= require angular-resource/angular-resource
+//= require angular-input-masks/angular-input-masks-standalone
 
 //= require angular/app.module
 //= require angular/app.route
+//= require angular/course.factory
 //= require angular/school.factory
+//= require angular/student.factory
+//= require angular/courses.controller
 //= require angular/schools.controller
+//= require angular/students.controller
 //= require angular-locale_pt-br

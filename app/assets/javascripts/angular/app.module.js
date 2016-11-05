@@ -4,6 +4,7 @@
   angular
     .module('EdoolsApp', [
       'ngRoute',
-      'ngResource'
+      'ngResource',
+      'ui.utils.masks'
     ])
 })();

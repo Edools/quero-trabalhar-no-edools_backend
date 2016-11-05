@@ -2,7 +2,8 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
-    @courses = Course.all
+    @q = Course.ransack(params[:q])
+    @courses = @q.result(distinct: true).order(created_at: :desc)
   end
 
   def show
@@ -55,6 +56,6 @@ class CoursesController < ApplicationController
     end
 
     def course_params
-      params.require(:course).permit(:title, :description, :content, :duration, :amount)
+      params.require(:course).permit(:title, :description, :content, :duration, :amount, :school_id)
     end
 end
