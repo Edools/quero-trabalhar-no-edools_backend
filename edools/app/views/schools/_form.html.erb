@@ -8,24 +8,24 @@
       </ul>
     </div>
   <% end %>
-  <p>
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :owner_email %>
-    <%= f.text_field :owner_email %>
-  </p>
-  <p>
+    <%= f.text_field :owner_email, :class => "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :pitch %>
-    <%= f.text_field :pitch %>
-  </p>
-  <p>
+    <%= f.text_field :pitch, :class => "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :subdomain %>
-    <%= f.text_field :subdomain %>
-  </p>
+    <%= f.text_field :subdomain, :class => "form-control" %>
+  </div>
   <p>
-    <%= f.submit :id => 'submit' %>
+    <%= f.submit :id => 'submit', :class => "btn btn-default" %>
   </p>
 <% end %>
   

@@ -1,27 +1,28 @@
 <%= form_for ([@school, @school.courses.build]) do |f| %>
-  <p>
-  School: <em><%= @school.name %></em>
-  </p>
-  <p>
+  <div class="form-group">
+  <label for="__school">School</label>
+  <input type="text" name="__school" value="<%= @school.name %>" disabled="true" class="form-control">
+  </div>
+  <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-  <p>
+    <%= f.text_field :title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_field :description %>
-  </p>
-  <p>
+    <%= f.text_field :description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :content %>
-    <%= f.text_field :content %>
-  </p>
-  <p>
+    <%= f.text_field :content, :class => "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :duration %>
-    <%= f.text_field :duration %>
-  </p>
-  <p>
+    <%= f.text_field :duration, :class => "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :price %>
-    <%= f.text_field :price %>
-  </p>
+    <%= f.text_field :price, :class => "form-control" %>
+  </div>
   <p>
     <%= f.submit :id => 'submit' %>
   </p>

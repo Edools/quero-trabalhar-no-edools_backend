@@ -1,6 +1,6 @@
 <h1><%= t('.title') %></h1>
 
-<table>
+<table class="table">
     <tr>
         <th>Id</th>
         <td><%= @school.id %></td>
@@ -23,9 +23,31 @@
     <tr>
         <th>Creation Date</th>
         <td><%= @school.created_at %></td>
-    </tr>
-
-    
+    </tr> 
 </table>
 
-<p><%= link_to "new course", new_course_path(:school_id => @school.id) %> </p>
+<p>
+    <%= link_to "New course", 
+            new_school_course_path(:school_id => @school.id), 
+            :class => "label label-primary" %> 
+</p>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Active students</th>
+        <th></th>
+    </tr>
+    <% @school.courses.each do |course| %>
+    <tr>
+        <td><%= course.id %></td>
+        <td><%= course.title %></td>
+        <td><%= course.enrolls.count %></td>
+        <td>
+        <%= link_to "Edit", edit_school_course_path(:school_id => @school.id, :id => course.id), :class => "label label-default" %>
+        <%= link_to "Delete", school_course_path(:school_id => @school.id, :id => course.id), method: :delete, :class => "label label-danger" %>
+        </td>
+    </tr>
+    <% end %>
+</table>

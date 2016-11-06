@@ -27,7 +27,7 @@ class SchoolsController < ApplicationController
   end
 
   def destroy
-    @school = School.find(params[:school_id])
+    @school = School.find(params[:id])
     @school.destroy
     redirect_to school_path(@school), :notice => t('flash.notice.school_destroyed')
   end

@@ -1,11 +1,14 @@
 <h1><%= t('.title') %></h1>
-
-<table>
+<p>
+    <%= link_to "New School", new_school_path, :class => "label label-primary" %>
+</p>
+<table class="table">
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Owner Email</th>
         <th>Creation Date</th>
+        <th></th>
     </tr>
     <% @schools.each do |school| %>
     <tr>
@@ -13,7 +16,11 @@
         <td><%= school.name %></td>
         <td><%= school.owner_email %></td>
         <td><%= school.created_at %></td>
-        <td></td>
+        <td>
+            <%= link_to "Show", school_path(school.id), :class => "label label-default" %>
+            <%= link_to "Edit", edit_school_path(school.id), :class => "label label-default" %>
+            <%= link_to "Delete", school_path(school.id), method: :delete, :class => "label label-danger" %>
+        </td>
     </tr>
     <% end %>
 </table>
