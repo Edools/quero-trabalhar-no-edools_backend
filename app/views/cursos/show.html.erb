@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @curso.titulo %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @curso.descricao %>
+</p>
+
+<p>
+  <strong>Conteudo:</strong>
+  <%= @curso.conteudo %>
+</p>
+
+<p>
+  <strong>Duracao:</strong>
+  <%= @curso.duracao %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @curso.data %>
+</p>
+
+<p>
+  <strong>Preco:</strong>
+  <%= @curso.preco %>
+</p>
+
+<p>
+  <strong>Escola:</strong>
+  <%= @curso.escola.nome %>
+</p>
+
+<div class="forms-actions">
+    <%= link_to 'Edit', edit_curso_path(@curso), :class => 'btn btn-primary btn-sm active' %>
+    <%= link_to 'Back', cursos_path, :class => 'btn btn-danger btn-sm active' %>
+</div>

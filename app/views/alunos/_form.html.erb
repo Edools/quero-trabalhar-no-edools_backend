@@ -1,0 +1,32 @@
+<%= form_for(aluno) do |f| %>
+  <% if aluno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(aluno.errors.count, "error") %> prohibited this aluno from being saved:</h2>
+
+      <ul>
+      <% aluno.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :matricula %>
+    <%= f.text_field :matricula %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select(:status, [['ATIVO',1],['INATIVO',0]]) %>
+  </div>
+  <br clear=all />
+  <div class="actions">
+      <%= f.submit nil, :class => "btn btn-large btn-primary" %>
+  </div>
+<% end %>

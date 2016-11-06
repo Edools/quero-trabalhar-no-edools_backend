@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>CRUD Cursos</h1>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Busca pelo titulo do curso..</h3>
+    </div>
+    <div class="panel-body">
+        <%= form_tag(cursos_path, :method => "get") do %>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :class => "btn btn-primary btn-sm active" %>
+        <% end %>
+    </div>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Titulo</th>
+      <th>Descricao</th>
+      <th>Conteudo</th>
+      <th>Duracao</th>
+      <th>Data</th>
+      <th>Preco</th>
+      <th>Escola</th>
+      <th><%=t '.actions', :default => 'Ações' %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cursos.each.with_index do |curso,index| %>
+      <tr>
+        <td scope="row"><%= index+1 %></td>
+        <td><%= curso.titulo %></td>
+        <td><%= curso.descricao %></td>
+        <td><%= curso.conteudo %></td>
+        <td><%= curso.duracao %></td>
+        <td><%= curso.data %></td>
+        <td><%= curso.preco %></td>
+        <td><%= curso.escola.nome %></td>
+        <td>
+            <%= link_to 'Show', curso %>
+            <%= link_to image_tag('edit.png'), edit_curso_path(curso), :class => 'quick-edit', :title => 'editar' %>
+            <%= link_to image_tag('delete.png'), curso, method: :delete, data: { confirm: 'Você tem certeza?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br clear=all />
+
+<div class="form-actions">
+    <%= link_to 'Novo Curso', new_curso_path, :class => 'btn btn-primary btn-sm active' %>
+</div>

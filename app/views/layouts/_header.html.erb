@@ -1,0 +1,29 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Desafio Edools", root_path, id: "logo" %>
+    <nav>
+        <ul class="nav navbar-nav navbar-right">
+            <% if params[:action] == "index" && params[:controller] == "alunos" %>
+                <li class="active"><%= link_to "CRUD Aluno", alunos_url %></li>
+            <% else %>
+                <li><%= link_to "CRUD Aluno", alunos_url %></li>
+            <% end %>
+            <% if params[:action] == "index" && params[:controller] == "escolas" %>
+                <li class="active"><%= link_to "CRUD Escolas", escolas_url %></li>
+            <% else %>
+                <li><%= link_to "CRUD Escolas", escolas_url %></li>
+            <% end %>
+            <% if params[:action] == "index" && params[:controller] == "cursos" %>
+                <li class="active"><%= link_to "CRUD Cursos", cursos_url %></li>
+            <% else %>
+                <li><%= link_to "CRUD Cursos", cursos_url %></li>
+            <% end %>
+            <% if params[:action] == "matriculas" && params[:controller] == "home" %>
+                <li class="active"><%= link_to "Matriculas", matriculas_url %></li>
+            <% else %>
+                <li><%= link_to "Matriculas", matriculas_url %></li>
+            <% end %>
+        </ul>
+    </nav>
+  </div>
+</header>
