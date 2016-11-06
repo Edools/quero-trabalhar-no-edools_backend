@@ -17,6 +17,29 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
   end
 
+  def edit
+    @course = Course.find(params[:id])
+  end
+
+  def update
+    @course = Course.find(params[:id])
+    if @course.update(course_params)
+      redirect_to @course, notice: "Curso atualizado com sucesso."
+    else
+      redirect_to root_path, alert: "Erro ao atualizar o curso."
+    end
+  end
+
+  def destroy
+    @course = Course.find(params[:id])
+    if @course.destroy
+      redirect_to root_path, notice: "Curso excluído com sucesso."
+    else
+      redirect_to root_path, alert: "Erro ao excluir o curso."
+    end
+
+  end
+
   private
 
   def course_params

@@ -1,0 +1,12 @@
+<div class="well">
+  <strong>Nome do curso: </strong> <%= @course.titulo %><br>
+  <strong>Descrição: </strong> <%= @course.descricao %><br>
+  <strong>Duração: </strong> <%= @course.duracao %><br>
+  <strong>Alunos ativos: </strong> <%= @course.alunos_ativos %><br>
+  <strong>Preço: </strong> <%= @course.preco %><br>
+  <br>
+  <hr>
+  <%= link_to "Editar", edit_course_path(@course.id), class:"btn btn-warning" %> |
+  <%= link_to 'Excluir',  @course,  method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+</div>
+<hr>
