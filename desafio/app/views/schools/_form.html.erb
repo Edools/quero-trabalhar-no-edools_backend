@@ -35,7 +35,9 @@
 <fieldset id="courses-school", class="form-group">
   <legend>Cursos:</legend>
   <ol>
-
+    <%= f.fields_for :courses do |course| %>
+        <%= render 'course_fields', :f => course %>
+    <% end %>
   </ol>
 </fieldset>
 

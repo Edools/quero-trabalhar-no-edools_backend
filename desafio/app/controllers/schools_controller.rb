@@ -23,6 +23,30 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
   end
 
+  def edit
+    @school = School.find(params[:id])
+  end
+
+  def update
+    @school = School.find(params[:id])
+    if @school.update(school_params)
+      redirect_to @school, notice: "Escola atualizada com sucesso."
+    else
+      flash[:alert] = "Erro ao atualizar a Escola"
+      render "new"
+    end
+  end
+
+  def destroy
+    @school = School.find(params[:id])
+    if @school.destroy
+      redirect_to root_path, notice: "Escola excluída com sucesso."
+    else
+      redirect_to root_path, alert: "Erro ao excluir a Escola."
+    end
+
+  end
+
   private
 
   def school_params

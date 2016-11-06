@@ -1,4 +1,12 @@
-<%= @school.nome %><br>
-<% for course in @school.courses %>
-<%= course.titulo %>
-<% end %>
+<div class="well">
+  <strong>Nome da Escola: </strong> <%= @school.nome %><br>
+  <strong>Curso oferecidos: </strong>
+  <% for course in @school.courses %>
+  <%= course.titulo %> |
+  <% end %>
+  <br>
+  <hr>
+  <%= link_to "Editar", edit_school_path(@school.id), class:"btn btn-warning" %> |
+  <%= link_to 'Excluir',  @school,  method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+</div>
+ <hr>
