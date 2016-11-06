@@ -1,15 +1,6 @@
-<%= form_for @course do |f| %>
-  <% if @course.errors.any? %>
-    <div id="errors">
-      <ul>
-        <% @course.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for ([@school, @school.courses.build]) do |f| %>
   <p>
-  School: <em><%= @course.school.name %></em>
+  School: <em><%= @school.name %></em>
   </p>
   <p>
     <%= f.label :title %>

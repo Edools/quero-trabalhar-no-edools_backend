@@ -22,6 +22,10 @@ class SchoolsController < ApplicationController
     end
   end
 
+  def update
+
+  end
+
   def destroy
     @school = School.find(params[:school_id])
     @school.destroy

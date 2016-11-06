@@ -1,0 +1,18 @@
+<h1><%= t('.title') %></h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>E-mail</th>
+    <th></th>
+  </tr>
+  <% @students.each do |student| %>
+    <tr>
+      <td><%= student.id %></td>
+      <td><%= student.name %></td>
+      <td><%= student.email %></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
