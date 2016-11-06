@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: edools_development
+
+test:
+  <<: *default
+  database: edools_test
+
+production:
+  <<: *default
+  database: edools_production
+  username:
+  password:

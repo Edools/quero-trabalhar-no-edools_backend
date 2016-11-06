@@ -1,0 +1,54 @@
+<div class="card-header">
+  <h2>Escola</h2>
+</div>
+<div class="card-body card-padding">
+  <form class="form-horizontal" name="schoolForm" novalidate="novalidate">
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="school_name">
+        Nome
+      </label>
+      <div class="col-sm-9">
+        <input class="form-control" type="text" ng-model="vm.school.name" name="school_name" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="owner_email">
+        E-mail do Proprietário
+      </label>
+      <div class="col-sm-9">
+        <input class="form-control" type="text" ng-model="vm.school.owner_email" name="owner_email" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="school_pitch">
+        Pitch
+      </label>
+      <div class="col-sm-9">
+        <input class="form-control" type="text" ng-model="vm.school.pitch" name="school_pitch" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="school_subdomain">
+        Subdomínio
+      </label>
+      <div class="col-sm-9">
+        <input class="form-control" type="text" ng-model="vm.school.subdomain" name="school_subdomain" required>
+        <p style="margin-top: 10px; font-size: 14px; font-weight: 100;" ng-show="vm.school.subdomain">Preview: {{ vm.school.subdomain }}.edools.com</p>
+      </div>
+    </div>
+
+    <div>
+      <a href="/#/schools" class="btn btn-default waves-effect">Voltar</a>
+      <button class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="schoolForm.$invalid">Salvar</button>
+      <span ng-show="schoolForm.$invalid">
+        Favor preencher os campos:
+        <span class="label label-danger" ng-show="schoolForm.school_name.$invalid">Nome</span>
+        <span class="label label-danger" ng-show="schoolForm.owner_email.$invalid">E-mail do Proprietário</span>
+        <span class="label label-danger" ng-show="schoolForm.school_subdomain.$invalid">Subdomínio</span>
+      </span>
+    </div>
+  </form>
+</div>

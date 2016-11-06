@@ -1,0 +1,80 @@
+<div class="card-header">
+  <h2>Curso</h2>
+</div>
+<div class="card-body card-padding">
+  <form class="form-horizontal" name="courseForm" novalidate="novalidate">
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="course_school_id">
+        Escola
+      </label>
+      <div class="col-sm-9">
+        <select class="form-control"
+                name="course_school_id"
+                ng-model="vm.course.school_id"
+                ng-options="school.id as school.name for school in vm.schools"
+    						ng-selected="vm.course.school_id"
+                required>
+    		</select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="course_title">
+        Título
+      </label>
+      <div class="col-sm-9">
+        <input class="form-control" type="text" ng-model="vm.course.title" name="course_title" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="course_description">
+        Descrição
+      </label>
+      <div class="col-sm-9">
+        <textarea class="form-control" ng-model="vm.course.description" name="course_description" required></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="course_content">
+        Conteúdo
+      </label>
+      <div class="col-sm-9">
+        <textarea class="form-control" ng-model="vm.course.content" name="course_content" required></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="course_duration">
+        Duração
+      </label>
+      <div class="col-sm-9">
+        <input class="form-control" type="text" ng-model="vm.course.duration" name="course_duration" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="course_amount">
+        Preço
+      </label>
+      <div class="col-sm-9">
+        <input class="form-control" type="text" ng-model="vm.course.amount" name="course_amount" ui-money-mask required>
+      </div>
+    </div>
+
+    <div>
+      <a href="/#/courses" class="btn btn-default waves-effect">Voltar</a>
+      <button class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="courseForm.$invalid">Salvar</button>
+      <span ng-show="courseForm.$invalid">
+        Favor preencher os campos:
+        <span class="label label-danger" ng-show="courseForm.course_school_id.$invalid">Escola</span>
+        <span class="label label-danger" ng-show="courseForm.course_title.$invalid">Título</span>
+        <span class="label label-danger" ng-show="courseForm.course_description.$invalid">Descrição</span>
+        <span class="label label-danger" ng-show="courseForm.course_content.$invalid">Conteúdo</span>
+        <span class="label label-danger" ng-show="courseForm.course_duration.$invalid">Duração</span>
+        <span class="label label-danger" ng-show="courseForm.course_amount.$invalid">Preço</span>
+      </span>
+    </div>
+  </form>
+</div>

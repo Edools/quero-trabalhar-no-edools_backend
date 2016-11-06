@@ -1,0 +1,48 @@
+<div class="card-header">
+  <h2>Escolas</h2>
+  <hr>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <div class="fg-line">
+          <input class="form-control" type="text" ng-model="vm.q" placeholder="Pesquisar escola por nome">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <a href="/#/schools/new" class="btn btn-primary waves-effect pull-right">Criar Escola</a>
+    </div>
+  </div>
+</div>
+<div class="card-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>E-mail do Proprietário</th>
+        <th>Pitch</th>
+        <th>Subdomínio</th>
+        <th>Criado em</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="school in vm.schools">
+        <td>{{ school.id }}</td>
+        <td>{{ school.name }}</td>
+        <td>{{ school.owner_email }}</td>
+        <td>{{ school.pitch }}</td>
+        <td>{{ school.subdomain }}</td>
+        <td>{{ school.created_at | date }}</td>
+        <th><a href="/#/schools/{{ school.id }}/students">Alunos</a></th>
+        <th><a href="/#/schools/{{ school.id }}/report">Alunos Ativos</a></th>
+        <th><a href="/#/schools/{{ school.id }}/edit">Editar</a></th>
+      </tr>
+      <tr ng-show="vm.schools.length == 0">
+        <td colspan="9">Nenhuma escola encontrada.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

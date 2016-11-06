@@ -1,0 +1,55 @@
+<div class="card-header">
+  <h2>Cursos</h2>
+  <hr>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <div class="fg-line">
+          <input class="form-control" type="text" ng-model="vm.q.title" placeholder="Pesquisar curso por título">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <select class="form-control"
+                name="course_school_id"
+                ng-model="vm.q.school_id"
+                ng-options="school.id as school.name for school in vm.schools"
+    						ng-selected="vm.course.school_id"
+                required>
+          <option value="">Filtrar por escola</option>
+    		</select>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <a href="/#/courses/new" class="btn btn-primary waves-effect pull-right">Criar Curso</a>
+    </div>
+  </div>
+</div>
+<div class="card-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Escola</th>
+        <th>Título</th>
+        <th>Duração</th>
+        <th>Criado em</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="course in vm.courses">
+        <td>{{ course.id }}</td>
+        <td>{{ course.school.name }}</td>
+        <td>{{ course.title }}</td>
+        <td>{{ course.duration }}</td>
+        <td>{{ course.created_at | date }}</td>
+        <td><a href="/#/courses/{{ course.id }}/edit">Editar</a></td>
+      </tr>
+      <tr ng-show="vm.courses.length == 0">
+        <td colspan="6">Nenhuma curso encontrado.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
