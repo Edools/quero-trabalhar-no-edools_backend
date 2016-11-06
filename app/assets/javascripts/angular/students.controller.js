@@ -7,14 +7,15 @@
     .controller('StudentsNewController', StudentsNewController)
     .controller('StudentsEditController', StudentsEditController)
 
-  StudentsController.$inject     = ['$scope', '$routeParams', 'StudentFactory']
+  StudentsController.$inject     = ['$scope', '$routeParams', 'StudentFactory', 'SchoolFactory']
   StudentsNewController.$inject  = ['$scope', '$routeParams', '$location', 'StudentFactory']
   StudentsEditController.$inject = ['$scope', '$routeParams', '$location', 'StudentFactory']
 
-  function StudentsController($scope, $routeParams, StudentFactory) {
+  function StudentsController($scope, $routeParams, StudentFactory, SchoolFactory) {
     var vm = this;
-    vm.students = StudentFactory.query({ school_id: $routeParams.school_id });
+    vm.students = StudentFactory.query({ 'q[school_id_eq]': $routeParams.school_id });
     vm.school_id = $routeParams.school_id;
+    vm.school = SchoolFactory.get({ id: $routeParams.school_id });
   }
 
   function StudentsNewController($scope, $routeParams, $location, StudentFactory) {

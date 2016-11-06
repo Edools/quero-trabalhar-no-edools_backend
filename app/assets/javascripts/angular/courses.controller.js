@@ -19,8 +19,7 @@
     vm.q = {};
 
     $scope.$watchCollection('vm.q', function(current, original) {
-      console.log('teste');
-      if (vm.q.title != undefined) {
+      if (vm.q.title != undefined || vm.q.school_id != undefined) {
         vm.courses = CourseFactory.query({ 'q[title_cont]': current.title, 'q[school_id_eq]': current.school_id });
       }
     });

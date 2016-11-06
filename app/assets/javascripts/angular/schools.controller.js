@@ -6,10 +6,12 @@
     .controller('SchoolsController', SchoolsController)
     .controller('SchoolsNewController', SchoolsNewController)
     .controller('SchoolsEditController', SchoolsEditController)
+    .controller('SchoolsReportsController', SchoolsReportsController)
 
-  SchoolsController.$inject     = ['$scope', 'SchoolFactory']
-  SchoolsNewController.$inject  = ['$scope', '$routeParams', '$location', 'SchoolFactory']
-  SchoolsEditController.$inject = ['$scope', '$routeParams', '$location', 'SchoolFactory']
+  SchoolsController.$inject        = ['$scope', 'SchoolFactory']
+  SchoolsNewController.$inject     = ['$scope', '$routeParams', '$location', 'SchoolFactory']
+  SchoolsEditController.$inject    = ['$scope', '$routeParams', '$location', 'SchoolFactory']
+  SchoolsReportsController.$inject = ['$scope', '$routeParams', '$location', 'StudentFactory', SchoolFactory]
 
   function SchoolsController($scope, SchoolFactory) {
     var vm = this;
@@ -52,5 +54,11 @@
 				}
 			);
     }
+  }
+
+  function SchoolsReportsController($scope, $routeParams, $location, StudentFactory, SchoolFactory) {
+    var vm = this;
+    vm.students = StudentFactory.query({ 'q[school_id_eq]': $routeParams.school_id, 'q[ative_true]': 1 });
+    vm.school   = SchoolFactory.get({ id: $routeParams.school_id });
   }
 })();

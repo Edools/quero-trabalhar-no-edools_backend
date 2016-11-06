@@ -32,6 +32,11 @@
   	    controller: 'StudentsNewController',
         controllerAs: 'vm'
   	  })
+      .when('/schools/:school_id/report', {
+  	    templateUrl: '/assets/angular/views/schools/reports/students_active.html',
+  	    controller: 'SchoolsReportsController',
+        controllerAs: 'vm'
+  	  })
       .when('/students/:id/edit', {
   	    templateUrl: '/assets/angular/views/schools/students/form.html',
   	    controller: 'StudentsEditController',

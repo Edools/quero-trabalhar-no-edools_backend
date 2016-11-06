@@ -2,7 +2,8 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def index
-    @students = Student.where(school_id: params[:school_id]).order(name: :asc)
+    @q = Student.ransack(params[:q])
+    @students = @q.result(distinct: true).order(name: :asc)
   end
 
   def show
