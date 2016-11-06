@@ -1,4 +1,9 @@
 class SchoolsController < ApplicationController
+
+  def index
+    @schools = School.all
+  end
+
   def new
     @school = School.new
     @school.courses.build
