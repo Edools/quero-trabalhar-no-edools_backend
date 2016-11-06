@@ -5,6 +5,9 @@ class EscolasController < ApplicationController
   # GET /escolas.json
   def index
     @escolas = Escola.all
+    if params[:search]
+      @escolas = Escola.search(params[:search])
+    end
   end
 
   # GET /escolas/1

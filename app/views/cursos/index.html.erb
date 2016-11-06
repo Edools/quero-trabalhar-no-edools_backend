@@ -2,6 +2,17 @@
 
 <h1>CRUD Cursos</h1>
 
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Busca pelo titulo do curso..</h3>
+    </div>
+    <div class="panel-body">
+        <%= form_tag(cursos_path, :method => "get") do %>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :class => "btn btn-primary btn-sm active" %>
+        <% end %>
+    </div>
+</div>
 <table class="table table-hover">
   <thead>
     <tr>

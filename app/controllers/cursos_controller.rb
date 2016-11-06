@@ -5,6 +5,9 @@ class CursosController < ApplicationController
   # GET /cursos.json
   def index
     @cursos = Curso.all
+    if params[:search]
+      @cursos = Curso.search(params[:search])
+    end
   end
 
   # GET /cursos/1
