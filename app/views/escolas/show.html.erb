@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @escola.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @escola.email %>
+</p>
+
+<p>
+  <strong>Pitch:</strong>
+  <%= @escola.pitch %>
+</p>
+
+<p>
+  <strong>Subdominio:</strong>
+  <%= @escola.subdominio %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @escola.data %>
+</p>
+
+<%= link_to 'Edit', edit_escola_path(@escola) %> |
+<%= link_to 'Back', escolas_path %>

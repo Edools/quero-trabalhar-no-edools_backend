@@ -1,0 +1,43 @@
+<%= form_for(escola) do |f| %>
+  <% if escola.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(escola.errors.count, "error") %> prohibited this escola from being saved:</h2>
+
+      <ul>
+      <% escola.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pitch %>
+    <%= f.text_field :pitch %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subdominio %>
+    <%= f.text_field :subdominio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data %>
+    <%= f.date_select :data %>
+  </div>
+
+  <br clear=all />
+  <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary btn-large' %>
+  </div>
+<% end %>

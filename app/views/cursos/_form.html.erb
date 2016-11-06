@@ -1,0 +1,52 @@
+<%= form_for(curso) do |f| %>
+  <% if curso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
+
+      <ul>
+      <% curso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %>
+    <%= f.text_field :titulo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descricao %>
+    <%= f.text_area :descricao %>
+  </div>
+
+  <div class="field">
+    <%= f.label :conteudo %>
+    <%= f.text_area :conteudo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :duracao %>
+    <%= f.text_field :duracao %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data %>
+    <%= f.date_select :data %>
+  </div>
+
+  <div class="field">
+    <%= f.label :preco %>
+    <%= f.text_field :preco %>
+  </div>
+
+  <div class="field">
+    <%= f.label :escola_id %>
+    <%= f.collection_select(:escola_id, Escola.all, :id, :nome, {:inclue_blank => true}) %>
+  </div>
+
+  <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary btn-large' %>
+  </div>
+<% end %>

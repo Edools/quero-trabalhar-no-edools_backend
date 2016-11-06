@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>CRUD Escolas</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Pitch</th>
+      <th>Subdominio</th>
+      <th>Data</th>
+      <th><%=t '.actions', :default => 'Ações' %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @escolas.each.with_index do |escola,index| %>
+      <tr>
+        <td class="row"><%= index+1 %></td>
+        <td><%= escola.nome %></td>
+        <td><%= escola.email %></td>
+        <td><%= escola.pitch %></td>
+        <td><%= escola.subdominio %></td>
+        <td><%= escola.data %></td>
+        <td>
+            <%= link_to 'Show', escola %>
+            <%= link_to image_tag('edit.png'), edit_escola_path(escola), :class => 'quick-edit', :title => 'editar' %>
+            <%= link_to image_tag('delete.png'), escola, method: :delete, data: { confirm: 'Você tem certeza?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="form-actions">
+    <%= link_to 'Nova Escola', new_escola_path, :class => 'btn btn-primary btn-sm active' %>
+</div>

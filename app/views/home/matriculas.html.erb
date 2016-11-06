@@ -1,0 +1,43 @@
+<% provide(:title, 'Matricular Alunos') %>
+<h1>Matricular Alunos</h1>
+
+<% unless @escolas.blank? %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Selecione a Escola...</div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Email do Dono</th>
+          <th><%=t '.actions', :default => 'Ações' %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @escolas.each.with_index do |s,index| %>
+            <tr>
+              <th scope="row"><%= index+1 %></th>
+              <td><%= s.nome %></td>
+              <td colspan="2"><%= s.email %></td>
+            </tr>
+            <% unless s.cursos.blank? %>
+                <tr>
+                    <td class="text-center" colspan="4">Cursos</td>
+                </tr>
+                <% s.cursos.each.with_index do |c,idx| %>
+                    <tr>
+                        <td scope="row" class="text-center" colspan="2"><%= idx+1 %></td>
+                        <td><%= c.titulo %></td>
+                        <td>
+                            <%= link_to t('.select', :default => t("helpers.links.select")), matricula_escola_path(s,c), :class => 'btn btn-primary btn-sm active' %>
+                        </td>
+                    </tr>
+                <% end %>
+            <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+    Nenhuma Escola encontrada!
+<% end %>

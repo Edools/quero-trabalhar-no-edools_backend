@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<h1>Visualizar Aluno</h1>
+
+<div class="list-group">
+    <a href="#" class="list-group-item active">
+        <h4 class="list-group-item-heading"><%= @aluno.nome %></h4>
+        <p class="list-group-item-text">Matrícula: <%= @aluno.matricula %></p>
+        <p class="list-group-item-text">Status: <%= @aluno.status == 1 ? 'ATIVO' : 'INATIVO' %></p>
+    </a>
+</div>
+
+<div class="form-actions">
+    <%= link_to 'Edit', edit_aluno_path(@aluno), :class => 'btn btn-primary btn-sm active' %> |
+    <%= link_to 'Back', alunos_path, :class => 'btn btn-danger btn-sm' %>
+</div>
