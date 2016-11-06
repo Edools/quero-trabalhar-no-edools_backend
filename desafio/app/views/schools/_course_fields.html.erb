@@ -1,0 +1,20 @@
+<div class="nested-fields">
+  <%= f.label :titulo, "Título do curso" %>
+  <%= f.text_field :titulo%><br />
+
+  <%= f.label :descricao, "Descrição" %>
+  <%= f.text_area :descricao%><br />
+
+  <%= f.label :duracao, "Duração" %>
+  <%= f.text_field :duracao%><br />
+
+  <%= f.label :data_criacao, "Data de Criação" %>
+  <%= f.date_field :data_criacao%><br />
+
+  <%= f.label :alunos_ativos, "Alunos Ativos" %>
+  <%= f.text_field :alunos_ativos%><br />
+
+  <%= f.label :preco, "Preço" %>
+  <%= f.text_field :preco%><br />
+  <%= link_to_remove_association "Excluir curso", f %>
+</div>

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Course, type: :model do
 
   subject {
-    described_class.new(titulo: "Programação com Rails", escola_id: 1,
+    described_class.new(titulo: "Programação com Rails", school_id: 1,
     descricao:"Lorem ipsum dolor sit amet, quo eu soluta detracto",
     duracao:20, data_criacao:Time.now, alunos_ativos:0, preco: 200.00)
   }
@@ -20,7 +20,7 @@ RSpec.describe Course, type: :model do
     end
 
     it "quando o id da escola não for informado" do
-      subject.escola_id = ""
+      subject.school_id = ""
       expect(subject).to_not be_valid
     end
 

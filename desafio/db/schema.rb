@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20161105115502) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "titulo"
-    t.integer  "escola_id"
+    t.integer  "school_id"
     t.text     "descricao"
     t.integer  "duracao"
     t.date     "data_criacao"

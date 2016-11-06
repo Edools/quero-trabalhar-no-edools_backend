@@ -2,7 +2,7 @@ class CreateCourses < ActiveRecord::Migration[5.0]
   def change
     create_table :courses do |t|
       t.string :titulo
-      t.integer :escola_id
+      t.integer :school_id
       t.text :descricao
       t.integer :duracao
       t.date :data_criacao

@@ -1,4 +1,5 @@
-<%= form_for(school) do |f| %>
+<%= form_for(@school) do |f| %>
+<%= render 'shared/erros', object: @school %>
 <p>
   <%= f.label :nome, "Nome da Escola" %><br />
   <%= f.text_field :nome%>
@@ -22,6 +23,10 @@
   <%= f.label :data_criacao, "Data de Criação" %><br />
   <%= f.date_field :data_criacao%>
 </p>
+
+<%= link_to_add_association 'Adicionar curso', f, :courses,
+'data-association-insertion-none' => "#courses-school ol",
+'data-association-insertion-method' => "append"%>
 
 <%= f.button "Cadastrar Escola"%>
 

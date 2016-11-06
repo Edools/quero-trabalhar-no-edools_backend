@@ -1,6 +1,7 @@
 class SchoolsController < ApplicationController
   def new
     @school = School.new
+    @school.courses.build
   end
 
   def create
@@ -20,6 +21,6 @@ class SchoolsController < ApplicationController
   private
 
   def school_params
-    params.require(:school).permit(:nome,:email_dono,:pitch,:sub_dominio,:data_criacao)
+    params.require(:school).permit(:nome,:email_dono,:pitch,:sub_dominio,:data_criacao, courses_attributes: [:id, :titulo, :descricao, :duracao, :data_criacao, :alunos_ativos, :preco, :_destroy])
   end
 end
