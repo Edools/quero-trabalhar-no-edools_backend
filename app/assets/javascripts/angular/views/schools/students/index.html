@@ -24,7 +24,10 @@
         <td>{{ student.name }}</td>
         <td>{{ student.phone }}</td>
         <td><span class="label label-{{ student.ative ? 'success' : 'danger' }}">Ativo</span></td>
-        <th><a href="/#/students/{{ student.id }}/edit">Editar</a></th>
+        <td><a href="/#/students/{{ student.id }}/edit">Editar</a></td>
+      </tr>
+      <tr ng-show="vm.students.length == 0">
+        <td colspan="5">Nenhuma aluno encontrado.</td>
       </tr>
     </tbody>
   </table>

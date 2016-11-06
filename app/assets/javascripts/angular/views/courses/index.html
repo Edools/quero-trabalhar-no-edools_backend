@@ -45,7 +45,10 @@
         <td>{{ course.title }}</td>
         <td>{{ course.duration }}</td>
         <td>{{ course.created_at | date }}</td>
-        <th><a href="/#/courses/{{ course.id }}/edit">Editar</a></th>
+        <td><a href="/#/courses/{{ course.id }}/edit">Editar</a></td>
+      </tr>
+      <tr ng-show="vm.courses.length == 0">
+        <td colspan="6">Nenhuma curso encontrado.</td>
       </tr>
     </tbody>
   </table>

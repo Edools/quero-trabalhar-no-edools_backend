@@ -40,6 +40,9 @@
         <th><a href="/#/schools/{{ school.id }}/report">Alunos Ativos</a></th>
         <th><a href="/#/schools/{{ school.id }}/edit">Editar</a></th>
       </tr>
+      <tr ng-show="vm.schools.length == 0">
+        <td colspan="9">Nenhuma escola encontrada.</td>
+      </tr>
     </tbody>
   </table>
 </div>
