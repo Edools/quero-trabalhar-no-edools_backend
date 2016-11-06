@@ -1,0 +1,37 @@
+<h1><%= t('.title') %></h1>
+
+<%= form_for([@student, @enroll]) do |f| %>
+  <% if @enroll.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @enroll.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h2>Avaliable courses</h2>
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th>School</th>
+    <th>Course</th>
+    <th></th>
+  </tr>
+  <% @schools.each_with_index do |school, index| %>
+    <% school.courses.each do |course| %>
+      <tr class="<%= "info" unless (index % 2) == 0  %>" >
+        <td><%= course.id %></td>
+        <td><%= school.name %></td>
+        <td><%= course.title %></td>
+        <td><%= f.radio_button :course_id, course.id %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </table>
+
+  <p>
+    <%= f.submit :id => 'submit' %>
+  </p>
+<% end %>

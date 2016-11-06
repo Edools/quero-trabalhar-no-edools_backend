@@ -1,4 +1,13 @@
-<%= form_for ([@school, @school.courses.build]) do |f| %>
+<%= form_for ([@school, @course]) do |f| %>
+  <% if @course.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @course.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="form-group">
   <label for="__school">School</label>
   <input type="text" name="__school" value="<%= @school.name %>" disabled="true" class="form-control">

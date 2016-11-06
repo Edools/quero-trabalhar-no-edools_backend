@@ -1,6 +1,9 @@
 <h1><%= t('.title') %></h1>
-
-<table>
+<p>
+  <%= link_to "New student", new_student_path, :class => "label label-primary" %>
+</p>
+<% unless @students.empty? %>
+<table class="table">
   <tr>
     <th>Id</th>
     <th>Name</th>
@@ -12,7 +15,14 @@
       <td><%= student.id %></td>
       <td><%= student.name %></td>
       <td><%= student.email %></td>
-      <td></td>
+      <td>
+        <%= link_to "Show", student_path(student.id), :class => "label label-default" %>
+        <%= link_to "Edit", edit_student_path(student.id), :class => "label label-default" %>
+        <%= link_to "Delete", student_path(student.id), :method => :delete, :class => "label label-danger" %>
+      </td>
     </tr>
   <% end %>
 </table>
+<% else %>
+  <h2>There is no students to show. </h2>
+<% end %>

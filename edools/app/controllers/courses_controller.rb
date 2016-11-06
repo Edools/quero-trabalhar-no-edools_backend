@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   def new
     @school = School.find(params[:school_id])
+    @course = @school.courses.build
   end
 
   def create
@@ -11,6 +12,22 @@ class CoursesController < ApplicationController
       redirect_to @school
     else
       render :new
+    end
+  end
+
+  def edit
+    @school = School.find(params[:school_id])
+    @course = @school.courses.find(params[:id])
+  end
+
+  def update
+    @school = School.find(params[:school_id])
+    @course = @school.courses.create(course_params)
+
+    if @course.update(course_params)
+      redirect_to @school, :notice => t('flash.notice.course_updated')
+    else
+      render :edit
     end
   end
 

@@ -22,8 +22,18 @@ class SchoolsController < ApplicationController
     end
   end
 
-  def update
+  def edit
+    @school = School.find(params[:id])
+  end
 
+  def update
+    @school = School.find(params[:id])
+
+    if @school.update(school_params)
+      redirect_to @school, :notice => t('flash.notice.school_update')
+    else
+      render :edit
+    end
   end
 
   def destroy
