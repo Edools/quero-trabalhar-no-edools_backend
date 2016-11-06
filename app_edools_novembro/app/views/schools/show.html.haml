@@ -1,0 +1,41 @@
+%h1.title
+  Dados da
+  = @school.name
+
+%hr
+
+%table.table
+  %tr
+    %td
+      Email:
+      =@school.email
+
+    %td{:align => "right", :rowspan => "5", :width => "200px"}
+      %h4 Opções
+      %p
+        = link_to "Novo Curso", new_user_school_course_path(@school, current_user), class: "btn btn-default"
+      %p
+        = link_to "Lista Geral de Estudantes", user_school_students_path(current_user, @school, @students), class: "btn btn-default"
+      %p
+        = link_to "Voltar", root_path, class: "btn btn-default"
+      %p
+        = link_to "Editar", edit_user_school_path(current_user, @school), class: "btn btn-default"
+      %p
+        = link_to "Apagar Escola", user_school_path(current_user, @school), method: :delete, data: { confirm: "Tem certeza que deseja apagar a escola #{@school.name}?" }, class: "btn btn-danger"
+
+  %tr
+    %td
+      Pitch:
+      = simple_format(@school.pitch)
+
+  %tr
+    %td
+      Subdominio:
+      = @school.subdomain
+
+  %tr
+    %td
+      Data de Criação:
+      = time_tag @school.created_at
+
+= render 'courses/joined_courses'

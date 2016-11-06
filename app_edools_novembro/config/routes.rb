@@ -5,9 +5,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :schools do
-      resources :courses do
-        resources :students
-      end
+      resources :courses, :students
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

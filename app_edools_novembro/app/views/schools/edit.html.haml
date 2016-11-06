@@ -1,0 +1,7 @@
+%h2
+  Editar dados da
+  = @school.name
+
+= render 'form'
+
+= link_to "Voltar", user_school_path(current_user, @school)

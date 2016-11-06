@@ -1,1 +1,8 @@
-%h1 User index
+%h1 Escolas Cadastradas
+
+- @schools.each do |school|
+  = link_to school.name, user_school_path(current_user, school)
+
+%br
+
+= link_to "Cadastrar Nova Escola", new_user_school_path(current_user)
