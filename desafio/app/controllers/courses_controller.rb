@@ -1,4 +1,13 @@
 class CoursesController < ApplicationController
+
+  def pesquisar_cursos
+    @courses = Course.titulo(params[:titulo])
+  end
+
+  def pesquisar_cursos_escola
+    @courses = Course.nome_escola(params[:nome])
+  end
+
   def new
     @course = Course.new
   end

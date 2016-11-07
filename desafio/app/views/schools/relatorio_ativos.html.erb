@@ -1,0 +1,18 @@
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Nome da escola</th>
+      <th>Quantidade de alunos ativos</th>
+      <th>Email do dono</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schools.each do |school| %>
+    <tr>
+      <td><%= school.nome %></td>
+      <td><%= school.total_ativos %></td>
+      <td><%= school.email_dono %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

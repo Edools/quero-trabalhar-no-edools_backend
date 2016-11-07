@@ -1,5 +1,13 @@
 class SchoolsController < ApplicationController
 
+  def pesquisar_escolas
+    @schools = School.nome(params[:nome])
+  end
+
+  def relatorio_ativos
+    @schools = School.all
+  end
+
   def index
     @schools = School.all
   end

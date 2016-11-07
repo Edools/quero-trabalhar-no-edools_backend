@@ -1,1 +1,60 @@
+<div class="row">
+  <%= form_tag pesquisar_escolas_path, method: :get do%>
+    <div class="form-group">
+      <div class="col-md-7 col-md-offset-2">
+        <strong>Pesquisar escolas por nome:</strong>
+         <div class="input-group m-t-10">
+           <%= text_field_tag 'nome', nil, class: 'form-control',placeholder: 'Informe o nome da escola'%>
+           <span class="input-group-btn">
+             <%= button_tag "Pesquisar escola", class: "btn btn-primary"%>
+           </span>
+         </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
+<div class="row">
+  <%= form_tag pesquisar_cursos_path, method: :get do%>
+    <div class="form-group">
+      <div class="col-md-7 col-md-offset-2">
+        <strong>Pesquisar cursos por nome:</strong>
+         <div class="input-group m-t-10">
+           <%= text_field_tag 'titulo', nil, class: 'form-control',placeholder: 'Informe o nome do curso'%>
+           <span class="input-group-btn">
+             <%= button_tag "Pesquisar curso", class: "btn btn-primary"%>
+           </span>
+         </div>
+      </div>
+    </div>
+  <% end %>
 
+</div>
+
+<br>
+<div class="row">
+  <%= form_tag pesquisar_cursos_escola_path, method: :get do%>
+    <div class="form-group">
+      <div class="col-md-7 col-md-offset-2">
+        <strong>Pesquisar cursos de uma escola:</strong>
+         <div class="input-group m-t-10">
+           <%= text_field_tag 'nome', nil, class: 'form-control',placeholder: 'Informe o nome da Escola'%>
+           <span class="input-group-btn">
+             <%= button_tag "Pesquisar cursos da escola", class: "btn btn-primary"%>
+           </span>
+         </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
+<hr>
+<div class="row">
+  <div class="form-group">
+    <div class="col-md-7 col-md-offset-2">
+       <div class="input-group m-t-10">
+         <strong>Relatório de alunos ativos por escola:</strong> |  <%= link_to "Relatório", relatorio_ativos_path, class: "btn btn-success"%>
+       </div>
+    </div>
+  </div>
+</div>
