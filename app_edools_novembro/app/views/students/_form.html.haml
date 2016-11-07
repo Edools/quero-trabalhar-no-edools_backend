@@ -1,6 +1,5 @@
 = f.input :responsible, label: "Nome do Responsável", placeholder: "Digite o nome do responsável pela aluno", required: true
 = f.input :name, label: t('labels.name'), placeholder: t('placeholders.full_name'), required: true
-= f.input :course_id, label: "Curso", collection: current_user.courses, label_method: :title, value_method: :id, required: true, include_blank: false, prompt: "Selecione o curso"
 = f.input :address, label: t('labels.address'), placeholder: t('placeholders.full_address'), required: true
 = f.input :phone, label: t('labels.phone'), placeholder: t('placeholders.phone'), id: "telefone_aluno", required: true
 = f.input :document, label: t('labels.document'), placeholder: t('placeholders.document'), id: "cpf_aluno", required: true

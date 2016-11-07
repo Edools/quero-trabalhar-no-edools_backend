@@ -15,7 +15,7 @@
       %th= t('table_titles.edit')
       %th= t('table_titles.delete')
 
-  - @students.each do |student|
+  - @students.select{|student| student.course.id == @course.id }.each do |student|
     %tbody
       %tr
         %td= student.responsible

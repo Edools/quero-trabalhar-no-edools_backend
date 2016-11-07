@@ -4,6 +4,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = current_user.students
+    @course = Course.find(params[:course_id])
   end
 
   def new
@@ -12,6 +13,7 @@ class StudentsController < ApplicationController
 
   def create
     @course = Course.find(params[:course_id])
+    @student = current_user.students.build(student_params)
 
     respond_to do |format|
       if @student.save
