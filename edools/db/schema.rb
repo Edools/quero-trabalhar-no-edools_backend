@@ -27,9 +27,8 @@ ActiveRecord::Schema.define(version: 20161103235038) do
   create_table "enrolls", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "student_id"
-    t.integer  "active",     default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_enrolls_on_course_id"
     t.index ["student_id"], name: "index_enrolls_on_student_id"
   end

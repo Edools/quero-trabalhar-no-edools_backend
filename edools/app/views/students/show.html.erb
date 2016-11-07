@@ -6,24 +6,24 @@
     <td><%= @student.id %></td>
   </tr>
   <tr>
-    <th>Name</th>
+    <th><%= t('activerecord.attributes.student.name') %></th>
     <td><%= @student.name %></td>
   </tr>
   <tr>
-    <th>E-mail</th>
+    <th><%= t('activerecord.attributes.student.email') %></th>
     <td><%= @student.email %></td>
   </tr>
 </table>
 
-<h2>Enrolls</h2>
+<h2><%= t('activerecord.models.enroll') %></h2>
 <p>
-  <%= link_to "New enroll", new_student_enroll_path(:student_id => @student.id), :class => "label label-primary" %>
+  <%= link_to t('.new_enroll'), new_student_enroll_path(:student_id => @student.id), :class => "label label-primary" %>
 </p>
 <% unless @student.enrolls.empty? %>
   <table class="table">
     <tr>
       <th>Id</th>
-      <th>Course</th>
+      <th><%= t('activerecord.models.course') %></th>
       <th></th>
     </tr>
     <% @student.enrolls.each do |enroll| %>
@@ -31,11 +31,11 @@
         <td><%= enroll.id %></td>
         <td><%= enroll.course.title %></td>
         <td>
-          <%= link_to "Delete", student_enroll_path(:student_id => @student.id, :id => enroll.id), method:  :delete, :class => "label label-danger" %>
+          <%= link_to t('.delete_enroll'), student_enroll_path(:student_id => @student.id, :id => enroll.id), method:  :delete, :class => "label label-danger" %>
         </td>
       </tr>
     <% end %>
   </table>
 <% else %>
-  <h3>There no enrolls for this student.</h3>
+  <h3><%= t('.no_enrolls_found') %></h3>
 <% end %>

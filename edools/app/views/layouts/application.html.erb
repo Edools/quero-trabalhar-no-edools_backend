@@ -9,6 +9,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand">Edools</a>
+        </div>
+        <div class="collapse navbar-collapse">   
+          <ul class="nav navbar-nav">
+            <li><a href="/students">Students</a></li>
+            <li><a href="/schools">Schools</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

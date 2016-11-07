@@ -1,0 +1,75 @@
+pt-BR:
+  schools:
+    new:
+      title: Cadastrar nova escola
+    show:
+      title: Visualizar detalhes da escola
+      courses: Cursos
+      no_courses_found: Não há cursos cadastrados nesta escola
+      new_course: Novo Curso
+      course_grid:
+        edit_course: Editar
+        delete_course: Deletar
+    index:
+      title: Cadastros de Escolas
+      new_school: Nova Escola
+      show_school: Visualizar
+      edit_school: Editar
+      delete_school: Deletar
+      no_schools_found: Não foi encontrada nenhuma escola
+    edit:
+      title: Editar escola
+  courses:
+    new:
+      title: Cadastrar novo Curso
+    edit:
+      title: Editar Curso      
+  students:
+    new:
+      title: "Cadastrar novo estudante"
+    show:
+      title: Visualizar detalhes do aluno
+      no_enrolls_found: Não há matrículas para este aluno
+      new_enroll: Nova Matrícula
+      delete_enroll: Delete
+    index:
+      title: Cadastros de Alunos
+      new_student: Novo Aluno
+      no_students_found: Não foi encontrado nenhum aluno
+  enroll:
+    new:
+      title: Matricular Aluno
+      avaliable_courses: Cursos Disponíveis
+  flash:
+    notice:
+      school_destroyed: Escola excluída
+      school_updated: Escola atualizada
+      student_destroyed: Aluno excluído
+      student_updated: Aluno atualizado
+  activerecord:
+    models:
+      student: Estudante
+      school: Escola
+      course: Curso
+      enroll: Matrícula
+    attributes:
+      student:
+        name: Nome
+        email: "E-mail"
+      school:
+        name: Nome
+        owner_email: Email do Proprietário
+        pitch: Pitch
+        subdomain: Subdomínio
+        created_at: Data de Criação
+      course:
+        title: Título
+        description: Descrição
+        content: Conteúdo
+        duration: Duração (em horas)
+        price: Preço
+        active_students: Alunos Ativos
+        school: Escola
+      enroll:
+        course: Curso
+        student: Aluno

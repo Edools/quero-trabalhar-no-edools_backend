@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<% unless @schools.empty? %>
 <h2>Avaliable courses</h2>
 <table class="table">
   <tr>
@@ -34,4 +34,7 @@
   <p>
     <%= f.submit :id => 'submit' %>
   </p>
+  <% else %>
+    <h3>Não há cursos disponíveis.</h3>
+  <% end %>
 <% end %>

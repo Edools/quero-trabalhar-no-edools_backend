@@ -5,30 +5,30 @@
         <th>Id</th>
         <td><%= @school.id %></td>
     <tr>
-        <th>Name</th>
+        <th><%= t('activerecord.attributes.school.name') %></th>
         <td><%= @school.name %></td>
     </tr>
     <tr>
-        <th>Owner Email</th>
+        <th><%= t('activerecord.attributes.school.owner_email') %></th>
         <td><%= @school.owner_email %></td>
     </tr>
     <tr>
-        <th>Pitch</th>
+        <th><%= t('activerecord.attributes.school.pitch') %></th>
         <td><%= @school.pitch %></td>
     </tr>
     <tr>
-        <th>Subdomain</th>
+        <th><%= t('activerecord.attributes.school.subdomain') %></th>
         <td><%= @school.subdomain %></td>
     </tr>
     <tr>
-        <th>Creation Date</th>
+        <th><%= t('activerecord.attributes.school.created_at') %></th>
         <td><%= @school.created_at %></td>
     </tr> 
 </table>
 
-<h2>Courses</h2>
+<h2><%= t('.courses') %></h2>
 <p>
-    <%= link_to "New course", 
+    <%= link_to t('.new_course'), 
             new_school_course_path(:school_id => @school.id), 
             :class => "label label-primary" %> 
 </p>
@@ -36,8 +36,8 @@
 <table class="table">
     <tr>
         <th>Id</th>
-        <th>Title</th>
-        <th>Active students</th>
+        <th><%= t('activerecord.attributes.course.title') %></th>
+        <th><%= t('activerecord.attributes.course.active_students') %></th>
         <th></th>
     </tr>
     <% @school.courses.each do |course| %>
@@ -46,12 +46,12 @@
         <td><%= course.title %></td>
         <td><%= course.enrolls.count %></td>
         <td>
-        <%= link_to "Edit", edit_school_course_path(:school_id => @school.id, :id => course.id), :class => "label label-default" %>
-        <%= link_to "Delete", school_course_path(:school_id => @school.id, :id => course.id), method: :delete, :class => "label label-danger" %>
+        <%= link_to t('.course_grid.edit_course'), edit_school_course_path(:school_id => @school.id, :id => course.id), :class => "label label-default" %>
+        <%= link_to t('.course_grid.delete_course'), school_course_path(:school_id => @school.id, :id => course.id), method: :delete, :class => "label label-danger" %>
         </td>
    </tr>
    <% end %>
 </table>
 <% else %>
-    <h3>There is no avaliable courses for this school.</h3>
+    <h3><%= t('.no_courses_found') %></h3>
 <% end %>

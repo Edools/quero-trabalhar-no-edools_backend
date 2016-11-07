@@ -1,8 +1,8 @@
 require_dependency '../validators/subdomain_validator.rb'
 
 class School < ApplicationRecord
-  has_many :courses, dependent: :destroy
-
+  has_many :courses, :dependent => :delete_all
+  
   validates :name, :presence => true
   validates :owner_email, :presence => true
   validates :subdomain, :presence => true,

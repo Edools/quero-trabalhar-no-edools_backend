@@ -2,7 +2,7 @@ class EnrollsController < ApplicationController
   def new
     @student = Student.find(params[:student_id])
     @enroll = @student.enrolls.build
-    @schools = School.all
+    @schools = School.where(:course.count > 0)
   end
 
   def create
