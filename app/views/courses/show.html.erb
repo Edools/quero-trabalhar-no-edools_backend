@@ -1,13 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @course.title %>
-</p>
+<h3><%= @course.title %></h3>
 
 <p>
   <strong>School:</strong>
-  <%= @course.school %>
+  <%= link_to @course.school, @course %>
 </p>
 
 <p>
@@ -22,13 +17,22 @@
 
 <p>
   <strong>Duration:</strong>
-  <%= @course.duration %>
+  <%= @course.duration %> <%= @course.periodicity %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @course.price %>
+  R$ <%= @course.price %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<fieldset>
+  <legend>Students</legend>
+  <ol>
+    <% @course.students.each do |student| %>
+      <li><%= student.name %></li>
+    <% end %>
+  </ol>
+</fieldset>
+
+<%= link_to 'Edit', edit_course_path(@course), :class => "btn btn-default" %>
+<%= link_to 'Back', courses_path, :class => "btn btn-warning" %>

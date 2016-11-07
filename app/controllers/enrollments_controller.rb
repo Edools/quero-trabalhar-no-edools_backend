@@ -1,10 +1,11 @@
 class EnrollmentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_enrollment, only: [:show, :edit, :update, :destroy]
 
   # GET /enrollments
   # GET /enrollments.json
   def index
-    @enrollments = Enrollment.all
+    @enrollments = Enrollment.all.page(params['page']).per(10)
   end
 
   # GET /enrollments/1
@@ -69,6 +70,6 @@ class EnrollmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def enrollment_params
-      params.require(:enrollment).permit(:school_id, :student_id, :status)
+      params.require(:enrollment).permit(:course_id, :student_id, :status)
     end
 end

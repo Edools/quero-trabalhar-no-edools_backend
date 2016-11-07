@@ -11,32 +11,102 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="field form-group row">
+    <div class="col-sm-6">
+      <%= f.label :name, :class => "control-label" %>
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.label :email, :class => "control-label" %>
+      <%= f.text_field :email, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="field form-group row">
+    <div class="col-sm-6">
+      <%= f.label :phone, :class => "control-label" %>
+      <%= f.text_field :phone, :class => "form-control" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.label :birthdate, :class => "control-label" %>
+      <%= f.text_field :birthdate, :class => "form-control datepicker" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-  </div>
+  <h3>Address</h3>
+  <%= f.fields_for :address do |address| %>
+    <div class="field form-group row">
+      <div class="col-sm-6">
+        <%= address.label :street, :class => "control-label" %>
+        <%= address.text_field :street, :class => "form-control" %>
+      </div>
+      <div class="col-sm-2">
+        <%= address.label :number, :class => "control-label" %>
+        <%= address.text_field :number, :class => "form-control" %>
+      </div>
+      <div class="col-sm-4">
+        <%= address.label :district, :class => "control-label" %>
+        <%= address.text_field :district, :class => "form-control" %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :birthdate %>
-    <%= f.text_field :birthdate %>
-  </div>
+    <div class="field form-group row">
+      <div class="col-sm-4">
+        <label class="control-label" for="country">Country</label>
+        <select class="form-control" id="country" name="country">
+          <option value="">Select a Country</option>
+          <% @countries.each do |country| %>
+            <option value="<%= country.id %>"
+              <% if @student.address and @student.address.city and @student.address.city.state.country.id == country.id %>
+                selected
+              <% end %>
+              >
+              <%= country.name %>
+            </option>
+          <% end %>
+        </select>
+      </div>
 
-  <div class="field">
-    <%= f.label :address_id %>
-    <%= f.text_field :address_id %>
-  </div>
+      <div class="col-sm-4">
+        <label class="control-label" for="state">State</label>
+        <select class="form-control" id="state" name="state">
+          <option value="">Select a State</option>
+
+          <% if @student.address and @student.address.city %>
+            <% @student.address.city.state.country.states.each do |state| %>
+              <option value="<%= state.id %>"
+                <% if state.id == @student.address.city.state.id %>
+                  selected="selected"
+                <% end%>
+                >
+                  <%= state.name %>
+              </option>
+            <% end %>
+          <% end %>
+        </select>
+      </div>
+
+      <div class="col-sm-4">
+        <%= address.label :city, :class => "control-label" %>
+        <select class="form-control" name="student[address_attributes][city_id]" id="student_address_attributes_city_id">
+            <option value="">Select a City</option>
+            <% if @student.address and @student.address.city %>
+              <% @student.address.city.state.cities.each do |city| %>
+                <option value="<%= city.id %>"
+                  <% if city.id == @student.address.city.id %>
+                    selected="selected"
+                  <% end%>
+                  >
+                    <%= city.name %>
+                </option>
+              <% end %>
+            <% end %>
+        </select>
+      </div>
+    </div>
+  <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end %>

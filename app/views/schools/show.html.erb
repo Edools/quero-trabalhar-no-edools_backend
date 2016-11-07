@@ -1,10 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @school.name %>
-</p>
-
+<h3><%= @school.name %></h3>
+<hr />
 <p>
   <strong>Owner email:</strong>
   <%= @school.owner_email %>
@@ -20,5 +15,14 @@
   <%= @school.subdomain %>
 </p>
 
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %>
+<fieldset><legend>Courses</legend>
+
+<ul>
+  <% @school.courses.each do |course| %>
+    <li><%= link_to course.title, course %></li>
+  <% end %>
+</ul>
+</fieldset>
+
+<%= link_to 'Edit', edit_school_path(@school), :class => "btn btn-warning" %>
+<%= link_to 'Back', schools_path, :class => "btn btn-default" %>

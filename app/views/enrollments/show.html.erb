@@ -1,8 +1,13 @@
-<p id="notice"><%= notice %></p>
+<h3>Enrollment #<%= @enrollment.id %></h3>
 
 <p>
   <strong>School:</strong>
-  <%= @enrollment.school %>
+  <%= @enrollment.course.school %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @enrollment.course %>
 </p>
 
 <p>
@@ -15,5 +20,5 @@
   <%= @enrollment.status %>
 </p>
 
-<%= link_to 'Edit', edit_enrollment_path(@enrollment) %> |
-<%= link_to 'Back', enrollments_path %>
+<%= link_to 'Edit', edit_enrollment_path(@enrollment), :class => "btn btn-warning" %>
+<%= link_to 'Back', enrollments_path, :class => "btn btn-default" %>

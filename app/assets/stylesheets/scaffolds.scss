@@ -2,9 +2,7 @@ body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
+  padding: 70px !important;
 }
 
 p, ol, ul, td {
@@ -18,19 +16,6 @@ pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
-}
-
-a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
 }
 
 th {
@@ -56,11 +41,10 @@ div {
 .field_with_errors {
   padding: 2px;
   background-color: red;
-  display: table;
 }
 
 #error_explanation {
-  width: 450px;
+  width: 100%;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;

@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :school_id %>
-    <%= f.text_field :school_id %>
+  <div class="field form-group">
+    <%= f.label :course_id, :class => "control-label" %>
+    <%= f.collection_select :course_id, Course.all, :id, :title, {}, {:class => "form-control"} %>
   </div>
 
-  <div class="field">
-    <%= f.label :student_id %>
-    <%= f.text_field :student_id %>
+  <div class="field form-group">
+    <%= f.label :student_id, :class => "control-label" %>
+    <%= f.collection_select :student_id, Student.all, :id, :name, {}, {:class => "form-control"} %>
   </div>
 
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.number_field :status %>
+  <div class="field form-group col-sm-12 row">
+    <div class="col-sm-4 row">
+      <%= f.label :status, :class => "control-label" %>
+      <%= f.select :status, Enrollment.statuses.keys, {:include_blank => "----"}, {:class => "form-control"} %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions form-group">
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
+
 <% end %>

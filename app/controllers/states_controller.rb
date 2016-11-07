@@ -1,10 +1,16 @@
 class StatesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_state, only: [:show, :edit, :update, :destroy]
 
   # GET /states
   # GET /states.json
   def index
-    @states = State.all
+    if params[:country_id]
+      @states = State.where(country_id: params[:country_id]).order('name ASC')
+    else
+      @states = State.all.page(params['page']).per(10)
+    end
+
   end
 
   # GET /states/1

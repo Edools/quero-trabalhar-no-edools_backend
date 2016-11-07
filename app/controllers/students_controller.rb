@@ -1,10 +1,11 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_countries, only: [:new, :create, :edit, :update]
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.all.page(params['page']).per(10)
   end
 
   # GET /students/1
@@ -15,10 +16,14 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
+    @student.build_address
   end
 
   # GET /students/1/edit
   def edit
+    if not @student.address
+      @student.build_address
+    end
   end
 
   # POST /students
@@ -67,8 +72,12 @@ class StudentsController < ApplicationController
       @student = Student.find(params[:id])
     end
 
+    def set_countries
+      @countries = Country.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:name, :email, :phone, :birthdate, :address_id)
+      params.require(:student).permit(:name, :email, :phone, :birthdate, :address_id, address_attributes: [:id, :street, :number, :district, :city_id])
     end
 end

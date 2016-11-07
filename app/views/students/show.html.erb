@@ -1,9 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
+<h3><%= @student.name %></h3>
 
 <p>
   <strong>Email:</strong>
@@ -25,5 +20,29 @@
   <%= @student.address %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<fieldset>
+  <legend>Enrollments</legend>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>COD</th>
+        <th>School</th>
+        <th>Course</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @student.enrollments.each do |enrollment| %>
+      <tr>
+        <td><% enrollment.id %></td>
+        <td><% enrollment.school %></td>
+        <td><% enrollment.course %></td>
+        <td><% enrollment.created_at %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</fieldset>
+
+<%= link_to 'Edit', edit_student_path(@student), :class => "btn btn-warning" %>
+<%= link_to 'Back', students_path, :class => "btn btn-default" %>

@@ -1,11 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Enrollments</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>School</th>
+      <th>Course</th>
       <th>Student</th>
       <th>Status</th>
       <th colspan="3"></th>
@@ -15,7 +13,7 @@
   <tbody>
     <% @enrollments.each do |enrollment| %>
       <tr>
-        <td><%= enrollment.school %></td>
+        <td><%= enrollment.course %></td>
         <td><%= enrollment.student %></td>
         <td><%= enrollment.status %></td>
         <td><%= link_to 'Show', enrollment %></td>
@@ -26,6 +24,8 @@
   </tbody>
 </table>
 
+<%= paginate @enrollments %>
+
 <br>
 
-<%= link_to 'New Enrollment', new_enrollment_path %>
+<%= link_to 'New Enrollment', new_enrollment_path, :class => "btn btn-primary" %>

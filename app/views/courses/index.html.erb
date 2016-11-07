@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Courses</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -18,11 +16,22 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.title %></td>
-        <td><%= course.school %></td>
-        <td><%= course.description %></td>
-        <td><%= course.content %></td>
-        <td><%= course.duration %></td>
+        <td><%= link_to course.title, course %></td>
+        <td><%= link_to course.school, course.school %></td>
+        <td>
+          <% if course.description and course.description.size > 140 %>
+            <%= course.description[0, 140] %>...</td>
+          <% else %>
+            <%= course.description %></td>
+          <% end %>
+        <td>
+          <% if course.content and course.content.size > 140 %>
+            <%= course.content[0, 140] %>...</td>
+          <% else %>
+            <%= course.content %></td>
+          <% end %>
+        </td>
+        <td><%= course.duration %> <%= course.periodicity %></td>
         <td><%= course.price %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
@@ -32,6 +41,8 @@
   </tbody>
 </table>
 
+<%= paginate @courses %>
+
 <br>
 
-<%= link_to 'New Course', new_course_path %>
+<%= link_to 'New Course', new_course_path, :class => "btn btn-primary" %>

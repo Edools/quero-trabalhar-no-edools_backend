@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>States</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -26,6 +24,8 @@
   </tbody>
 </table>
 
+<%= paginate @states %>
+
 <br>
 
-<%= link_to 'New State', new_state_path %>
+<%= link_to 'New State', new_state_path, :class => "btn btn-primary" %>

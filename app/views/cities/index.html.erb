@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Cities</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -24,6 +22,8 @@
   </tbody>
 </table>
 
+<%= paginate @cities %>
+
 <br>
 
-<%= link_to 'New City', new_city_path %>
+<%= link_to 'New City', new_city_path, :class => "btn btn-primary" %>

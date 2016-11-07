@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root "courses#index"
+  get 'pages/index'
+
+  devise_for :users
+  root to: 'pages#index'
 
   resources :enrollments
   resources :courses

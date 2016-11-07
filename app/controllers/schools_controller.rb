@@ -1,10 +1,11 @@
 class SchoolsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_school, only: [:show, :edit, :update, :destroy]
 
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.all
+    @schools = School.all.page(params['page']).per(10)
   end
 
   # GET /schools/1

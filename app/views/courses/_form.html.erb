@@ -11,37 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="field form-group row">
+    <div class="col-sm-6">
+      <%= f.label :title, :class => "control-label" %>
+      <%= f.text_field :title, :class => "form-control" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.label :school_id, :class => "control-label" %>
+      <%= f.collection_select :school_id, School.all, :id, :name, {:prompt => true}, { :class => "form-control"} %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :school_id %>
-    <%= f.text_field :school_id %>
+  <div class="field form-group">
+    <%= f.label :description, :class => "control-label" %>
+    <%= f.text_field :description, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+  <div class="field form-group">
+    <%= f.label :content, :class => "control-label" %>
+    <%= f.text_area :content, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+  <div class="row form-group">
+    <div class="col-sm-4 row">
+      <div class="col-sm-12">
+        <%= f.label :duration, :class => "control-label" %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.number_field :duration, :class => "form-control"  %>
+      </div>
+      <div class="col-sm-6">
+        <%= f.select :periodicity, Course.periodicities, {:include_blank => "----"}, {:class => "form-control"} %>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.label :price, :class => "control-label" %>
+      <%= f.number_field :price, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :duration %>
-    <%= f.text_field :duration %>
-  </div>
 
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="actions form-group">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
