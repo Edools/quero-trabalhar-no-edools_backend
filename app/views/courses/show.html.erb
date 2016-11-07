@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="course"> 
+    <div class="col-md-10 col-md-offset-1">
+
+
+  <% if current_user.school %>      
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <%= link_to 'Edit', edit_course_path(@course) %>
+      </div>
+      <div class="col-md-6 text-center">
+        <%= link_to 'Adicionar Curso', new_lesson_path %>
+      </div>  
+    </div>
+    <hr>
+  <%end%>
+      <div class="box">
+      <h3 class="text-center"> <%= @course.school.name%> - <%= @course.title %> </h3>
+      <p> <%= @course.description %> </p>
+      <p> Duração do curso: <%= @course.duration %> </p>
+      <p> Preço: <%= number_to_currency(@course.price, :separator => ",", :delimiter => ".", :unit => "R$")%> </p>
+
+      <% if current_user.school %>   
+        <%= link_to 'Voltar', school_path(current_user.school) %>
+      <%else%>
+
+        <% if !@found_course %>
+          <%= link_to join_course_path(@course) do%>
+            <h3  class="text-center">
+              Entrar no Curso
+            </h3>
+          <%end%>
+        <%else%>
+           <p class="text-center"><%= link_to "Registrado, clique aqui para acessar Curso",course_lessons_path(@course), class: 'btn-access-course'%> </p>
+        <%end%>
+
+        <br>
+        <h4 class="text-center"><%= link_to 'Voltar', pages_discovery_path %></h4>
+
+
+      <%end%>
+    </div> <!-- End - Box -->
+    </div> <!-- End- col-md-10 -->
+    </div> <!-- Course -->
+</div>

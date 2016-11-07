@@ -1,0 +1,25 @@
+<%= simple_form_for @lesson, url: course_lesson_path do |f| %>
+  <% if @lesson.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
+
+      <ul>
+      <% @lesson.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.text_field :title, placeholder: 'Título da Lição', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :description, placeholder: 'Descrição', rows: 8, class: 'form-control' %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

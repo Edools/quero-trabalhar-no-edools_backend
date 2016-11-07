@@ -1,0 +1,30 @@
+.school {
+  .my-course {
+    .box {
+      margin-bottom: 30px;
+      padding-top: 10px;
+      box-shadow: 1px 1px #797979;
+      border-radius: 5px;
+      height: 350px;
+      background-color: #fcfcfc;
+      .title {
+        border-bottom: 1px solid #555;
+      }
+      .description {
+        text-align: justify;
+        padding: 10px;
+        
+      }
+      .internal-box {
+        height: 250px;
+        .price{
+          padding-right: 10px;
+        }
+      }
+      .information-box{
+        padding-top: 5px;
+        padding-right: 10px;
+      }
+    }
+  }
+}//School

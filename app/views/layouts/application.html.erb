@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edools</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Slab" rel="stylesheet">
+  
+</head>
+<body>
+	
+	<% if current_user %> 
+	<%= render 'layouts/navbar'%> 
+	<div class="bg-header" style="padding-top: 150px;"> </div>
+	<%end%>
+	<%= yield %>
+
+</body>
+</html>

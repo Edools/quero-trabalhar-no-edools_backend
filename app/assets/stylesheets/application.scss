@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require animate
+ *= require font-awesome
+ *= require_tree .
+ */
+
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+html, body {
+  background-color: #f0f0f0; 
+}
+
+
+* { font-family: 'Josefin Slab', serif;}
+textarea { resize: none; }
+a:hover {
+  background-color: transparent !important;
+  color: #000 !important;
+  text-decoration: none;
+}
+
+.profile, .lesson, .profile, .school, .student , .course{
+  padding-top: 30px;
+}
+
+.navbar-configuration {
+  position: fixed;
+  width: 100%;
+  text-transform: uppercase;
+}
+.navbar {
+  z-index: 999;
+  opacity: 0.8;
+  transition: all 0.3s;
+  &:hover {
+  	opacity: 1.0
+  }
+  .navbar-brand {
+    font-family: 'Amatic SC', cursive; font-size: 30px; 
+  }
+}//navbar
+
+
+
+.bg-header {
+  background-image: image-url('header-bg.jpg');
+  background-attachment: fixed;
+  height: 10vh;  
+}
