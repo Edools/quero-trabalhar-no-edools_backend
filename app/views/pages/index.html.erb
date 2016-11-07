@@ -1,0 +1,41 @@
+
+
+<div class="container">
+<div class="row">
+	<div class="profile">
+	<h1 class="text-center">Perfil</h1>
+	<%if current_user.type_profile.downcase == "student"%>
+		<% if !current_user.student %>
+			<%= link_to 'Preenchar as informações pendentes', new_student_path %>
+		<%else%>
+			<p class="text-center"> <%= current_user.student.name if current_user%> </p>  
+			<p class="text-center">Data de Nascimento: <%= current_user.student.born %></p>			
+		<%end%>
+	<%end%>
+
+	<p class="text-center"><%= current_user.email if current_user%> </p>  
+	<p class="text-center">Tipo de Perfil: <%= current_user.type_profile.titleize %></p>
+
+
+	<div class='box'>
+		<%if current_user.student%>
+		<h3>Cursos matriculados</h3>
+		<%else%>
+		<h3>Meus Cursos</h3>
+		<%end%>
+		<div  class="row">
+		<%@courses.each do |course|%>
+			<div class="col-md-4 square">
+				<%= link_to course_lessons_path(course) do %>
+					<div class="square-inner">
+						<%= course.title%> (<%= course.school.name%>)
+					</div>
+				<%end%>
+			</div>	
+		<%end%>
+		</div>
+	</div>
+
+	</div>
+</div>
+</div>

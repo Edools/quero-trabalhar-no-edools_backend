@@ -1,0 +1,30 @@
+<%if params[:search] and params[:search] != "" %>
+	<p class="text-center">Resultado da busca pela palavra "<%= params[:search]%>"</p>
+<%end%>
+
+
+
+<% if @items %>
+<div class="text-right"><%= will_paginate @items %></div>
+<% @items.each do |item| %>
+
+	<p class="item"> 
+		<%if params[:filter_by] == 'course' %>
+			<%= link_to course_path(item) do%>
+				<%= item.title %>  (<%= item.school.name %>)
+			<%end%>
+		<%elsif params[:filter_by] == 'school'%>
+			<%= link_to school_path(item) do%>
+				<%= item.name %> (<%= item.courses.count%>) 
+			<%end%>
+		<%else%>
+			<%= link_to course_path(item) do%>
+				<%= item.title %>  (<%= item.school.name %>)
+			<%end%>
+		<% end %> 
+	</p>
+<%end%>
+
+
+<div class="text-center"><%= will_paginate @items %></div>
+<%end%>

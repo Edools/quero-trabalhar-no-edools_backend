@@ -1,0 +1,32 @@
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.text_field :title, placeholder: 'Nome do Curso', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :description, placeholder: 'Descrição', rows: 8,  class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.number_field :duration, placeholder: 'Duração do Curso', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %><br>
+    <%= f.text_field :price, placeholder: 'Preço', class: 'form-control' %>
+  </div>
+  <div class="col-md-4 col-md-offset-4">
+  <div class="actions">
+    <%= f.submit 'Criar Curso', class: 'btn btn-success btn-block btn-lg' %>
+  </div>
+  </div>
+<% end %>

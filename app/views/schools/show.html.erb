@@ -1,0 +1,67 @@
+<div class="container">
+<div class="row">
+<div class="school">
+<div class="col-md-10 col-md-offset-1">
+
+
+<% if current_user.school %>
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <%= link_to 'Editar', edit_school_path(@school) %>
+    </div>
+    <div class="col-md-6 text-center">
+      <%= link_to 'Adicionar Curso', new_course_path %>
+    </div>  
+  </div>
+  <hr>
+<%end%>
+
+
+
+  <div class="row">
+    <h2 class="text-center"> <%= @school.name %> </h2>
+    <p class="text-center"> <%= @school.contact_email %> </p>
+    <p class="text-center"> Fundado em <%= @school.foundation.strftime("%d/%m/%y") %> </p>
+  </div>
+
+  <div class="row">
+    <h3>Um pouco sobre a <b><%= @school.name %></b></h3>
+    <p> <%= @school.pitch %> </p>
+  </div>
+
+  <% if @courses.count > 0 %>
+  <div class="row">
+    <div class="my-course">
+    <h3>Meus cursos</h3>
+      <% @courses.each do |course| %>
+        <div class="col-md-4">
+          <div class="box">
+            <div class="internal-box">
+              <h4 class="text-center title"> <%= course.title %></h4>
+              <p class="text-right price"> <%= number_to_currency(course.price, :separator => ",", :delimiter => ".", :unit => "R$")%> (<%= course.duration%> meses)</p>
+              <p class="description"> <%=h truncate(course.description, :length => 300) %> </p>
+            </div>
+            <div class="information-box"> 
+
+              <%= link_to course_lessons_path(course) do %>
+                <p class="text-center"> <% if course.lessons %> <%= course.lessons.count%>  <% else %> 0 <%end%>  Aula(s)</p>
+              <%end%>
+
+              <p class="text-center"><%= course.users.count%> aluno(s)</p>
+
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+  </div>
+  <%else%>
+  <br>
+  <p class= "text-center"> Você ainda não tem nenhum curso</p>
+  <%end%><!-- End-if @courses -->
+
+
+</div> <!-- End-col-md-10 -->
+</div> <!-- End-School -->
+</div> <!-- End-Row -->
+</div> <!-- End-Container -->

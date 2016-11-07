@@ -1,0 +1,27 @@
+<%= form_tag pages_discovery_path, :method => 'get', :id => "item_search", remote: true do %>
+  <p>
+
+  	<div class="form-group">
+  		<div class="row">
+	  		<div class="col-md-8">
+	    		<%= text_field_tag :search, params[:search], class: 'form-control' %>
+	    	</div>
+	    	<div class="col-md-4">
+	    		<%= submit_tag "Buscar", :title => nil, class: 'btn btn-info btn-block' %>
+	    	</div>
+    	</div>
+    </div>
+    
+    <div class="row text-center">
+
+    	<%= radio_button_tag 'filter_by', 'course', true %> Filtrar por Curso
+      
+    	&nbsp &nbsp
+
+    	<%= radio_button_tag 'filter_by', 'school' %> Filtrar por Escola
+    </div>
+
+  </p>
+  <br>
+  <div id="item"><%= render 'item' %></div>
+<% end %>

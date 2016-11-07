@@ -1,0 +1,44 @@
+<div class="container">
+<div class="row">
+<h1 style="margin-top: 80px;">Listing schools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contact email</th>
+      <th>Subdomain</th>
+      <th>Foundation</th>
+      <th>Pitch</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.name %></td>
+        <td><%= school.contact_email %></td>
+        <td><%= school.subdomain %></td>
+        <td><%= school.foundation %></td>
+        <td><%= school.pitch %></td>
+        <td><%= school.user_id %></td>
+        <td><%= link_to 'Show', school %></td>
+        <td><%= link_to 'Edit', edit_school_path(school) %></td>
+        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New School', new_school_path %>
+
+</div> <!-- row -->
+</div> <!-- container -->

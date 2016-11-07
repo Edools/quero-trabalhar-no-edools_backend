@@ -1,0 +1,24 @@
+default: &default
+ pool: 5
+ host: localhost
+ port: 5433
+ adapter: postgresql
+ encoding: UTF8
+ template: template0
+ collation: en_US.UTF-8
+ ctype: en_US.UTF-8
+ username: postgres
+ password: 123
+
+
+development: 
+ <<: *default
+ database: edools_development
+
+test: 
+ <<: *default
+ database: edools_test
+
+production: 
+ <<: *default
+ database: edools_production

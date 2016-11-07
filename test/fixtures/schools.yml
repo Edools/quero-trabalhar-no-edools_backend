@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  contact_email: MyString
+  subdomain: MyString
+  foundation: 2016-11-06
+  pitch: MyText
+  user_id: 1
+
+two:
+  name: MyString
+  contact_email: MyString
+  subdomain: MyString
+  foundation: 2016-11-06
+  pitch: MyText
+  user_id: 1

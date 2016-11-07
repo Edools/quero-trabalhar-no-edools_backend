@@ -1,0 +1,49 @@
+<%= form_for(@school) do |f| %>
+  <% if @school.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@school.errors.count, "error") %> prohibited this school from being saved:</h2>
+
+      <ul>
+      <% @school.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: 'Nome da Escola' , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :contact_email, placeholder: 'E-mail para contato' ,   class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :subdomain, placeholder: 'subdominio' , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%#= f.text_field :foundation, :id => 'datetimepicker-foundation', placeholder: 'Quando a foi fundado?', class: 'form-control'  %>
+    Quando foi fundado? <%= f.date_select :foundation, :order => [:day, :month, :year]  %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :pitch, :rows => 5, :class => "form-control", :placeholder => 'Pitch'%>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="actions ">
+        <%= f.submit 'Registrar Escola', class: 'btn btn-success btn-block btn-lg' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker-foundation').datetimepicker();
+    });
+</script>

@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="lesson"> 
+    <div class="col-md-10 col-md-offset-1">
+
+      <% if @ownerSchool %>
+      <div class="row">
+        <div class="col-md-6 text-center">
+           <div style="opacity: 0.3;">Edit</div>
+        </div>
+        <div class="col-md-6 text-center">
+          <%= link_to 'Nova Lição', new_course_lesson_path(@course) %>
+        </div>  
+      </div>
+      <hr>
+      <%end%>
+
+      <div class="box">
+
+      <h3 class="text-center"> <%= @course.school.name%> - <%= @course.title %> </h3>
+      <p> <%= @course.description %> </p>
+      <p> Duração do curso: <%= @course.duration %> </p>
+      <p> Preço: <%= number_to_currency(@course.price, :separator => ",", :delimiter => ".", :unit => "R$")%> </p>
+
+      <br>
+
+
+      <% if @course.lessons %>
+        <%if @course.lessons.count != 0%>
+        <h1>Lições</h1>
+
+        <table class="table">
+          <tbody>
+            <% @lessons.each do |lesson| %>
+              <tr>
+                  <td>
+                    <%= link_to course_lesson_path(@course, lesson)  do %>
+                      <p><%= lesson.title %></p>
+                    <%end%>
+                  </td>
+                <% if @ownerSchool %>
+                  <td class="text-center"><%= link_to 'Editar', edit_course_lesson_path(@course, lesson) %></td>
+                  <td class="text-center"><%= link_to 'Excluir', course_lesson_path(@course, lesson), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <%end%>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br>
+        <%else%>
+          <h4 class="text-center">Este curso ainda não tem lições</h4>
+        <%end%>
+      <%else%>
+        <h4 class="text-center">Este curso ainda não tem lições</h4>
+      <%end%>
+
+
+      <br>
+      <% if current_user.school %>
+        <h4 class="text-center"> <%= link_to 'Voltar', school_path(current_user.school) %></h4>
+      <%else%>
+        <h4 class="text-center"> <%= link_to 'Voltar', course_path(params[:course_id]) %></h4>
+      <%end%>
+    </div> 
+    </div> <!-- End- col-md-10 -->
+    </div> <!-- Course -->
+</div>
+
+
+      
+
+

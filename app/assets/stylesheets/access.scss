@@ -1,0 +1,23 @@
+#access {
+  font-family: 'Josefin Slab', serif;  
+  color: #DADADA;
+  h2 { font-family: 'Amatic SC', cursive; font-size: 60px; }
+  h3 { text-transform: uppercase; font-size: 20px; }  
+  
+  .signup {
+    padding-top: 5%;
+    background-image: image-url("login/background.png");
+    height: 100vh;  
+    
+    select { width: 100%; text-align-last:center; }
+    .form-control { text-align: center; }
+  }//signup
+  .get-login, .get-signup { margin-top: 30px; text-align: center; }
+  
+  .login {
+    padding-top: 5%;
+    background-image: image-url("login/background2.png");
+    height: 100vh;
+  }
+  
+}//access
