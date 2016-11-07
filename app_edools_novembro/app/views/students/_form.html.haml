@@ -1,0 +1,11 @@
+= f.input :responsible, label: "Nome do Responsável", placeholder: "Digite o nome do responsável pela aluno", required: true
+= f.input :name, label: t('labels.name'), placeholder: t('placeholders.full_name'), required: true
+= f.input :course_id, label: "Curso", collection: current_user.courses, label_method: :title, value_method: :id, required: true, include_blank: false, prompt: "Selecione o curso"
+= f.input :address, label: t('labels.address'), placeholder: t('placeholders.full_address'), required: true
+= f.input :phone, label: t('labels.phone'), placeholder: t('placeholders.phone'), id: "telefone_aluno", required: true
+= f.input :document, label: t('labels.document'), placeholder: t('placeholders.document'), id: "cpf_aluno", required: true
+= f.input :registration, label: "Matrícula", placeholder: "Matrícula do aluno na escola", required: true
+= f.input :status_student, label: "Status", collection: [[ t('labels.active'), 1 ], [ t('labels.inactive'), 0 ]], selected: t('labels.active'), include_blank: false, required: true
+= f.input :course_id, as: :hidden, input_html: { value: @course.id }
+= f.input :school_id, as: :hidden, input_html: { value: @school.id }
+= f.button :submit

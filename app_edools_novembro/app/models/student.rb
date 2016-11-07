@@ -1,7 +1,10 @@
 class Student < ActiveRecord::Base
-  has_many :courses
+  belongs_to :course
   belongs_to :school
 
+  require "validates_cpf_cnpj"
+
   validates :name, :address, :document, :phone, :responsible, :registration,
-            :status, :course_id, presence: true
+            :status_student, :course_id, presence: true
+  validates_cpf :document
 end

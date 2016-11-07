@@ -21,6 +21,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @school = @course.school
   end
 
   def edit

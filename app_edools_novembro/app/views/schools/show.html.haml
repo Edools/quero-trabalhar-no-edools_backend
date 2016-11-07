@@ -15,7 +15,7 @@
       %p
         = link_to "Novo Curso", new_user_school_course_path(current_user, @school), class: "btn btn-default"
       %p
-        = link_to "Lista Geral de Estudantes", user_school_students_path(current_user, @school, @students), class: "btn btn-default"
+        = link_to "Lista Geral de Estudantes", lista_geral_path(current_user, @school), class: "btn btn-default"
       %p
         = link_to "Voltar", root_path, class: "btn btn-default"
       %p

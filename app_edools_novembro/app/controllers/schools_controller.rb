@@ -21,6 +21,7 @@ class SchoolsController < ApplicationController
   end
 
   def show
+    @students = @school.students
   end
 
   def edit
@@ -45,6 +46,11 @@ class SchoolsController < ApplicationController
       format.html { redirect_to root_path, notice: "Escola apagada com sucesso" }
       format.json { head :no_content }
     end
+  end
+
+  def lista_geral
+    @school = School.find(params[:school_id])
+    @students = @school.students
   end
 
   private

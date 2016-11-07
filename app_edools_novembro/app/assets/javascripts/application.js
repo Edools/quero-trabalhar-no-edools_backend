@@ -11,7 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require maskedinput
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+jQuery(function($){
+   $("#cpf_aluno").mask("999.999.999-99");
+   $("#telefone_aluno").mask("(99)9999-99999");
+});

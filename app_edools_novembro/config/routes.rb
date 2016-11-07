@@ -5,15 +5,18 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :schools do
-      resources :courses, :students
+      resources :courses do
+        resources :students
+      end
     end
   end
 
   post "users/:user_id/schools/:id/courses/new" => "courses#create"
   patch "users/:user_id/schools/:id/courses/:id/edit" => "courses#update"
-  post "users/:user_id/schools/:id/students/new" => "students#create"
-  patch "users/:user_id/schools/:school_id/students/:id/edit" => "students#update"
-  delete "users/:user_id/schools/:school_id/students" => "students#destroy"
+  post "users/:user_id/schools/:school_id/courses/:course_id/students/new" => "students#create"
+  patch "users/:user_id/schools/:school_id/courses/:course_id/students/:id/edit" => "students#update"
+  delete "users/:user_id/schools/:school_id/courses/:course_id/students" => "students#destroy"
+  get "users/:user_id/schools/:school_id/students", controller: 'schools', action: 'lista_geral', as: 'lista_geral'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

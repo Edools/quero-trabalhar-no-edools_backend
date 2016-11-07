@@ -1,0 +1,35 @@
+%h1= t('titles.students_list')
+
+%input#search.form-control{:placeholder => t('placeholders.search_student'), :type => "search", :value => ""}/
+
+%table.table.table-striped#table
+  %thead
+    %tr
+      %th Responsável
+      %th Matrícula
+      %th= t('table_titles.name')
+      %th= t('table_titles.address')
+      %th= t('table_titles.phone')
+      %th= t('table_titles.document')
+      %th Status
+      %th= t('table_titles.edit')
+      %th= t('table_titles.delete')
+
+  - @students.each do |student|
+    %tbody
+      %tr
+        %td= student.responsible
+        %td= student.registration
+        %td= student.name
+        %td= student.address
+        %td= student.phone
+        %td= student.document
+        %td
+          - if student.status_student == 1
+            Ativo
+          - else
+            Inativo
+        %td= link_to t('links.edit'), edit_user_school_course_student_path(current_user, @school.id, @course.id, student.id)
+        %td= link_to t('links.delete'), user_school_course_student_path(current_user, @school.id, @course.id, student.id), method: :delete, data: { confirm: t('messages.confirm') }
+.id
+= link_to t('links.back'), user_school_course_path(current_user, @school, @course)

@@ -18,7 +18,7 @@
     - @school.courses.map do |course|
       %tr
         %td
-          =course.title
+          = link_to course.title, user_school_course_path(current_user, @school, course)
         %td
           = time_tag course.created_at
         %td

@@ -1,0 +1,39 @@
+%h2
+  Dados do curso
+  = @course.title
+
+%hr
+
+%h5
+  %p
+    %b
+      Descrição:
+    = @course.description
+%br
+%h5
+  %p
+    %b
+      Conteúdo:
+    = @course.content
+%br
+%h5
+  %p
+    %b
+      Duração:
+    = @course.duration
+%br
+%h5
+  %p
+    %b
+      Preço:
+    =  number_to_currency(@course.price, unit: "R$ ", separator:",", delimiter:" ")
+
+%br
+%hr
+
+  %p
+    = link_to "Cadastrar Aluno", new_user_school_course_student_path(current_user, @school, @course), class: "btn btn-default"
+    = link_to "Listar Alunos Matrículados", user_school_course_students_path(current_user, @school, @course), class: "btn btn-default"
+    = link_to "Editar Curso", edit_user_school_course_path(current_user, @course.school, @course), class: "btn btn-primary"
+    = link_to "Apagar", user_school_course_path(current_user, @course.school, @course), class: "btn btn-danger",method: :delete, data: { confirm: "Tem certeza que deseja apagar o curso #{@course.title}?" }
+    = link_to "Voltar", user_school_path(current_user, @course.school.id), class: "btn btn-default"
