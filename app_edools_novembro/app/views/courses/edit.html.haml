@@ -1,0 +1,6 @@
+%h1= t('titles.edit_course')
+
+= simple_form_for @course, url: edit_user_school_course_path(current_user, @course.school, @course) do |f|
+  = render "courses/form_edit", f: f
+
+= link_to t('links.cancel'), user_school_path(current_user, @course.school.id)

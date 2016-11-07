@@ -1,5 +1,7 @@
 class SchoolsController < ApplicationController
   before_action :find_school, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
   def new
     @school = current_user.schools.build
   end

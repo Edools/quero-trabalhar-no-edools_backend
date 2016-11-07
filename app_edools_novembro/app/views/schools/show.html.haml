@@ -13,7 +13,7 @@
     %td{:align => "right", :rowspan => "5", :width => "200px"}
       %h4 Opções
       %p
-        = link_to "Novo Curso", new_user_school_course_path(@school, current_user), class: "btn btn-default"
+        = link_to "Novo Curso", new_user_school_course_path(current_user, @school), class: "btn btn-default"
       %p
         = link_to "Lista Geral de Estudantes", user_school_students_path(current_user, @school, @students), class: "btn btn-default"
       %p
