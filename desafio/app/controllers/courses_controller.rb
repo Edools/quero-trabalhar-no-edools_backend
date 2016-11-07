@@ -8,6 +8,10 @@ class CoursesController < ApplicationController
     @courses = Course.nome_escola(params[:nome])
   end
 
+  def pesquisar_cursos_preco
+    @courses = Course.preco(params[:min],params[:max])
+  end
+
   def new
     @course = Course.new
   end

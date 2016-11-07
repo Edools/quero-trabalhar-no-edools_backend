@@ -5,6 +5,7 @@
       <th>Escola</th>
       <th>Alunos ativos</th>
       <th>Valor</th>
+      <th>Opções</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,7 @@
       <td><%= course.titulo %></td>
       <td><%= course.school.nome %></td>
       <td><%= course.alunos_ativos %></td>
+      <td><%= course.preco %></td>
       <td><%= link_to "Exibir", course_path(course.id) %> | <%= link_to "Editar", edit_course_path(course.id) %> </td>
     </tr>
     <% end %>
