@@ -1,0 +1,44 @@
+<%= form_for(@school) do |f| %>
+<%= render 'shared/erros', object: @school %>
+<div class="form-group">
+  <%= f.label :nome, "Nome da Escola"%><br />
+  <%= f.text_field :nome, class: "form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :email_dono, "Email do Dono" %><br />
+  <%= f.email_field :email_dono, class: "form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :pitch, "Apresentação" %><br />
+  <%= f.text_area :pitch, class: "form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :sub_dominio, "Subdomínio" %><br />
+  <%= f.text_field :sub_dominio, class: "form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :data_criacao, "Data de Criação" %><br />
+  <%= f.date_field :data_criacao, class: "form-control"%>
+</div>
+
+<%= f.button "Cadastrar Escola", class: "btn btn-success"%>
+
+<%= link_to_add_association 'Adicionar curso', f, :courses,
+'data-association-insertion-none' => "#courses-school ol",
+'data-association-insertion-method' => "append", class:"btn btn-primary"%>
+
+
+<fieldset id="courses-school", class="form-group">
+  <legend>Cursos:</legend>
+  <ol>
+    <%= f.fields_for :courses do |course| %>
+        <%= render 'course_fields', :f => course %>
+    <% end %>
+  </ol>
+</fieldset>
+
+<% end %>

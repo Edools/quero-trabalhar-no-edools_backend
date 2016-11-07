@@ -1,0 +1,20 @@
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Nome da escola</th>
+      <th>Quantidade de cursos</th>
+      <th>Email do dono</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schools.each do |school| %>
+    <tr>
+      <td><%= school.nome %></td>
+      <td><%= school.courses.size %></td>
+      <td><%= school.email_dono %></td>
+      <td><%= link_to "Exibir", school_path(school.id) %> | <%= link_to "Editar", edit_school_path(school.id) %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

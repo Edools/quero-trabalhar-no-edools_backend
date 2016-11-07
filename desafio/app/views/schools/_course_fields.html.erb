@@ -1,0 +1,23 @@
+<div class="control-group nested-fields">
+  <div class="controls">
+    <%= f.label :titulo, "Título do curso" %>
+    <%= f.text_field :titulo, class: "form-control"%><br />
+
+    <%= f.label :descricao, "Descrição" %>
+    <%= f.text_area :descricao, class: "form-control"%><br />
+
+    <%= f.label :duracao, "Duração" %>
+    <%= f.text_field :duracao, class: "form-control"%><br />
+
+    <%= f.label :data_criacao, "Data da Criação" %>
+    <%= f.date_field :data_criacao, class: "form-control"%><br />
+
+    <%= f.label :alunos_ativos, "Alunos Ativos" %>
+    <%= f.text_field :alunos_ativos, class: "form-control"%><br />
+
+    <%= f.label :preco, "Preço" %>
+    <%= f.text_field :preco, class: "form-control"%><br />
+    <%= link_to_remove_association "Excluir curso", f, class:"btn btn-danger" %>
+  </div>
+</div>
+<hr>

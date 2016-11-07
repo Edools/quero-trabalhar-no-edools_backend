@@ -1,0 +1,35 @@
+<%= form_for(@course) do |f| %>
+<%= render 'shared/erros', object: @course %>
+<div class="form-group">
+  <%= f.label :titulo, "Título do curso"%><br />
+  <%= f.text_field :titulo, class: "form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :descricao, "Descrição" %><br />
+  <%= f.text_area :descricao, class: "form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :duracao, "Duração" %><br />
+  <%= f.text_field :duracao, class: "form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :data_criacao, "Data de Criação" %><br />
+  <%= f.date_field :data_criacao, class: "form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :alunos_ativos, "Alunos Ativos" %><br />
+  <%= f.text_field :alunos_ativos, class: "form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :preco, "Preço" %><br />
+  <%= f.text_field :preco, class: "form-control"%>
+</div>
+
+<%= f.button "Atualizar Curso", class: "btn btn-success"%>
+
+<% end %>
