@@ -10,10 +10,6 @@ RSpec.describe Course, type: :model do
 
   describe "Validações" do
 
-    it "Curso válida" do
-      expect(subject).to be_valid
-    end
-
     it "quando o título do curso não foi informado" do
       subject.titulo = ""
       expect(subject).to_not be_valid
