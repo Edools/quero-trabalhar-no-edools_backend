@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "courses#index"
+
   resources :enrollments
   resources :courses
   resources :students
