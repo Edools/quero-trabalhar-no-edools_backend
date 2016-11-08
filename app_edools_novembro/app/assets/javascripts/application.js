@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require maskedinput
+//= require jquery.searchable
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require_tree .
@@ -19,4 +20,13 @@
 jQuery(function($){
    $("#cpf_aluno").mask("999.999.999-99");
    $("#telefone_aluno").mask("(99)9999-99999");
+});
+
+$(function () {
+  $('#table').searchable({
+    striped: true,
+    oddRow: { 'background-color': '#f5f5f5' },
+    evenRow: { 'background-color': '#fff' },
+    searchType: 'fuzzy'
+  });
 });

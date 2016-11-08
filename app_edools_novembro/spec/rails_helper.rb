@@ -7,6 +7,8 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'shoulda/matchers'
 require 'capybara/rails'
+require 'devise'
+include Warden::Test::Helpers
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -29,14 +31,19 @@ require 'capybara/rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  #config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include FactoryGirl::Syntax::Methods
-
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  config.after :each do
+    Warden.test_reset!
+  end
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
