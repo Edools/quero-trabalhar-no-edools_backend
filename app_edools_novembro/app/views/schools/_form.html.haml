@@ -1,4 +1,4 @@
-= simple_form_for([current_user, @school]) do |f|
+= simple_form_for([current_user, @school], html: { multipart: true }) do |f|
   -if @school.errors.any?
     #error_explanation
       %h2
@@ -12,4 +12,5 @@
   = f.input :email, label: "Email da Escola", placeholder: "Digite um email para a escola", class: 'form-control', required: true
   = f.input :pitch, label: "Pitch", class: 'form-control', required: true
   = f.input :subdomain, label: "Subdominio", placeholder: "nome-escola.edools.com", class: 'form-control', required: true
+  = f.file_field :image, label: "Imagem", placeholder: "Selecione uma imagem", input_html: { class: 'form-control' }, required: true, class: 'form-control'
   = f.button :submit, "Cadastrar", class: "btn btn-primary right"

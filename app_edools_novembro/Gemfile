@@ -16,6 +16,7 @@ gem 'devise', '~> 3.5', '>= 3.5.10'
 gem 'will_paginate', '~> 3.1'
 gem 'validates_cpf_cnpj'
 gem 'maskedinput-rails'
+gem 'paperclip', '~> 4.3', '>= 4.3.7'
 
 group :development, :test do
   gem 'byebug'

@@ -1,9 +1,7 @@
 %h1 Escolas Cadastradas
-
+%hr
 - @schools.each do |school|
+  = image_tag(school.image.url(:thumb))
   = link_to school.name, user_school_path(current_user, school)
 
 %br
-
-= link_to "Cadastrar Nova Escola", new_user_school_path(current_user)
-= link_to "Sair do Sistema", destroy_user_session_path, method: :delete

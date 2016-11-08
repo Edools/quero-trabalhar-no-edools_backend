@@ -13,15 +13,15 @@
     %td{:align => "right", :rowspan => "5", :width => "200px"}
       %h4 Opções
       %p
-        = link_to "Novo Curso", new_user_school_course_path(current_user, @school), class: "btn btn-default"
+        = link_to "Novo Curso", new_user_school_course_path(current_user, @school), class: "btn btn-default options"
       %p
-        = link_to "Lista Geral de Estudantes", lista_geral_path(current_user, @school), class: "btn btn-default"
+        = link_to "Lista Geral de Estudantes", lista_geral_path(current_user, @school), class: "btn btn-default options"
       %p
-        = link_to "Voltar", root_path, class: "btn btn-default"
+        = link_to "Voltar", root_path, class: "btn btn-default options"
       %p
-        = link_to "Editar", edit_user_school_path(current_user, @school), class: "btn btn-default"
+        = link_to "Editar", edit_user_school_path(current_user, @school), class: "btn btn-default options"
       %p
-        = link_to "Apagar Escola", user_school_path(current_user, @school), method: :delete, data: { confirm: "Tem certeza que deseja apagar a escola #{@school.name}?" }, class: "btn btn-danger"
+        = link_to "Apagar Escola", user_school_path(current_user, @school), method: :delete, data: { confirm: "Tem certeza que deseja apagar a escola #{@school.name}?" }, class: "btn btn-danger options"
 
   %tr
     %td

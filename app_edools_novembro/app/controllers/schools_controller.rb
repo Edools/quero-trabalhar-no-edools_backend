@@ -30,7 +30,7 @@ class SchoolsController < ApplicationController
   def update
     respond_to do |format|
       if @school.update(school_params)
-        format.html { redirect_to @school, notice: "Escola atualizada com sucesso" }
+        format.html { redirect_to root_path, notice: "Escola atualizada com sucesso" }
         format.json { render :show, status: :ok, location: @school }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class SchoolsController < ApplicationController
   private
 
   def school_params
-    params.require(:school).permit(:name, :email, :pitch, :subdomain)
+    params.require(:school).permit(:name, :email, :pitch, :subdomain, :image)
   end
 
   def find_school
