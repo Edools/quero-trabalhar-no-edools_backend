@@ -1,0 +1,108 @@
+<div id="courses-panel">
+    <h2>((school.name))</h2>
+
+    <h3>Cursos</h3>
+
+    <div v-for="course in school.courses">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">((course.title))</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Descrição</td>
+                                    <td>((course.description))</td>
+                                </tr>
+                                <tr>
+                                    <td>Conteúdo</td>
+                                    <td>((course.content))</td>
+                                </tr>
+                                <tr>
+                                    <td>Duração</td>
+                                    <td>((course.duration))</td>
+                                </tr>
+                                <tr>
+                                    <td>Preço</td>
+                                    <td>((course.price))</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#extend "js"}}
+    <script type="text/javascript">
+        var $pathArray = window.location.pathname.split('/');
+        var $shoolId = $pathArray[2];
+
+        var courseVM = new Vue({
+            delimiters: ['((', '))'],
+            el: '#courses-panel',
+            data: {
+                school: {
+                    id: '',
+                    name: '',
+                    email: '',
+                    pitch: '',
+                    subdomain: '',
+                    creation_date: '',
+                    courses: []
+                }
+            },
+            mounted: function() {
+                var _this = this;
+                _this.getSchool($shoolId);
+                _this.getCourses($shoolId);
+            },
+            methods: {
+                getSchool: function(id) {
+                    var _this = this;
+                    var getSchoolURL = '{{baseAPIURL}}/schools/' + $shoolId;
+
+                    _this.$http.get(getSchoolURL).then((response) => {
+                        var school = response.data.data.attributes;
+                        _this.school.id = school.id;
+                        _this.school.name = school.name;
+                        _this.school.email = school.email;
+                        _this.school.pitch = school.pitch;
+                        _this.school.subdomain = school.subdomain;
+                        _this.school.creation_date = school.creation_date;
+                    }, (response) => {
+                        console.log(response);
+                    });
+                },
+                getCourses: function(schoolId) {
+                    var _this = this;
+                    var getCoursesURL = '{{baseAPIURL}}/schools/' + $shoolId + '/courses';
+
+                    _this.$http.get(getCoursesURL).then((response) => {
+                        var courses = response.data.data;
+                        courses.forEach(function(course) {
+                            _this.school.courses.push({
+                                id: course.attributes.id,
+                                title: course.attributes.title,
+                                school_id: course.attributes.school_id,
+                                description: course.attributes.description,
+                                content: course.attributes.content,
+                                duration: course.attributes.duration,
+                                creation_date: course.attributes.creation_date,
+                                active_students: course.attributes.active_students,
+                                price: course.attributes.price
+                            });
+                        });
+                    }, (response) => {
+                        console.log(response);
+                    });
+                }
+            }
+        });
+    </script>
+{{/extend}}

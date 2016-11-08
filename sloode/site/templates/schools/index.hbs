@@ -1,0 +1,52 @@
+{{#extend "css"}}
+    <link href="/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+{{/extend}}
+
+<h1>Escolas</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table" id="schools-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Subdomínio</th>
+                    <th>Alunos ativos</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+{{#extend "js"}}
+    <script src="/assets/bower_components/datatables.net/js/jquery.dataTables.min.js" charset="utf-8"></script>
+    <script src="/assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#schools-table').DataTable({
+                ajax: {
+                    url: '{{baseAPIURL}}/schools'
+                },
+                columnDefs: [{
+                    "targets": [-1],
+                    "orderable": false
+                }],
+                columns: [{
+                    data: 'attributes.name',
+                    name: 'attributes.name'
+                }, {
+                    data: 'attributes.subdomain',
+                    name: 'attributes.subdomain'
+                }, {
+                    data: 'attributes.active_students',
+                    name: 'attributes.active_students'
+                }, {
+                    render: function(data, type, row) {
+                        return "<a href='/escolas/" + row.id + "/cursos' title='Cursos'><span class='glyphicon glyphicon-book' aria-hidden='true'></span></a>";
+                    }
+                }]
+            });
+        });
+    </script>
+{{/extend}}
