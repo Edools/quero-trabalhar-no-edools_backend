@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'rails_helper'
 require 'capybara/rspec'
-
+require 'devise'
 Capybara.javascript_driver = :selenium
 
 describe "when access courses pages", js: true do

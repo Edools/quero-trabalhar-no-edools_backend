@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   before_action :find_course, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   def new
     @school = School.find(params[:school_id])
     @course = current_user.courses.build

@@ -1,22 +1,28 @@
 # encoding: utf-8
 require 'rails_helper'
+require 'spec_helper'
 require 'capybara/rspec'
+include Devise::TestHelpers
+include Warden::Test::Helpers
+Warden.test_mode!
 
 Capybara.javascript_driver = :selenium
 
 describe 'when access schools page', js: true do
-  let!(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.create(:user) }
 
   it 'create a new school' do
-    visit '/'
+    visit '/users/sign_up'
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password
-    click_on 'Log in'
-    click_on 'Cadastrar Nova Escola'
+    fill_in 'user_password_confirmation', with: user.password
+    click_button 'Sign up'
+    click_button 'Nova Escola'
     fill_in 'Nome da Escola', with: 'FooBar'
     fill_in 'Email da Escola', with: 'foobar@gmail.com'
     fill_in 'Pitch', with: 'FooBarFooBar FooBar'
     fill_in 'Subdominio', with: 'foo-bar.edools.com'
+    page.attach_file('school_image', Rails.root + 'spec/fixture/rails.png')
     click_on 'Cadastrar'
 
     expect(page).to have_content('Escola cadastrada com sucesso.')

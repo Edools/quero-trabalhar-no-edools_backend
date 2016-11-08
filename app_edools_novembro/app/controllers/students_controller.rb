@@ -1,7 +1,8 @@
 class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
   before_action :data_student, only: [:index, :new, :create, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   def index
     @students = current_user.students
     @course = Course.find(params[:course_id])
