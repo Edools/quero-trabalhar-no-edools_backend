@@ -6,6 +6,9 @@ RSpec.describe School, type: :model do
       it { expect(create(:school).name).not_to be_nil }
       it { expect(create(:school).name).to be_a String }
     end
+    context '#courses' do 
+      it { expect(create(:school).courses).not_to be_nil }
+    end
     context '#owner_email' do
       it { expect(create(:school).owner_email).not_to be_nil }
       it { expect(create(:school).owner_email).to be_a String }
