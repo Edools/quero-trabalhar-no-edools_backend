@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  school_id: 
+  description: MyText
+  content: MyText
+  duration: MyString
+  price: 1.5
+
+two:
+  title: MyString
+  school_id: 
+  description: MyText
+  content: MyText
+  duration: MyString
+  price: 1.5

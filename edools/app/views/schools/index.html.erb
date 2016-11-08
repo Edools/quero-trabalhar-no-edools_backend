@@ -1,0 +1,46 @@
+<h1>Escolas</h1>
+
+<div class="row">
+    <div class="col-sm-12">
+      <%= form_tag("/schools", method: "get", class: "navbar-form navbar-left", role: "search") do%>
+          <div class="form-group">
+            <%= text_field_tag "search", nil, placeholder: "Nome", class: "form-control" %>
+          </div>
+          <%= submit_tag("Pesquisar", class: "btn btn-default") %>
+          <%= link_to 'Adicionar', new_school_path, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <tr>
+                <th>Nome</th>
+                <th></th>
+            </tr>
+
+            <% @schools.each do |school| %>
+            <tr>
+                <td><%= school.name %></td>
+                <td class="col-sm-5 right">
+                  <%= link_to "Cursos", school_courses_path(school), class: "btn btn-default"%>
+                  <%= link_to "Alunos", school_students_path(school), class: "btn btn-default"%>
+                  <%= link_to 'Alunos ativos', active_students_school_path(school), class: "btn btn-default" %>
+                  <div class="btn-group">
+                    <%= link_to edit_school_path(school), class: "btn btn-default" do%>
+                      <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    <% end %>
+                    <%= link_to school_path(school), class: "btn btn-default", method: :delete, data: { confirm: 'Tem certeza de que deseja excluir?' } do%>
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    <% end %>
+                    <%= link_to school_path(school), class: "btn btn-default" do%>
+                      <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    <% end %>
+                  </div>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<h1>Nova Escola</h1>
+
+<%= form_for :school, url: schools_path do |f| %>
+
+<div class="form-group">
+    <%= f.label :name, "Nome", for: "name" %>
+    <%= f.text_field :name, id: "name", class: "form-control", placeholder: "Nome" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :owner_email, "Email do dono", for: "email" %>
+    <%= f.text_field :owner_email, id: "email", class: "form-control", placeholder: "Email do dono", type: "email" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :pitch, "Pitch", for: "pitch" %>
+    <%= f.text_area :pitch, id: "pitch", class: "form-control", placeholder: "Pitch" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :subdomain, "Subdomínio", for: "subdomain" %>
+    <%= f.text_field :subdomain, id: "subdomain", class: "form-control", placeholder: "Subdomínio" %>
+</div>
+
+<div>
+    <%= f.submit "Salvar", class: "btn btn-primary" %>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <% if @school.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+            <div id="error_explanation">
+                <h2>
+                    <%= pluralize(@school.errors.count, "erro encontrado", "erros encontrados") %>
+                </h2>
+                <ul>
+                    <% @school.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+<% end %>

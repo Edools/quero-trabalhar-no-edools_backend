@@ -1,0 +1,54 @@
+<h1>Novo curso</h1>
+
+<%= form_for([@school, @school.courses.build]) do |f| %>
+
+<div class="form-group">
+    <%= f.label :title, "Título", for: "title" %><br>
+    <%= f.text_field :title, id: "title", class: "form-control", placeholder: "Título" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :description, "Descrição", for: "description" %><br>
+    <%= f.text_area :description, id: "description", class: "form-control", placeholder: "Descrição" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :content, "Conteúdo", for: "content" %><br>
+    <%= f.text_area :content, id: "content", class: "form-control", placeholder: "Conteúdo" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :duration, "Duração", for: "duration" %><br>
+    <%= f.text_field :duration, id: "duration", class: "form-control", placeholder: "Duração" %>
+</div>
+
+<div class="form-group">
+    <%= f.label :price, "Preço", for: "price" %><br>
+    <%= f.text_field :price, id: "price", class: "form-control", placeholder: "Preço" %>
+</div>
+
+<div>
+    <%= f.submit "Salvar", class: "btn btn-primary" %>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <% if @course.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@course.errors.count, "erro encontrado", "erros encontrados") %>
+            </h2>
+            <ul>
+                <% @course.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+<% end %>

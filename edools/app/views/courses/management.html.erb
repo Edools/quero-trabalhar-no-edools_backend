@@ -1,0 +1,110 @@
+<h1>Select students</h1>
+
+<%= form_for :course, url: enroll_school_course_path(@school, @course), method: :patch do |f| %>
+  <%= hidden_field_tag 'students_ids', value: @ids %>
+
+  <div>
+    <%= f.submit "Salvar", class: "btn btn-default" %>
+  </div>
+<% end %>
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <tr>
+                <th>Título</th>
+                <th></th>
+            </tr>
+
+            <% @students.each do |student| %>
+            <tr>
+                <td><%= student.name %></td>
+                <td class="col-sm-3">
+                  <div class="btn-group">
+                    <%= button_tag(type: "button", data: { student_id: student.id }, class: "btn btn-default add-student") do%>
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    <% end %>
+                  </div>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+</div>
+
+<script>
+  //get the hidden that stores the ids of students
+  var hidden = $("#students_ids");
+
+  //get the value = "{:value=>[1, 2]}"
+  var str = hidden.val();
+
+  //extract only ids
+  var ids = str.substring(str.lastIndexOf('[') + 1, str.lastIndexOf(']'));
+
+  //remove spaces
+  ids = ids.replace(" ", "");
+
+  //set the hidden value
+  hidden.val(ids);
+
+  //convert string with ids to array
+  ids = ids.split(",").filter(Boolean);
+
+  //get the add/rmv student buttons
+  var buttons = document.getElementsByClassName("add-student");
+
+  for (var i = 0; i < buttons.length; i++){
+
+    //get the data-student-id
+    var id = $(buttons[i]).attr("data-student-id");
+
+    //check if the id exists in the ids array
+    var index = ids.indexOf(id);
+
+    //if it does
+    if (index != -1)
+    {
+      //change the icon
+      var span = $(buttons[i]).find("span");
+      $(span).removeClass("glyphicon-plus");
+      $(span).addClass("glyphicon-remove");
+    }
+  }
+
+  $(".add-student").on('click', function() {
+
+      var span = $(this).find("span");
+
+      //get the ids in the hidden and convert to array
+      var ids = $("#students_ids").val().split(",").filter(Boolean);
+
+      //get the id of selected student
+      var id = $(this).attr("data-student-id");
+
+      //check if the id exists in the ids array
+      var index = ids.indexOf(id);
+
+      //if it does
+      if (index == -1) {
+        //add the id
+        ids.push(id);
+
+        //change the button icon
+        $(span).removeClass("glyphicon-plus");
+        $(span).addClass("glyphicon-remove");
+      }
+      //otherwise
+      else {
+        //removes the id
+        ids.splice(index, 1);
+
+        //change the button icon
+        $(span).removeClass("glyphicon-remove");
+        $(span).addClass("glyphicon-plus");
+      }
+
+      //set the hidden value
+      hidden.val(ids);
+  });
+</script>
