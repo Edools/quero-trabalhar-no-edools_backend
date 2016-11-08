@@ -5,7 +5,7 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.all.page(params['page']).per(10)
+    @schools = School.search(params[:search]).page(params['page']).per(10)
   end
 
   # GET /schools/1

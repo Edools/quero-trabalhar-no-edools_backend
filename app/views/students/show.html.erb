@@ -35,7 +35,7 @@
       <% @student.enrollments.each do |enrollment| %>
       <tr>
         <td><% enrollment.id %></td>
-        <td><% enrollment.school %></td>
+        <td><% enrollment.course.school %></td>
         <td><% enrollment.course %></td>
         <td><% enrollment.created_at %></td>
       </tr>

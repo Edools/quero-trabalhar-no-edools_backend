@@ -1,5 +1,27 @@
 <h1>Courses</h1>
 
+<div class="row form-group">
+  <%= form_tag courses_path, :method => 'get' do %>
+    <div class="col-sm-3">
+      <%= text_field_tag :search, params[:search], :class => "form-control" %>
+    </div>
+    <div class="col-sm-1">
+      <%= submit_tag "Search", :name => nil, :class => "btn btn-primary" %>
+    </div>
+
+    <div class="col-sm-7">
+      <% if params[:filter] %>
+        <%= select_tag :filter, options_for_select(School.all.collect{|sc| [sc.name, sc.id]}, params[:filter]), :include_blank => true, :class => "form-control" %>
+      <% else %>
+        <%= select_tag :filter, options_for_select(School.all.collect{|sc| [sc.name, sc.id]}), :include_blank => true, :class => "form-control" %>
+      <% end %>
+    </div>
+    <div class="col-sm-1">
+      <%= submit_tag "Filter", :name => nil, :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
