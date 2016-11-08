@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :school do
-    name "MyString"
-    owner_email "MyString"
-    pitch "MyText"
-    subdomain "MyString"
+    name 'Escola'
+    owner_email 'dono@escola.com.br'
+    pitch 'Nossa escola'
+    subdomain 'escola.edools.com'
   end
 end
