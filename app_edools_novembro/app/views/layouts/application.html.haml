@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title App Edools
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    %header.navbar.navbar-modificado{:role => "navigation"}
+    .navbar-inner
+      .container
+        %nav.collapse.navbar-collapse.navbar-ex1-collapse
+          - if user_signed_in?
+            %ul
+              .nav.navbar-nav.navbar-right
+                %li= link_to "Nova Escola", new_user_school_path(current_user)
+                %li= link_to "Sair do Sistema", destroy_user_session_path, method: :delete
+          - else
+            %ul
+              .nav.navbar-nav.pull-right
+                %li= link_to "Entrar", new_user_session_path
+                %li= link_to "Cadastrar", new_user_registration_path
+
+  .container
+    - flash.each do |name, msg|
+      = content_tag(:div, msg, class: "alert alert-#{name}")
+
+
+    #content.col-md-9.center-block
+      = yield

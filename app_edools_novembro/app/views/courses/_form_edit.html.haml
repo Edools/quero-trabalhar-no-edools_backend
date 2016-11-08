@@ -1,0 +1,7 @@
+= f.input :title, label: t('labels.title'), placeholder: t('placeholders.title'), required: true
+= f.input :description, label: t('labels.description'), placeholder: t('placeholders.description'), required: true
+= f.input :content, label: t('labels.content'), placeholder: t('placeholders.content'), required: true
+= f.input :duration, label: t('labels.duration'), placeholder: t('placeholders.duration'), required: true
+= f.input :price, label: t('labels.price'), placeholder: t('placeholders.price'), required: true
+= f.input :school_id, as: :hidden, input_html: { value: @course.school.id }
+= f.button :submit, class: 'btn btn-primary pull-rigth'

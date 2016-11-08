@@ -1,0 +1,72 @@
+- if @school.courses.count > 0
+  %h1 Cursos Cadastrados
+  %input#search.form-control{:placeholder => 'Buscar curso por nome', :type => "search", :value => ""}/
+
+  %br
+  %table.table.table-striped#table
+    %thead
+      %tr
+        %th Nome do Curso
+        %th Data de Criação
+        %th Descrição
+        %th Conteúdo
+        %th Duração
+        %th Valor
+        %th Editar
+        %th Deletar
+    %tbody
+    - @school.courses.map do |course|
+      %tr
+        %td
+          = link_to course.title, user_school_course_path(current_user, @school, course)
+        %td
+          = time_tag course.created_at
+        %td
+          %button.btn-default{ "data-target" => "#myDescription", "data-toggle" => "modal", type: "button" }
+            Descrição
+
+          #myDescription.modal.fade{ :role => "dialog" }
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  %button.close{ "data-dismiss" => "modal", :type => "button" } &times;
+                  %h4.modal-title
+                    Descrição
+
+                .modal-body
+                  %p= simple_format(course.description)
+
+                .modal-footer
+                  %button.btn.btn-default{ "data-dismiss" => "modal", :type => "button" }
+                    Fechar
+
+        %td
+          %button.btn-default{ "data-toggle" => "modal", "data-target" => "#myModal", :type => "button" }
+            Conteúdo
+
+          #myModal.modal.fade{ :role => "dialog" }
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  %button.close{ "data-dismiss" => "modal", :type => "button" } &times;
+                  %h4.modal-title
+                    Conteúdo
+
+                .modal-body
+                  %p= simple_format(course.content)
+
+                .modal-footer
+                  %button.btn.btn-default{ "data-dismiss" => "modal", :type => "button" }
+                    Fechar
+
+        %td
+          = course.duration
+
+        %td
+          = number_to_currency(course.price, unit: "R$ ", separator:",", delimiter:" ")
+
+        %td
+          = link_to 'Editar', edit_user_school_course_path(current_user, @school.id, course.id)
+
+        %td
+          = link_to "Apagar", user_school_course_path(current_user, @school, course), method: :delete, data: { confirm: "Tem certeza que deseja apagar o curso #{course.title}?" }

@@ -1,0 +1,110 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: Erros nas validações
+      models:
+        school:
+          attributes:
+            name:
+              blank: O campo nome não pode ficar em branco
+              taken: O nome já está sendo utilizado
+            email_responsible:
+              blank: O campo email não pode ficar em branco
+              invalid: O campo email está com um formato inválido
+              taken: O email já está sendo utilizado
+            pitch:
+              blank: O campo pitch não pode ficar em branco
+            subdomain:
+              invalid: O campo subdominio está com um formato inválido
+              taken: Este subdominio já foi escolhido
+
+  buttons:
+    close: Fechar
+    content: Conteúdo
+    description: Descrição
+  labels:
+    address: Endereço
+    active: Ativo
+    content: Conteúdo
+    date_school: Data da criação da escola
+    description: Descrição
+    document: CPF
+    duration: Duração
+    email: Email
+    inactive: Inativo
+    name: Nome
+    phone: Telefone
+    pitch: Pitch
+    price: Preço
+    subdomain: Subdominio
+    title: Título
+  links:
+    back: Voltar
+    cancel: Cancelar
+    delete: Deletar
+    edit: Editar
+    new_course: Novo Curso
+    new_school: Nova Escola
+    new_student: Novo Aluno
+    students_list: Listar Alunos
+  messages:
+    confirm: Você tem certeza?
+    course_create: Curso cadastrado com sucesso.
+    course_destroy: Curso removido com sucesso.
+    course_update: Curso atualizado com sucesso.
+    school_create: Escola cadastrada com sucesso.
+    school_destroy: Escola removida com sucesso.
+    school_update: Escola atualizada com sucesso.
+    student_create: Aluno cadastrado com sucesso.
+    student_destroy: Aluno removido com sucesso.
+    student_update: Dados do aluno atualizado com sucesso.
+  placeholders:
+    content: Conteúdo programático
+    description: Descrição do curso
+    document: CPF - xxx.xxx.xxx-xx
+    duration: Duração
+    email: Email do responsável pela escola email@example.com
+    full_address: Endereço completo
+    full_name: Nome completo do Aluno
+    name: Nome da Escola
+    phone: Telefone (xx)xxxxx-xxxx
+    price: Preço em reais
+    search_course: Buscar curso por nome
+    search_school: Buscar escola por nome
+    search_student: Buscar aluno por nome
+    subdomain: Subdominio deve ter o formato example-example.edools.com
+    title: Título do curso
+  table_titles:
+    address: Endereço
+    content: Conteúdo
+    created_at: Criado em
+    delete: Deletar
+    description: Descrição
+    document: CPF
+    duration: Duração
+    edit: Editar
+    email_responsible: Email do Responsável
+    name: Nome
+    name_course: Nome do Curso
+    phone: Telefone
+    price: Preço
+    school_name: Nome da Escola
+    subdomain: Subdominio
+  time:
+    formats:
+      long: "%d-%m-%Y"
+  titles:
+    content: Conteúdo
+    description: Descrição
+    edit_course: Editar informações do curso
+    edit_school: Editar informações da escola
+    edit_student: Editar dados do aluno
+    joined_courses: Cursos Cadastrados
+    new_course: Novo Curso
+    new_school: Nova Escola
+    new_student: Novo Aluno
+    options: Opções
+    students_list: Lista de Alunos
+    school: Escola
+    school_list: Controle de Escolas
