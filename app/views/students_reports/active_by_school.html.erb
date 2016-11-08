@@ -1,0 +1,48 @@
+<h1>Active Users By School</h1>
+
+<div class="row form-group">
+  <%= form_tag students_reports_active_by_school_path, :method => 'get' do %>
+
+    <div class="col-sm-7">
+      <% if params[:school] %>
+        <%= select_tag :school, options_for_select(School.all.collect{|sc| [sc.name, sc.id]}, params[:school]), :include_blank => true, :class => "form-control" %>
+      <% else %>
+        <%= select_tag :school, options_for_select(School.all.collect{|sc| [sc.name, sc.id]}), :include_blank => true, :class => "form-control" %>
+      <% end %>
+    </div>
+    <div class="col-sm-1">
+      <%= submit_tag "Filter", :name => nil, :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+<a id="generate_pdf" target="_blank" class="btn btn-default" href="<%= active_by_school_pdf_path(format: 'pdf') %>">View in PDF</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>School</th>
+      <th>Course</th>
+      <th>Student</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @enrollments.each do |enrollment| %>
+    <tr>
+      <td>
+        <%= link_to enrollment.id, enrollment %>
+      </td>
+      <td>
+        <%= link_to enrollment.course.school %>
+      </td>
+      <td>
+        <%= link_to enrollment.course %>
+      </td>
+      <td>
+        <%= link_to enrollment.student %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
