@@ -1,3 +1,4 @@
+# Schools Controller
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
 
