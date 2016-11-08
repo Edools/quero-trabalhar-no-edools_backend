@@ -1,0 +1,38 @@
+<h3><%= @course.title %></h3>
+
+<p>
+  <strong>School:</strong>
+  <%= link_to @course.school, @course %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @course.description %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @course.content %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @course.duration %> <%= @course.periodicity %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  R$ <%= @course.price %>
+</p>
+
+<fieldset>
+  <legend>Students</legend>
+  <ol>
+    <% @course.students.each do |student| %>
+      <li><%= student.name %></li>
+    <% end %>
+  </ol>
+</fieldset>
+
+<%= link_to 'Edit', edit_course_path(@course), :class => "btn btn-default" %>
+<%= link_to 'Back', courses_path, :class => "btn btn-warning" %>

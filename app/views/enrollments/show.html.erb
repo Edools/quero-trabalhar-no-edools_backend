@@ -1,0 +1,24 @@
+<h3>Enrollment #<%= @enrollment.id %></h3>
+
+<p>
+  <strong>School:</strong>
+  <%= @enrollment.course.school %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @enrollment.course %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @enrollment.student %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @enrollment.status %>
+</p>
+
+<%= link_to 'Edit', edit_enrollment_path(@enrollment), :class => "btn btn-warning" %>
+<%= link_to 'Back', enrollments_path, :class => "btn btn-default" %>

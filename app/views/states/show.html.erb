@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @state.name %>
+</p>
+
+<p>
+  <strong>Abbr:</strong>
+  <%= @state.abbr %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @state.country %>
+</p>
+
+<%= link_to 'Edit', edit_state_path(@state) %> |
+<%= link_to 'Back', states_path %>

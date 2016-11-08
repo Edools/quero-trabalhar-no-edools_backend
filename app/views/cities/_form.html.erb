@@ -1,0 +1,31 @@
+<%= form_for(city) do |f| %>
+  <% if city.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(city.errors.count, "error") %> prohibited this city from being saved:</h2>
+
+      <ul>
+      <% city.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group row">
+
+    <div class="col-sm-8">
+      <%= f.label :name, :class => "control-label" %>
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= f.label :state_id, :class => "control-label" %>
+      <%= f.collection_select :state_id, State.all, :id, :name, {}, {:class => "form-control"} %>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
+<% end %>

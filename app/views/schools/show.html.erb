@@ -1,0 +1,28 @@
+<h3><%= @school.name %></h3>
+<hr />
+<p>
+  <strong>Owner email:</strong>
+  <%= @school.owner_email %>
+</p>
+
+<p>
+  <strong>Pitch:</strong>
+  <%= @school.pitch %>
+</p>
+
+<p>
+  <strong>Subdomain:</strong>
+  <%= @school.subdomain %>
+</p>
+
+<fieldset><legend>Courses</legend>
+
+<ul>
+  <% @school.courses.each do |course| %>
+    <li><%= link_to course.title, course %></li>
+  <% end %>
+</ul>
+</fieldset>
+
+<%= link_to 'Edit', edit_school_path(@school), :class => "btn btn-warning" %>
+<%= link_to 'Back', schools_path, :class => "btn btn-default" %>

@@ -1,0 +1,33 @@
+<%= form_for(state) do |f| %>
+  <% if state.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(state.errors.count, "error") %> prohibited this state from being saved:</h2>
+
+      <ul>
+      <% state.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group row">
+    <div class="col-sm-6">
+      <%= f.label :name, :class => "control-label" %>
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.label :abbr, :class => "control-label" %>
+      <%= f.text_field :abbr, :class => "form-control" %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= f.label :country_id, :class => "control-label" %>
+      <%= f.collection_select :country_id, Country.all, :id, :name, {}, {:class => "form-control"} %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<%= form_for(country) do |f| %>
+  <% if country.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(country.errors.count, "error") %> prohibited this country from being saved:</h2>
+
+      <ul>
+      <% country.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group row">
+
+    <div class="col-sm-8">
+      <%= f.label :name, :class => "control-label" %>
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= f.label :abbr, :class => "control-label" %>
+      <%= f.text_field :abbr, :class => "form-control" %>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
+<% end %>
