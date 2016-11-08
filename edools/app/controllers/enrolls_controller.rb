@@ -2,7 +2,7 @@ class EnrollsController < ApplicationController
   def new
     @student = Student.find(params[:student_id])
     @enroll = @student.enrolls.build
-    @schools = School.where(:course.count > 0)
+    @schools = School.all.each { |e| e unless e.courses.count == 0  }
   end
 
   def create
@@ -22,7 +22,7 @@ class EnrollsController < ApplicationController
     @enroll = @student.enrolls.find(params[:id])
 
     @enroll.destroy
-    redirect_to @student
+    redirect_to @student, :notice => t('flash.notice.enroll_destroyed')
   end
 
   def show

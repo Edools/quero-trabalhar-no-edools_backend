@@ -38,8 +38,12 @@ class SchoolsController < ApplicationController
 
   def destroy
     @school = School.find(params[:id])
-    @school.destroy
-    redirect_to schools_path, :notice => t('flash.notice.school_destroyed')
+    if @school.courses.count > 0
+      redirect_to schools_path, :notice => t('flash.notice.school_has_courses')
+    else
+      @school.destroy
+      redirect_to schools_path, :notice => t('flash.notice.school_destroyed')
+    end
   end
 
   private

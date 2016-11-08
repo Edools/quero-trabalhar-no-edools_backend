@@ -16,9 +16,9 @@
       <td><%= student.name %></td>
       <td><%= student.email %></td>
       <td>
-        <%= link_to "Show", student_path(student.id), :class => "label label-default" %>
-        <%= link_to "Edit", edit_student_path(student.id), :class => "label label-default" %>
-        <%= link_to "Delete", student_path(student.id), :method => :delete, :class => "label label-danger" %>
+        <%= link_to t('.show_student'), student_path(student.id), :class => "label label-default" %>
+        <%= link_to t('.edit_student'), edit_student_path(student.id), :class => "label label-default" %>
+        <%= link_to t('.delete_student'), student_path(student.id), :method => :delete, :class => "label label-danger" %>
       </td>
     </tr>
   <% end %>

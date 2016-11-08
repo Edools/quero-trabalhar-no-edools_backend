@@ -11,7 +11,7 @@
     </div>
   <% end %>
 <% unless @schools.empty? %>
-<h2>Avaliable courses</h2>
+<h2><%= t('.avaliable_courses') %></h2>
 <table class="table">
   <tr>
     <th>Id</th>
@@ -35,6 +35,6 @@
     <%= f.submit :id => 'submit' %>
   </p>
   <% else %>
-    <h3>Não há cursos disponíveis.</h3>
+    <h3><%= t('.no_courses_found')%></h3>
   <% end %>
 <% end %>

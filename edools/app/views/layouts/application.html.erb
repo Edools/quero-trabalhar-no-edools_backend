@@ -15,12 +15,18 @@
         </div>
         <div class="collapse navbar-collapse">   
           <ul class="nav navbar-nav">
-            <li><a href="/students">Students</a></li>
-            <li><a href="/schools">Schools</a></li>
+            <li><a href="/students"><%= t('activerecord.models.student') %></a></li>
+            <li><a href="/schools"><%= t('activerecord.models.school') %></a></li>
           </ul>
         </div>
     </nav>
     <div class="container">
+      <% if notice.present? %>
+        <p class="alert alert-info">
+          <%= notice %>
+        </p>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>

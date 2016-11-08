@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :students do
     resources :enrolls
   end
+
+  root 'home#index'
 end

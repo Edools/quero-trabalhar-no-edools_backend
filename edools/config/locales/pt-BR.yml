@@ -1,4 +1,21 @@
 pt-BR:
+  home:
+    index:
+      school_access_title: Acesso escolas
+      school_access_msg: |
+        Para acessar o cadastro de escolas, 
+        você irá acessar o botão acima escrito "Escolas", 
+        você poderá visualizar as escolas ou cadastrar nova escola, 
+        para cadastrar novo curso, você deverá acessar o cadastro da 
+        escola para então cadastrar um novo curso. 
+      student_access_title: Acesso estudantes
+      student_access_msg: |
+        Para acessar o cadastro de estudantes, 
+        clique no botão acima escrito "Estudantes", 
+        você irá selecionar os estudantes ou cadastrar novo 
+        estudante, para realizar a matrícula você deverá ter 
+        cursos cadastrados e visualizar o cadastro do 
+        estudante e clicar para efetuar a matrícula.
   schools:
     new:
       title: Cadastrar nova escola
@@ -31,21 +48,29 @@ pt-BR:
       title: Visualizar detalhes do aluno
       no_enrolls_found: Não há matrículas para este aluno
       new_enroll: Nova Matrícula
-      delete_enroll: Delete
+      delete_enroll: Deletar
     index:
       title: Cadastros de Alunos
-      new_student: Novo Aluno
       no_students_found: Não foi encontrado nenhum aluno
-  enroll:
+      new_student: Novo Aluno
+      show_student: Visualizar
+      edit_student: Editar
+      delete_student: Deletar
+  enrolls:
     new:
       title: Matricular Aluno
       avaliable_courses: Cursos Disponíveis
+      no_courses_found: Não há cursos disponíveis
   flash:
     notice:
       school_destroyed: Escola excluída
       school_updated: Escola atualizada
       student_destroyed: Aluno excluído
       student_updated: Aluno atualizado
+      school_has_courses: Você deve excluir os cursos antes de excluir a escola
+      course_destroyed: O curso foi excluído
+      course_updated: O curso foi atualizado
+      enroll_destroyed: A matrícula foi excluída
   activerecord:
     models:
       student: Estudante

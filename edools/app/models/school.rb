@@ -4,7 +4,7 @@ class School < ApplicationRecord
   has_many :courses, :dependent => :delete_all
   
   validates :name, :presence => true
-  validates :owner_email, :presence => true
+  validates :owner_email, :presence => true, :uniqueness => true
   validates :subdomain, :presence => true,
                         :uniqueness => true,
                         :subdomain => true

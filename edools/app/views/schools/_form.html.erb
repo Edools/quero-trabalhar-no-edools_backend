@@ -1,6 +1,6 @@
 <%= form_for @school do |f| %>
   <% if @school.errors.any? %>
-    <div id="errors">
+    <div class="alert alert-danger">
       <ul>
         <% @school.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
