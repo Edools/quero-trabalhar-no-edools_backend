@@ -1,0 +1,80 @@
+<h1>Resultados</h1>
+
+<div class="row" id="search-panel">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3>Escolas</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="school in schools">
+                            <td>((school.name))</td>
+                            <td><a v-bind:href="'/escolas/' + school.id + '/cursos'" title="Cursos"><span class='glyphicon glyphicon-book' aria-hidden='true'></span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Cursos</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#extend "js"}}
+    <script src="/assets/js/querystring.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var searchVM = new Vue({
+            delimiters: ['((', '))'],
+            el: '#search-panel',
+            data: {
+                schools: [],
+                courses: []
+            },
+            mounted: function() {
+                var _this = this;
+                _this.getSchoolResult();
+            },
+            methods: {
+                getSchoolResult: function() {
+                    var _this = this;
+                    var getResultURL = '{{baseAPIURL}}/schools/search?q=' + QueryString.q;
+
+                    _this.$http.get(getResultURL).then((response) => {
+                        var results = response.data.data;
+
+                        results.forEach(function(result) {
+                            _this.schools.push({
+                                id: result.attributes.id,
+                                name: result.attributes.name,
+                                email: result.attributes.email,
+                                pitch: result.attributes.pitch,
+                                subdomain: result.attributes.subdomain
+                            });
+                        });
+                    }, (response) => {
+                        console.log(response);
+                    });
+                }
+            }
+        });
+    </script>
+{{/extend}}

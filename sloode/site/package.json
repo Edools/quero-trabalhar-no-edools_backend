@@ -1,0 +1,24 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "handlebars": "^4.0.5",
+    "handlebars-extend-block": "^1.0.0",
+    "handlebars-layouts": "^3.1.4",
+    "hapi": "^15.2.0",
+    "hoek": "^4.1.0",
+    "inert": "^4.0.2",
+    "nodemon": "^1.11.0",
+    "vision": "^4.1.0",
+    "vue-resource": "^1.0.3"
+  }
+}

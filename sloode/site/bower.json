@@ -1,0 +1,25 @@
+{
+  "name": "Sloode",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Marco Damaceno <maadamaceno@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^2.0.5",
+    "bootstrap": "^3.3.7",
+    "datatables.net": "^1.10.12",
+    "datatables.net-bs": "^1.10.12",
+    "vue-resource": "^1.0.3"
+  }
+}
