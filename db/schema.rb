@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20161108142353) do
     t.text     "description"
     t.text     "content"
     t.string   "duration"
-    t.decimal  "active_students"
+    t.integer  "active_students"
     t.float    "price"
     t.integer  "school_id"
     t.datetime "created_at",      null: false

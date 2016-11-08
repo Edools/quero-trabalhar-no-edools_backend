@@ -5,7 +5,7 @@ class CreateCourses < ActiveRecord::Migration
       t.text :description
       t.text :content
       t.string :duration
-      t.decimal :active_students
+      t.integer :active_students
       t.float :price
 
       t.belongs_to :school, index: true
