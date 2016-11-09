@@ -1,0 +1,5 @@
+- flash.each do |type, msg|
+  - if msg.is_a?(String)
+    .alert.alert-dismissible{ class: alert_class(type) }
+      %a.close{ 'data-dismiss': 'alert', href: '#' } ×
+      = msg.html_safe
