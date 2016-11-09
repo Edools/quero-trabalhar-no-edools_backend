@@ -1,0 +1,68 @@
+---
+pt-BR:
+  back: 'Voltar'
+  confirm_delete_message: 'Confirmar exclusão?'
+  creation: 'Criação'
+  currency: 'R$ '
+  dashboard: 'Dashboard'
+  destroy: 'Apagar'
+  edit: 'Editar'
+  name: 'Nome'
+  save: 'Salvar'
+  search: 'Procurar'
+  show: 'Ver'  
+  sign_out: 'Sair'
+  users: 'Usuários'
+  
+  school: 'Escola'
+  schools: 'Escolas'
+  new_school: 'Nova Escola'
+  owner_email: 'Email do proprietário'
+  subdomain: 'Subdomínio'
+  pitch: 'Apresentação'
+  
+  course: 'Curso'
+  courses: 'Cursos'
+  title: 'Título'
+  description: 'Descrição'
+  content: 'Conteúdo'
+  duration: 'Duração (hh:mm)'
+  active_students: 'Estudantes ativos'
+  price: 'Preço'
+  new_course: 'Novo curso'
+  all_courses: 'Todos os Cursos'
+  
+  simple_form:
+    labels:
+      school:
+        name: 'Nome'
+        ownerMail: 'E-mail do Proprietário'
+        pitch: 'Apresentação'
+        subdomain: 'Subdomínio'
+      course:
+        title: 'Título'
+        school: 'Escola'
+        description: 'Descrição'
+        content: 'Conteúdo'
+        duration: 'Duração (minutos)'
+        active_students: 'Estudantes ativos'
+        price: 'Preço'
+  views:
+    pagination:
+      first: '&laquo; Primeiro'
+      last: 'Último &raquo;'
+      previous: '&lsaquo; Anterior'
+      next: 'Próximo &rsaquo;'
+      truncate: ...
+  activerecord:
+    errors:
+      models:
+        school:
+          attributes:
+            owner_email:
+              email: 'Precisa ser um e-mail válido.'
+  alerts:
+    successfully_created: '%{model} criado(a) com sucesso.'
+    successfully_updated: '%{model} atualizado(a) com sucesso.'
+    successfully_destroyed: '%{model} apagado(a) com sucesso.'
+  truncate_omission: '... (continua)'

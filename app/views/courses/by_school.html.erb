@@ -1,0 +1,13 @@
+<div class="row">
+  <%= render 'table', courses: @courses %>
+</div>
+<div class="row">
+  <div class="medium-3 columns">
+    <%= link_to t('new_course'), new_school_courses_path, class: "button" %>    
+  </div>
+  <div class="medium-6 columns text-center">
+    <%= paginate @courses %>
+  </div>
+  <div class="medium-3 columns">
+  </div>
+</div>

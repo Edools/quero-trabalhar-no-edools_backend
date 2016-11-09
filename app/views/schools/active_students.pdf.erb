@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+     <%= wicked_pdf_stylesheet_link_tag "application" %>
+  </head>
+  <body onload='number_pages'>
+    <div id="header">
+     <h1 class="text-center">Alunos ativos - Por escolas</h1>
+    </div>
+    <div id="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Escola</th>
+            <th>Alunos ativos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @schools.each do |school| %>
+          <tr>
+            <td><%= school.name%></td>
+            <td><%= school.total_active_students%></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
