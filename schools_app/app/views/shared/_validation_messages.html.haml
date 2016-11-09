@@ -1,0 +1,8 @@
+- if resource.errors.any?
+  .error-explanation
+    .alert.alert-danger
+      O formulário contém #{t('erros', count: resource.errors.count)}.
+    %ul
+      - resource.errors.full_messages.each do |msg|
+        %li
+          = msg
