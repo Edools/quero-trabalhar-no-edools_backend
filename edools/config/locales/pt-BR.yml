@@ -56,6 +56,8 @@ pt-BR:
       show_student: Visualizar
       edit_student: Editar
       delete_student: Deletar
+    edit:
+      title: Editar cadastro de estudante
   enrolls:
     new:
       title: Matricular Aluno

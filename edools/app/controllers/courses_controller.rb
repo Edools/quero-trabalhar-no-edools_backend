@@ -22,7 +22,7 @@ class CoursesController < ApplicationController
 
   def update
     @school = School.find(params[:school_id])
-    @course = @school.courses.create(course_params)
+    @course = @school.courses.find(params[:id])
 
     if @course.update(course_params)
       redirect_to @school, :notice => t('flash.notice.course_updated')
@@ -40,6 +40,6 @@ class CoursesController < ApplicationController
 
   private
     def course_params
-      params.require(:course).permit(:title, :school, :description, :content, :duration, :price)
+      params.require(:course).permit(:title, :school_id, :description, :content, :duration, :price)
     end
 end
