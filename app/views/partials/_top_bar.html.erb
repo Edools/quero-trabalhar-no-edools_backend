@@ -1,0 +1,25 @@
+<div class="top-bar">
+  <div class="row expanded">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Edools - Painel</li>            
+      </ul>
+    </div>
+    <div class="top-bar-right hide-for-medium">
+      <a type="button" class="menu-icon" data-open="offCanvas"></a>
+    </div>
+    <div class="top-bar-right">
+      
+        <%= form_tag '', :method => 'get' do %>
+        <ul class="menu">
+          <% if @search_form %>
+          <li><%= text_field_tag :search, params[:search], placeholder: t('search') %></li>
+          <li><%= button_tag fa_icon('search'), class: 'button', :name => nil%></li>
+          <% end %>
+          <li><%= link_to t('sign_out'), destroy_user_session_path, :method=>'delete' %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+

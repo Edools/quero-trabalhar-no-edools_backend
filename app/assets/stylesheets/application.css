@@ -1,0 +1,117 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ * 
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+*/
+
+.sidebar{
+  z-index: 1;
+}
+
+.content{
+  margin-top: 64.4px;
+}
+
+.input.error input{
+  margin-bottom: 0px;
+}
+
+.input .error{
+  color: red;
+  margin-bottom: 50px;
+}
+
+table .tiny.button-group{
+  margin-bottom: 0px;
+}
+
+.menu-text{
+  color: white;
+}
+
+.sidebar{
+  background: #EEEEEE;
+  color: white;
+  left: 0;
+  top: 54.4px;
+  bottom: 0;
+  padding: 10px;
+  position: fixed;
+}
+
+.inner-wrap {
+  width: auto; 
+}
+
+.move-right .inner-wrap {
+  -ms-transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+  -margin-left: 114px; 
+}
+
+.left-off-canvas-menu {
+  -ms-transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+  position: fixed;
+  width: 0;
+  height: 100%; 
+  background-color: black;
+}
+
+.icon-bar a.item,
+.icon-bar a.item label{
+  color: white;
+}
+
+.icon-bar a.item i{
+  padding: 5px;
+  font-size: 2em;
+
+}
+
+.move-right .left-off-canvas-menu {
+  width: 114px; 
+}
+
+.move-right .exit-off-canvas {
+  display: none; 
+}
+
+.left-off-canvas-toggle {
+  display: none;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-size: 3rem;
+  color: #333;
+  transition: all .25s ease-in-out; 
+}
+.left-off-canvas-toggle:focus {
+  color: #333; 
+}
+.left-off-canvas-toggle:hover {
+  color: #8c8c8c;
+  transition: all .25s ease-in-out; 
+}
+
+.ad-block {
+  margin-bottom: 2rem; 
+}

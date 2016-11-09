@@ -1,0 +1,30 @@
+<div class="medium-6 medium-offset-3">
+  <p>
+    <strong><%= t('name') %>:</strong>
+    <%= @school.name %>
+  </p>
+
+  <p>
+    <strong><%= t('owner_email') %>:</strong>
+    <%= @school.owner_email %>
+  </p>
+
+  <p>
+    <strong><%= t('pitch') %>:</strong>
+    <%= @school.pitch %>
+  </p>
+
+  <p>
+    <strong><%= t('subdomain') %>:</strong>
+    <%= @school.subdomain %>
+  </p>
+
+  <p>
+    <strong><%= t('creation') %>:</strong>
+    <%= @school.created_at %>
+  </p>
+</div>
+<div class="medium-6 medium-offset-3">
+  <%= link_to t('edit'), edit_school_path(@school) %> |
+  <%= link_to t('back'), schools_path %>
+</div>

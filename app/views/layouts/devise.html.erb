@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="off-canvas position-right" id="offCanvas" data-position="right" data-off-canvas>
+          
+        </div>       
+        <div class="off-canvas-content" data-off-canvas-content>
+          <div class="top-bar">
+            <div class="row expanded">
+              <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+                  <li class="menu-text">Edools - Painel</li>            
+                </ul>
+              </div>
+              <div class="top-bar-right hide-for-medium">
+                <a type="button" class="menu-icon" data-open="offCanvas"></a>
+              </div>
+              <div class="top-bar-right">
+              
+              </div>
+            </div>
+          </div>
+          <div class="page-title">
+            <h1><%= yield(:title) %></h1>
+          </div>
+          <div class="row expanded">
+            <div class="small-12 medium-4 medium-offset-4 columns">
+              <% if notice %>
+              <div class="callout small" data-closable>
+                <h5><%= notice %></h5>
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <% end %>
+              
+              <% if alert %>
+              <div class="callout alert small" data-closable>
+                <h5><%= alert %></h5>
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <% end %>
+              
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

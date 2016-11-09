@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="medium-12">
+    <table class="table">
+     <thead>
+       <tr>
+         <th><%= t('e-mail') %></th>
+       </tr>
+     </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>              
+            <td><%= link_to user.email, user %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

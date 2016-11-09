@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th><%= t('title') %></th>
+      <th><%= t('school') %></th>
+      <th class="text-right"><%= t('duration') %></th>
+      <th class="text-right"><%= t('active_students') %></th>
+      <th class="text-right"><%= t('price') %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% courses.each do |course| %>
+      <tr>
+        <td>
+          <%= link_to course.title, course %>
+        </td>
+        <td><%= course.school.name %></td>
+        <td class="text-right"><%= Time.at(course.duration*60).utc.strftime("%H:%M").gsub '00 hora e ', '' %></td>
+        <td class="text-right"><%= course.active_students %></td>
+        <td class="text-right"><%= number_to_currency(course.price, unit: t('currency'), separator: ",", delimiter: "") %></td>
+        <td class="text-right">
+          <div class="tiny button-group">
+            <%= link_to fa_icon('edit') + ' ' + t('edit'), edit_course_path(course), class: 'button' %>
+            <%= link_to fa_icon('trash') + ' ' + t('destroy'), course, method: :delete, data: { confirm: t('confirm_delete_message') }, class: 'button alert' %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

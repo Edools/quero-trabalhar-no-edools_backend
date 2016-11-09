@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) + ' | ' : "" %> Edools</title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="off-canvas position-right" id="offCanvas" data-position="right" data-off-canvas>
+          <%= render 'partials/vertical_menu' %>
+        </div>       
+        <div class="off-canvas-content" data-off-canvas-content>
+          <%= render 'partials/top_bar' %>
+          <div class="page-title">
+            <h1><%= yield(:title) %></h1>
+          </div>
+          <div class="row expanded">
+            <div class="medium-2 columns sidebar show-for-medium">
+
+              <%= render 'partials/vertical_menu' %>
+
+            </div>
+            <div class="small-12 medium-10 columns">
+              <div class="medium-6 columns">
+                <ul class="breadcrumbs">
+                  <%= render_breadcrumbs :tag => :li, :separator => "" %>
+                </ul>
+              </div>
+               <div class="medium-6 columns text-right">
+                <% if current_page?(school_active_students_path) %>
+                 <%= link_to 'Downlaod pdf', school_active_students_path(:format => :pdf), class: 'tiny button' %>
+                <% end %>
+              </div>
+              <% if notice %>
+              <div class="callout small" data-closable>
+                <h5><%= notice %></h5>
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <% end %>
+              
+              <% if alert %>
+              <div class="callout alert small" data-closable>
+                <h5><%= notice %></h5>
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <% end %>
+              
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

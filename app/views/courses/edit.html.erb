@@ -1,0 +1,8 @@
+<div class="row">
+  <%= render 'form', course: @course %>  
+</div>
+
+<div class="medium-6 medium-offset-3">
+  <%= link_to t('show') , @course %> |
+  <%= link_to t('back'), courses_path %>
+</div>

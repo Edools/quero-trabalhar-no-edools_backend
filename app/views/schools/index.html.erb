@@ -1,0 +1,44 @@
+<div class="row">
+<table>
+  <thead>
+    <tr>
+      <th><%= t('name') %></th>
+      <th><%= t('owner_email') %></th>
+      <th><%= t('subdomain') %></th>
+      <th><%= t('creation') %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= link_to school.name, school%></td>
+        <td><%= school.owner_email %></td>
+        <td><%= school.subdomain %></td>
+        <td><%= school.created_at %></td>
+        <td class="text-right">
+          <div class="tiny button-group">
+            <%= link_to fa_icon('graduation-cap') + ' ' + t('courses'), school_courses_path(school), class: "button" %>
+            <%= link_to fa_icon('edit') + ' ' + t('edit'), edit_school_path(school), class: "button" %>
+            <%= link_to fa_icon('trash') + ' ' + t('destroy'), school, method: :delete, data: { confirm: t('confirm_delete_message') }, class: "button alert" %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<div class="row">
+  <div class="medium-3 columns">
+    <%= link_to fa_icon('plus') + ' ' + t('new_school'), new_school_path, class: "button" %>    
+  </div>
+  <div class="medium-6 columns text-center">
+    <%= paginate @schools %>
+  </div>
+  <div class="medium-3 columns">
+  </div>
+</div>
+
+
+

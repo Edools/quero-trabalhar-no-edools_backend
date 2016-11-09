@@ -1,0 +1,23 @@
+<div class="row">
+  <table>
+    <thead>
+      <tr>
+        <th>Escola</th>
+        <th>Alunos ativos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.name%></td>
+        <td><%= school.total_active_students%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="medium-12 columns text-center">
+    <%= paginate @schools %>
+  </div>
+</div>
