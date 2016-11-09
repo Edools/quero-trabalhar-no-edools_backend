@@ -1,0 +1,30 @@
+<h1><%= t('.title') %></h1>
+<p>
+    <%= link_to t('.new_school'), new_school_path, :class => "label label-primary" %>
+</p>
+<% unless @schools.empty? %>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th><%= t('activerecord.attributes.school.name') %></th>
+        <th><%= t('activerecord.attributes.school.owner_email') %></th>
+        <th><%= t('activerecord.attributes.school.created_at') %></th>
+        <th></th>
+    </tr>
+    <% @schools.each do |school| %>
+    <tr>
+        <td><%= school.id %></td>
+        <td><%= school.name %></td>
+        <td><%= school.owner_email %></td>
+        <td><%= school.created_at %></td>
+        <td>
+            <%= link_to t('.show_school'), school_path(school.id), :class => "label label-default" %>
+            <%= link_to t('.edit_school'), edit_school_path(school.id), :class => "label label-default" %>
+            <%= link_to t('.delete_school'), school_path(school.id), method: :delete, :class => "label label-danger" %>
+        </td>
+    </tr>
+    <% end %>
+</table>
+<% else %>
+    <h2><%= t('.no_schools_found') %></h2>
+<% end %>

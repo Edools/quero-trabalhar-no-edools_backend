@@ -1,0 +1,102 @@
+pt-BR:
+  home:
+    index:
+      school_access_title: Acesso escolas
+      school_access_msg: |
+        Para acessar o cadastro de escolas, 
+        você irá acessar o botão acima escrito "Escolas", 
+        você poderá visualizar as escolas ou cadastrar nova escola, 
+        para cadastrar novo curso, você deverá acessar o cadastro da 
+        escola para então cadastrar um novo curso. 
+      student_access_title: Acesso estudantes
+      student_access_msg: |
+        Para acessar o cadastro de estudantes, 
+        clique no botão acima escrito "Estudantes", 
+        você irá selecionar os estudantes ou cadastrar novo 
+        estudante, para realizar a matrícula você deverá ter 
+        cursos cadastrados e visualizar o cadastro do 
+        estudante e clicar para efetuar a matrícula.
+  schools:
+    new:
+      title: Cadastrar nova escola
+    show:
+      title: Visualizar detalhes da escola
+      courses: Cursos
+      no_courses_found: Não há cursos cadastrados nesta escola
+      new_course: Novo Curso
+      course_grid:
+        edit_course: Editar
+        delete_course: Deletar
+    index:
+      title: Cadastros de Escolas
+      new_school: Nova Escola
+      show_school: Visualizar
+      edit_school: Editar
+      delete_school: Deletar
+      no_schools_found: Não foi encontrada nenhuma escola
+    edit:
+      title: Editar escola
+  courses:
+    new:
+      title: Cadastrar novo Curso
+    edit:
+      title: Editar Curso      
+  students:
+    new:
+      title: "Cadastrar novo estudante"
+    show:
+      title: Visualizar detalhes do aluno
+      no_enrolls_found: Não há matrículas para este aluno
+      new_enroll: Nova Matrícula
+      delete_enroll: Deletar
+    index:
+      title: Cadastros de Alunos
+      no_students_found: Não foi encontrado nenhum aluno
+      new_student: Novo Aluno
+      show_student: Visualizar
+      edit_student: Editar
+      delete_student: Deletar
+    edit:
+      title: Editar cadastro de estudante
+  enrolls:
+    new:
+      title: Matricular Aluno
+      avaliable_courses: Cursos Disponíveis
+      no_courses_found: Não há cursos disponíveis
+  flash:
+    notice:
+      school_destroyed: Escola excluída
+      school_updated: Escola atualizada
+      student_destroyed: Aluno excluído
+      student_updated: Aluno atualizado
+      school_has_courses: Você deve excluir os cursos antes de excluir a escola
+      course_destroyed: O curso foi excluído
+      course_updated: O curso foi atualizado
+      enroll_destroyed: A matrícula foi excluída
+  activerecord:
+    models:
+      student: Estudante
+      school: Escola
+      course: Curso
+      enroll: Matrícula
+    attributes:
+      student:
+        name: Nome
+        email: "E-mail"
+      school:
+        name: Nome
+        owner_email: Email do Proprietário
+        pitch: Pitch
+        subdomain: Subdomínio
+        created_at: Data de Criação
+      course:
+        title: Título
+        description: Descrição
+        content: Conteúdo
+        duration: Duração (em horas)
+        price: Preço
+        active_students: Alunos Ativos
+        school: Escola
+      enroll:
+        course: Curso
+        student: Aluno
