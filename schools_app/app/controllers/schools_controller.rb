@@ -3,10 +3,6 @@ class SchoolsController < ApplicationController
     @schools = School.order(updated_at: :desc).all
   end
 
-  def show
-    @school = set_school
-  end
-
   def new
     @school = School.new
   end

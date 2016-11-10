@@ -7,6 +7,10 @@ describe School, type: :model do
 
   it { should validate_length_of(:name).is_at_most(60) }
 
+  it 'be valid' do
+    expect(school.valid?).to be true
+  end
+
   it 'does not accept an outside edools subdomain' do
     school.subdomain = 'nonvalid.domain.com'
     expect(school.valid?).to be false
