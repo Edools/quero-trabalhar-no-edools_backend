@@ -1,0 +1,29 @@
+- provide(:title, 'Alunos')
+
+.panel.panel-default
+  .panel-heading
+  .panel-body
+    .row.text-right
+      .col-md-12
+        = link_to 'Novo Aluno', new_student_path, class: 'btn btn-sm btn-success'
+    .table-responsive
+      %table.table.table-striped
+        %thead
+          %tr
+            %th #
+            %th Nome
+            %th E-mail
+            %th
+
+        %tbody
+          - @students.each do |student|
+            %tr
+              %td
+                = student.id
+              %td
+                = truncate(student.name, length: 20)
+              %td
+                = truncate(student.email, length: 20)
+              %td.td-buttons.text-center
+                = link_to 'Editar', edit_student_path(student), class: 'btn btn-sm btn-warning'
+                = link_to 'Excluir', student, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'
