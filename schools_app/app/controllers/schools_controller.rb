@@ -22,6 +22,7 @@ class SchoolsController < ApplicationController
 
   def update
     @school = set_school
+    @school.update(school_params)
     respond_with @school
   end
 
