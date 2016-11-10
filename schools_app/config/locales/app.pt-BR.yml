@@ -9,6 +9,10 @@ pt-BR:
         zero: Cursos
         one: Curso
         other: Cursos
+      student:
+        zero: Estudantes
+        one: Estudante
+        other: Estudantes
     attributes:
       school:
         name: Nome
@@ -22,3 +26,6 @@ pt-BR:
         content: Conteúdo
         duration: Duração
         price: Preço
+      students:
+        name: Nome
+        email: E-mail
