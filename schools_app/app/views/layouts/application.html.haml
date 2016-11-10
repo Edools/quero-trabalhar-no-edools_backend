@@ -19,6 +19,8 @@
         .col-md-3.side-bar
           = render 'layouts/sidebar'
         .col-md-9
+          .breadcrumb
+            = render_breadcrumbs tag: :li, separator: ' '
           %h1
             = yield(:title)
           %hr

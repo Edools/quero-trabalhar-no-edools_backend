@@ -1,13 +1,17 @@
 class EnrollmentsController < ApplicationController
+  add_breadcrumb 'Matrículas', :enrollments_path
+
   def index
     @enrollments = Enrollment.order(updated_at: :desc).all
   end
 
   def new
+    add_breadcrumb 'Nova'
     @enrollment = Enrollment.new
   end
 
   def create
+    add_breadcrumb 'Nova'
     @enrollment = Enrollment.create(enrollment_params)
     respond_with @enrollment
   end

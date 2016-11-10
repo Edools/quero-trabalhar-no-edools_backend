@@ -16,7 +16,11 @@ feature 'Site layout', type: :feature do
     expect(page).to have_link 'Cursos'
     click_link 'Cursos'
     expect(current_path).to eq(courses_path)
-    visit root_path
+
+    # Click breadcrumb home link
+    expect(page).to have_link 'Início'
+    click_link 'Início'
+    expect(current_path).to eq(root_path)
 
     # Visit students index
     expect(page).to have_link 'Alunos'
@@ -28,6 +32,5 @@ feature 'Site layout', type: :feature do
     expect(page).to have_link 'Matrículas'
     click_link 'Matrículas'
     expect(current_path).to eq(enrollments_path)
-    visit root_path
   end
 end
