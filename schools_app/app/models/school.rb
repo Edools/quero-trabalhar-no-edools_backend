@@ -7,7 +7,7 @@ class School < ActiveRecord::Base
 
   def edools_subdomain
     unless !subdomain.blank? && subdomain.end_with?('.edools.com')
-      errors.add(:subdomain, "can't be an outside edools domain")
+      errors.add(:subdomain, 'não pode estar fora do domínio da Edools')
     end
   end
 end

@@ -10,6 +10,6 @@ describe School, type: :model do
   it 'does not accept an outside edools subdomain' do
     school.subdomain = 'nonvalid.domain.com'
     expect(school.valid?).to be false
-    expect(school.errors.messages[:subdomain].join).to match("can't be an outside edools domain")
+    expect(school.errors.messages[:subdomain].join).to match('não pode estar fora do domínio da Edools')
   end
 end

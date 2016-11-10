@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      school:
+        zero: Escolas
+        one: Escola
+        other: Escolas
+    attributes:
+      school:
+        name: Nome
+        owner_email: E-mail do dono
+        pitch: Pitch
+        subdomain: Subdomínio
