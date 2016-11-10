@@ -7,7 +7,7 @@ RSpec.describe "courses/show", type: :view do
       :description => "MyText",
       :content => "MyText",
       :duration => "Duration",
-      :active_students => "9.99",
+      :active_students => 9,
       :price => 2.5
     ))
   end
@@ -18,7 +18,7 @@ RSpec.describe "courses/show", type: :view do
     expect(rendered).to match(/MyText/)
     expect(rendered).to match(/MyText/)
     expect(rendered).to match(/Duration/)
-    expect(rendered).to match(/9.99/)
+    expect(rendered).to match(/9/)
     expect(rendered).to match(/2.5/)
   end
 end
