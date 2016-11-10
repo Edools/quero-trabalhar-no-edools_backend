@@ -13,6 +13,10 @@ pt-BR:
         zero: Alunos
         one: Aluno
         other: Alunos
+      enrollment:
+        zero: Matrículas
+        one: Matrícula
+        other: Matrículas
     attributes:
       school:
         name: Nome
@@ -29,3 +33,6 @@ pt-BR:
       student:
         name: Nome
         email: E-mail
+      enrollment:
+        course: Curso
+        student: Aluno

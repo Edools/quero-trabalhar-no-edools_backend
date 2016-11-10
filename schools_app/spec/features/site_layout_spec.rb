@@ -23,5 +23,11 @@ feature 'Site layout', type: :feature do
     click_link 'Alunos'
     expect(current_path).to eq(students_path)
     visit root_path
+
+    # Visit enrollments index
+    expect(page).to have_link 'Matrículas'
+    click_link 'Matrículas'
+    expect(current_path).to eq(enrollments_path)
+    visit root_path
   end
 end

@@ -1,0 +1,13 @@
+= form_for @enrollment do |enrollment|
+
+  = render partial: 'shared/validation_messages', locals: { resource: @enrollment }
+  .form-group
+    = enrollment.label :course_id, 'Curso'
+    = enrollment.collection_select(:course_id, Course.all, :id, :title, {}, { class: 'form-control' })
+  .form-group
+    = enrollment.label :student_id, 'Aluno'
+    = enrollment.collection_select(:student_id, Student.all, :id, :name, {}, { class: 'form-control' })
+  .form-group.text-center
+    = link_to enrollments_path, class: 'btn btn-danger' do
+      Cancelar
+    = enrollment.submit class: 'btn btn-success'
