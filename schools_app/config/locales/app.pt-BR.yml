@@ -17,6 +17,7 @@ pt-BR:
         subdomain: Subdomínio
       course:
         title: Título
+        school: Escola
         description: Descrição
         content: Conteúdo
         duration: Duração

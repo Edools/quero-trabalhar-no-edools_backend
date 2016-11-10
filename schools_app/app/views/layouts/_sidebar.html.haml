@@ -1,4 +1,7 @@
 .list-group
   = link_to schools_path, class: 'list-group-item' do
-    %span.glyphicon.glyphicon-user{ 'aria-hidden' => 'true' }
+    %span.glyphicon.glyphicon-home{ 'aria-hidden' => 'true' }
     %p Escolas
+  = link_to courses_path, class: 'list-group-item' do
+    %span.glyphicon.glyphicon-book{ 'aria-hidden' => 'true' }
+    %p Cursos
