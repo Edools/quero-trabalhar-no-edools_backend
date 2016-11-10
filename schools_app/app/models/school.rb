@@ -1,5 +1,5 @@
 class School < ActiveRecord::Base
-  has_many :courses
+  has_many :courses, dependent: :destroy
 
   validates :name,        presence: true, length: { maximum: 60 }
   validates :owner_email, presence: true

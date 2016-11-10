@@ -1,5 +1,10 @@
 class Course < ActiveRecord::Base
   belongs_to :school
+  has_many :enrollments, dependent: :destroy
+  has_many :students, through: :enrollments
 
-  validates :content, :description, :school, :title, presence: true
+  validates :content,     presence: true
+  validates :description, presence: true
+  validates :school,      presence: true
+  validates :title,       presence: true
 end
