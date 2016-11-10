@@ -1,4 +1,6 @@
 class School < ActiveRecord::Base
+  has_many :courses
+
   validates :name,        presence: true, length: { maximum: 60 }
   validates :owner_email, presence: true
   validate  :edools_subdomain
