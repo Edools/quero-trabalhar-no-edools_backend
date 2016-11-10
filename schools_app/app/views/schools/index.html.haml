@@ -29,7 +29,7 @@
               %td
                 = school.subdomain
               %td
-                3
+                = school.courses.size
               %td.td-buttons.text-center
                 = link_to 'Editar', edit_school_path(school), class: 'btn btn-sm btn-warning'
                 = link_to 'Excluir', school, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'

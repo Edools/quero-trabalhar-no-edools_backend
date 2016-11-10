@@ -14,7 +14,7 @@
             %th Título
             %th Duração
             %th Preço
-            %th # Alunos
+            %th # Matrículas
             %th
 
         %tbody
@@ -30,7 +30,7 @@
                 R$
                 = course.price
               %td
-                6
+                = course.enrollments.size
               %td.td-buttons.text-center
                 = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'
                 = link_to 'Excluir', course, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'
