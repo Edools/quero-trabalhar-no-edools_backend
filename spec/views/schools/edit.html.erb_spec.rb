@@ -2,12 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "schools/edit", type: :view do
   before(:each) do
-    @school = assign(:school, School.create!(
-      :name => "MyString",
-      :owner_email => "MyString",
-      :pitch => "MyText",
-      :subdomain => "MyString"
-    ))
+    @school = assign(:school, create(:school))
   end
 
   it "renders the edit school form" do

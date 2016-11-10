@@ -1,20 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe "schools/show", type: :view do
+RSpec.describe 'schools/show', type: :view do
   before(:each) do
-    @school = assign(:school, School.create!(
-      :name => "Name",
-      :owner_email => "Owner Email",
-      :pitch => "MyText",
-      :subdomain => "Subdomain"
-    ))
+    @school = assign(:school, create(:school))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
-    expect(rendered).to match(/Name/)
-    expect(rendered).to match(/Owner Email/)
-    expect(rendered).to match(/MyText/)
-    expect(rendered).to match(/Subdomain/)
+    expect(rendered).to match(/Escola/)
+    expect(rendered).to match(/dono@escola.com.br/)
+    expect(rendered).to match(/Nossa escola/)
+    expect(rendered).to match(/escola.edools.com/)
   end
 end

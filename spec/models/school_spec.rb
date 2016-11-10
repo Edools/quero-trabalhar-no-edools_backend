@@ -20,6 +20,10 @@ RSpec.describe School, type: :model do
     context '#subdomain' do
       it { expect(create(:school).subdomain).not_to be_nil }
       it { expect(create(:school).subdomain).to be_a String }
+      it 'conform to *.edools.com' do
+        expect(create(:school).subdomain).to match(/[\w-]+.edools.com/)
+        expect{create(:school, subdomain: 'test.fake.com')}.to raise_error(ActiveRecord::RecordInvalid)
+      end
     end
     context '#created_at' do
       it { expect(create(:school).created_at).not_to be_nil }
