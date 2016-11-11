@@ -3,6 +3,8 @@ class Course < ActiveRecord::Base
   has_many :enrollments, dependent: :destroy
   has_many :students, through: :enrollments
 
+  scope :search_title, -> (search) { where('title ILIKE ?', "%#{search}%") }
+
   validates :content,     presence: true
   validates :description, presence: true
   validates :school,      presence: true

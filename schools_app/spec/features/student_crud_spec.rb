@@ -18,13 +18,30 @@ feature 'As an User I manage Student CRUD' do
     expect(current_path).to eq(students_path)
     expect(page).to have_content student.name.truncate(20)
 
-    # Update
-    visit edit_student_path(1)
-    fill_in 'student_name', with: 'Novo nome de Aluno'
-    submit_form
-    expect(page).to have_content 'Novo nome de Aluno'
-
     # Destroy
     expect { click_link 'Excluir' }.to change(Student, :count).by(-1)
+  end
+
+  scenario 'updating' do
+    student = FactoryGirl.create(:student)
+
+    # Update
+    visit edit_student_path(student)
+    fill_in 'student_name', with: 'Novo nome de Aluno'
+    submit_form
+    expect(current_path).to eq(students_path)
+    expect(page).to have_content 'Novo nome de Aluno'
+  end
+
+  scenario 'searching by name' do
+    student_example = FactoryGirl.create(:student, name: 'Example')
+    student_joe= FactoryGirl.create(:student, name: 'Joe')
+
+    visit students_path
+    expect(page).to have_content student_example.name
+    fill_in 'q', with: student_joe.name
+    submit_form_by_button
+    expect(page).to have_content student_joe.name
+    expect(page).to have_no_content student_example.name
   end
 end

@@ -19,13 +19,30 @@ feature 'As an User I manage School CRUD' do
     expect(current_path).to eq(schools_path)
     expect(page).to have_content school.name.truncate(20)
 
-    # Update
-    visit edit_school_path(1)
-    fill_in 'school_name', with: 'Novo nome de Escola'
-    submit_form
-    expect(page).to have_content 'Novo nome de Escola'
-
     # Destroy
     expect { click_link 'Excluir' }.to change(School, :count).by(-1)
+  end
+
+  scenario 'updating' do
+    school = FactoryGirl.create(:school)
+
+    # Update
+    visit edit_school_path(school)
+    fill_in 'school_name', with: 'Novo nome de Escola'
+    submit_form
+    expect(current_path).to eq(schools_path)
+    expect(page).to have_content 'Novo nome de Escola'
+  end
+
+  scenario 'searching by name' do
+    school_stanford = FactoryGirl.create(:school, name: 'Stanford')
+    school_mit = FactoryGirl.create(:school, name: 'Mit')
+
+    visit schools_path
+    expect(page).to have_content school_stanford.name
+    fill_in 'q', with: school_mit.name
+    submit_form_by_button
+    expect(page).to have_content school_mit.name
+    expect(page).to have_no_content school_stanford.name
   end
 end

@@ -1,6 +1,8 @@
 class School < ActiveRecord::Base
   has_many :courses, dependent: :destroy
 
+  scope :search_name, -> (search) { where('name ILIKE ?', "%#{search}%") }
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
   validates :name,        presence: true, length: { maximum: 60 }

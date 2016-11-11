@@ -2,7 +2,9 @@ class SchoolsController < ApplicationController
   add_breadcrumb 'Escolas', :schools_path
 
   def index
-    @schools = School.order(updated_at: :desc).all
+    @schools = params.has_key?(:q) && !params[:q].blank? ?
+               search_by_query(params[:q]) : School.all
+    @schools = @schools.order(updated_at: :desc)
   end
 
   def new
@@ -42,5 +44,9 @@ class SchoolsController < ApplicationController
 
   def school_params
     params.require(:school).permit(:name, :owner_email, :pitch, :subdomain)
+  end
+
+  def search_by_query(query)
+    School.search_name(query)
   end
 end

@@ -2,7 +2,9 @@ class CoursesController < ApplicationController
   add_breadcrumb 'Cursos', :courses_path
 
   def index
-    @courses = Course.order(updated_at: :desc).all
+    @courses = params.has_key?(:q) && !params[:q].blank? ?
+               search_by_query(params[:q]) : Course.all
+    @courses = @courses.order(updated_at: :desc)
   end
 
   def new
@@ -42,5 +44,9 @@ class CoursesController < ApplicationController
 
   def course_params
     params.require(:course).permit(:title, :school_id, :description, :content, :duration, :price)
+  end
+
+  def search_by_query(query)
+    Course.search_title(query)
   end
 end
