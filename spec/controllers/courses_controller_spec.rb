@@ -185,4 +185,22 @@ RSpec.describe CoursesController, type: :controller do
     end
   end
 
+  describe 'GET #search_by_school' do
+    it 'assign matches as @matches' do
+      school1 = create :school
+      school2 = create :school
+      sc1 = create :course, school_id: school1.id
+      sc2 = create :course, school_id: school1.id
+      sc3 = create :course, school_id: school1.id
+
+      create :course, school_id: school2.id
+      create :course, school_id: school2.id
+
+      @selected_school = school1
+      @selected_courses = [sc1,sc2,sc3]
+      xhr :get, :search_by_school, school_id: @selected_school.id, format: :js
+      expect(assigns(:matches)).to match(@selected_courses)
+    end
+  end
+
 end

@@ -2,6 +2,15 @@
 
 <h1>Listing Courses</h1>
 
+<%= form_tag(search_by_school_courses_path, method: "get", remote: true) do %>
+  <%= label_tag(:name, "Buscar por escola:") %>
+  <%= select_tag 'school_id', options_from_collection_for_select(@schools, :id, :name, 1) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<ol id='matches_list'>
+</ol>
+
 <table>
   <thead>
     <tr>

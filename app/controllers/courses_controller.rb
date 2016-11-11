@@ -6,6 +6,7 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
+    @schools = School.all
   end
 
   # GET /courses/1
@@ -60,6 +61,13 @@ class CoursesController < ApplicationController
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # GET /courses/search_by_school
+  def search_by_school
+    @matches = Course.where school_id: params[:school_id]
+    @schools = School.all
+    render 'search_by_school.js.erb'
   end
 
   private

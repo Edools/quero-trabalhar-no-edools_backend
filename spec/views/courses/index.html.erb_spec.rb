@@ -23,6 +23,7 @@ RSpec.describe 'courses/index', type: :view do
         school_id: school.id
       )
     ])
+    assign(:schools, [school])
   end
 
   it 'renders a list of courses' do
