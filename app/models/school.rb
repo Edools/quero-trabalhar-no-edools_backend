@@ -1,4 +1,6 @@
 class School < ActiveRecord::Base
+  has_many :courses
+
   validates :name, presence: true
   validates :owner_email, presence: true
   validates :pitch, presence: true
