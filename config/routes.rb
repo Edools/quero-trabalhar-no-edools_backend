@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
 
-  resources :schools, only: [:index, :new, :create, :show, :destroy]
+  resources :schools, except: [:edit, :update]
+  resources :courses, except: [:edit, :update]
 end

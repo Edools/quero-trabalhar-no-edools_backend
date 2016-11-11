@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require jquery_masked_input
 //= require_tree .
+
+jQuery(function($){
+   $(".subdomain").mask("********************.edools.com");
+});

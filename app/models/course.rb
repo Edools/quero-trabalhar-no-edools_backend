@@ -8,4 +8,8 @@ class Course < ActiveRecord::Base
   validates :content, presence: true
   validates :length, presence: true
   validates :price, presence: true, numericality: true
+
+  def self.by_name query
+    query ? where("name like ?", query) : all
+  end
 end
