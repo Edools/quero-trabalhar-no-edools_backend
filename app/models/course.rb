@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
   belongs_to :school
+  has_many :student_courses
 
   validates :title, presence: true
   validates :school_id, presence: true
