@@ -21,3 +21,6 @@
 
 # Coverage files
 coverage
+
+# Log files
+log
