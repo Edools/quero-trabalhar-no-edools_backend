@@ -9,10 +9,10 @@
     = school.email_field :owner_email, placeholder: 'E-mail', class: 'form-control'
   .form-group
     = school.label :pitch, 'Pitch'
-    = school.text_field :pitch, placeholder: 'Pitch', class: 'form-control'
+    = school.text_field :pitch, class: 'form-control'
   .form-group
     = school.label :subdomain, 'Subdomínio da escola'
-    = school.text_field :subdomain, placeholder: 'Subdomínio', class: 'form-control'
+    = school.text_field :subdomain, placeholder: 'Subdomínio (Ex.: minha-escola.edools.com)', class: 'form-control'
   .form-group.text-center
     = link_to schools_path, class: 'btn btn-danger' do
       Cancelar

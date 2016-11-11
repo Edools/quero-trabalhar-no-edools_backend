@@ -3,10 +3,10 @@
   = render partial: 'shared/validation_messages', locals: { resource: @student }
   .form-group
     = student.label :name, 'Nome'
-    = student.text_field :name, placeholder: 'Nome', class: 'form-control'
+    = student.text_field :name, class: 'form-control'
   .form-group
     = student.label :email, 'E-mail'
-    = student.email_field :email, placeholder: 'E-mail', class: 'form-control'
+    = student.email_field :email, class: 'form-control'
   .form-group.text-center
     = link_to students_path, class: 'btn btn-danger' do
       Cancelar

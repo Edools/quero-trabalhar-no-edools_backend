@@ -1,11 +1,12 @@
 - provide(:title, 'Matrículas')
 
+.row.search
+  .col-lg-4.col-lg-offset-8.text-right
+    = link_to 'Nova Matrícula', new_enrollment_path, class: 'btn btn-sm btn-success'
+
 .panel.panel-default
   .panel-heading
   .panel-body
-    .row.text-right
-      .col-md-12
-        = link_to 'Nova Matrícula', new_enrollment_path, class: 'btn btn-sm btn-success'
     .table-responsive
       %table.table.table-striped
         %thead

@@ -1,11 +1,18 @@
 - provide(:title, 'Escolas')
 
+.row.search
+  .col-lg-6
+    .input-group
+      %input.form-control{ placeholder: 'Buscar Escola...', type: 'text' }
+      %span.input-group-btn
+        %button.btn.btn-default{ type: 'button' }
+          %span.glyphicon.glyphicon-search{ 'aria-hidden' => 'true' }
+  .col-lg-4.col-lg-offset-2.text-right
+    = link_to 'Nova Escola', new_school_path, class: 'btn btn-sm btn-success'
+
 .panel.panel-default
   .panel-heading
   .panel-body
-    .row.text-right
-      .col-md-12
-        = link_to 'Nova Escola', new_school_path, class: 'btn btn-sm btn-success'
     .table-responsive
       %table.table.table-striped
         %thead
