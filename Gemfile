@@ -14,6 +14,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
@@ -21,8 +22,3 @@ group :development do
   gem 'spring'
   gem 'guard-rspec', require: false
 end
-
-group :test do
-  gem 'shoulda-matchers', '~> 3.1'
-end
-
