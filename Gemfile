@@ -31,12 +31,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use fuzzy-match for text search features
+gem 'fuzzy_match'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
   # console
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'simplecov', require: false
+  gem 'word_salad'
   gem 'byebug'
 end
 

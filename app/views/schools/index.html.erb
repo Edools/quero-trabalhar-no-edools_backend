@@ -2,6 +2,15 @@
 
 <h1>Listing Schools</h1>
 
+<%= form_tag(seach_name_schools_path, method: "get", remote: true) do %>
+  <%= label_tag(:name, "Buscar por nome:") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<ol id='matches_list'>
+</ol>
+
 <table>
   <thead>
     <tr>

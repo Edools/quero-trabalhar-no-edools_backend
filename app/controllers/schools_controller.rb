@@ -6,6 +6,7 @@ class SchoolsController < ApplicationController
   # GET /schools.json
   def index
     @schools = School.all
+    @matches = nil 
   end
 
   # GET /schools/1
@@ -68,6 +69,14 @@ class SchoolsController < ApplicationController
     @courses = Course.where school_id: params[:id]
   end
 
+  # GET /schools/search_name
+  def search_name
+    @schools = School.all
+    matcher = FuzzyMatch.new(@schools, read: :name)
+    @matches = matcher.find_all(params[:name])
+    render 'search_name.js.erb'
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -79,4 +88,5 @@ class SchoolsController < ApplicationController
   def school_params
     params.require(:school).permit(:name, :owner_email, :pitch, :subdomain)
   end
+
 end

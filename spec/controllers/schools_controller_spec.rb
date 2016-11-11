@@ -216,4 +216,25 @@ RSpec.describe SchoolsController, type: :controller do
     end
   end
 
+  describe 'GET #search_name' do
+    before :each do
+      @berry = create :school, name: 'amora'
+      @love = create :school, name: 'amor'
+      @stone =  create :school, name: 'pedra'
+      @fire = create :school, name: 'fogo'
+      @bolder = create :school, name: 'pedregulho'
+    end
+
+    it 'assigns the matching schools as @matching_schools' do
+      xhr :get, :search_name, name: 'amora', format: :js
+      expect(assigns(:matches)).to include @berry
+    end
+
+    it 'assigns the closing matching schools as @close_matching_schools' do
+      xhr :get, :search_name, name: 'amor'
+      expect(assigns(:matches)).to include @love
+    end
+
+  end
+
 end

@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe 'schools/index', type: :view do
   before(:each) do
     assign(:schools, [create(:school), create(:school)])
+    assign(:matches, [])
+    assign(:close_matches, {})
   end
 
   it 'renders a list of schools' do
