@@ -1,0 +1,4 @@
+$('#matches_list').html('')
+<% @matches.each do |match| %>
+  $('#matches_list').append('<li><%= link_to match.title, match %></li>')
+<% end %>
