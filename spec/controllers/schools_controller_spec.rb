@@ -107,9 +107,7 @@ RSpec.describe SchoolsController, type: :controller do
         expect(assigns(:school)).to be_a(School)
       end
 
-      # TODO : Fix render_template.
       it 're-renders the "new" template' do
-        skip "TODO : Fix render_template."
         post :create, school: invalid_attributes, session: valid_session
         expect(response).to render_template('new')
       end
@@ -131,7 +129,6 @@ RSpec.describe SchoolsController, type: :controller do
         school = School.create! valid_attributes
         put :update, id: school.to_param, school: new_attributes, session: valid_session
         school.reload
-        # skip('Add assertions for updated state')
         expect(response).to redirect_to(school_path(school))
       end
 
@@ -155,9 +152,7 @@ RSpec.describe SchoolsController, type: :controller do
         expect(assigns(:school)).to eq(school)
       end
 
-      # TODO : Fix render_template.
       it 're-renders the "edit" template' do
-        skip "TODO : Fix render_template."
         school = School.create! valid_attributes
         put :update, id: school.to_param, school: invalid_attributes, session: valid_session
         expect(response).to render_template('edit')
@@ -220,7 +215,7 @@ RSpec.describe SchoolsController, type: :controller do
     before :each do
       @berry = create :school, name: 'amora'
       @love = create :school, name: 'amor'
-      @stone =  create :school, name: 'pedra'
+      @stone = create :school, name: 'pedra'
       @fire = create :school, name: 'fogo'
       @bolder = create :school, name: 'pedregulho'
     end

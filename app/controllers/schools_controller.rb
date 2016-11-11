@@ -6,7 +6,7 @@ class SchoolsController < ApplicationController
   # GET /schools.json
   def index
     @schools = School.all
-    @matches = nil 
+    @matches = nil
   end
 
   # GET /schools/1

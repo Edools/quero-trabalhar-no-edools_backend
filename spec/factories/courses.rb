@@ -6,7 +6,6 @@ FactoryGirl.define do
     duration '1 ano'
     active_students '10'
     price 1000.0
-    
     association :school, factory: :school
   end
 end

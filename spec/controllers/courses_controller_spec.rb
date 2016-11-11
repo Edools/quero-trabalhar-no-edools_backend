@@ -9,7 +9,7 @@ require 'rails_helper'
 # controller code, this generated spec may or may not pass.
 #
 # It only uses APIs available in rails and/or rspec-rails.  There are a number
-# of tools you can use to make these specs even more expressive, but we're
+# of tools you can use to make these specs even more expressive, but we"re
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 #
 # Compared to earlier versions of this generator, there is very limited use of
@@ -23,7 +23,7 @@ RSpec.describe CoursesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Course. As you add validations to Course, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     school = create(:school)
     {
       title: 'Ruby',
@@ -34,93 +34,94 @@ RSpec.describe CoursesController, type: :controller do
       price: 0.0,
       school_id: school.id
     }
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     {
       title: 'Ruby',
       description: nil,
       content: nil,
       duration: '1 year',
       active_students: 200,
-      price: 'free'
+      price: 'free',
+      school_id: nil
     }
-  }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # CoursesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET #index" do
-    it "assigns all courses as @courses" do
+  describe 'GET #index' do
+    it 'assigns all courses as @courses' do
       course = Course.create! valid_attributes
       get :index, session: valid_session
       expect(assigns(:courses)).to eq([course])
     end
   end
 
-  describe "GET #show" do
-    it "assigns the requested course as @course" do
+  describe 'GET #show' do
+    it 'assigns the requested course as @course' do
       course = Course.create! valid_attributes
       get :show, id: course.to_param, session: valid_session
       expect(assigns(:course)).to eq(course)
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new course as @course" do
+  describe 'GET #new' do
+    it 'assigns a new course as @course' do
       get :new, session: valid_session
       expect(assigns(:course)).to be_a(Course)
     end
   end
 
-  describe "GET #edit" do
-    it "assigns the requested course as @course" do
+  describe 'GET #edit' do
+    it 'assigns the requested course as @course' do
       course = Course.create! valid_attributes
       get :edit, id: course.to_param, session: valid_session
       expect(assigns(:course)).to eq(course)
     end
   end
 
-  describe "POST #create" do
-    context "with valid params" do
-      it "creates a new Course" do
-        expect {
+  describe 'POST #create' do
+    context 'with valid params' do
+      it 'creates a new Course' do
+        # course = Course.create! valid_attributes
+        expectation = expect do
           post :create, course: valid_attributes, session: valid_session
-        }.to change(Course, :count).by(1)
+        end
+        expectation.to change(Course, :count).by(1)
       end
 
-      it "assigns a newly created course as @course" do
+      it 'assigns a newly created course as @course' do
         post :create, course: valid_attributes, session: valid_session
         expect(assigns(:course)).to be_a(Course)
         expect(assigns(:course)).to be_persisted
       end
 
-      it "redirects to the created course" do
+      it 'redirects to the created course' do
         post :create, course: valid_attributes, session: valid_session
         expect(response).to redirect_to(Course.last)
       end
     end
 
-    context "with invalid params" do
-      it "assigns a newly created but unsaved course as @course" do
+    context 'with invalid params' do
+      it 'assigns a newly created but unsaved course as @course' do
         post :create, course: invalid_attributes, session: valid_session
         expect(assigns(:course)).to be_a(Course)
       end
 
-      # TODO : Fix render_template.
-      it "re-renders the 'new' template" do
-        skip 'TODO : Fix render_template.'
+      it 're-renders the "new" template' do
         post :create, course: invalid_attributes, session: valid_session
-        expect(response).to render_template("new")
+        expect(response).to render_template('new')
       end
     end
   end
 
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
+  describe 'PUT #update' do
+    context 'with valid params' do
+      let(:new_attributes) do
         school = create(:school)
         {
           title: 'Python',
@@ -131,54 +132,53 @@ RSpec.describe CoursesController, type: :controller do
           price: 0.0,
           school_id: school.id
         }
-      }
+      end
 
-      it "updates the requested course" do
+      it 'updates the requested course' do
         course = Course.create! valid_attributes
         put :update, id: course.to_param, course: new_attributes, session: valid_session
         course.reload
         expect(response).to redirect_to(course)
       end
 
-      it "assigns the requested course as @course" do
+      it 'assigns the requested course as @course' do
         course = Course.create! valid_attributes
         put :update, id: course.to_param, course: valid_attributes, session: valid_session
         expect(assigns(:course)).to eq(course)
       end
 
-      it "redirects to the course" do
+      it 'redirects to the course' do
         course = Course.create! valid_attributes
         put :update, id: course.to_param, course: valid_attributes, session: valid_session
         expect(response).to redirect_to(course)
       end
     end
 
-    context "with invalid params" do
-      it "assigns the course as @course" do
+    context 'with invalid params' do
+      it 'assigns the course as @course' do
         course = Course.create! valid_attributes
         put :update, id: course.to_param, course: invalid_attributes, session: valid_session
         expect(assigns(:course)).to eq(course)
       end
 
-      # TODO : Fix render_template.
-      it "re-renders the 'edit' template" do
-        skip 'TODO : Fix render_template.'
+      it 're-renders the "edit" template' do
         course = Course.create! valid_attributes
         put :update, id: course.to_param, course: invalid_attributes, session: valid_session
-        expect(response).to render_template("edit")
+        expect(response).to render_template(:edit)
       end
     end
   end
 
-  describe "DELETE #destroy" do
-    it "destroys the requested course" do
+  describe 'DELETE #destroy' do
+    it 'destroys the requested course' do
       course = Course.create! valid_attributes
-      expect {
+      expectation = expect do
         delete :destroy, id: course.to_param, session: valid_session
-      }.to change(Course, :count).by(-1)
+      end
+      expectation.to change(Course, :count).by(-1)
     end
 
-    it "redirects to the courses list" do
+    it 'redirects to the courses list' do
       course = Course.create! valid_attributes
       delete :destroy, id: course.to_param, session: valid_session
       expect(response).to redirect_to(courses_url)
@@ -197,7 +197,7 @@ RSpec.describe CoursesController, type: :controller do
       create :course, school_id: school2.id
 
       @selected_school = school1
-      @selected_courses = [sc1,sc2,sc3]
+      @selected_courses = [sc1, sc2, sc3]
       xhr :get, :search_by_school, school_id: @selected_school.id, format: :js
       expect(assigns(:matches)).to match(@selected_courses)
     end

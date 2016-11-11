@@ -6,7 +6,7 @@ RSpec.describe School, type: :model do
       it { expect(create(:school).name).not_to be_nil }
       it { expect(create(:school).name).to be_a String }
     end
-    context '#courses' do 
+    context '#courses' do
       it { expect(create(:school).courses).not_to be_nil }
     end
     context '#owner_email' do
@@ -22,7 +22,7 @@ RSpec.describe School, type: :model do
       it { expect(create(:school).subdomain).to be_a String }
       it 'conform to *.edools.com' do
         expect(create(:school).subdomain).to match(/[\w-]+.edools.com/)
-        expect{create(:school, subdomain: 'test.fake.com')}.to raise_error(ActiveRecord::RecordInvalid)
+        expect { create(:school, subdomain: 'test.fake.com') }.to raise_error(ActiveRecord::RecordInvalid)
       end
     end
     context '#created_at' do
@@ -30,7 +30,7 @@ RSpec.describe School, type: :model do
     end
   end
 
-  context '#active_students' do 
+  context '#active_students' do
     before :each do
       @school = create(:school)
 
@@ -39,7 +39,7 @@ RSpec.describe School, type: :model do
       create(:course, school_id: @school.id, active_students: 30)
     end
 
-    it { expect(create(:school).active_students).to eq(0) } 
+    it { expect(create(:school).active_students).to eq(0) }
     it { expect(@school.active_students).to eq(60) }
   end
 end

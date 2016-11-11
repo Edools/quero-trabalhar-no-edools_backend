@@ -16,5 +16,4 @@ RSpec.describe ReportsController, type: :controller do
       expect(assigns(:schools)).to match(schools)
     end
   end
-  
 end
