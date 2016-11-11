@@ -3,6 +3,6 @@ FactoryGirl.define do
     name "MyString"
     owner_email "MyString"
     pitch "MyString"
-    subdomain "subdomain.edools.com"
+    sequence(:subdomain) {|n| "subdomain#{n}.edools.com" }
   end
 end
