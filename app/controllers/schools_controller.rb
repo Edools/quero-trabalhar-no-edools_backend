@@ -1,6 +1,6 @@
 # Schools Controller
 class SchoolsController < ApplicationController
-  before_action :set_school, only: [:show, :edit, :update, :destroy]
+  before_action :set_school, only: [:show, :edit, :update, :destroy, :courses]
 
   # GET /schools
   # GET /schools.json
@@ -60,6 +60,12 @@ class SchoolsController < ApplicationController
       format.html { redirect_to schools_url, notice: 'School was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # GET /schools/1/courses
+  # GET /schools/1/courses.json
+  def courses
+    @courses = Course.where school_id: params[:id]
   end
 
   private
