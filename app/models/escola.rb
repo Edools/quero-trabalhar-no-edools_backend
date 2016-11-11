@@ -1,5 +1,7 @@
 class Escola < ActiveRecord::Base
   has_many :cursos
+  has_many :alunos
+
   validates :nome, presence: { message: "obrigatório" }
-  validates_format_of :sub_dominio, with: /(?:[A-Za-z0-9][A-Za-z0-9\-]{0,61}[A-Za-z0-9]|[A-Za-z0-9])/, message: "inválido"
+  validates_format_of :sub_dominio, with: /\A[a-zA-Z0-9-]+.edools.com\z/, message: "inválido"
 end

@@ -1,6 +1,7 @@
 <div class="container">
 
-    <%= link_to 'Nov0 aluno', new_aluno_path, class: 'btn btn-default' %>
+    <%= link_to 'Voltar para Escola', escola_path(@escola), class: 'btn btn-default' %>
+    <%= link_to 'Novo aluno', new_escola_aluno_path(@escola), class: 'btn btn-success' %>
 
     <table class="table table-hover table-striped">
         <thead>
@@ -15,9 +16,9 @@
             <tr>
                 <td><%= aluno.id %></td>
                 <td><%= aluno.nome %></td>
-                <td><%= link_to 'Exibir', aluno_path(aluno) %></td>
-                <td><%= link_to 'Editar', edit_aluno_path(aluno) %></td>
-                <td><%= link_to 'Apagar', aluno_path(aluno), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+                <td><%= link_to 'Exibir', escola_aluno_path(@escola,aluno) %></td>
+                <td><%= link_to 'Editar', edit_escola_aluno_path(@escola,aluno) %></td>
+                <td><%= link_to 'Apagar', escola_aluno_path(@escola,aluno), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
             </tr>
             <% end %>
         </tbody>

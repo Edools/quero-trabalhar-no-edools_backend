@@ -1,3 +1,5 @@
 class Aluno < ActiveRecord::Base
-  validates :nome, presence: { message: "obrigatório" }
+  belongs_to :escola
+  has_and_belongs_to_many :cursos
+  validates :nome, presence: { message: "obrigatório" }, uniqueness: true
 end

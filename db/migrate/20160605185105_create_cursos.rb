@@ -7,7 +7,6 @@ class CreateCursos < ActiveRecord::Migration
       t.text :conteudo
       t.string :duracao
       t.date :data_criacao
-      t.references :alunos_ativos, index: true, foreign_key: true
       t.float :preco
 
       t.timestamps null: false

@@ -21,6 +21,9 @@
                 <td><%= escola.email_dono %></td>
                 <td><%= escola.sub_dominio %></td>
                 <td><%= escola.data_criacao %></td>
+                <td><%= link_to 'Alunos', escola_alunos_path(escola) %></td>
+                <td><%= link_to 'Alunos Ativos', active_alunos_escola_path(escola) %></td>
+                <td><%= link_to 'Cursos', escola_cursos_path(escola) %></td>
                 <td><%= link_to 'Exibir', escola_path(escola) %></td>
                 <td><%= link_to 'Editar', edit_escola_path(escola) %></td>
                 <td><%= link_to 'Apagar', escola_path(escola), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>

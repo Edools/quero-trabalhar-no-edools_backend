@@ -1,0 +1,30 @@
+<div class="container">
+
+    <%= link_to 'Voltar para Escola', escola_path(@escola), class: 'btn btn-default' %>
+    <%= link_to 'Novo curso', new_escola_curso_path(@escola), class: 'btn btn-success' %>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Título</th>
+                <th>Data de Criação</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @cursos.each do |curso| %>
+            <tr>
+                <td><%= curso.id %></td>
+                <td><%= curso.titulo %></td>
+                <td><%= curso.data_criacao %></td>
+                <td><%= link_to 'Matriculas', enrollment_escola_curso_path(@escola,curso) %></td>
+                <td><%= link_to 'Exibir', escola_curso_path(@escola,curso) %></td>
+                <td><%= link_to 'Editar', edit_escola_curso_path(@escola,curso) %></td>
+                <td><%= link_to 'Apagar', escola_curso_path(@escola,curso), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</div>

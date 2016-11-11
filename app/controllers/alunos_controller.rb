@@ -1,34 +1,39 @@
 class AlunosController < ApplicationController
   def index
-      @alunos = Aluno.all
+    @escola = Escola.find(params[:escola_id])
+    @alunos = @escola.alunos.all
   end
 
   def show
+    @escola = Escola.find(params[:escola_id])
     @aluno = Aluno.find(params[:id])
   end
 
   def new
-    @aluno = Aluno.new
+    @escola = Escola.find(params[:escola_id])
+    @aluno = @escola.alunos.build
   end
 
   def edit
+    @escola = Escola.find(params[:escola_id])
     @aluno = Aluno.find(params[:id])
   end
 
   def create
-    @aluno = Aluno.new(aluno_params)
-    @aluno.data_criacao = Date.today
+    @escola = Escola.find(params[:escola_id])
+    @aluno = @escola.alunos.create(aluno_params)
     if @aluno.save
-      redirect_to @aluno
+      redirect_to escola_alunos_path(@escola)
     else
       render 'new'
     end
   end
 
   def update
+    @escola = Escola.find(params[:escola_id])
     @aluno = Aluno.find(params[:id])
     if @aluno.update(aluno_params)
-      redirect_to @aluno
+      redirect_to escola_alunos_path(@escola)
     else
       render 'edit'
     end

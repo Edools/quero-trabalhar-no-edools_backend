@@ -1,7 +1,20 @@
-<%= form_for([@escola, @escola.cursos.build]) do |f| %>
+<%= form_for([@escola, @curso]) do |f| %>
 
 <fieldset>
     <legend>Formulário de curso</legend>
+
+    <% if @curso.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <strong>
+          <%= pluralize(@curso.errors.count, "Erro encontrado", "Erros encontrados") %>
+        </strong>
+        <ul>
+          <% @curso.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="form-group">
         <%= f.label :titulo %>

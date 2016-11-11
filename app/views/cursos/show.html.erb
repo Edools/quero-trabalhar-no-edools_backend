@@ -44,6 +44,7 @@
         </div>
     </div>
 
+    <%= link_to 'Matriculas', enrollment_escola_curso_path(@escola, @curso), class: 'btn btn-primary' %>
     <%= link_to 'Voltar', escola_path(@curso.escola), class: 'btn btn-default' %>
     <%= link_to 'Apagar', [@curso.escola, @curso], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
 

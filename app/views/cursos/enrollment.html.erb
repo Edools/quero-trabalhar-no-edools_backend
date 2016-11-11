@@ -1,0 +1,111 @@
+<div class="container">
+  
+    <h1>Matriculas</h1>
+
+    <%= form_for :curso, url: enroll_escola_curso_path(@escola, @curso), method: :patch do |f| %>
+      <%= hidden_field_tag 'alunos_ids', value: @ids %>
+    
+      <div>
+        <%= f.submit "Salvar", class: "btn btn-default" %>
+      </div>
+    <% end %>
+    
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <table class="table table-striped">
+                <tr>
+                    <th>Aluno</th>
+                    <th></th>
+                </tr>
+    
+                <% @alunos.each do |aluno| %>
+                <tr>
+                    <td><%= aluno.nome %></td>
+                    <td class="col-sm-3">
+                      <div class="btn-group">
+                        <%= button_tag(type: "button", data: { aluno_id: aluno.id }, class: "btn btn-default add-aluno") do%>
+				Matricular
+                        <% end %>
+                      </div>
+                    </td>
+                </tr>
+                <% end %>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+  //get the hidden that stores the ids of alunos
+  var hidden = $("#alunos_ids");
+
+  //get the value = "{:value=>[1, 2]}"
+  var str = hidden.val();
+
+  //extract only ids
+  var ids = str.substring(str.lastIndexOf('[') + 1, str.lastIndexOf(']'));
+
+  //remove spaces
+  ids = ids.replace(/\s/g,'');
+
+  //set the hidden value
+  hidden.val(ids);
+
+  //convert string with ids to array
+  ids = ids.split(",").filter(Boolean);
+
+  //get the add/rmv aluno buttons
+  var buttons = document.getElementsByClassName("add-aluno");
+
+  for (var i = 0; i < buttons.length; i++){
+
+    //get the data-aluno-id
+    var id = $(buttons[i]).attr("data-aluno-id");
+
+    //check if the id exists in the ids array
+    var index = ids.indexOf(id);
+
+    //if it does
+    if (index != -1)
+    {
+      //change the text
+      $(buttons[i]).html("Desmatricular");
+    }
+  }
+
+  $(".add-aluno").on('click', function() {
+
+      //get the ids in the hidden and convert to array
+      var ids = $("#alunos_ids").val().split(",").filter(Boolean);
+
+      //get the id of selected aluno
+      var id = $(this).attr("data-aluno-id");
+
+      //check if the id exists in the ids array
+      var index = ids.indexOf(id);
+
+      //if it does
+      if (index == -1) {
+        //add the id
+        ids.push(id);
+
+        //change the button text
+        $(this).html("Desmatricular");
+      }
+      //otherwise
+      else {
+        //removes the id
+        ids.splice(index, 1);
+
+        //change the button text
+        $(this).html("Matricular");
+      }
+
+      //set the hidden value
+      console.log(ids);
+      hidden.val(ids);
+  });
+});
+</script>

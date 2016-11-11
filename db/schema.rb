@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605185156) do
+ActiveRecord::Schema.define(version: 20160605185174) do
 
   create_table "alunos", force: :cascade do |t|
     t.string   "nome"
+    t.integer  "escola_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "alunos", ["escola_id"], name: "index_alunos_on_escola_id"
+
+  create_table "alunos_cursos", force: :cascade do |t|
+    t.integer "curso_id"
+    t.integer "aluno_id"
+  end
+
+  add_index "alunos_cursos", ["aluno_id"], name: "index_alunos_cursos_on_aluno_id"
+  add_index "alunos_cursos", ["curso_id"], name: "index_alunos_cursos_on_curso_id"
 
   create_table "cursos", force: :cascade do |t|
     t.string   "titulo"
@@ -25,14 +36,12 @@ ActiveRecord::Schema.define(version: 20160605185156) do
     t.text     "descricao"
     t.text     "conteudo"
     t.string   "duracao"
-    t.datetime "data_criacao"
-    t.integer  "alunos_ativos_id"
+    t.date     "data_criacao"
     t.float    "preco"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  add_index "cursos", ["alunos_ativos_id"], name: "index_cursos_on_alunos_ativos_id"
   add_index "cursos", ["escola_id"], name: "index_cursos_on_escola_id"
 
   create_table "escolas", force: :cascade do |t|

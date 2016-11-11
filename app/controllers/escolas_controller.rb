@@ -43,6 +43,19 @@ class EscolasController < ApplicationController
     redirect_to escolas_path
   end
 
+  def active_alunos
+    @escola = Escola.find(params[:id])
+    @inativos = []
+    @ativos = []
+    if @escola.alunos.count > 0
+      @escola.cursos.each do |c|
+        @ativos += c.alunos
+      end
+      @ativos = @ativos.uniq
+      @inativos = @escola.alunos - @ativos
+    end
+  end
+
   private
     def escola_params
       params.require(:escola).permit(:nome, :email_dono, :pitch, :sub_dominio)
