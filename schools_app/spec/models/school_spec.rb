@@ -13,10 +13,13 @@ describe School, type: :model do
     expect(school.valid?).to be true
   end
 
-  it 'does not accept an outside edools subdomain' do
-    school.subdomain = 'nonvalid.domain.com'
-    expect(school.valid?).to be false
-    expect(school.errors.messages[:subdomain].join).to match('não pode estar fora do domínio da Edools')
+  it 'does not accept invalid subdomain' do
+    invalid_subdomains = %w[novalid.domain.com foo.org user-example.
+                           foobar+baz fooar..com]
+    invalid_subdomains.each do |invalid_subdomain|
+      school.subdomain = invalid_subdomain
+      expect(school.valid?).to be false
+    end
   end
 
   it 'does not accept invalid owner emails' do
