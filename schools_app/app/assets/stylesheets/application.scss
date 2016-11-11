@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$color-green: #4db07d;
+
+body { padding-top: 70px; }
+
+hr {
+  border-top: 1px solid #ddd;
+}
+
+.navbar {
+  border: none;
+  background-color: $color-green;
+  .navbar-brand {
+    font-weight: 600;
+    color: rgba(255,255,255,.9);
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.side-bar {
+  border-right: 1px solid #ddd;
+  height: 550px;
+}
+
+.list-group-item {
+  display: flex;
+  p {  margin: 0 10px; }
+}
+
+.field_with_errors {
+  color: #a94442;
+  @extend .has-error;
+}
+
+.error-explanation {
+  li { color: #a94442; }
+}
+
+.anchor-index-card {
+  color: #555;
+  &:hover {
+    color: #555;
+    text-decoration: none;
+  }
+}
+
+.index-card {
+  .glyphicon {
+    color: #555;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+}
+
+.td-buttons {
+  width: 160px;
+  .btn {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.search { margin-bottom: 20px; }
+
+.school-filter {
+  border-radius: 0;
+  height: 34px;
+}

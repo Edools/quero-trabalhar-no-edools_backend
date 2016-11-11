@@ -1,0 +1,13 @@
+.list-group
+  = link_to schools_path, class: 'list-group-item' do
+    %span.glyphicon.glyphicon-home{ 'aria-hidden' => 'true' }
+    %p Escolas
+  = link_to courses_path, class: 'list-group-item' do
+    %span.glyphicon.glyphicon-book{ 'aria-hidden' => 'true' }
+    %p Cursos
+  = link_to students_path, class: 'list-group-item' do
+    %span.glyphicon.glyphicon-user{ 'aria-hidden' => 'true' }
+    %p Alunos
+  = link_to enrollments_path, class: 'list-group-item' do
+    %span.glyphicon.glyphicon-pencil{ 'aria-hidden' => 'true' }
+    %p Matrículas

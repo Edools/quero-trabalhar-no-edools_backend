@@ -1,0 +1,38 @@
+pt-BR:
+  activerecord:
+    models:
+      school:
+        zero: Escolas
+        one: Escola
+        other: Escolas
+      course:
+        zero: Cursos
+        one: Curso
+        other: Cursos
+      student:
+        zero: Alunos
+        one: Aluno
+        other: Alunos
+      enrollment:
+        zero: Matrículas
+        one: Matrícula
+        other: Matrículas
+    attributes:
+      school:
+        name: Nome
+        owner_email: E-mail do dono
+        pitch: Pitch
+        subdomain: Subdomínio
+      course:
+        title: Título
+        school: Escola
+        description: Descrição
+        content: Conteúdo
+        duration: Duração
+        price: Preço
+      student:
+        name: Nome
+        email: E-mail
+      enrollment:
+        course: Curso
+        student: Aluno

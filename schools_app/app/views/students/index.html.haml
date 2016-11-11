@@ -1,0 +1,38 @@
+- provide(:title, 'Alunos')
+
+.row.search
+  .col-lg-6
+    .input-group
+      = form_tag students_path, method: 'get' do
+        .input-group
+          = text_field_tag :q, params[:q], placeholder: 'Buscar por nome', type: 'text', class: 'form-control'
+          %span.input-group-btn
+            = button_tag name: nil, class: 'btn btn-default' do
+              %span.glyphicon.glyphicon-search{ 'aria-hidden' => 'true' }
+  .col-lg-4.col-lg-offset-2.text-right
+    = link_to 'Novo Aluno', new_student_path, class: 'btn btn-sm btn-success'
+
+.panel.panel-default
+  .panel-heading
+  .panel-body
+    .table-responsive
+      %table.table.table-striped
+        %thead
+          %tr
+            %th #
+            %th Nome
+            %th E-mail
+            %th
+
+        %tbody
+          - @students.each do |student|
+            %tr
+              %td
+                = student.id
+              %td
+                = truncate(student.name, length: 20)
+              %td
+                = truncate(student.email, length: 20)
+              %td.td-buttons.text-center
+                = link_to 'Editar', edit_student_path(student), class: 'btn btn-sm btn-warning'
+                = link_to 'Excluir', student, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'

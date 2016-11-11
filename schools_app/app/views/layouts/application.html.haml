@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    
+    %title
+      = full_title(yield(:title))
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      = render 'layouts/navbar'
+    .container
+      .row
+        .col-md-3.side-bar
+          = render 'layouts/sidebar'
+        .col-md-9
+          .breadcrumb
+            = render_breadcrumbs tag: :li, separator: ' '
+          %h1
+            = yield(:title)
+          %hr
+          = render 'shared/messages'
+          = yield

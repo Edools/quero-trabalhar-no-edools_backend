@@ -1,0 +1,18 @@
+- provide(:title, 'Painel')
+
+.row.text-center
+  .col-md-4
+    = link_to students_path, class: 'thumbnail anchor-index-card' do
+      .index-card
+        %span.glyphicon.glyphicon-th-list{ 'aria-hidden' => 'true' }
+        %h4 Ver alunos
+  .col-md-4
+    = link_to new_course_path, class: 'thumbnail anchor-index-card' do
+      .index-card
+        %span.glyphicon.glyphicon-plus-sign{ 'aria-hidden' => 'true' }
+        %h4 Criar curso
+  .col-md-4
+    = link_to new_enrollment_path, class: 'thumbnail anchor-index-card' do
+      .index-card
+        %span.glyphicon.glyphicon-ok{ 'aria-hidden' => 'true' }
+        %h4 Fazer matrícula

@@ -1,0 +1,29 @@
+- provide(:title, 'Matrículas')
+
+.row.search
+  .col-lg-4.col-lg-offset-8.text-right
+    = link_to 'Nova Matrícula', new_enrollment_path, class: 'btn btn-sm btn-success'
+
+.panel.panel-default
+  .panel-heading
+  .panel-body
+    .table-responsive
+      %table.table.table-striped
+        %thead
+          %tr
+            %th #
+            %th Curso
+            %th Aluno
+            %th
+
+        %tbody
+          - @enrollments.each do |enrollment|
+            %tr
+              %td
+                = enrollment.id
+              %td
+                = truncate(enrollment.course.title, length: 20)
+              %td
+                = truncate(enrollment.student.name, length: 20)
+              %td.td-buttons.text-center
+                = link_to 'Excluir', enrollment, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'

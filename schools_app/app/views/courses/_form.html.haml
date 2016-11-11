@@ -1,0 +1,25 @@
+= form_for @course do |course|
+
+  = render partial: 'shared/validation_messages', locals: { resource: @course }
+  .form-group
+    = course.label :title, 'Título'
+    = course.text_field :title, placeholder: 'Título (Ex.: Gastronomia básico)', class: 'form-control'
+  .form-group
+    = course.label :price, 'Preço'
+    = course.number_field(:price, { step: 0.1,  class: 'form-control' })
+  .form-group
+    = course.label :duration, 'Duração'
+    = course.text_field :duration, placeholder: 'Duração (Ex.: 2 semanas)', class: 'form-control'
+  .form-group
+    = course.label :school_id, 'Escola'
+    = course.collection_select(:school_id, School.all, :id, :name, {}, { class: 'form-control' })
+  .form-group
+    = course.label :description, 'Descrição'
+    = course.text_area :description, rows: '3', class: 'form-control'
+  .form-group
+    = course.label :content, 'Conteúdo'
+    = course.text_area :content, rows: '4', class: 'form-control'
+  .form-group.text-center
+    = link_to courses_path, class: 'btn btn-danger' do
+      Cancelar
+    = course.submit class: 'btn btn-success'

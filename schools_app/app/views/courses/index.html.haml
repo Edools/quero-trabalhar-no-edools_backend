@@ -1,0 +1,40 @@
+- provide(:title, 'Cursos')
+
+.row.search
+  .col-lg-8
+    = render 'search'
+
+  .col-lg-3.col-lg-offset-1.text-right
+    = link_to 'Novo Curso', new_course_path, class: 'btn btn-sm btn-success'
+
+.panel.panel-default
+  .panel-heading
+  .panel-body
+    .table-responsive
+      %table.table.table-striped
+        %thead
+          %tr
+            %th #
+            %th Título
+            %th Duração
+            %th Preço
+            %th # Matrículas
+            %th
+
+        %tbody
+          - @courses.each do |course|
+            %tr
+              %td
+                = course.id
+              %td
+                = truncate(course.title, length: 20)
+              %td
+                = truncate(course.duration, length: 20)
+              %td
+                R$
+                = course.price
+              %td
+                = course.enrollments.size
+              %td.td-buttons.text-center
+                = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'
+                = link_to 'Excluir', course, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'
