@@ -36,6 +36,7 @@ group :development, :test do
   # console
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'simplecov', require: false
   gem 'byebug'
 end
 
