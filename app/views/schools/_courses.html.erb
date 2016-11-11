@@ -1,0 +1,42 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Length
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Creation Date
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% courses.each do |course| %>
+      <tr>
+        <td>
+          <%= link_to(course.title, course_path(course.id)) %>
+        </td>
+        <td><%= course.description %></td>
+        <td><%= course.length %></td>
+        <td><%= course.price %></td>
+        <td><%= l(course.created_at, format: :short) %></td>
+        <td>
+          <%= link_to('X', course_path(course.id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } ) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

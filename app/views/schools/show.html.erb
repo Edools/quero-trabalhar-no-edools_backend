@@ -1,0 +1,14 @@
+<h1><%= @school.name %></h1>
+
+<ul>
+  <li>Owner Email: <%= @school.owner_email %></li>
+  <li>Pitch: <%= @school.pitch %></li>
+  <li>Subdomain: <%= @school.subdomain %></li>
+  <li>
+    Creation Date: <%= l(@school.created_at, format: :short) %>
+  </li>
+</ul>
+
+<% if @school.courses.any? %>
+  <%= render 'courses', courses: @school.courses %>
+<% end %>

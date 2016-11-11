@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: quero-trabalhar-no-edools_backend_development
+
+test:
+  <<: *default
+  database: quero-trabalhar-no-edools_backend_test
+
+production:
+  <<: *default
+  database: quero-trabalhar-no-edools_backend_production
+  username: quero-trabalhar-no-edools_backend
+  password: <%= ENV['QUERO-TRABALHAR-NO-EDOOLS_BACKEND_DATABASE_PASSWORD'] %>

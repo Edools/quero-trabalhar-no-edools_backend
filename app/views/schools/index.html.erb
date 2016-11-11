@@ -1,0 +1,58 @@
+<h1>Schools</h1>
+
+<%= form_tag schools_path, method: :get do %>
+  <div class='row'>
+    <div class='col-md-8'>
+      <%= text_field_tag :search, params[:search], class: 'form-control' %>
+    </div>
+    <div class='col-md-4'>
+      <%= submit_tag "Search", name: nil, class: 'form-control' %>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to "New School", new_school_path %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Owner Email
+      </th>
+      <th>
+        Pitch
+      </th>
+      <th>
+        Pitch
+      </th>
+      <th>
+        Creation Date
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td>
+          <%= link_to(school.name, school_path(school.id)) %>
+        </td>
+        <td><%= school.owner_email %></td>
+        <td><%= school.pitch %></td>
+        <td><%= school.subdomain %></td>
+        <td><%= l(school.created_at, format: :short) %></td>
+        <td>
+          <%= link_to('X', school_path(school.id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } ) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
