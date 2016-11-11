@@ -36,6 +36,12 @@ class SchoolsController < ApplicationController
     respond_with @school
   end
 
+  def create_report
+    add_breadcrumb 'Relatório'
+    @school = set_school
+    render 'report'
+  end
+
   private
 
   def set_school

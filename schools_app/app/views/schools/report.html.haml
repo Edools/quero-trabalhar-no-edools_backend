@@ -1,0 +1,32 @@
+- provide(:title, 'Relatório - Estudantes Ativos')
+
+- @school.courses.each do |course|
+  .panel.panel-default
+    .panel-heading
+      %h4
+        %b
+          Curso:
+        = course.title
+    - if course.students.size > 0
+      .panel-body
+        .table-responsive
+          %table.table.table-striped
+            %thead
+              %tr
+                %th #
+                %th Nome
+                %th E-mail
+
+            %tbody
+              - course.students.each do |student|
+                %tr
+                  %td
+                    = student.id
+                  %td
+                    = truncate(student.name, length: 20)
+                  %td
+                    = truncate(student.email, length: 20)
+    - else
+      .panel-body.text-center
+        %h4
+          O curso não possui nenhum aluno ativo!

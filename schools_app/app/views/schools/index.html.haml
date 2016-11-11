@@ -25,6 +25,7 @@
             %th Domínio
             %th # Cursos
             %th
+            %th
 
         %tbody
           - @schools.each do |school|
@@ -39,6 +40,9 @@
                 = school.subdomain
               %td
                 = school.courses.size
+              %td
+                = link_to report_school_path(school) do
+                  %span.glyphicon.glyphicon-print
               %td.td-buttons.text-center
                 = link_to 'Editar', edit_school_path(school), class: 'btn btn-sm btn-warning'
                 = link_to 'Excluir', school, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'
