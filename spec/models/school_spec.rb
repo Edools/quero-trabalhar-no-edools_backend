@@ -29,4 +29,17 @@ RSpec.describe School, type: :model do
       it { expect(create(:school).created_at).not_to be_nil }
     end
   end
+
+  context '#active_students' do 
+    before :each do
+      @school = create(:school)
+
+      create(:course, school_id: @school.id, active_students: 10)
+      create(:course, school_id: @school.id, active_students: 20)
+      create(:course, school_id: @school.id, active_students: 30)
+    end
+
+    it { expect(create(:school).active_students).to eq(0) } 
+    it { expect(@school.active_students).to eq(60) }
+  end
 end

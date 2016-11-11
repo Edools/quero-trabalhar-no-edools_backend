@@ -1,0 +1,10 @@
+<h1>Relatório de estudantes ativos por escola</h1>
+
+<h3>Escolas</h3>
+<ol>
+  <% @schools.each do |school| %>
+    <li>
+      <%= link_to school.name, school %>: <%=school.active_students%> estudantes ativos.
+    </li>
+  <% end %>
+</ol>
