@@ -2,8 +2,12 @@ class CoursesController < ApplicationController
   add_breadcrumb 'Cursos', :courses_path
 
   def index
-    @courses = params.has_key?(:q) && !params[:q].blank? ?
-               search_by_query(params[:q]) : Course.all
+    @courses = Course.all
+    search_by_query(params[:q]) if params.has_key?(:q) && !params[:q].blank?
+    filter_school(params[:course][:school_id]) if (
+      params.fetch(:course, {}).fetch(:school_id, false) &&
+      !params[:course][:school_id].blank?
+    )
     @courses = @courses.order(updated_at: :desc)
   end
 
@@ -47,6 +51,10 @@ class CoursesController < ApplicationController
   end
 
   def search_by_query(query)
-    Course.search_title(query)
+    @courses = Course.search_title(query)
+  end
+
+  def filter_school(school_id)
+    @courses = @courses.where(school_id: school_id)
   end
 end

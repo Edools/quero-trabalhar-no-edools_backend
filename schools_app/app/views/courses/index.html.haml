@@ -1,15 +1,10 @@
 - provide(:title, 'Cursos')
 
 .row.search
-  .col-lg-6
-    .input-group
-      = form_tag courses_path, method: 'get' do
-        .input-group
-          = text_field_tag :q, params[:q], placeholder: 'Buscar por título', type: 'text', class: 'form-control'
-          %span.input-group-btn
-            = button_tag name: nil, class: 'btn btn-default' do
-              %span.glyphicon.glyphicon-search{ 'aria-hidden' => 'true' }
-  .col-lg-4.col-lg-offset-2.text-right
+  .col-lg-8
+    = render 'search'
+
+  .col-lg-3.col-lg-offset-1.text-right
     = link_to 'Novo Curso', new_course_path, class: 'btn btn-sm btn-success'
 
 .panel.panel-default

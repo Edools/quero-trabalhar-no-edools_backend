@@ -1,0 +1,7 @@
+= form_tag courses_path, method: 'get' do
+  .input-group
+    = text_field_tag :q, params[:q], placeholder: 'Buscar por título', type: 'text', class: 'form-control'
+    .input-group-btn
+      = collection_select(:course, :school_id, School.all, :id, :name, { include_blank: 'Escola' }, class: 'btn btn-default school-filter')
+      = button_tag name: nil, class: 'btn btn-default' do
+        %span.glyphicon.glyphicon-search{ 'aria-hidden' => 'true' }

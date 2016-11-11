@@ -47,4 +47,24 @@ feature 'As an User I manage Course CRUD' do
     expect(page).to have_content course_physics.title
     expect(page).to have_no_content course_mechanics.title
   end
+
+  scenario 'searching by title and filtering by school' do
+    school = FactoryGirl.create(:school)
+
+    course_stanford = FactoryGirl.create(:course,
+                                         title: 'Mechanics',
+                                         school: school,
+                                         duration: '2 semanas')
+    course_mit = FactoryGirl.create(:course,
+                                    title: 'Mechanics',
+                                    duration: '1 semana')
+
+    visit courses_path
+    expect(page).to have_content course_mit.title
+    fill_in 'q', with: course_stanford.title
+    find('#course_school_id').find(:xpath, "option[@value='#{school.id}']").select_option
+    submit_form_by_button
+    expect(page).to have_content course_stanford.duration
+    expect(page).to have_no_content course_mit.duration
+  end
 end
