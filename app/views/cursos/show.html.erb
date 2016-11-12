@@ -1,0 +1,51 @@
+<div class="container">
+
+    <h1>Curso #<%= @curso.id %></h1>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Título</label>
+        <div class="col-sm-10">
+            <p class="form-control-static"><%= @curso.titulo %></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Descrição</label>
+        <div class="col-sm-10">
+            <p class="form-control-static"><%= @curso.descricao %></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Conteúdo</label>
+        <div class="col-sm-10">
+            <p class="form-control-static"><%= @curso.conteudo %></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Duração</label>
+        <div class="col-sm-10">
+            <p class="form-control-static"><%= @curso.duracao %></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Preço</label>
+        <div class="col-sm-10">
+            <p class="form-control-static">R$<%= @curso.preco %></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Data de criação</label>
+        <div class="col-sm-10">
+            <p class="form-control-static"><%= @curso.data_criacao %></p>
+        </div>
+    </div>
+
+    <%= link_to 'Matriculas', enrollment_escola_curso_path(@escola, @curso), class: 'btn btn-primary' %>
+    <%= link_to 'Voltar', escola_path(@curso.escola), class: 'btn btn-default' %>
+    <%= link_to 'Apagar', [@curso.escola, @curso], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+
+</div>

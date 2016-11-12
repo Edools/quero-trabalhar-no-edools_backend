@@ -1,0 +1,35 @@
+<div class="container">
+
+    <%= link_to 'Nova escola', new_escola_path, class: 'btn btn-default' %>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Email do dono</th>
+                <th>Sub-domínio</th>
+                <th>Data de criação</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @escolas.each do |escola| %>
+            <tr>
+                <td><%= escola.id %></td>
+                <td><%= escola.nome %></td>
+                <td><%= escola.email_dono %></td>
+                <td><%= escola.sub_dominio %></td>
+                <td><%= escola.data_criacao %></td>
+                <td><%= link_to 'Alunos', escola_alunos_path(escola) %></td>
+                <td><%= link_to 'Alunos Ativos', active_alunos_escola_path(escola) %></td>
+                <td><%= link_to 'Cursos', escola_cursos_path(escola) %></td>
+                <td><%= link_to 'Exibir', escola_path(escola) %></td>
+                <td><%= link_to 'Editar', edit_escola_path(escola) %></td>
+                <td><%= link_to 'Apagar', escola_path(escola), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</div>
