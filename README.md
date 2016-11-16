@@ -55,6 +55,8 @@ Siga as boas práticas que adota normalmente nos projetos que desenvolve.
 
 *We wish you good luck, and may the Quality be with you!*
 
+[![Build Status](https://travis-ci.org/arthurstomp/quero-trabalhar-no-edools_backend.svg?branch=master)](https://travis-ci.org/arthurstomp/quero-trabalhar-no-edools_backend)
+
 ## Cobertura dos testes
 
 ![SimpleCov](https://i.imgsafe.org/62c2500149.png)
