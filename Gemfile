@@ -42,6 +42,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'word_salad'
   gem 'byebug'
+  gem 'rake'
 end
 
 group :development do
