@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Matrícula:</strong>
+  <%= @student.enrollment %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @student.status %>
+</p>
+
+<%= link_to 'editar', edit_student_path(@student), class: "btn btn-primary btn-sm" %> |

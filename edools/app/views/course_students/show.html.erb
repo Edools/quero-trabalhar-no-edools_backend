@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+
+<!-- <p>
+  <strong>Nome:</strong>
+  <%= @course_student.name %>
+</p> -->
+
+<p>
+  <strong>Curso:</strong>
+  <%= @course_student.course.title %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @course_student.student.name %>
+</p>
+
+<%= link_to 'editar', edit_course_student_path(@course_student), class: "btn btn-primary btn-sm" %> |

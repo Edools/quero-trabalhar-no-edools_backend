@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @school.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @school.email %>
+</p>
+
+<p>
+  <strong>Pitch:</strong>
+  <%= @school.pitch %>
+</p>
+
+<p>
+  <strong>Subdominio:</strong>
+  <%= @school.subdomain %>
+</p>
+
+<p>
+  <strong>Date of creation:</strong>
+  <%= @school.date_of_creation %>
+</p>
+
+<%= link_to 'editar', edit_school_path(@school), class: "btn btn-primary btn-sm" %> 

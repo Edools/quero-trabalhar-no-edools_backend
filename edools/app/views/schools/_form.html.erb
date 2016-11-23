@@ -1,0 +1,39 @@
+<%= form_for(@school) do |f| %>
+  <% if @school.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@school.errors.count, "error") %> prohibited this school from being saved:</h2>
+
+      <ul>
+      <% @school.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="jumbotron">
+      <div class="field">
+        <%= f.label :Nome %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :Email %><br>
+        <%= f.text_field :email, class: 'form-control'  %>
+      </div>
+      <div class="field">
+        <%= f.label :Pitch %><br>
+        <%= f.text_field :pitch, class: 'form-control'  %>
+      </div>
+      <div class="field">
+        <%= f.label :Subdominio %><br>
+        <%= f.text_field :subdomain, class: 'form-control'  %>
+      </div>
+      <div class="field">
+        <%= f.label "Data de Criação" %><br>
+        <%= f.text_field :date_of_creation, type: "date", class: 'form-control' %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit "salvar" ,class: "btn btn-primary btn-sm" %>
+      </div>
+    </div>
+<% end %>

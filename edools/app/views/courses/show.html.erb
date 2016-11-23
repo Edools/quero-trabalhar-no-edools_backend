@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ńome:</strong>
+  <%= @course.title %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @course.description %>
+</p>
+
+<p>
+  <strong>Conteúdo:</strong>
+  <%= @course.content %>
+</p>
+
+<p>
+  <strong>Duração:</strong>
+  <%= @course.duration %>
+</p>
+
+<p>
+  <strong>Data de Criação do Curso:</strong>
+  <%= @course.date_of_creation %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @course.price %>
+</p>
+
+<p>
+  <strong>Escola:</strong>
+  <%= @course.school_id %>
+</p>
+
+<%= link_to 'editar', edit_course_path(@course) , class: "btn btn-primary btn-sm"%>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1>Listagem de Matróculas de Cursos</h1>
+</div>
+<%= link_to 'Nova Turma', new_course_student_path,  class: "btn btn-primary btn-sm pull-right" %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Curso</th>
+      <th>Estudante</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_students.each do |course_student| %>
+      <tr>
+        <td><%= course_student.name %></td>
+        <td><%= course_student.course.title %></td>
+        <td>
+          <%= link_to 'exibir', course_student, class: "btn btn-info btn-sm" %>
+          <%= link_to 'editar', edit_course_student_path(course_student), class: "btn btn-info btn-sm" %>
+          <%= link_to 'deletar', course_student,class: "btn btn-info btn-sm", method: :delete, data: { confirm: 'Quer deletar?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
