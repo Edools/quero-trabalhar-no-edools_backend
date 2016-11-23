@@ -1,0 +1,5 @@
+<h1>Editar curso</h1>
+
+<%= form_for @course, url: school_course_path(@school, @course), html: { class: 'ui form'  } do |f| %>
+  <%= render partial: 'form', locals: { f: f  } %>
+<% end %>

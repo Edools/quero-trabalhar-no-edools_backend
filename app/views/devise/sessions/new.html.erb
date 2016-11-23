@@ -1,0 +1,26 @@
+<h2 class="ui teal image header">
+  <%= image_tag 'is-cool-logo', class: 'image' %>
+  <div class="content">
+    Entrar no sistema
+  </div>
+</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'ui large form' }) do |f| %>
+  <div class="ui stacked segment">
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, placeholder: 'E-mail' %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "off", placeholder: 'Senha' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Entrar", class: 'ui teal button' %>
+    </div>
+  </div>
+<% end %>
+
+<div class="ui message">
+  <%= render "devise/shared/links" %>
+</div>

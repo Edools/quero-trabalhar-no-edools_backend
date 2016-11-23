@@ -1,0 +1,5 @@
+<h1>Matricular alunos</h1>
+
+<%= form_for @course_student, url: school_course_courses_students_path(@school, @course), html: { class: 'ui form'  } do |f| %>
+  <%= render partial: 'form', locals: { f: f  } %>
+<% end %>

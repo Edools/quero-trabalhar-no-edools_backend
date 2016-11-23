@@ -1,0 +1,6 @@
+<div class="field">
+  <label>Alunos</label>
+  <%= f.select :student_id, @students %>
+</div>
+<%= f.submit 'Salvar', class: 'teal ui left floated button' %>
+<%= link_to 'Voltar', students_path, class: 'primary ui left floated button' %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alunos matriculados</h1>
+
+<div class="ui right aligned grid">
+<div class="right floated righ aligned four wide column">
+  <%= link_to 'Adicionar alunos', new_school_course_courses_student_path, class: 'teal ui button' %>
+  <%= link_to 'Voltar', schools_path, class: 'primary ui button' %>
+  </div>
+</div>
+
+<table class="ui celled striped table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Operações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_with_students.each do |course| %>
+      <tr>
+        <td><%= course.student_name %></td>
+        <td>
+          <%= link_to 'Remover', school_course_courses_student_path(@school, @course, course.student_id), method: :delete, data: { confirm: 'você tem certeza?' }, class: 'red ui button' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

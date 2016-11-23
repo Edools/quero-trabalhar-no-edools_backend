@@ -1,0 +1,31 @@
+<% if @school.errors.any? %>
+  <div id="error_explanation" >
+    <div class="ui red message">
+      <div class="header">
+        <%= t('forms.error_message') %>
+      </div>
+      <ul class="list">
+      <% @school.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<div class="actions">
+  <div class="field">
+    <label><%= t('forms.school.name.name') %></label>
+    <%= f.text_field :name, placeholder: t('forms.school.name.placeholder') %>
+  </div>
+  <div class="field">
+    <label><%= t('forms.school.pitch.name') %></label>
+    <%= f.text_field :pitch, placeholder: t('forms.school.pitch.placeholder') %>
+  </div>
+  <div class="field">
+    <label><%= t('forms.school.subdomain.name') %></label>
+    <%= f.text_field :subdomain, placeholder: t('forms.school.subdomain.placeholder') %>
+  </div>
+  <%= f.submit 'Salvar', class: 'teal ui left floated button' %>
+  <%= link_to 'voltar', schools_path, class: 'primary ui left floated button' %>
+</div>

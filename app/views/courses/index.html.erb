@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cursos</h1>
+
+<div class="ui category search six wide column">
+  <%= form_tag school_courses_path, method: :get do %>
+    <div class="ui icon input">
+      <%= text_field_tag :course_name, params[:course_name], class: 'prompt', placeholder: 'Buscar curso...' %>
+    </div>
+    <%= submit_tag "Buscar", class: 'primary ui button'%>
+    <%= link_to 'Novo Curso', new_school_course_path, class: 'teal ui right floated button' %>
+    <%= link_to 'Voltar', schools_path, class: 'primary ui right floated button' %>
+  <% end %>
+</div>
+<table class="ui celled striped table">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Descrição</th>
+      <th>Duração</th>
+      <th>Preço</th>
+      <th>Criado em</th>
+      <th>Operações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.title %></td>
+        <td><%= course.description %></td>
+        <td><%= course.duration %></td>
+        <td><%= course.price %></td>
+        <td><%= course.created_at %></td>
+        <td>
+          <%= link_to 'Matriculados', school_course_path(@school, course), class: 'primary ui button' %>
+          <%= link_to 'Matricular alunos', school_course_path(@school, course), class: 'olive ui button' %>
+          <%= link_to 'Editar', edit_school_course_path(@school, course), class: 'yellow ui button' %>
+          <%= link_to 'Remover', school_course_path(@school, course), method: :delete, data: { confirm: 'você tem certeza?' }, class: 'red ui button' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
