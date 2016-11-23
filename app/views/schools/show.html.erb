@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h1><%= @school.name %></h1>
+  <hr>
+  <h4>Contato: <%= @school.owner_email %></h4>
+  <h6>Subdomínio: <%= @school.subdomain %></h6>
+  <p><%= @school.pitch %></p>
+
+  <%= link_to 'Cursos pertencentes à essa escola', school_courses_path(@school), class: 'btn btn-lg btn-primary' %>
+</div>

@@ -1,0 +1,33 @@
+<div class="col-md-8 col-md-offset-2">
+  <h1><%= @course.title %></h1>
+  <h4><%= @course.school.name %></h4>
+
+  <hr>
+
+  <div class="list-group">
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Descrição</h4>
+      <p class="list-group-item-text"><%= @course.description %></p>
+    </a>
+
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Conteúdo</h4>
+      <p class="list-group-item-text"><%= @course.content %></p>
+    </a>
+
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Preço</h4>
+      <p class="list-group-item-text"><%= number_to_currency(@course.price) %></p>
+    </a>
+
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Duração</h4>
+      <p class="list-group-item-text"><%= @course.duration.strftime("%HH:%MM") %></p>
+    </a>
+
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Estudantes ativos</h4>
+      <p class="list-group-item-text"><%= @course.active_students %></p>
+    </a>
+  </div>
+</div>
