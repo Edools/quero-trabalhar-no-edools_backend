@@ -1,0 +1,30 @@
+<%= form_for @escola, :html => {:class => "form-horizontal"} do |f| %>
+  <%= render 'escolas/errors' if @escola.errors.any?  %>
+
+  <div class="form-group">
+    <%= f.label :nome, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.text_field :nome, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pitch, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.text_field :pitch, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :subdominio, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.text_field :subdominio, class: 'form-control' %>
+    </div>
+  </div>
+  <%= f.submit t('actions.save'), class: 'btn btn-success col-md-3 col-md-offset-2' %>
+  <%= link_to t('actions.back'), escolas_path, class: 'btn btn-default col-md-3' %>
+<% end %>

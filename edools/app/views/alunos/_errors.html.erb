@@ -1,0 +1,9 @@
+<div id="error_explanation">
+  <h2><%= pluralize(@aluno.errors.count, "error") %> prohibited this aluno from being saved:</h2>
+
+  <ul>
+  <% @aluno.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+</div>

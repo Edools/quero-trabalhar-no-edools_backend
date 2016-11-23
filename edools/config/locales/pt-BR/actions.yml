@@ -1,0 +1,12 @@
+pt-BR:
+  actions:
+    show: Show
+    edit: Editar
+    remove: Remover
+    back: Voltar
+    cancel: Cancelar
+    save: Salvar
+    new: Novo
+    update: Atualizar
+    cancel_my_account: Cancelar minha conta
+    search: Pesquisar

@@ -1,0 +1,18 @@
+<%= render 'shared/notice' %>
+</div>
+<div class="row">
+  <h3>Relatório de alunos ativos por escola</h3>
+  <%= form_tag(relatorio_alunos_path, :method=>'get') do %>
+    <label class="col-md-2 control-label">Selecionar escola </label>
+    <%= select_tag :escola_id, options_for_select(@escolas.map{ |e| [e.nome, e.id] }) %>
+    <%= submit_tag t('actions.show'), class: 'btn btn-link' %>
+  <% end %>
+</div>
+<div class="row">
+  <h3>Relatório de cursos por escola</h3>
+  <%= form_tag(relatorio_cursos_path, :method=>'get') do %>
+      <label class="col-md-2 control-label">Selecionar escola </label>
+      <%= select_tag :escola_id, options_for_select(@escolas.map{ |e| [e.nome, e.id] }) %>
+      <%= submit_tag t('actions.show'), class: 'btn btn-link' %>
+  <% end %>
+</div>

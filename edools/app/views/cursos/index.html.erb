@@ -1,0 +1,60 @@
+<%= render 'shared/notice' %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-8 pull-left">
+        <%= link_to t('actions.back'), root_path, class: 'btn btn-default' %>
+        <%= link_to t('actions.new'), new_curso_path, class: 'btn btn-primary' %>
+      </div>
+      <div class="col-md-4">
+        <div class="pull-right">
+          <%= form_for search_curso_path, method: :get do |f| %>
+              <div class="input-group">
+                <%= text_field_tag :q, params[:q], class: 'form-control' %>
+                <div class="input-group-btn">
+                  <%= submit_tag t('actions.search'), name: nil, class: 'btn btn-default' %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h1>Listing Cursos</h1>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th><%= t('activerecord.attributes.curso.titulo') %></th>
+          <th><%= t('activerecord.attributes.curso.escola') %></th>
+          <th><%= t('activerecord.attributes.curso.descricao') %></th>
+          <th><%= t('activerecord.attributes.curso.conteudo') %></th>
+          <th><%= t('activerecord.attributes.curso.duracao') %></th>
+          <th><%= t('activerecord.attributes.curso.data_criacao') %></th>
+          <th><%= t('activerecord.attributes.curso.alunos_ativos') %></th>
+          <th><%= t('activerecord.attributes.curso.preco') %></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cursos.each do |curso| %>
+          <tr>
+            <td><%= curso.titulo %></td>
+            <td><%= curso.escola.nome %></td>
+            <td><%= curso.descricao %></td>
+            <td><%= curso.conteudo %></td>
+            <td><%= curso.duracao %></td>
+            <td><%= curso.data_criacao %></td>
+            <td><%= curso.alunos_ativos %></td>
+            <td><%= curso.preco %></td>
+            <td><%= link_to t('actions.show'), curso %></td>
+            <td><%= link_to t('actions.edit'), edit_curso_path(curso) %></td>
+            <td><%= link_to t('actions.remove'), curso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

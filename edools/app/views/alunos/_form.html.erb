@@ -1,0 +1,30 @@
+<%= form_for @aluno, :html => {:class => "form-horizontal"} do |f| %>
+  <%= render 'escolas/errors' if @aluno.errors.any?  %>
+
+  <div class="form-group">
+    <%= f.label :nome, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.text_field :nome, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :curso_id, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.select :curso_id, options_for_select(@cursos.map{ |c| [c.titulo, c.id] }), { class: 'form-control' } %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ativo, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= f.check_box :ativo %>
+    </div>
+  </div>
+  <%= f.submit t('actions.save'), class: 'btn btn-success col-md-3 col-md-offset-2' %>
+  <%= link_to t('actions.back'), alunos_path, class: 'btn btn-default col-md-3' %>
+<% end %>
