@@ -1,0 +1,24 @@
+<%= simple_form_for(@course) do |f| %>
+    <div class="row">
+      <div class="col-md-8">
+        <%= f.input :title %>
+      </div>
+      <div class="col-md-4">
+        <%= f.association :school %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :price, input_html: {class: 'money'} %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :duration %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :active_students %>
+      </div>
+    </div>
+    <%= f.input :description %>
+    <%= f.input :content %>
+    <%= f.button :submit %>
+<% end %>

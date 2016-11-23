@@ -1,0 +1,43 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @course.title%></h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong><%= Course.human_attribute_name('school')%>:</strong>
+      <%= @course.school.name %>
+    </p>
+    <p>
+      <strong><%= Course.human_attribute_name('price')%>:</strong>
+      <%= @course.price %>
+    </p>
+    <p>
+      <strong><%= Course.human_attribute_name('duration')%>:</strong>
+      <%= @course.duration %>
+    </p>
+    <p>
+      <strong><%= Course.human_attribute_name('duration')%>:</strong>
+      <%= @course.duration %>
+    </p>
+    <p>
+      <strong><%= Course.human_attribute_name('active_students')%>:</strong>
+      <%= @course.active_students %>
+    </p>
+    <p>
+      <strong><%= Course.human_attribute_name('description')%>:</strong>
+      <%= @course.description %>
+    </p>
+    <p>
+      <strong><%= Course.human_attribute_name('content')%>:</strong>
+      <%= @course.content %>
+    </p>
+    <p>
+      <strong><%= Course.human_attribute_name('created_at')%>:</strong>
+      <%= l @course.created_at, format: :complete %>
+    </p>
+  </div>
+</div>
+<div class="btn-group pull-right" role="group">
+  <%= link_to t('helpers.links.back'), courses_path,              class: 'btn btn-danger' %>
+  <%= link_to t('helpers.links.edit'), edit_course_path(@course), class: 'btn btn-success' %>
+</div>

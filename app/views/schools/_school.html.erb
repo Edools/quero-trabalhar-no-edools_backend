@@ -1,0 +1,19 @@
+<tr>
+  <td><%= school.name %></td>
+  <td><%= school.owner_email %></td>
+  <td><%= school.subdomain %></td>
+  <td><%= l school.created_at, format: :complete %></td>  
+  <td class="text-center">
+    <div class="btn-group pull-right" role="group">
+      <%= link_to school do%>
+        <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
+      <% end %>
+      <%= link_to edit_school_path(school) do%>
+        <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
+      <% end %>
+      <%= link_to school, method: :delete, data: { confirm: t('helpers.links.confirm') } do %>
+        <button class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button>
+      <% end %>
+    </div>
+  </td>
+</tr>

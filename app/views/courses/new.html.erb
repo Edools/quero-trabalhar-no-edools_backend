@@ -1,0 +1,6 @@
+<div class="well">
+  <h1><%= t('helpers.titles.new', {model: Course.model_name.human})%></h1>
+</div>
+<p><%= link_to t('helpers.links.back'), courses_path, class: 'pull-right btn btn-danger' %></p>
+<br /><br />
+<%= render 'form' %>

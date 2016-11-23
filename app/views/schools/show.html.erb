@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @school.name%></h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong><%= School.human_attribute_name('owner_email')%>:</strong>
+      <%= @school.owner_email %>
+    </p>
+    <p>
+      <strong><%= School.human_attribute_name('pitch')%>:</strong>
+      <%= @school.pitch %>
+    </p>
+    <p>
+      <strong><%= School.human_attribute_name('subdomain')%>:</strong>
+      <%= @school.subdomain %>
+    </p>
+  </div>
+</div>
+<div class="btn-group pull-right" role="group">
+  <%= link_to t('helpers.links.back'), schools_path,              class: 'btn btn-danger' %>
+  <%= link_to t('helpers.links.edit'), edit_school_path(@school), class: 'btn btn-success' %>
+</div>
