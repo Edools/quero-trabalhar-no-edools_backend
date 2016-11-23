@@ -1,0 +1,8 @@
+pt-BR:
+  courses:
+    index:
+      title: Cursos
+    new:
+      title: Cadastrar Curso
+    edit:
+      title: Editar Curso

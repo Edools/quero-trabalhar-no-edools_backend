@@ -1,0 +1,8 @@
+pt-BR:
+  layouts:
+    application:
+      menu:
+        schools: Escolas
+        courses: Cursos
+        students: Alunos
+      back: Voltar
