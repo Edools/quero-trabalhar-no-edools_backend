@@ -1,0 +1,33 @@
+<h1>Novo Aluno</h1>
+
+<%= form_for([@school, @school.students.build]) do |f| %>
+
+<div class="form-group">
+    <%= f.label :name, "Nome", for: "name" %><br>
+    <%= f.text_field :name, id: "name", class: "form-control", placeholder: "Nome" %>
+</div>
+
+<div>
+    <%= f.submit "Salvar", class: "btn btn-default" %>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <% if @student.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+            <div id="error_explanation">
+                <h2>
+                    <%= pluralize(@student.errors.count, "erro encontrado", "erros encontrados") %>
+                </h2>
+                <ul>
+                    <% @student.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+<% end %>

@@ -1,0 +1,33 @@
+<h1>Select students</h1>
+
+<%= form_for :course, url: enroll_school_course_path(@school, @course), method: :patch do |f| %>
+  <%= hidden_field_tag 'students_ids', value: @ids %>
+
+  <div>
+    <%= f.submit "Salvar", class: "btn btn-default" %>
+  </div>
+<% end %>
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <tr>
+                <th>Título</th>
+                <th></th>
+            </tr>
+
+            <% @students.each do |student| %>
+            <tr>
+                <td><%= student.name %></td>
+                <td class="col-sm-3">
+                  <div class="btn-group">
+                    <%= button_tag(type: "button", data: { student_id: student.id }, class: "btn btn-default add-student") do%>
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    <% end %>
+                  </div>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+</div>
