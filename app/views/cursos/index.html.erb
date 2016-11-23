@@ -1,0 +1,42 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      <h1>Cursos Cadastrados</h1>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Descricao</th>
+          <th>Conteudo</th>
+          <th>Duracao</th>
+          <th>Alunos ativos</th>
+          <th>Preco</th>
+          <th colspan="3">Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @cursos.each do |curso| %>
+          <tr>
+            <td><%= curso.titulo %></td>
+            <td><%= curso.descricao %></td>
+            <td><%= curso.conteudo %></td>
+            <td><%= curso.duracao %></td>
+            <td><%= curso.alunos_ativos %></td>
+            <td><%= curso.preco %></td>
+            <td>
+              <button type="button" class="btn btn-primary"><%= link_to 'Visualizar', curso %></button>
+              <button type="button" class="btn btn-warning"><%= link_to 'Editar', edit_curso_path(curso) %></button>
+              <button type="button" class="btn btn-danger"><%= link_to 'Deletar', curso, method: :delete, data: { confirm: 'Você tem certeza?' } %></button>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <button type="button" class="btn btn-success"><%= link_to 'Cadastrar Curso', new_curso_path %></button>
+  </div>
+</div>

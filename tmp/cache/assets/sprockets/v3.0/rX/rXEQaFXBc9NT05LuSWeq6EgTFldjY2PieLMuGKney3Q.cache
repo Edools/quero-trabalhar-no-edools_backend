@@ -1,0 +1,38 @@
+{:uriI"’file://app/assets/bower_components/morrisjs/examples/goals.html?type=text/html&id=7c5efe687dc3712c83a8a2b88e997a5d6cbfca0a1209665322c3ba1b4eb21a41:ET:load_pathI" app/assets/bower_components;T:filenameI"=app/assets/bower_components/morrisjs/examples/goals.html;T:	nameI"morrisjs/examples/goals;T:logical_pathI"!morrisjs/examples/goals.html;T:content_typeI"text/html;T:sourceI"î<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+</head>
+<body>
+<h1>Value Goals</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+var decimal_data = [];
+for (var x = 0; x <= 360; x += 10) {
+  decimal_data.push({
+    x: x,
+    y: Math.sin(Math.PI * x / 180).toFixed(4)
+  });
+}
+window.m = Morris.Line({
+  element: 'graph',
+  data: decimal_data,
+  xkey: 'x',
+  ykeys: ['y'],
+  labels: ['sin(x)'],
+  parseTime: false,
+  goals: [-1, 0, 1]
+});
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Kfile-digest://app/assets/bower_components/morrisjs/examples/goals.html;TTF:charsetI"
+utf-8;F:digest"%ü£Ù>²¯­WìœÇ~,¬X‚ƒ¡$uÝµF¢"QÉd±:lengthiî:dependencies_digest"%–ºŸÜKýh*7_>ä¯Îœ¯ºåç­;I¥Ç¿:idI"E7c5efe687dc3712c83a8a2b88e997a5d6cbfca0a1209665322c3ba1b4eb21a41;F:
+mtimel+¦ïYV

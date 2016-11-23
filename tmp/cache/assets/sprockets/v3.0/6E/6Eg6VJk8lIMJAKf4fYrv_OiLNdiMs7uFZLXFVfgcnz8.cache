@@ -1,0 +1,47 @@
+{:uriI"“file://app/assets/bower_components/morrisjs/examples/resize.html?type=text/html&id=c08d9913275cb723dde8144d7e3e491c21bbf871282005e480aa9976eae66384:ET:load_pathI" app/assets/bower_components;T:filenameI">app/assets/bower_components/morrisjs/examples/resize.html;T:	nameI"morrisjs/examples/resize;T:logical_pathI""morrisjs/examples/resize.html;T:content_typeI"text/html;T:sourceI"l<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+  <style>
+    body { width: 100%; }
+    #graph { width: 100%; }
+  </style>
+</head>
+<body>
+<h1>Formatting Dates YYYY-MM-DD</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+/* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */
+var day_data = [
+  {"period": "2012-10-01", "licensed": 3407, "sorned": 660},
+  {"period": "2012-09-30", "licensed": 3351, "sorned": 629},
+  {"period": "2012-09-29", "licensed": 3269, "sorned": 618},
+  {"period": "2012-09-20", "licensed": 3246, "sorned": 661},
+  {"period": "2012-09-19", "licensed": 3257, "sorned": 667},
+  {"period": "2012-09-18", "licensed": 3248, "sorned": 627},
+  {"period": "2012-09-17", "licensed": 3171, "sorned": 660},
+  {"period": "2012-09-16", "licensed": 3171, "sorned": 676},
+  {"period": "2012-09-15", "licensed": 3201, "sorned": 656},
+  {"period": "2012-09-10", "licensed": 3215, "sorned": 622}
+];
+Morris.Line({
+  element: 'graph',
+  data: day_data,
+  xkey: 'period',
+  ykeys: ['licensed', 'sorned'],
+  labels: ['Licensed', 'SORN'],
+  resize: true
+});
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Lfile-digest://app/assets/bower_components/morrisjs/examples/resize.html;TTF:charsetI"
+utf-8;F:digest"%E\A†óø…´âJ´PşHüğïŸÆcÂQgo±ğb^é:lengthil:dependencies_digest"%ØïPbU)ãÑ›“/,ßé³aO¬ûVÜJI[øåH:idI"Ec08d9913275cb723dde8144d7e3e491c21bbf871282005e480aa9976eae66384;F:
+mtimel+¦ïYV

@@ -1,0 +1,43 @@
+{:uriI"°file://app/assets/bower_components/morrisjs/examples/diagonal-xlabels-bar.html?type=text/html&id=69e1b6e5edc6c65e013dc6ca89c201a3bd9de0ce6c53a651659e82429d794c56:ET:load_pathI" app/assets/bower_components;T:filenameI"Lapp/assets/bower_components/morrisjs/examples/diagonal-xlabels-bar.html;T:	nameI"+morrisjs/examples/diagonal-xlabels-bar;T:logical_pathI"0morrisjs/examples/diagonal-xlabels-bar.html;T:content_typeI"text/html;T:sourceI"2<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+</head>
+<body>
+<h1>Displaying X Labels Diagonally (Bar Chart)</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+/* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */
+var day_data = [
+  {"period": "2012-10-01", "licensed": 3407, "sorned": 660},
+  {"period": "2012-09-30", "licensed": 3351, "sorned": 629},
+  {"period": "2012-09-29", "licensed": 3269, "sorned": 618},
+  {"period": "2012-09-20", "licensed": 3246, "sorned": 661},
+  {"period": "2012-09-19", "licensed": 3257, "sorned": 667},
+  {"period": "2012-09-18", "licensed": 3248, "sorned": 627},
+  {"period": "2012-09-17", "licensed": 3171, "sorned": 660},
+  {"period": "2012-09-16", "licensed": 3171, "sorned": 676},
+  {"period": "2012-09-15", "licensed": 3201, "sorned": 656},
+  {"period": "2012-09-10", "licensed": 3215, "sorned": 622}
+];
+Morris.Bar({
+  element: 'graph',
+  data: day_data,
+  xkey: 'period',
+  ykeys: ['licensed', 'sorned'],
+  labels: ['Licensed', 'SORN'],
+  xLabelAngle: 60
+});
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Zfile-digest://app/assets/bower_components/morrisjs/examples/diagonal-xlabels-bar.html;TTF:charsetI"
+utf-8;F:digest"%¸eO8™YΩ∂À˝Æî3?RÑjßÄ Åé›4óIÁxS9:lengthi2:dependencies_digest"%±5ÿËÑ„K_∆/wqÜObI÷r˝Ëˆ»}§¨:idI"E69e1b6e5edc6c65e013dc6ca89c201a3bd9de0ce6c53a651659e82429d794c56;F:
+mtimel+¶ÔYV

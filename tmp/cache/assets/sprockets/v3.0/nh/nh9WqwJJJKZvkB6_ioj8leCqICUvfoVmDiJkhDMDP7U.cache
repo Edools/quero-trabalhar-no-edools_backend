@@ -1,0 +1,54 @@
+{:uriI"•file://app/assets/bower_components/morrisjs/examples/updating.html?type=text/html&id=90ea146a6f6bc04eaa6beb7f9987a3f20860197c747125263e1bcaae59b2eea4:ET:load_pathI" app/assets/bower_components;T:filenameI"@app/assets/bower_components/morrisjs/examples/updating.html;T:	nameI"morrisjs/examples/updating;T:logical_pathI"$morrisjs/examples/updating.html;T:content_typeI"text/html;T:sourceI"Y<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+</head>
+<body>
+<h1>Updating data</h1>
+<div id="graph"></div>
+<div id="reloadStatus">
+<pre id="code" class="prettyprint linenums">
+
+var nReloads = 0;
+function data(offset) {
+  var ret = [];
+  for (var x = 0; x <= 360; x += 10) {
+    var v = (offset + x) % 360;
+    ret.push({
+      x: x,
+      y: Math.sin(Math.PI * v / 180).toFixed(4),
+      z: Math.cos(Math.PI * v / 180).toFixed(4)
+    });
+  }
+  return ret;
+}
+var graph = Morris.Line({
+    element: 'graph',
+    data: data(0),
+    xkey: 'x',
+    ykeys: ['y', 'z'],
+    labels: ['sin()', 'cos()'],
+    parseTime: false,
+    ymin: -1.0,
+    ymax: 1.0,
+    hideHover: true
+});
+function update() {
+  nReloads++;
+  graph.setData(data(5 * nReloads));
+  $('#reloadStatus').text(nReloads + ' reloads');
+}
+setInterval(update, 100);
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Nfile-digest://app/assets/bower_components/morrisjs/examples/updating.html;TTF:charsetI"
+utf-8;F:digest"%ê~*©iø¢|‹áß½6dÞ@çÊ²¨lGÈ_\ø«„:lengthiY:dependencies_digest"%aLTXÅ’À¯=½?XÒä*<ÉXØ^ËjjäoOéL¥Õ:idI"E90ea146a6f6bc04eaa6beb7f9987a3f20860197c747125263e1bcaae59b2eea4;F:
+mtimel+¦ïYV

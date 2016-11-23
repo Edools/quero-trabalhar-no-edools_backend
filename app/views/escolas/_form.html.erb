@@ -1,0 +1,35 @@
+<%= form_for(@escola) do |f| %>
+  <% if @escola.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @escola.errors.full_messages.each do |message| %>
+        <li class="alert alert-danger" role="alert"><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :pitch %><br>
+    <%= f.text_field :pitch, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :subdominio %><br>
+    <%= f.text_field :subdominio, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :data_criacao %><br>
+    <%= f.date_select :data_criacao, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit%>
+  </div>
+<% end %>

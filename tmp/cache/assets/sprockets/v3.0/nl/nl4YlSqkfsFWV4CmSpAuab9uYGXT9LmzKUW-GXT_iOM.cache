@@ -1,0 +1,37 @@
+{:uriI"’file://app/assets/bower_components/datatables/bower.json?type=application/json&id=c5270d734c1849a9377c8cf318c0ea1e1c7d3a9997490ceec3da1b8a6465ff8d:ET:load_pathI" app/assets/bower_components;T:filenameI"6app/assets/bower_components/datatables/bower.json;T:	nameI"datatables/bower;T:logical_pathI"datatables/bower.json;T:content_typeI"application/json;T:sourceI"M{
+	"name": "datatables",
+	"version": "1.10.10",
+	"main": [
+		"media/js/jquery.dataTables.js",
+		"media/css/jquery.dataTables.css",
+		"media/images/sort_asc.png",
+		"media/images/sort_asc_disabled.png",
+		"media/images/sort_both.png",
+		"media/images/sort_desc.png",
+		"media/images/sort_desc_disabled.png"
+	],
+	"dependencies": {
+		"jquery": ">=1.7.0"
+	},
+	"license": "MIT",
+	"keywords": [
+		"jquery",
+		"datatables",
+		"table",
+		"javascript",
+		"library"
+	],
+	"ignore": [
+		"/.*",
+		"examples",
+		"media/unit_testing",
+		"composer.json",
+		"dataTables.jquery.json",
+		"package.json"
+	]
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Dfile-digest://app/assets/bower_components/datatables/bower.json;TTF:charsetI"
+utf-8;F:digest"%`ÿLô˜KÉÆ¤6ï¶Ÿ>Ê*Rş÷Îï¡óœYa Ù:lengthiM:dependencies_digest"%çFø¼¤»mõwoQÁù¢ãLlÎú““T?¥·}:idI"Ec5270d734c1849a9377c8cf318c0ea1e1c7d3a9997490ceec3da1b8a6465ff8d;F:
+mtimel+¦ïYV

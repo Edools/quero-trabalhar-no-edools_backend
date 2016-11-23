@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      <h1>Escola Selecionada</h1>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Nome:</strong>
+      <%= @escola.nome %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @escola.email %>
+    </p>
+
+    <p>
+      <strong>Pitch:</strong>
+      <%= @escola.pitch %>
+    </p>
+
+    <p>
+      <strong>Subdominio:</strong>
+      <%= @escola.subdominio %>
+    </p>
+
+    <p>
+      <strong>Data criacao:</strong>
+      <%= @escola.data_criacao %>
+    </p>
+
+    <button type="button" class="btn btn-warning"><%= link_to 'Editar', edit_escola_path(@escola) %></button>
+    <button type="button" class="btn btn-default"><%= link_to 'Voltar', escolas_path %></button>
+  </div>
+</div>

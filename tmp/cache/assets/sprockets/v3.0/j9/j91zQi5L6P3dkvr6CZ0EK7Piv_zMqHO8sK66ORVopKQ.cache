@@ -1,0 +1,36 @@
+{:uriI"™file://app/assets/bower_components/morrisjs/examples/area-as-line.html?type=text/html&id=636513822496aa0e73934f32ec589a8d74bd510a2f5c2b33bf74c04f820dcf00:ET:load_pathI" app/assets/bower_components;T:filenameI"Dapp/assets/bower_components/morrisjs/examples/area-as-line.html;T:	nameI"#morrisjs/examples/area-as-line;T:logical_pathI"(morrisjs/examples/area-as-line.html;T:content_typeI"text/html;T:sourceI"<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+</head>
+<body>
+<h1>Area charts behaving like line charts</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+// Use Morris.Area instead of Morris.Line
+Morris.Area({
+  element: 'graph',
+  behaveLikeLine: true,
+  data: [
+    {x: '2011 Q1', y: 3, z: 3},
+    {x: '2011 Q2', y: 2, z: 1},
+    {x: '2011 Q3', y: 2, z: 4},
+    {x: '2011 Q4', y: 3, z: 3}
+  ],
+  xkey: 'x',
+  ykeys: ['y', 'z'],
+  labels: ['Y', 'Z']
+});
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Rfile-digest://app/assets/bower_components/morrisjs/examples/area-as-line.html;TTF:charsetI"
+utf-8;F:digest"%g:.\Q½s,ñÖC+Å(Î,{07(üæÌ¿Ù|Î:lengthi:dependencies_digest"%›ÉôfòWøÎlª9ÂH”äÿSÙ°tËdvê¯Pã:idI"E636513822496aa0e73934f32ec589a8d74bd510a2f5c2b33bf74c04f820dcf00;F:
+mtimel+¦ïYV

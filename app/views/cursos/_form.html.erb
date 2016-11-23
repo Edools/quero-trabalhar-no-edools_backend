@@ -1,0 +1,48 @@
+<%= form_for(@curso) do |f| %>
+  <% if @curso.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @curso.errors.full_messages.each do |message| %>
+        <li class="alert alert-danger" role="alert"><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo, class: "form-control"%>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_area :descricao, class: "form-control"%>
+  </div>
+  <div class="field">
+    <%= f.label :conteudo %><br>
+    <%= f.text_field :conteudo, class: "form-control"%>
+  </div>
+  <div class="field">
+    <%= f.label :duracao %><br>
+    <%= f.text_field :duracao, class: "form-control"%>
+  </div>
+  <div class="field">
+    <%= f.label :alunos_ativos %><br>
+    <%= f.text_field :alunos_ativos, class: "form-control"%>
+  </div>
+  <div class="field">
+    <%= f.label :preco %><br>
+    <%= f.text_field :preco, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :escola %>
+    <%if @escolas.size > 0 %>
+      <%= f.collection_select :escola_id, @escolas, "id", "nome", {}, class: "form-control" %>
+      <%#= select("post", "escola_id", @escolas.collect {|p| [ p.nome, p.id ] }) %>
+    <% end %>
+
+</div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

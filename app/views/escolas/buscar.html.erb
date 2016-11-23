@@ -1,0 +1,45 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <%= form_tag buscar_escolas_path, method: :post, class:"navbar-form navbar-right" do %>
+      <div class="form-group">
+        <%= text_field_tag :nome, @nome_a_buscar, class:"form-control" %>
+        <%= button_to "Buscar", nil, class:"btn btn-default" %>
+      </div>
+    <% end %>
+      <h1>Escolas Cadastradas</h1>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Pitch</th>
+          <th>Subdominio</th>
+          <th>Data criacao</th>
+          <th colspan="3">Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @escolas.each do |escola| %>
+          <tr>
+            <td><%= escola.nome %></td>
+            <td><%= escola.email %></td>
+            <td><%= escola.pitch %></td>
+            <td><%= escola.subdominio %></td>
+            <td><%= escola.data_criacao %></td>
+            <td colspan="3">
+              <button type="button" class="btn btn-primary"><%= link_to 'Visualizar', escola %></button>
+              <button type="button" class="btn btn-warning"><%= link_to 'Editar', edit_escola_path(escola) %></button>
+                <button type="button" class="btn btn-danger"><%= link_to 'Deletar', escola, method: :delete, data: { confirm: 'Você tem certeza?' } %></button>              
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= button_to "Cadastrar Escola", new_escola_path, method: :get, class:"btn btn-success" %>
+  </div>
+
+
+</div>

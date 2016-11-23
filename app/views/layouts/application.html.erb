@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EducaMais</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= nav_bar responsive: true, brand:"EducaMais - Educação como prioridade", brand_link: root_url do %>
+      <%= menu_group pull: :right  do %>
+          <%= menu_item "Inicio", root_path %>
+          <%= menu_item "Escolas", '/escolas' %>
+          <%= menu_item "Cursos", '/cursos' %>          
+          <!-- <%= menu_item "Sobre nós", root_path %>
+          <%= menu_item "Contato", root_path %> -->
+      <% end %>
+  <% end %>
+</head>
+<body>
+  <div class="container">
+    <% if notice %>
+      <p id="notice" class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <%= yield %>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{:uriI"˜file://app/assets/bower_components/bootstrap-social/bower.json?type=application/json&id=aec909655d0cebb8cda7fe4c9f295430817d4e8c4807e9bef2596fae39810a55:ET:load_pathI" app/assets/bower_components;T:filenameI"<app/assets/bower_components/bootstrap-social/bower.json;T:	nameI"bootstrap-social/bower;T:logical_pathI" bootstrap-social/bower.json;T:content_typeI"application/json;T:sourceI"ã{
+  "name": "bootstrap-social",
+  "main": "bootstrap-social.css",
+  "licence": "MIT",
+  "ignore": [
+    "assets",
+    "index.html",
+    "LICENCE"
+  ],
+  "dependencies": {
+    "bootstrap": "~3",
+    "font-awesome": "~4.2"
+  }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Jfile-digest://app/assets/bower_components/bootstrap-social/bower.json;TTF:charsetI"
+utf-8;F:digest"%AJIpo1£Y/ÚG}¡p+»x‚Lž°M€¹®:lengthiã:dependencies_digest"%DEQ2ifŽòS¦ìó}â¾(:r/—Gdû¦'FTŽÐ–k‰:idI"Eaec909655d0cebb8cda7fe4c9f295430817d4e8c4807e9bef2596fae39810a55;F:
+mtimel+¦ïYV

@@ -1,0 +1,9 @@
+{:uriI"§file://app/assets/bower_components/flot/examples/ajax/data-eu-gdp-growth.json?type=application/json&id=476a6dee827a384f44d6b02a91c51e7c2ff96326f06735b6ce31feb24f0f636b:ET:load_pathI" app/assets/bower_components;T:filenameI"Kapp/assets/bower_components/flot/examples/ajax/data-eu-gdp-growth.json;T:	nameI"*flot/examples/ajax/data-eu-gdp-growth;T:logical_pathI"/flot/examples/ajax/data-eu-gdp-growth.json;T:content_typeI"application/json;T:sourceI"±{
+    "label": "Europe (EU27)",
+    "data": [[1999, 3.0], [2000, 3.9], [2001, 2.0], [2002, 1.2], [2003, 1.3], [2004, 2.5], [2005, 2.0], [2006, 3.1], [2007, 2.9], [2008, 0.9]]
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Yfile-digest://app/assets/bower_components/flot/examples/ajax/data-eu-gdp-growth.json;TTF:charsetI"
+utf-8;F:digest"%úkþtéM¬Ža¿í†(]#[ŽÅ‚$H#çG¯µ˜ç>á:lengthi±:dependencies_digest"%ù^w{Gó•;$¼Ÿ f}ÕïlKqœ¹~ ín*8¾:idI"E476a6dee827a384f44d6b02a91c51e7c2ff96326f06735b6ce31feb24f0f636b;F:
+mtimel+¦ïYV

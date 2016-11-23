@@ -1,0 +1,36 @@
+{:uriI"˜file://app/assets/bower_components/morrisjs/examples/bar-no-axes.html?type=text/html&id=fcd387811e3f6f4f0dd70c5a33bb590ea1a05b0e41a4bdae8591f3752a664f95:ET:load_pathI" app/assets/bower_components;T:filenameI"Capp/assets/bower_components/morrisjs/examples/bar-no-axes.html;T:	nameI""morrisjs/examples/bar-no-axes;T:logical_pathI"'morrisjs/examples/bar-no-axes.html;T:content_typeI"text/html;T:sourceI"é<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+</head>
+<body>
+<h1>Bar charts</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+// Use Morris.Bar
+Morris.Bar({
+  element: 'graph',
+  axes: false,
+  data: [
+    {x: '2011 Q1', y: 3, z: 2, a: 3},
+    {x: '2011 Q2', y: 2, z: null, a: 1},
+    {x: '2011 Q3', y: 0, z: 2, a: 4},
+    {x: '2011 Q4', y: 2, z: 4, a: 3}
+  ],
+  xkey: 'x',
+  ykeys: ['y', 'z', 'a'],
+  labels: ['Y', 'Z', 'A']
+});
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Qfile-digest://app/assets/bower_components/morrisjs/examples/bar-no-axes.html;TTF:charsetI"
+utf-8;F:digest"%ÆYn1|ˆkg	–ÿ0É]6ö¶“²‹_"2I¯Ô¬Ë48h:lengthié:dependencies_digest"%jAÄéS}Z=Žç W¥ù[ó•˜õ.ës¨s°VOÍ:idI"Efcd387811e3f6f4f0dd70c5a33bb590ea1a05b0e41a4bdae8591f3752a664f95;F:
+mtimel+¦ïYV
