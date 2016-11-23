@@ -1,0 +1,6 @@
+= f.input :name, label: t('labels.name'), placeholder: t('placeholders.full_name')
+= f.input :address, label: t('labels.address'), placeholder: t('placeholders.full_address')
+= f.input :phone, label: t('labels.phone'), placeholder: t('placeholders.phone')
+= f.input :document, label: t('labels.document'), placeholder: t('placeholders.document')
+= f.input :status, collection: [[ t('labels.active'), true ], [ t('labels.inactive'), false ]], selected: t('labels.active'), include_blank: false
+= f.button :submit

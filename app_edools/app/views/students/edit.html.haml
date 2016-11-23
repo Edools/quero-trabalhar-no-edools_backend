@@ -1,0 +1,4 @@
+%h1= t('titles.edit_student')
+
+= simple_form_for @student, url: edit_school_student_path(@student, @school) do |f|
+  = render "students/form", f: f

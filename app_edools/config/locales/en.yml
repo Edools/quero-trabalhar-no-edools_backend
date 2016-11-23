@@ -1,0 +1,110 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: Errors in validations
+      models:
+        school:
+          attributes:
+            name:
+              blank: The field name can't be blank
+              taken: Name already being used
+            email_responsible:
+              blank: The field mail can't be blank
+              invalid: Mail field is with an invalid format
+              taken: Mail already being used
+            pitch:
+              blank: The field pitch can't be blank
+            subdomain:
+              invalid: Subdomain field is with an invalid format
+              taken: Subdomain already being used
+
+  buttons:
+    close: Close
+    content: Content
+    description: Description
+  labels:
+    address: Address
+    active: Active
+    content: Content
+    date_school: School creation date
+    description: Description
+    document: Document
+    duration: Duration
+    email: Email
+    inactive: Inactive
+    name: Name
+    phone: Phone
+    pitch: Pitch
+    price: Price
+    subdomain: Subdomain
+    title: Title
+  links:
+    back: Back
+    cancel: Cancel
+    delete: Delete
+    edit: Edit
+    new_course: New Course
+    new_school: New School
+    new_student: New Student
+    students_list: Students List
+  messages:
+    confirm: Are you sure?
+    course_create: The course was registered successfully!
+    course_destroy: The course was removed successfully!
+    course_update: The course was updated successfully!
+    school_create: The school was registered successfully!
+    school_destroy: The school was removed successfully!
+    school_update: The school was updated successfully!
+    student_create: The student was registered successfully!
+    student_destroy: The student was removed successfully!
+    student_update: The student was updated successfully!
+  placeholders:
+    content: Program content
+    description: Course description
+    document: Document - xxx.xxx.xxx-xx
+    duration: Duration
+    email: Email responsible for school email@example.com
+    full_address: Full address
+    full_name: Full name of Student
+    name: School name
+    phone: Phone (xx)xxxxx-xxxx
+    price: Price in US dollars
+    search_course: Search course name
+    search_school: Search school name
+    search_student: Search student name
+    subdomain: Subdomain must have the format example-example.edools.com
+    title: Course title
+  table_titles:
+    address: Address
+    content: Content
+    created_at: Created at
+    delete: Delete
+    description: Description
+    document: Document
+    duration: Duration
+    edit: Edit
+    email_responsible: Email Responsible
+    name: Name
+    course_name: Course Name
+    phone: Phone
+    price: Price
+    school_name: School Name
+    subdomain: Subdomain
+  time:
+    formats:
+      long: "%Y-%m-%d"
+  titles:
+    content: Content
+    description: Description
+    edit_course: Edit course information
+    edit_school: Edit school information
+    edit_student: Edit student data
+    joined_courses: Joined Courses
+    new_course: New Course
+    new_school: New School
+    new_student: New Student
+    options: Options
+    students_list: Students List
+    school: School
+    school_list: Schools Control

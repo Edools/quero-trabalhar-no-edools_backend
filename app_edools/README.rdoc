@@ -1,0 +1,24 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version: 2.0.0
+
+* System dependencies: Rails 4
+  
+* Configuration: $ bundle install
+  
+* Database creation: Postgres
+
+* Database initialization: $ rake db:migrate and $ rake db:migrate RAILS_ENV=test
+
+* How to run the test suite: $bundle exec rspec spec
+
+* How to run the app: $ rails server
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

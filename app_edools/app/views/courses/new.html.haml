@@ -1,0 +1,13 @@
+%h1= t('titles.new_course')
+
+= simple_form_for @course, :url => new_school_course_path do |f|
+  -if @course.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@course.errors.count, "erro")
+        no preenchimento
+      %ul
+        - @course.errors.full_messages.each do |message|
+          %li= message
+
+  = render "courses/form", f: f
