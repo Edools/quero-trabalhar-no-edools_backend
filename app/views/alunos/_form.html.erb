@@ -1,0 +1,32 @@
+<div class="container">
+    <%= form_for @aluno do |f| %>
+
+    <fieldset>
+        <legend>Formulário</legend>
+
+
+        <% if @aluno.errors.any? %>
+          <div id="error_explanation" class="alert alert-danger">
+            <strong>
+              <%= pluralize(@aluno.errors.count, "Erro encontrado", "Erros encontrados") %>
+            </strong>
+            <ul>
+              <% @aluno.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+            <%= f.label :nome %>
+            <%= f.text_field :nome, class: "form-control", required: true %>
+        </div>        
+
+        <%= f.submit "Enviar", class: "btn btn-success" %>
+
+    </fieldset>
+
+    <% end %>
+
+</div>

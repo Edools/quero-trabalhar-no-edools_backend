@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  escola_id: 
+  descricao: MyText
+  conteudo: MyText
+  duracao: MyString
+  data_criacao: 2016-06-05 15:51:07
+  alunos_ativos_id: 
+  preco: 1.5
+
+two:
+  titulo: MyString
+  escola_id: 
+  descricao: MyText
+  conteudo: MyText
+  duracao: MyString
+  data_criacao: 2016-06-05 15:51:07
+  alunos_ativos_id: 
+  preco: 1.5

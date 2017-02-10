@@ -1,0 +1,26 @@
+<div class="container">
+
+    <%= link_to 'Nov0 aluno', new_aluno_path, class: 'btn btn-default' %>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @alunos.each do |aluno| %>
+            <tr>
+                <td><%= aluno.id %></td>
+                <td><%= aluno.nome %></td>
+                <td><%= link_to 'Exibir', aluno_path(aluno) %></td>
+                <td><%= link_to 'Editar', edit_aluno_path(aluno) %></td>
+                <td><%= link_to 'Apagar', aluno_path(aluno), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,47 @@
+<div class="container">
+    <%= form_for @escola do |f| %>
+
+    <fieldset>
+        <legend>Formulário</legend>
+
+
+        <% if @escola.errors.any? %>
+          <div id="error_explanation" class="alert alert-danger">
+            <strong>
+              <%= pluralize(@escola.errors.count, "Erro encontrado", "Erros encontrados") %>
+            </strong>
+            <ul>
+              <% @escola.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+            <%= f.label :nome %>
+            <%= f.text_field :nome, class: "form-control", required: true %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :email_dono %>
+            <%= f.email_field :email_dono, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :pitch %><br>
+            <%= f.text_area :pitch, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :sub_dominio %>
+            <%= f.text_field :sub_dominio, class: "form-control", required: true %>
+        </div>
+
+        <%= f.submit "Enviar", class: "btn btn-success" %>
+
+    </fieldset>
+
+    <% end %>
+
+</div>
