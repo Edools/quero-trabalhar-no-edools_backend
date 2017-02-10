@@ -1,0 +1,43 @@
+= form_for @course, html: { class: "form form-horizontal course" } do |f|
+  .form-group
+    = f.label :title, class: 'control-label'
+    .controls
+      = f.text_field :title, class: 'form-control', required: true
+    = error_span(@course[:title])
+  .form-group
+    = f.label :school_id, class: 'control-label'
+    .controls
+      = f.select :school_id, options_for_select(@schools), {selected: @course.new_record? ? nil : @course.school_id }, class: 'form-control', required: true
+    = error_span(@course[:school_id])
+  .form-group
+    = f.label :description, class: 'control-label'
+    .controls
+      = f.text_field :description, class: 'form-control'
+    = error_span(@course[:description])
+  .form-group
+    = f.label :content, class: 'control-label'
+    .controls
+      = f.text_field :content, class: 'form-control'
+    = error_span(@course[:content])
+  .form-group
+    = f.label :duration, class: 'control-label'
+    .controls
+      = f.text_field :duration, class: 'form-control', required: true
+    = error_span(@course[:duration])
+  .form-group
+    = f.label :creation_date, class: 'control-label'
+    .controls
+      = f.text_field :creation_date, class: 'form-control datepicker', required: true
+    = error_span(@course[:creation_date])
+  .form-group
+    = f.label :active_students, class: 'control-label'
+    .controls
+      = f.text_field :active_students, class: 'form-control', required: true
+    = error_span(@course[:active_students])
+  .form-group
+    = f.label :price, class: 'control-label'
+    .controls
+      = f.text_field :price, class: 'form-control', required: true
+    = error_span(@course[:price])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), courses_path, :class => 'btn btn-default'

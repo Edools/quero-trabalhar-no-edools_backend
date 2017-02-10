@@ -1,0 +1,28 @@
+= form_for @school, html: { class: "form form-horizontal school" } do |f|
+  .form-group
+    = f.label :name, class: 'control-label'
+    .controls
+      = f.text_field :name, class: 'form-control', required: true
+    = error_span(@school[:name])
+  .form-group
+    = f.label :email, class: 'control-label'
+    .controls
+      = f.text_field :email, class: 'form-control', required: true
+    = error_span(@school[:email])
+  .form-group
+    = f.label :pitch, class: 'control-label'
+    .controls
+      = f.text_field :pitch, class: 'form-control'
+    = error_span(@school[:pitch])
+  .form-group
+    = f.label :subdomain, class: 'control-label'
+    .controls
+      = f.text_field :subdomain, class: 'form-control', required: true
+    = error_span(@school[:subdomain])
+  .form-group
+    = f.label :creation_date, class: 'control-label'
+    .controls
+      = f.text_field :creation_date, class: 'form-control datepicker', required: true
+    = error_span(@school[:creation_date])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), schools_path, :class => 'btn btn-default'

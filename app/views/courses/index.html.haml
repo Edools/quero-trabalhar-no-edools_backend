@@ -1,0 +1,44 @@
+- model_class = Course
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+
+= form_tag courses_path, method: 'get', class: "form-inline" do
+  .form-group
+    = label_tag :title, "Search by title:"
+    = text_field_tag :title, nil, class: "form-control"
+  .form-group
+    = label_tag :school_id, "Filter by School:"
+    = select_tag :school_id, options_for_select(@schools, params[:school_id]), class: "form-control"
+  = submit_tag "Search", class: "btn btn-primary"
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:title)
+      %th= model_class.human_attribute_name(:school_id)
+      %th= model_class.human_attribute_name(:description)
+      %th= model_class.human_attribute_name(:content)
+      %th= model_class.human_attribute_name(:duration)
+      %th= model_class.human_attribute_name(:creation_date)
+      %th= model_class.human_attribute_name(:active_students)
+      %th= model_class.human_attribute_name(:price)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @courses.each do |course|
+      %tr
+        %td= link_to course.id, course_path(course)
+        %td= course.title
+        %td= course.school.name
+        %td= course.description
+        %td= course.content
+        %td= course.duration
+        %td= course.creation_date
+        %td= course.active_students
+        %td= course.price
+        %td=l course.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_course_path(course), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), course_path(course), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_course_path, :class => 'btn btn-primary'

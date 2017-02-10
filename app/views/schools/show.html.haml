@@ -1,0 +1,29 @@
+- model_class = School
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
+  = @school.name
+%p
+  %strong= model_class.human_attribute_name(:email) + ':'
+  %br
+  = @school.email
+%p
+  %strong= model_class.human_attribute_name(:pitch) + ':'
+  %br
+  = @school.pitch
+%p
+  %strong= model_class.human_attribute_name(:subdomain) + ':'
+  %br
+  = @school.subdomain
+%p
+  %strong= model_class.human_attribute_name(:creation_date) + ':'
+  %br
+  = @school.creation_date
+
+
+= link_to t('.back', :default => t("helpers.links.back")), schools_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_school_path(@school), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), school_path(@school), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

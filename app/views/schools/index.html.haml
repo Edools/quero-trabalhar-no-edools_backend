@@ -1,0 +1,35 @@
+- model_class = School
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+
+= form_tag schools_path, method: 'get', class: "form-inline" do
+  .form-group
+    = label_tag :name, "Search by Name:"
+    = text_field_tag :name, nil, class: "form-control"
+  = submit_tag "Search", class: "btn btn-primary"
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:email)
+      %th= model_class.human_attribute_name(:pitch)
+      %th= model_class.human_attribute_name(:subdomain)
+      %th= model_class.human_attribute_name(:creation_date)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @schools.each do |school|
+      %tr
+        %td= link_to school.id, school_path(school)
+        %td= school.name
+        %td= school.email
+        %td= school.pitch
+        %td= school.subdomain
+        %td= school.creation_date
+        %td=l school.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_school_path(school), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), school_path(school), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_school_path, :class => 'btn btn-primary'
