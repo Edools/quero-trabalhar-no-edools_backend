@@ -1,0 +1,47 @@
+<h1>Buscar escolas</h1>
+
+<%= form_tag(escolas_path, :method => :get) do %>
+
+  <%= label_tag "Nome" %>
+  <%= text_field_tag "busca[nome]" %>
+  <%= submit_tag "Buscar", :title => "Clique aqui para buscar" %>
+
+<% end %>
+
+<h1>Listando escolas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email do dono</th>
+      <th>Pitch</th>
+      <th>Subdominio</th>
+      <th>Cursos</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @escolas.each do |escola| %>
+      <tr>
+        <td><%= escola.nome %></td>
+        <td><%= escola.email_do_dono %></td>
+        <td><%= escola.pitch %></td>
+        <td><%= escola.subdominio %></td>
+        <td><%= link_to 'Cursos', escola_cursos_path(escola) %></td>
+        <td><%= link_to 'Ver', escola %></td>
+        <td><%= link_to 'Editar', edit_escola_path(escola) %></td>
+        <td>
+          <%= link_to 'Deletar', escola, method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' } %>
+        </td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova Escola', new_escola_path %>
