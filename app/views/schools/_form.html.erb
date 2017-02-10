@@ -1,0 +1,8 @@
+<%= simple_form_for(@school, html: {class: 'form-horizontal' }) do |f| %>
+  <%= f.input :name, label: "Nome" %>
+  <%= f.input :owner_email, label: "Email do dono" %>
+  <%= f.input :pitch %>
+  <%= f.input :subdomain, label: "Subdomínio" %>
+
+  <%= f.button :submit, value: "Salvar" %>
+<% end %>

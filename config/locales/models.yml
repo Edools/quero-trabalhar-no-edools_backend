@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      account_category:
+        one: Categoria
+        other: Categorias
+
+    attributes:
+      account_category:
+        name: Nome
+        status: Situação
