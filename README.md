@@ -1,10 +1,15 @@
 # O desafio
 
-Neste desafio você terá que construir uma gem básica para comunicação com API da Edools. Nosso principal objetivo é conhecer como você aborda os problemas e desenvolve soluções.
+Neste desafio você terá que construir uma gem básica para comunicação com API da Edools. 
+Nosso principal objetivo é conhecer como você aborda os problemas e desenvolve soluções.
+Você deve subir a gem num repositório publíco, a entrega será o link do seu novo repositório.
 
-O token da Api Edools enviado por email deve ser utilizado apenas para a criação de uma nova escola. As demais ações da gem devem utilizar o token credentials do admin que vai ser gerado após criação da escola.
+O token da Api Edools enviado por email deve ser utilizado apenas para a criação de uma nova escola. 
+As demais ações da gem devem utilizar o token credentials do admin que vai ser gerado após a criação da escola.
+Esse token é retornado no body da request de criação da escola.
 
-Você deve utilizar essa documentaço da nossa API http://docs.edools.com/api/V1, porém o token da Api Edools foi criado para nosso ambiente de staging https://core.myedools.info/
+Você deve utilizar essa documentaço da nossa API http://docs.edools.com/api/V1 
+O token da Api Edools foi criado para nosso ambiente de staging https://core.myedools.info/
 
 Uma especificação básica segue abaixo. Tudo que não foi especificado deve ser decidido por você, isso também será avaliado.
 
@@ -14,7 +19,7 @@ Uma especificação básica segue abaixo. Tudo que não foi especificado deve se
 
 ## Escolas
 
-- Criar nova escolala, 
+- Criar nova escola utilizando endpoint wizard
 - Atualizar escola
 
 ## Cursos
@@ -46,9 +51,10 @@ Siga as boas práticas que adota normalmente nos projetos que desenvolve.
 
 # Recomendações finais
 
+- Criar testes para o seu código será muito bem visto.
+- Você deve subir a gem num repositório com código sob licença MIT.
+- O horário do último commit será o horário considerado para a entrega.
 - Nossa avaliação não será apenas em cima de produtividade, daremos grande valor a qualidade do código escrito.
 - Não iremos considerar entregas após o prazo combinado.
-- Criar testes para o seu código será muito bem visto.
-- O horário do pull-request será o horário considerado para a entrega.
 
 *We wish you good luck, and may the Quality be with you!*
