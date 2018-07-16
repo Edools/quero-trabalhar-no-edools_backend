@@ -1,47 +1,39 @@
 # O desafio
 
-Neste desafio você terá que construir uma gem básica para comunicação com API da Edools. 
+Neste desafio você terá que construir um sistema básico para manipulação de escolas e cursos. Nosso principal objetivo é conhecer como você aborda os problemas e desenvolve soluções.
 
-Nosso principal objetivo é conhecer como você aborda os problemas e desenvolve soluções.
+Uma especificação básica segue abaixo. Tudo que não foi especificado deve ser decidido por você, isso também será avaliado.
 
-Você deve subir a gem num repositório público, a entrega será o link do seu novo repositório.
+## CRUD de Escolas e Cursos
 
-O token da Api Edools enviado por email deve ser utilizado apenas para a criação de uma nova escola.
- 
-As demais ações da gem devem utilizar o token credentials do admin que vai ser gerado após a criação da escola.
+- Escolas
+ - Nome
+ - Email do Dono
+ - Pitch
+ - Subdomínio
+ - Data de Criação
 
-Esse token é retornado no body da request de criação da escola.
+- Cursos
+ - Título
+ - Escola
+ - Descrição
+ - Conteúdo
+ - Duração
+ - Data de Criação
+ - Alunos Ativos
+ - Preço
 
-Você deve utilizar essa documentaço da nossa API http://docs.edools.com/api/V1
- 
-O token da Api Edools foi criado para nosso ambiente de staging https://core.myedools.info/
+## Relacionamentos
 
-Segue abaixo uma especificação básica. Tudo que não foi especificado deve ser decidido por você, isso também será avaliado.
+- Uma escola pode possuir diversos cursos
+- Um curso só pode pertencer a uma escola
 
-## Autenticação
+## Features
 
-- Criar configuração na gem para setar o token da Api Edools
-
-## Escolas
-
-- Criar nova escola utilizando endpoint wizard
-- Atualizar escola
-
-## Cursos
-
-- Criar novo curso
-- Listar cursos da escola
-
-## Produtos
-
-- Criar novo produto na escola
-- Listar produtos da escola
-
-## Alunos
-
-- Enviar convite para aluno matriculando em algum produto
-- Listar todos alunos de uma escola
-- Listar todos alunos de um produto
+- Buscar Curso e Escola por Nome e filtrar cursos por escola
+- Relatório de Alunos Ativos por escola
+- Adicionar validação no atributo Subdomínio da Escola, para que este possa ser usado para criar subdomínios do Edools (Ex: academia-bizstart.edools.com)
+- Implementar alguma feature que te venha a cabeça e que possa surpreender nossa equipe.
 
 ## Boas práticas
 
@@ -56,10 +48,9 @@ Siga as boas práticas que adota normalmente nos projetos que desenvolve.
 
 # Recomendações finais
 
-- Criar testes para o seu código será muito bem visto.
-- Você deve subir a gem num repositório com código sob licença MIT.
-- O horário do último commit será o horário considerado para a entrega.
 - Nossa avaliação não será apenas em cima de produtividade, daremos grande valor a qualidade do código escrito.
 - Não iremos considerar entregas após o prazo combinado.
+- Criar testes para o seu código será muito bem visto.
+- O horário do pull-request será o horário considerado para a entrega.
 
 *We wish you good luck, and may the Quality be with you!*
