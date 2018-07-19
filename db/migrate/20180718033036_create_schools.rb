@@ -6,6 +6,7 @@ class CreateSchools < ActiveRecord::Migration[5.2]
       t.text :pitch
       t.string :subdomain
       t.date :date_creation
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

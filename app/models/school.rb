@@ -1,5 +1,6 @@
 class School < ApplicationRecord
   has_many :courses, dependent: :destroy
+  belongs_to :user
 
   validates_presence_of :name, :owner_email, :pitch, :subdomain, :date_creation
   validates :owner_email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
