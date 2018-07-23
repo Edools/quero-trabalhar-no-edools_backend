@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { FactoryBot.build(:user) }
+
+  it 'is valid with valid attributes' do
+    expect(subject).to be_valid
+  end
+
+  describe 'Associations' do
+    it { is_expected.to have_many(:schools) }
+  end
 end
