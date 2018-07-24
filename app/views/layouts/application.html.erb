@@ -10,6 +10,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= render "shared/navbar" %>
+    </header>
+  
+    <main>
+      <div class="container">
+        <%= yield :form_errors %>
+        <%= yield %>
+      </div>
+    </main>
+  
+    <footer>
+      <%= render "shared/footer" %>
+    </footer>
   </body>
 </html>
