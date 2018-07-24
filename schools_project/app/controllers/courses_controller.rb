@@ -14,10 +14,12 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+    load_schools
   end
 
   # GET /courses/1/edit
   def edit
+    load_schools
   end
 
   # POST /courses
@@ -27,6 +29,7 @@ class CoursesController < ApplicationController
     if @course.save
       redirect_to @course, notice: 'Course was successfully created.'
     else
+      load_schools
       render :new
     end
   end
@@ -36,6 +39,7 @@ class CoursesController < ApplicationController
     if @course.update(course_params)
       redirect_to @course, notice: 'Course was successfully updated.'
     else
+      load_schools
       render :edit
     end
   end
@@ -47,13 +51,15 @@ class CoursesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = current_user.courses.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
       params.require(:course).permit(:school_id, :title, :description, :content, :duration, :price)
+    end
+
+    def load_schools
+      @schools = current_user.schools
     end
 end

@@ -1,14 +1,14 @@
-<h1>Courses</h1>
+<h1><%= I18n.t('courses.list') %></h1>
 
-<table>
+<%= link_to I18n.t('defaults.new'), new_course_path, class: 'btn btn-success' %>
+
+<table class='table table-striped'>
   <thead>
     <tr>
-      <th>School</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Content</th>
-      <th>Duration</th>
-      <th>Price</th>
+      <th><%= Course.human_attribute_name(:school) %></th>
+      <th><%= Course.human_attribute_name(:title) %></th>
+      <th><%= Course.human_attribute_name(:duration) %></th>
+      <th><%= Course.human_attribute_name(:price) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,18 +18,12 @@
       <tr>
         <td><%= course.school.name %></td>
         <td><%= course.title %></td>
-        <td><%= course.description %></td>
-        <td><%= course.content %></td>
         <td><%= course.duration %></td>
         <td><%= course.price.format %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to I18n.t('defaults.show'), course %></td>
+        <td><%= link_to I18n.t('defaults.edit'), edit_course_path(course) %></td>
+        <td><%= link_to I18n.t('defaults.delete'), course, method: :delete, data: { confirm: I18n.t('defaults.confirm_delete') } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Course', new_course_path %>

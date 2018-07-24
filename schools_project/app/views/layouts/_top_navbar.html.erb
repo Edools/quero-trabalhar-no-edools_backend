@@ -10,17 +10,17 @@
       <!-- Left Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <%= link_to 'Schools', schools_path, class: 'nav-link' %>
+          <%= link_to I18n.t('menu.schools'), schools_path, class: 'nav-link' %>
         </li>
         <li class="nav-item active">
-          <%= link_to 'Courses', courses_path, class: 'nav-link' %>
+          <%= link_to I18n.t('menu.courses'), courses_path, class: 'nav-link' %>
         </li>
       </ul>
 
       <!-- Right Links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'nav-link') %>
+          <%= link_to(I18n.t('menu.logout'), destroy_user_session_path, method: :delete, class: 'nav-link') %>
         </li>
       </ul>
     </div>

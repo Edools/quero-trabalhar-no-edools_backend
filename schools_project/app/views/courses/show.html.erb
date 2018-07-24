@@ -1,32 +1,32 @@
 <p>
-  <strong>School:</strong>
+  <strong><%= Course.human_attribute_name(:school) %></strong>
   <%= @course.school.name %>
 </p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%= Course.human_attribute_name(:title) %></strong>
   <%= @course.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= Course.human_attribute_name(:description) %></strong>
   <%= @course.description %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong><%= Course.human_attribute_name(:content) %></strong>
   <%= @course.content %>
 </p>
 
 <p>
-  <strong>Duration:</strong>
+  <strong><%= Course.human_attribute_name(:duration) %></strong>
   <%= @course.duration %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong><%= Course.human_attribute_name(:price) %></strong>
   <%= @course.price.format %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<%= link_to I18n.t('defaults.edit'), edit_course_path(@course), class: 'btn btn-light' %> |
+<%= link_to I18n.t('defaults.back'), courses_path, class: 'btn btn-light' %>

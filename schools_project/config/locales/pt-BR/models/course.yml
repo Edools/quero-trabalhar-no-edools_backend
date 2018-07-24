@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      course: Curso
+    attributes:
+      course:
+        user: Usuário
+        user_id: Usuário
+        school: Escola
+        school_id: Escola
+        title: Título
+        description: Descrição
+        content: Conteúdo
+        duration: Duração (horas)
+        price: Preço

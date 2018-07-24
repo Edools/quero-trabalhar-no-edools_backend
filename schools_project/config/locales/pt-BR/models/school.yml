@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      school: Escola
+    attributes:
+      school:
+        user: Usuário
+        user_id: Usuário
+        name: Nome
+        pitch: Pitch
+        subdomain: Subdomínio
