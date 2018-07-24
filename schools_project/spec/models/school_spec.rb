@@ -9,6 +9,7 @@ RSpec.describe School, type: :model do
 
   describe 'Associations' do
     it { is_expected.to belong_to(:user) }
+    it { is_expected.to have_many(:courses) }
   end
 
   describe 'Validations' do
