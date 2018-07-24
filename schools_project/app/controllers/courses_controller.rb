@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
 
   # GET /courses
   def index
-    @courses = current_user.courses.by_title(params[:title]).by_school(params[:school_id])
+    @courses = current_user.courses.by_title(params[:title]).by_school(params[:school_id]).order(:title).page(params[:page]).per(10)
   end
 
   # GET /courses/1
