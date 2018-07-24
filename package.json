@@ -1,0 +1,7 @@
+{
+  "name": "edools-schools-manager",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.1.2"
+  }
+}

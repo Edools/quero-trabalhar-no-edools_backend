@@ -1,0 +1,1756 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:4
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateSchools (20180722220551)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schools" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "owner_email" varchar, "pitch" varchar, "subdomain" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180722220551_create_schools.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180722220551"]]
+  ↳ bin/rails:4
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-22 22:08:43.429289"], ["updated_at", "2018-07-22 22:08:43.429289"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/schools" for 127.0.0.1 at 2018-07-22 19:08:52 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/juhguu/Developer/edools-schools-manager/app/assets/config
+  /Users/juhguu/Developer/edools-schools-manager/app/assets/images
+  /Users/juhguu/Developer/edools-schools-manager/app/assets/javascripts
+  /Users/juhguu/Developer/edools-schools-manager/app/assets/stylesheets
+  /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/juhguu/Developer/edools-schools-manager/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:13
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1367728403515669704_70216929001200'
+Started GET "/schools" for 127.0.0.1 at 2018-07-22 19:09:40 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/juhguu/Developer/edools-schools-manager/app/assets/config
+  /Users/juhguu/Developer/edools-schools-manager/app/assets/images
+  /Users/juhguu/Developer/edools-schools-manager/app/assets/javascripts
+  /Users/juhguu/Developer/edools-schools-manager/app/assets/stylesheets
+  /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/juhguu/Developer/edools-schools-manager/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:13
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1156165822593643834_70206093540960'
+Started GET "/schools" for 127.0.0.1 at 2018-07-22 19:10:50 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 548ms (Views: 502.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-22 19:10:53 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (108.0ms)
+  Rendered schools/new.html.erb within layouts/application (113.2ms)
+Completed 200 OK in 166ms (Views: 146.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-22 19:11:21 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (16.0ms)
+  Rendered schools/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-22 19:11:25 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-22 19:11:30 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:24:53 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 24ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:27:39 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 180ms (Views: 174.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:27:55 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (63.9ms)
+  Rendered schools/new.html.erb within layouts/application (67.9ms)
+Completed 200 OK in 121ms (Views: 100.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:34:01 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 42ms (Views: 34.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:34:47 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:34:56 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 46ms (Views: 43.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:34:57 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:35:02 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:36:31 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:36:40 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:37:37 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:41:04 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 54ms (Views: 47.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:41:15 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 26ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:41:26 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:41:45 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:42:35 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:42:36 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:42:39 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:43:07 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 47ms (Views: 43.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:43:08 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:43:36 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:43:51 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:44:59 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:45:01 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:46:00 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:48:04 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:17
+  Rendered schools/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:48:25 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:56
+  Rendered schools/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:52:28 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:52:47 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:52:49 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:54:18 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:54:24 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:55:05 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:55:08 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:55:12 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:25
+  Rendered schools/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:55:17 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:25
+  Rendered schools/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:55:18 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:25
+  Rendered schools/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:55:20 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:55:30 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:55:36 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (14.2ms)
+  Rendered schools/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 88ms (Views: 50.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 22:56:01 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:56:03 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (16.0ms)
+  Rendered schools/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:56:13 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (30.2ms)
+  Rendered schools/new.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 68ms (Views: 65.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 22:56:21 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:56:23 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (16.9ms)
+  Rendered schools/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 64ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/schools" for 127.0.0.1 at 2018-07-23 22:56:24 -0300
+Processing by SchoolsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/u/6SrcTC8KXbCngfpJcxstPKKhuXAcZUBNLArkNPn4qXBGSTMJRJLp4uAZd5NZuXdR0GDE4fGaJCTL7HFzv5w==", "school"=>{"name"=>"", "owner_email"=>"", "pitch"=>"", "subdomain"=>""}, "commit"=>"Create School"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[36mSchool Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "schools" WHERE LOWER("schools"."subdomain") = LOWER(?) LIMIT ?[0m  [["subdomain", ""], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (7.0ms)
+  Rendered schools/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 35ms (Views: 24.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 22:56:39 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 22:56:47 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:56:49 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (14.5ms)
+  Rendered schools/new.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 48ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:57:58 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (6.2ms)
+  Rendered schools/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 22:57:59 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:58:01 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (9.4ms)
+  Rendered schools/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 22:58:03 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 45ms (Views: 41.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 22:59:25 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 22ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:59:27 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (14.2ms)
+  Rendered schools/new.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:59:41 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (5.5ms)
+  Rendered schools/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 22:59:54 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (4.9ms)
+  Rendered schools/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:00:00 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (6.2ms)
+  Rendered schools/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:00:23 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (5.5ms)
+  Rendered schools/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 30ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:01:02 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (15.0ms)
+  Rendered schools/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 61ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:01:27 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (6.2ms)
+  Rendered schools/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:01:28 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (4.7ms)
+  Rendered schools/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:02:08 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (6.3ms)
+  Rendered schools/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:02:11 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (5.7ms)
+  Rendered schools/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:02:15 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (9.9ms)
+  Rendered schools/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 41ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:02:18 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (5.4ms)
+  Rendered schools/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:03:02 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (6.5ms)
+  Rendered schools/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:03:16 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (4.9ms)
+  Rendered schools/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:03:40 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (5.6ms)
+  Rendered schools/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:03:43 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.6ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 44ms (Views: 39.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:03:44 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (13.2ms)
+  Rendered schools/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:04:07 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (5.4ms)
+  Rendered schools/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/schools" for 127.0.0.1 at 2018-07-23 23:04:15 -0300
+Processing by SchoolsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eJ6df4AeHYG/q3Ps0XJoA0DTBXaKBErj2gNEFgwKqioLzabBsReIHiivoRhdiHZYMJffJ0D2Se1ZUkEqHaTlkQ==", "school"=>{"name"=>"", "owner_email"=>"", "pitch"=>"", "subdomain"=>""}, "commit"=>"Create School"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[36mSchool Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "schools" WHERE LOWER("schools"."subdomain") = LOWER(?) LIMIT ?[0m  [["subdomain", ""], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (8.1ms)
+  Rendered schools/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 39ms (Views: 30.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:10:22 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 123ms (Views: 114.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:10:26 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (26.0ms)
+  Rendered schools/new.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 68ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/schools" for 127.0.0.1 at 2018-07-23 23:11:10 -0300
+Processing by SchoolsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dlRH2OQJ0+MbHOYrF7MiiWY7dGUd6XwwACU6TAVZjEtarrHmEF9qaF44n6PKEYiswOxYcsT3o8ZGu0QlUS3qA==", "school"=>{"name"=>"Colégio Fantástico", "owner_email"=>"contato@fantastico.com", "pitch"=>"https://www.youtube.com/watch?v=NyhTIljd4Vw", "subdomain"=>"--0192839012asdkjalskd"}, "commit"=>"Create School"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[36mSchool Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "schools" WHERE LOWER("schools"."subdomain") = LOWER(?) LIMIT ?[0m  [["subdomain", "--0192839012asdkjalskd"], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (11.0ms)
+  Rendered schools/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 62ms (Views: 55.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/schools" for 127.0.0.1 at 2018-07-23 23:11:23 -0300
+Processing by SchoolsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gu1BSNtw4MWD7z7g/dv4PJDrxNTSs3RV/I/RodCGG2Fpvnr26nl1WhTr7BRxIeZn4K8ehRhBd1t/3tSdwShU2g==", "school"=>{"name"=>"Colégio Fantástico", "owner_email"=>"contato@fantastico.com", "pitch"=>"https://www.youtube.com/watch?v=NyhTIljd4Vw", "subdomain"=>"fantastico"}, "commit"=>"Create School"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[36mSchool Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "schools" WHERE LOWER("schools"."subdomain") = LOWER(?) LIMIT ?[0m  [["subdomain", "fantastico"], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[36mSchool Create (0.7ms)[0m  [1m[32mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Colégio Fantástico"], ["owner_email", "contato@fantastico.com"], ["pitch", "https://www.youtube.com/watch?v=NyhTIljd4Vw"], ["subdomain", "fantastico"], ["created_at", "2018-07-24 02:11:23.336637"], ["updated_at", "2018-07-24 02:11:23.336637"]]
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+Redirected to http://localhost:3000/schools/1
+Completed 302 Found in 13ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:11:23 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 51ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:11:26 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 46ms (Views: 38.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:11:42 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:12:56 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:13:03 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 66ms (Views: 63.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:13:05 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:23
+  Rendered schools/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:13:20 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 45.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:13:30 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:22
+  Rendered schools/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:13:46 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:13:50 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:14:39 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?target=blank" for 127.0.0.1 at 2018-07-23 23:14:41 -0300
+Processing by SchoolsController#index as HTML
+  Parameters: {"target"=>"blank"}
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?target=blank" for 127.0.0.1 at 2018-07-23 23:15:24 -0300
+Processing by SchoolsController#index as HTML
+  Parameters: {"target"=>"blank"}
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?target=blank" for 127.0.0.1 at 2018-07-23 23:16:48 -0300
+Processing by SchoolsController#index as HTML
+  Parameters: {"target"=>"blank"}
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?target=blank" for 127.0.0.1 at 2018-07-23 23:16:50 -0300
+Processing by SchoolsController#index as HTML
+  Parameters: {"target"=>"blank"}
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?target=blank" for 127.0.0.1 at 2018-07-23 23:17:08 -0300
+Processing by SchoolsController#index as HTML
+  Parameters: {"target"=>"blank"}
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?target=blank" for 127.0.0.1 at 2018-07-23 23:17:23 -0300
+Processing by SchoolsController#index as HTML
+  Parameters: {"target"=>"blank"}
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?target=blank" for 127.0.0.1 at 2018-07-23 23:17:26 -0300
+Processing by SchoolsController#index as HTML
+  Parameters: {"target"=>"blank"}
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?target=blank" for 127.0.0.1 at 2018-07-23 23:18:08 -0300
+Processing by SchoolsController#index as HTML
+  Parameters: {"target"=>"blank"}
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:18:10 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 45ms (Views: 36.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:18:11 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:18:52 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:18:56 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (23.5ms)
+  Rendered schools/new.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 54ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:18:58 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 47ms (Views: 41.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:19:04 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 36.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1/edit" for 127.0.0.1 at 2018-07-23 23:19:10 -0300
+Processing by SchoolsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/edit.html.erb within layouts/application
+  Rendered schools/_form.html.erb (13.7ms)
+  Rendered schools/edit.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 57ms (Views: 52.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1/edit" for 127.0.0.1 at 2018-07-23 23:20:42 -0300
+Processing by SchoolsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/edit.html.erb within layouts/application
+  Rendered schools/_form.html.erb (9.2ms)
+  Rendered schools/edit.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1/edit" for 127.0.0.1 at 2018-07-23 23:20:58 -0300
+Processing by SchoolsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/edit.html.erb within layouts/application
+  Rendered schools/_form.html.erb (5.4ms)
+  Rendered schools/edit.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1/edit" for 127.0.0.1 at 2018-07-23 23:21:11 -0300
+Processing by SchoolsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/edit.html.erb within layouts/application
+  Rendered schools/_form.html.erb (4.9ms)
+  Rendered schools/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1/edit" for 127.0.0.1 at 2018-07-23 23:21:19 -0300
+Processing by SchoolsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/edit.html.erb within layouts/application
+  Rendered schools/_form.html.erb (6.6ms)
+  Rendered schools/edit.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1/edit" for 127.0.0.1 at 2018-07-23 23:22:02 -0300
+Processing by SchoolsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/edit.html.erb within layouts/application
+  Rendered schools/_form.html.erb (8.0ms)
+  Rendered schools/edit.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 41ms (Views: 37.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1/edit" for 127.0.0.1 at 2018-07-23 23:22:14 -0300
+Processing by SchoolsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/edit.html.erb within layouts/application
+  Rendered schools/_form.html.erb (7.8ms)
+  Rendered schools/edit.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 42ms (Views: 38.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:22:27 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 49.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:23:32 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:23:39 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 23ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:23:42 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:23:45 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 30.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:24:08 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:24:10 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 43ms (Views: 39.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:24:10 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:24:13 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:24:14 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:25:01 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:25:06 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (15.0ms)
+  Rendered schools/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 50ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/schools" for 127.0.0.1 at 2018-07-23 23:25:10 -0300
+Processing by SchoolsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G865bKjRy+JvJCugwIrSBpQjGZCeEa+SoYAvDZxO2DDPfVK0UwCRBEIwukbj/FiuArhFIMF11O14mlb0OR8JqQ==", "school"=>{"name"=>"", "owner_email"=>"", "pitch"=>"", "subdomain"=>""}, "commit"=>"Create School"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[36mSchool Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "schools" WHERE LOWER("schools"."subdomain") = LOWER(?) LIMIT ?[0m  [["subdomain", ""], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (7.4ms)
+  Rendered schools/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 36ms (Views: 27.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:25:12 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:25:13 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 37ms (Views: 32.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:27:02 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 27.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:27:55 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:28:37 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:30:05 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:30:34 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2018-07-23 23:31:37 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:31:39 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (2.0ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 48ms (Views: 40.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:31:44 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (15.1ms)
+  Rendered schools/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 49ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/schools" for 127.0.0.1 at 2018-07-23 23:32:12 -0300
+Processing by SchoolsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gQrM3uxmpbOT5BwXPuZTvPibchLlrODnFy7Rb9kR8atVuScGF7f/Vb7wjfEdkNkUbgAuorrIm5jONKiWfEAgMg==", "school"=>{"name"=>"Xuxa Park", "owner_email"=>"xuxa@globo.com", "pitch"=>"https://www.youtube.com/watch?v=wVOULWZHLNA", "subdomain"=>"xuxa"}, "commit"=>"Create School"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[36mSchool Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "schools" WHERE LOWER("schools"."subdomain") = LOWER(?) LIMIT ?[0m  [["subdomain", "xuxa"], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[36mSchool Create (0.3ms)[0m  [1m[32mINSERT INTO "schools" ("name", "owner_email", "pitch", "subdomain", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Xuxa Park"], ["owner_email", "xuxa@globo.com"], ["pitch", "https://www.youtube.com/watch?v=wVOULWZHLNA"], ["subdomain", "xuxa"], ["created_at", "2018-07-24 02:32:12.180076"], ["updated_at", "2018-07-24 02:32:12.180076"]]
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+Redirected to http://localhost:3000/schools/2
+Completed 302 Found in 27ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/schools/2" for 127.0.0.1 at 2018-07-23 23:32:12 -0300
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:67
+  Rendering schools/show.html.erb within layouts/application
+  Rendered schools/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:32:13 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 49ms (Views: 45.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:33:43 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (12.5ms)
+  Rendered schools/new.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 66ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/schools" for 127.0.0.1 at 2018-07-23 23:33:44 -0300
+Processing by SchoolsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HDf+16d1zpNtXSOOy1vlGPTrlaBmaIg1+33PVcn93b3IhBUPXKSUdUBJsmjoLW+wYnDJEDkM80oiZ7asbKwMJA==", "school"=>{"name"=>"", "owner_email"=>"", "pitch"=>"", "subdomain"=>""}, "commit"=>"Create School"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[36mSchool Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "schools" WHERE LOWER("schools"."subdomain") = LOWER(?) LIMIT ?[0m  [["subdomain", ""], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (7.4ms)
+  Rendered schools/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 46ms (Views: 39.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:33:47 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:36:39 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:37:01 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:37:03 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:37:05 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 49ms (Views: 43.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:37:53 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:37:57 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:38:18 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:38:19 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:38:33 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:38:38 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 26ms (Views: 22.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:38:42 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (11.6ms)
+  Rendered schools/new.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 48ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:38:44 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:38:54 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (3.8ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 42ms (Views: 33.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:38:55 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2018-07-23 23:38:57 -0300
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (11.5ms)
+  Rendered schools/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 64ms (Views: 60.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/schools" for 127.0.0.1 at 2018-07-23 23:38:58 -0300
+Processing by SchoolsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Iy0AeUmoX9xoGJz0r4myA3qVKChxgoWS1z1EDyMdSXv3nuuhsnkFOkUMDRKM/zir7A50mC7m/u0OJz32hkyY4g==", "school"=>{"name"=>"", "owner_email"=>"", "pitch"=>"", "subdomain"=>""}, "commit"=>"Create School"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[36mSchool Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "schools" WHERE LOWER("schools"."subdomain") = LOWER(?) LIMIT ?[0m  [["subdomain", ""], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/schools_controller.rb:30
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/_form.html.erb (8.5ms)
+  Rendered schools/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 36ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:39:00 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:39:18 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:39:19 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 42ms (Views: 38.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateCourses (20180724024537)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180724024537_create_courses.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "content" text, "start_date" date, "end_date" date, "price" float, "school_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_adf7d91583"
+FOREIGN KEY ("school_id")
+  REFERENCES "schools" ("id")
+)[0m
+  ↳ db/migrate/20180724024537_create_courses.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_courses_on_school_id" ON "courses" ("school_id")[0m
+  ↳ db/migrate/20180724024537_create_courses.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180724024537"]]
+  ↳ bin/rails:4
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/schools" for 127.0.0.1 at 2018-07-23 23:46:56 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/juhguu/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 78ms (Views: 71.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-07-23 23:46:58 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:20
+  Rendered courses/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 21.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2018-07-23 23:46:59 -0300
+Processing by CoursesController#new as HTML
+  Rendering courses/new.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/courses/_form.html.erb:8
+  Rendered courses/_form.html.erb (30.1ms)
+  Rendered courses/new.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 79ms (Views: 52.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 23:47:23 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-07-23 23:50:44 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:20
+  Rendered courses/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 68ms (Views: 65.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2018-07-23 23:50:46 -0300
+Processing by CoursesController#new as HTML
+  Rendering courses/new.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/courses/_form.html.erb:8
+  Rendered courses/_form.html.erb (36.4ms)
+  Rendered courses/new.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 67ms (Views: 61.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2018-07-24 00:14:18 -0300
+Processing by CoursesController#new as HTML
+  Rendering courses/new.html.erb within layouts/application
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/courses/_form.html.erb:8
+  Rendered courses/_form.html.erb (27.6ms)
+  Rendered courses/new.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 118ms (Views: 66.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/courses" for 127.0.0.1 at 2018-07-24 00:14:20 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HUcM65QkMonnkYp00BMyEhjcxHboau9DHkriti5cZx9uFDdVpS2nFnCVWIBc6SxJaJgeJyKY7E2dG+eKP/IopA==", "course"=>{"title"=>"", "school_id"=>"", "description"=>"", "content"=>"", "start_date(1i)"=>"2018", "start_date(2i)"=>"7", "start_date(3i)"=>"24", "end_date(1i)"=>"2018", "end_date(2i)"=>"7", "end_date(3i)"=>"24", "price"=>""}, "commit"=>"Create Course"}
+  [1m[35m (1.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/courses_controller.rb:30
+  Rendering courses/new.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/courses/_form.html.erb:8
+  Rendered courses/_form.html.erb (21.6ms)
+  Rendered courses/new.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 62ms (Views: 45.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-24 19:07:09 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 593ms (Views: 561.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-07-24 19:07:14 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:20
+  Rendered courses/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 57ms (Views: 27.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2018-07-24 19:07:15 -0300
+Processing by CoursesController#new as HTML
+  Rendering courses/new.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/courses/_form.html.erb:8
+  Rendered courses/_form.html.erb (117.4ms)
+  Rendered courses/new.html.erb within layouts/application (120.7ms)
+Completed 200 OK in 165ms (Views: 144.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-24 19:07:21 -0300
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:21
+  Rendered schools/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 53ms (Views: 49.8ms | ActiveRecord: 0.3ms)
+
+
