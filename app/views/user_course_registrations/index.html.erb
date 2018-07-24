@@ -1,0 +1,45 @@
+<div class='row form'>
+    <div class="col s12 ">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <div class='search_schools row'>
+              <h5>Tabela de matrículas:</h5>
+              <% if @invite.present? %>
+                <table class='striped responsive-table'>
+                  <thead>
+                    <tr>
+                      <th>Usuário</th>
+                      <th>Escola</th>
+                      <th>Nome do curso</th>
+                      <th>Data de matrícula</th>
+                      <th>Mostrar</th>
+                      <th>Excluir</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <% @invite.each do |i| %>
+                      <% if can? :manage, i %>
+                        <tr>
+                          <td><%= i.user.email %></td>
+                          <td><%= i.school.name %></td>
+                          <td><%= i.course.title %></td>
+                          <td><%= i.created_at %></td>
+                          <td><%= link_to 'Mostrar', user_course_registration_path(i) %></td>
+                          <td><%= link_to 'Excluir', user_course_registration_path(i), method: :delete, data: {confirm: 'Are you ?'} %></td>
+                        </tr>
+                      <% end %>
+                    <% end %>
+                  </tbody>
+                </table>
+                <%= will_paginate @invite %>
+              <% else %>
+                <p>Não há matriculas registradas.</p>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
