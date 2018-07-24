@@ -38,15 +38,21 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'
 gem 'materialize-sass'
-gem 'material_icons' 
+gem 'material_icons'
 gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-materialize'
 gem 'devise'
+gem 'cancancan'
+gem 'rolify'
+gem 'draper'
+gem 'simple_form'
+gem 'pg_search'
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails', '~> 3.5'
-  gem "database_cleaner"
+  #gem "database_cleaner"
 
 
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

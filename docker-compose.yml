@@ -25,6 +25,8 @@ services:
     volumes:
       - .:/ed
       - app-gems:/app-gems
+    stdin_open: true
+    tty: true  
 
 volumes:
   redis:
