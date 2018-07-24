@@ -4,7 +4,7 @@ class SchoolsController < ApplicationController
 
   # GET /schools
   def index
-    @schools = current_user.schools
+    @schools = current_user.schools.by_name(params[:name])
   end
 
   # GET /schools/1

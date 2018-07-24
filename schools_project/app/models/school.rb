@@ -5,6 +5,8 @@ class School < ApplicationRecord
 
   has_many :courses, dependent: :destroy
 
+  scope :by_name, -> (name) { where("name like ?", "%#{name}%")}
+
   validates :name, :pitch, :subdomain, presence: true
   validates :subdomain, uniqueness: true
   validates :subdomain, format: { with: VALID_SUBDOMAIN_REGEX }

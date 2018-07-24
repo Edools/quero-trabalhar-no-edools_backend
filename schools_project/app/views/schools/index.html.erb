@@ -2,6 +2,11 @@
 
 <%= link_to I18n.t('defaults.new'), new_school_path, class: 'btn btn-success' %>
 
+<%= form_tag(schools_path, method: :get, class: 'float-right') do %>
+  <%= text_field_tag :name, nil, placeholder: School.human_attribute_name(:name) %>
+  <%= submit_tag(I18n.t('defaults.search'), class: 'btn-sm btn-primary') %>
+<% end %>
+
 <table class='table table-striped'>
   <thead>
     <tr>

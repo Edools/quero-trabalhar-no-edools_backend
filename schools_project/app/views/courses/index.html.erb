@@ -2,6 +2,12 @@
 
 <%= link_to I18n.t('defaults.new'), new_course_path, class: 'btn btn-success' %>
 
+<%= form_tag(courses_path, method: :get, class: 'float-right') do %>
+  <%= text_field_tag :title, nil, placeholder: Course.human_attribute_name(:title) %>
+  <%= select_tag :school_id, options_from_collection_for_select(@schools, :id, :name), prompt: Course.human_attribute_name(:school) %>
+  <%= submit_tag(I18n.t('defaults.search'), class: 'btn-sm btn-primary') %>
+<% end %>
+
 <table class='table table-striped'>
   <thead>
     <tr>

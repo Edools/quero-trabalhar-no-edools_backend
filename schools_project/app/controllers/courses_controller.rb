@@ -1,10 +1,11 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :load_schools, only: [:index, :new, :edit]
 
   # GET /courses
   def index
-    @courses = current_user.courses.all
+    @courses = current_user.courses.by_title(params[:title]).by_school(params[:school_id])
   end
 
   # GET /courses/1
@@ -14,12 +15,10 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
-    load_schools
   end
 
   # GET /courses/1/edit
   def edit
-    load_schools
   end
 
   # POST /courses
