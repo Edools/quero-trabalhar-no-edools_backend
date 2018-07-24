@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_18_033236) do
+ActiveRecord::Schema.define(version: 2018_07_22_044418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2018_07_18_033236) do
     t.text "description"
     t.text "content"
     t.string "duration"
-    t.integer "active_student"
     t.decimal "price"
     t.bigint "school_id"
     t.bigint "user_id"
@@ -28,6 +27,16 @@ ActiveRecord::Schema.define(version: 2018_07_18_033236) do
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_courses_on_school_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -40,6 +49,17 @@ ActiveRecord::Schema.define(version: 2018_07_18_033236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_schools_on_user_id"
+  end
+
+  create_table "user_course_registrations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "school_id"
+    t.index ["course_id"], name: "index_user_course_registrations_on_course_id"
+    t.index ["school_id"], name: "index_user_course_registrations_on_school_id"
+    t.index ["user_id"], name: "index_user_course_registrations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,7 +79,18 @@ ActiveRecord::Schema.define(version: 2018_07_18_033236) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_roles", id: false, force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "role_id"
+    t.index ["role_id"], name: "index_users_roles_on_role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+    t.index ["user_id"], name: "index_users_roles_on_user_id"
+  end
+
   add_foreign_key "courses", "schools"
   add_foreign_key "courses", "users"
   add_foreign_key "schools", "users"
+  add_foreign_key "user_course_registrations", "courses"
+  add_foreign_key "user_course_registrations", "schools"
+  add_foreign_key "user_course_registrations", "users"
 end
