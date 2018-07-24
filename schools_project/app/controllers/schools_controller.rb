@@ -25,7 +25,7 @@ class SchoolsController < ApplicationController
     @school = current_user.schools.new(school_params)
 
     if @school.save
-      redirect_to @school, notice: 'School was successfully created.'
+      redirect_to @school, notice: I18n.t('defaults.created_with_model', model_name: School.model_name.human)
     else
       render :new
     end
@@ -34,7 +34,7 @@ class SchoolsController < ApplicationController
   # PATCH/PUT /schools/1
   def update
     if @school.update(school_params)
-      redirect_to @school, notice: 'School was successfully updated.'
+      redirect_to @school, notice: I18n.t('defaults.updated_with_model', model_name: School.model_name.human)
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class SchoolsController < ApplicationController
   # DELETE /schools/1
   def destroy
     @school.destroy
-    redirect_to schools_url, notice: 'School was successfully destroyed.'
+    redirect_to schools_url, notice: I18n.t('defaults.deleted_with_model', model_name: School.model_name.human)
   end
 
   private

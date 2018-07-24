@@ -26,7 +26,7 @@ class CoursesController < ApplicationController
     @course = current_user.courses.new(course_params)
 
     if @course.save
-      redirect_to @course, notice: 'Course was successfully created.'
+      redirect_to @course, notice: I18n.t('defaults.created_with_model', model_name: Course.model_name.human)
     else
       load_schools
       render :new
@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   def update
     if @course.update(course_params)
-      redirect_to @course, notice: 'Course was successfully updated.'
+      redirect_to @course, notice: I18n.t('defaults.updated_with_model', model_name: Course.model_name.human)
     else
       load_schools
       render :edit
@@ -46,7 +46,7 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   def destroy
     @course.destroy
-    redirect_to courses_url, notice: 'Course was successfully destroyed.'
+    redirect_to courses_url, notice: I18n.t('defaults.deleted_with_model', model_name: Course.model_name.human)
   end
 
   private
