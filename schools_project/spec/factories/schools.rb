@@ -3,6 +3,6 @@ FactoryBot.define do
     user
     name "MyString"
     pitch "MyString"
-    subdomain "MyString"
+    subdomain { generate(:subdomain) }
   end
 end
