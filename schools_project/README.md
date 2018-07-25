@@ -1,24 +1,11 @@
-# README
+# Schools Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails software for school courses management
 
-Things you may want to cover:
+### Dependencies
 
-* Ruby version
+This project uses
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby 2.5.1
+* Rails 5.2.0
+* PostgreSQL
