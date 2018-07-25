@@ -1,0 +1,26 @@
+<div class='row form'>
+  <div class='search_schools row'>
+    <h5>Tabela de cursos:</h5>
+    <%= form_tag( courses_path, method: :get, remote: true, id: 'search_form') do  %>
+      <div class='input-field col s12 m3 l3'>
+        <label>Busca por curso:</label>
+        <%= text_field_tag 'search_title', nil, placeholder: 'Digite o titulo do curso..' %>
+      </div>
+      <div class='col s12 m4 l2'>
+        <label>Filtro por escola:</label>
+        <%= select_tag "search_school", options_from_collection_for_select(School.all, "id", "name"), :prompt => 'Todas' %>
+      </div>
+      <div class='course_submit col s12 m2 l1 waves-effect waves-light btn-small grey'>
+        <%= submit_tag "Buscar", :name => nil, id:'search_course' %>
+      </div>
+    <% end %>
+    <% if can? :manage, @course %>
+      <a class="waves-effect waves-light btn red lighten-1 col s12 m12 l4 offset-l2 new_course" href=<%= new_course_path %>><i class="material-icons left">add_circle_outline</i>Criar novo curso</a>
+    <% end %>
+  </div>
+    
+  <div id="result_search">
+    <%= render 'result' %>
+  </div>   
+        
+</div>

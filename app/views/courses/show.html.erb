@@ -1,0 +1,25 @@
+<div class="row cards">
+  <div class="col s12">
+    <h3 class="header"><%= @course.show_course.title %></h3>
+    <div class="card horizontal">
+      <div class="card-content col s12">
+        <label>Titulo:</label>
+        <p><%= @course.show_course.title %></p>
+        <label>Descrição:</label>
+        <p><%= @course.show_course.description %></p>
+        <label>Conteúdo:</label>
+        <p><%= @course.show_course.content %></p>
+        <label>Escola:</label>
+        <p><%= @course.show_course.school.name %></p>
+        <label>Duração:</label>
+        <p><%= @course.show_course.duration %></p>
+        <label>Alunos Ativos:</label>
+        <p><%= @course.count_students %></p>
+        <label>Preço:</label>
+        <p><%= @course.show_course.price %></p>
+      </div>
+    </div>
+    <a class="waves-effect waves-light btn red darken-1 invite_button">Matricular</a>
+    <a class="waves-effect waves-light btn red darken-1" href=<%= courses_path %>>Voltar</a>
+  </div>
+</div>

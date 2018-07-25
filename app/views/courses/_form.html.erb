@@ -1,0 +1,37 @@
+<%= form_for @course, html: {class: "col s12"} do |f| %>
+
+  <%= form_errors_for @course %>
+
+  <div class="input-field">
+    <%= f.text_field :title %>
+    <label for="title">Titulo</label>
+  </div>
+
+  <div class="input-field">
+    <%= f.text_area :description , class: 'materialize-textarea' %>
+    <label for="description">Descrição</label>
+  </div>
+
+  <div class="input-field">
+    <%= f.text_field :content, class: 'materialize-textarea' %>
+    <label for="content">Conteúdo</label>  
+  </div>
+
+  <div class="input-field">
+    <%= f.text_field :duration %>
+    <label for="duration">Duração do curso</label>  
+  </div>
+
+  <div>
+    <label for="school">Escola</label>  
+    <%= f.select :school_id, School.all.collect {|s| [ s.name, s.id ] } %>
+  </div>
+
+  <div class="input-field">
+    <%= f.number_field :price %>
+    <label for="price">Preço</label>  
+  </div>
+
+  <%= f.button :submit, class: 'btn waves-effect waves-light red darken-1' %>
+  <a class="waves-effect waves-light btn red darken-1" href=<%= courses_path %>>Voltar</a>
+<% end %>

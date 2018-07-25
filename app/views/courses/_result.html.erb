@@ -1,0 +1,38 @@
+<% if @course.present? %>
+  <table class='striped responsive-table'>
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Duração</th>
+        <th>Escola</th>
+        <th>Alunos ativos</th>
+        <th>Preço</th>
+        <th>Mostrar</th>
+        <% if can? :manage, @course %>
+          <th>Editar</th>
+          <th>Excluir</th>
+        <% end %>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @course.each do |c| %>
+        <tr>
+          <td><%= c.title %></td>
+          <td><%= c.duration %></td>
+          <td><%= c.school.name %></td>
+          <td><%= c.user_course_registrations.count %></td>
+          <td><%= c.price %></td>
+          <td><%= link_to 'Mostrar', course_path(c) %></td>
+          <% if can? :manage, c %>
+            <td><%= link_to 'Editar', edit_course_path(c) %></td>
+            <td><%= link_to 'Excluir', course_path(c), method: :delete, data: {confirm: 'Deseja realmente deletar curso ?'} %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @course %>
+<% else %>
+  <p>Não há cursos registrados.</p>
+<% end %>

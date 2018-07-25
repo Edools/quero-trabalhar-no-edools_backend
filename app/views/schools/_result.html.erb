@@ -1,0 +1,36 @@
+<% if @school.present? %>
+  <table class='striped responsive-table'>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email do Dono</th>
+        <th>Subdomínio</th>
+        <th>Data de Criação</th>
+        <th>Mostrar</th>
+        <% if can? :manage, @school %>
+          <th>Editar</th>
+          <th>Excluir</th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @school.each do |s| %>
+        <tr>
+          <td><%= s.name %></td>
+          <td><%= s.owner_email %></td>
+          <td><%= s.subdomain %></td>
+          <td><%= s.date_creation %></td>
+          <td><%= link_to 'Mostrar', school_path(s.id) %></td>
+          <% if can? :manage, s %>
+            <td><%= link_to 'Editar', edit_school_path(s.id) %></td>
+            <td><%= link_to 'Excluir', school_path(s.id), method: :delete, data: {confirm: 'Deseja realmente excluir ?'} %></td>
+          <% end %>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @school %>
+<% else %>
+  <p>Não há escolas registradas.</p>
+<% end %>

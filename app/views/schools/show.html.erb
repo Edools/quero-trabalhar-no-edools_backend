@@ -1,0 +1,18 @@
+<div class="row cards">
+  <div class="col s12">
+    <h3 class="header"><%= @school.name %></h3>
+    <div class="card horizontal">
+      <div class="card-content col s12">
+        <label>Nome da escola:</label>
+        <p><%= @school.name %></p>
+        <label>Email do dono:</label>
+        <p><%= @school.owner_email %></p>
+        <label>Subdominio:</label>
+        <p><%= @school.subdomain %></p>
+        <label>Data de criação:</label>
+        <p><%= @school.date_creation %></p>
+      </div>
+    </div>
+    <a class="waves-effect waves-light btn red darken-1" href=<%= schools_path %>>Voltar</a>
+  </div>
+</div>

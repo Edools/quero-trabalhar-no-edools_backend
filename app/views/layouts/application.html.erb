@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ed</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <%= render "shared/navbar" %>
+    </header>
+  
+    <main>
+      <div class="container">
+        <%= yield :form_errors %>
+        <%= yield %>
+      </div>
+    </main>
+  
+    <footer>
+      <%= render "shared/footer" %>
+    </footer>
+  </body>
+</html>

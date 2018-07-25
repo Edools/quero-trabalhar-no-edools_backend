@@ -1,0 +1,25 @@
+<div class="navbar-fixed">
+  <nav class="top-nav">
+    <div class="nav-wrapper col s12">
+      <a href="/" class="brand-logo">  
+        <span class="logo-title">
+          Teste Edools
+        </span>
+      </a>
+
+      <a href="#" data-activates="side-bar" class="button-collapse"><i class="material-icons">menu</i></a>
+
+      <ul class="right hide-on-med-and-down">
+        <% if current_user %>
+          <li><%= link_to 'Escolas', '/schools' %></li>
+          <li><%= link_to 'Cursos', '/courses' %></li>
+          <li><%= link_to 'Matriculas', '/user_course_registrations' %></li>
+          <li><%= link_to('Sair', destroy_user_session_path, :method => :delete) %></li>
+        <% else %>
+          <li><%= link_to 'Entrar', '/users/sign_in' %></li>
+          <li><%= link_to 'Criar Conta', '/users/sign_up' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
