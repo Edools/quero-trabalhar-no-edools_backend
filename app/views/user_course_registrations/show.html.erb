@@ -1,0 +1,18 @@
+<div class="row cards">
+    <div class="col s12">
+      <h3 class="header">Matrícula em: <%= @invite.course.title %></h3>
+      <div class="card horizontal">
+        <div class="card-content col s12">
+          <label>Email do usuário:</label>
+          <p><%= @invite.user.email %></p>
+          <label>Escola:</label>
+          <p><%= @invite.school.name %></p>
+          <label>Nome do curso:</label>
+          <p><%= @invite.course.title %></p>
+          <label>Data de matricula:</label>
+          <p><%= @invite.created_at %></p>
+        </div>
+      </div>
+      <a class="waves-effect waves-light btn red darken-1" href=<%= user_course_registrations_path %>>Voltar</a>
+    </div>
+  </div>

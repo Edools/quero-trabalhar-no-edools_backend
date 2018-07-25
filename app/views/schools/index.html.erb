@@ -1,0 +1,29 @@
+<div class='row form'>
+  <div class='search_schools row'>
+    <h5>Tabela de escolas:</h5>
+    <%= form_tag( schools_path, method: :get, remote: true, id: 'search_form') do  %>
+      <div class='input-field col s12 m12 l3'>
+        <label>Busca por escola</label>
+        <%= text_field_tag 'search_name', nil, placeholder: 'Digite o nome da escola..' %>
+      </div>
+      <div class='col s12 m12 l3'>
+        <%= submit_tag "Buscar", :name => nil, id:'search_name', class: 'search_name waves-effect waves-light btn-small grey' %>
+      </div>
+    <% end %>
+    <% if can? :manage, @school %>
+      <div class='col col s12 m12 l4 offset-l2'>
+        <div class='buttons_school'>
+          <a class="waves-effect waves-light btn red lighten-1" href=<%= new_school_path %>><i class="material-icons left">add_circle_outline</i>Criar nova escola</a>
+        </div>
+        <div class='buttons_school'>
+          <%= button_to "Relatório de alunos por escola", csv_records_path(format: "csv"), :method => :get, class: 'waves-effect waves-light btn red lighten-1' %>
+        </div>
+      </div>
+      
+    <% end %>
+  </div>
+
+  <div id="result_search">
+    <%= render 'result' %>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+
+<%= form_for @school, html: {class: "col s12"} do |f| %>
+  <%= form_errors_for @school %>
+  <div class="input-field">
+    <%= f.text_field :name %>
+    <label for="name">Nome</label>
+  </div>
+  <div class="input-field">
+    <%= f.text_field :owner_email %>
+    <label for="owner_email">Email do dono</label>
+  </div>
+  <div class="input-field">
+    <%= f.text_field :subdomain %>
+    <label for="subdomain">Subdominio</label>  
+  </div>
+  <div class="input-field creation_date">
+    <%= f.date_field :date_creation, class: 'datepicker' %>
+    <label for="creation_date">Data de criacao</label>  
+  </div>
+  <div class="input-field">
+    <%= f.text_area :pitch , class: 'materialize-textarea'%>
+    <label for="pitch">Pitch</label>  
+  </div>
+  <div class='submit_back'>
+    <%= f.button :submit, class: 'btn waves-effect waves-light red darken-1' %>
+    <a class="waves-effect waves-light btn red darken-1" href=<%= schools_path %>>Voltar</a> 
+  </div>
+<% end %>
