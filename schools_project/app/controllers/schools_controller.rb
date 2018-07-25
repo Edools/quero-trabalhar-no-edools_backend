@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class SchoolsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_school, only: [:show, :edit, :update, :destroy]
+  before_action :set_school, only: %i[show edit update destroy]
 
   # GET /schools
   def index
@@ -8,8 +10,7 @@ class SchoolsController < ApplicationController
   end
 
   # GET /schools/1
-  def show
-  end
+  def show; end
 
   # GET /schools/new
   def new
@@ -17,8 +18,7 @@ class SchoolsController < ApplicationController
   end
 
   # GET /schools/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /schools
   def create
@@ -47,11 +47,12 @@ class SchoolsController < ApplicationController
   end
 
   private
-    def set_school
-      @school = current_user.schools.find(params[:id])
-    end
 
-    def school_params
-      params.require(:school).permit(:name, :pitch, :subdomain)
-    end
+  def set_school
+    @school = current_user.schools.find(params[:id])
+  end
+
+  def school_params
+    params.require(:school).permit(:name, :pitch, :subdomain)
+  end
 end

@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class CoursesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
-  before_action :load_schools, only: [:index, :new, :edit]
+  before_action :set_course, only: %i[show edit update destroy]
+  before_action :load_schools, only: %i[index new edit]
 
   # GET /courses
   def index
@@ -9,8 +11,7 @@ class CoursesController < ApplicationController
   end
 
   # GET /courses/1
-  def show
-  end
+  def show; end
 
   # GET /courses/new
   def new
@@ -18,8 +19,7 @@ class CoursesController < ApplicationController
   end
 
   # GET /courses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /courses
   def create
@@ -50,15 +50,16 @@ class CoursesController < ApplicationController
   end
 
   private
-    def set_course
-      @course = current_user.courses.find(params[:id])
-    end
 
-    def course_params
-      params.require(:course).permit(:school_id, :title, :description, :content, :duration, :price)
-    end
+  def set_course
+    @course = current_user.courses.find(params[:id])
+  end
 
-    def load_schools
-      @schools = current_user.schools
-    end
+  def course_params
+    params.require(:course).permit(:school_id, :title, :description, :content, :duration, :price)
+  end
+
+  def load_schools
+    @schools = current_user.schools
+  end
 end

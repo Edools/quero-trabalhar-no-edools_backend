@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StudentsController < ApplicationController
   # POST /students
   def create
@@ -6,7 +8,8 @@ class StudentsController < ApplicationController
   end
 
   private
-    def student_params
-      params.require(:student).permit(:course_id, :name)
-    end
+
+  def student_params
+    params.require(:student).permit(:course_id, :name)
+  end
 end

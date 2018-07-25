@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :student do
     course
-    name "MyString"
+    name 'MyString'
   end
 end
