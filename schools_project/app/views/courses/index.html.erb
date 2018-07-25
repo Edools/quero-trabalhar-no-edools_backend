@@ -2,6 +2,10 @@
 
 <%= link_to I18n.t('defaults.new'), new_course_path, class: 'btn btn-success' %>
 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#studentModal">
+  <%= I18n.t('courses.add_student') %>
+</button>
+
 <%= form_tag(courses_path, method: :get, class: 'float-right') do %>
   <%= text_field_tag :title, nil, placeholder: Course.human_attribute_name(:title) %>
   <%= select_tag :school_id, options_from_collection_for_select(@schools, :id, :name), prompt: Course.human_attribute_name(:school) %>
@@ -15,6 +19,7 @@
       <th><%= Course.human_attribute_name(:title) %></th>
       <th><%= Course.human_attribute_name(:duration) %></th>
       <th><%= Course.human_attribute_name(:price) %></th>
+      <th><%= Course.human_attribute_name(:students) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +31,7 @@
         <td><%= course.title %></td>
         <td><%= course.duration %></td>
         <td><%= course.price.format %></td>
+        <td><%= course.students.count %></td>
         <td><%= link_to I18n.t('defaults.show'), course %></td>
         <td><%= link_to I18n.t('defaults.edit'), edit_course_path(course) %></td>
         <td><%= link_to I18n.t('defaults.delete'), course, method: :delete, data: { confirm: I18n.t('defaults.confirm_delete') } %></td>
@@ -35,3 +41,5 @@
 </table>
 
 <%= paginate @courses %>
+
+<%= render 'students/new_modal' %>

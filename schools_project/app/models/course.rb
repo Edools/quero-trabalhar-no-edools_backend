@@ -2,6 +2,8 @@ class Course < ApplicationRecord
   belongs_to :user
   belongs_to :school
 
+  has_many :students, dependent: :destroy
+
   scope :by_title, -> (title) { where("title like ?", "%#{title}%")}
   scope :by_school, lambda{ |school_id| self.where(school_id: school_id) if school_id.present? }
 

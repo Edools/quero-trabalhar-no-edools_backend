@@ -7,6 +7,7 @@ pt-BR:
     back: Voltar
     show: Exibir
     search: Buscar
+    close: Fechar
     confirm_delete: Tem certeza que deseja excluir?
     created_with_model: "%{model_name} criado(a) com sucesso."
     updated_with_model: "%{model_name} alterado(a) com sucesso."

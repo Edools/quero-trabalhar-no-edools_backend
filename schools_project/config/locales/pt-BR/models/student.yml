@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      student: Estudante
+    attributes:
+      student:
+        course: Curso
+        course_id: Curso
+        name: Nome
