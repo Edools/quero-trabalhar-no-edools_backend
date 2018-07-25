@@ -1,0 +1,6 @@
+pt-BR:
+  courses:
+    list: Lista de Cursos
+    new: Novo Curso
+    edit: Alterando Curso
+    add_student: Adicionar Aluno

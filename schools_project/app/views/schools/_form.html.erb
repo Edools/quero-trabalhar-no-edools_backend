@@ -1,0 +1,30 @@
+<%= form_with(model: school, local: true) do |form| %>
+  <% if school.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% school.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :pitch %>
+    <%= form.text_field :pitch, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :subdomain %>
+    <%= form.text_field :subdomain, class: 'form-control', required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit I18n.t('defaults.save'), class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<p>
+  <strong><%= School.human_attribute_name(:name) %></strong>
+  <%= @school.name %>
+</p>
+
+<p>
+  <strong><%= School.human_attribute_name(:pitch) %></strong>
+  <%= @school.pitch %>
+</p>
+
+<p>
+  <strong><%= School.human_attribute_name(:subdomain) %></strong>
+  <%= @school.subdomain %>
+</p>
+
+<%= link_to I18n.t('defaults.edit'), edit_school_path(@school), class: 'btn btn-light' %> |
+<%= link_to I18n.t('defaults.back'), schools_path, class: 'btn btn-light' %>

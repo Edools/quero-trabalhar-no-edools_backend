@@ -1,0 +1,6 @@
+<h1><%= I18n.t('courses.edit') %></h1>
+
+<%= render 'form', course: @course %>
+
+<%= link_to I18n.t('defaults.show'), @course, class: 'btn btn-light' %> |
+<%= link_to I18n.t('defaults.back'), courses_path, class: 'btn btn-light' %>
