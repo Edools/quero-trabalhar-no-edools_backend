@@ -1,5 +1,5 @@
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'form-auth' }) do |f| %>
-  <h1 class="h3 mb-3 font-weight-normal">Forgot your password?</h1>
+  <h1 class="h3 mb-3 font-weight-normal"><%= I18n.t('devise.forgot_password') %></h1>
 
   <%= devise_error_messages! %>
 
@@ -9,7 +9,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Send instructions", class: 'btn btn-lg btn-primary btn-block' %>
+    <%= f.submit I18n.t('devise.send_instructions'), class: 'btn btn-lg btn-primary btn-block' %>
   </div>
 <% end %>
 

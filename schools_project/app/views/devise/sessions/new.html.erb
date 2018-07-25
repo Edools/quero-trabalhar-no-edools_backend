@@ -2,19 +2,19 @@
   <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
 
   <div class="field">
-    <label for="inputEmail" class="sr-only">Email address</label>
+    <label for="inputEmail" class="sr-only"><%= I18n.t('devise.email') %></label>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
   </div>
 
   <div class="field">
-    <label for="inputPassword" class="sr-only">Password</label>
+    <label for="inputPassword" class="sr-only"><%= I18n.t('devise.password') %></label>
     <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :remember_me, I18n.t('devise.remember_me') %>
     </div>
   <% end -%>
 
