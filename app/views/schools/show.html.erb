@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @school.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @school.email %>
+</p>
+
+<p>
+  <strong>Pitch:</strong>
+  <%= @school.pitch %>
+</p>
+
+<p>
+  <strong>Subdomain:</strong>
+  <%= @school.subdomain %>
+</p>
+
+<p>
+  <strong>Total students active:</strong>
+  <%= @total_students_active %>
+</p>
+
+<td><%= link_to 'Students', students_path() %></td>
+<br>
+<td><%= link_to 'Courses', courses_path() %></td>
+<br>
+<td><%= link_to 'StudentCourses', student_courses_path() %></td>
+
+<br>
+<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to 'Back', schools_path %>

@@ -1,0 +1,2 @@
+module StudentCoursesHelper
+end
