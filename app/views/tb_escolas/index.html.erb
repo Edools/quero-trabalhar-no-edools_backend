@@ -1,0 +1,39 @@
+<% content_for :title, "Listagem de #{breadcrumb('administracao.escola.base')}" %>
+<div class="card shadow mb-4">
+  <%= panel_header_filter %>
+  <div class="card-body">
+    <%= search_form_for @q, method: :get, id: 'tb_escolas_search',
+                        layout: :inline, html: { class: 'form-horizontal', role: 'form' } do |f| %>
+      <%= hidden_field_tag :tipo_relatorio %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= h f.label :nome_cont, "#{human_attr(TbEscola, :nome)}" %>
+          <%= h f.text_field :nome_cont, class: 'form-control',
+                             label: "#{human_attr(TbEscola, :nome)}",
+                             placeholder: "Digite o #{human_attr(TbEscola, :nome)}",
+                             label_class: "margin-top-10" %>
+        </div>
+
+        <div class="col-md-6">
+          <%= h f.label :tb_cursos_titulo_cont, "#{human_attr(TbCurso, :titulo)}" %>
+          <%= h f.text_field :tb_cursos_titulo_cont, class: 'form-control',
+                             label: "#{human_attr(TbCurso, :titulo)}",
+                             placeholder: "Digite o #{human_attr(TbCurso, :titulo)}",
+                             label_class: "margin-top-10" %>
+        </div>
+
+        <div class="col-md-12 margin-top-10">
+          <%= render "layouts/botoes_filtrar_limpar", :f => f %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="card shadow mb-4">
+  <%= panel_header("Lista de #{breadcrumb('administracao.escola.plural')}",
+                   [{ label: 'Novo', link: new_tb_escola_path, icone: 'fa-plus' }]) %>
+  <div class="card-body">
+    <%= render 'lista_grid' %>
+  </div>
+</div>

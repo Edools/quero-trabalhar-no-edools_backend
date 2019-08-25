@@ -1,0 +1,14 @@
+<div class="form-group" id="">
+  <label class="font-bold"><%= options[:label] %></label>
+  <div class="input-group date">
+    <%= form.text_field field,
+                        options.merge(
+                            value: (form.object.attributes[field.to_s].to_date.to_s_br if form.object and form.object.attributes[field.to_s]),
+                            disable_plugin: true,
+                            class: 'material-date-picker-default form-control') do %>
+
+    <% end %>
+    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+  </div>
+</div>
+

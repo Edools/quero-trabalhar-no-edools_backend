@@ -1,0 +1,56 @@
+<% @breadcrumbs ||= [] %>
+<div class="row wrapper white-bg page-heading" style="<%= "max-height: 60px;" unless content_for?(:title) %>">
+  <div class="col-lg-12 margin-top-10 hidden-xs">
+    <ol class="breadcrumb show-text-1-lines" style="padding-top: 13px;">
+      <% if @breadcrumbs %>
+        <script>
+            var div_pai_bread_crumbs = null;
+        </script>
+
+        <li>
+          <%= link_to root_path do %>
+            Início
+          <% end %>
+        </li>
+
+        <% @breadcrumbs.each_with_index do |item, index| %>
+          <li class="<%= "active" if (index + 1) == @breadcrumbs.size %>">
+            <% if (index + 1) == @breadcrumbs.size %>
+              <%= "<strong>#{h(item[0])}</strong>".html_safe %>
+            <% else %>
+              <%= link_to(item[1]) do %>
+                <%= h(item[0]) %>
+              <% end %>
+            <% end %>
+          </li>
+
+        <% end %>
+      <% end %>
+    </ol>
+  </div>
+</div>
+
+
+<% @breadcrumbs.each_with_index do |item, index| %>
+  <% if item[3] && item[3].present? && item[0] != item[3] %>
+    <script>
+        if (div_pai_bread_crumbs != null) {
+            $(div_pai_bread_crumbs.find('li:contains("<%= item[3] %>")')[0]).addClass("active");
+            div_pai_bread_crumbs = div_pai_bread_crumbs.find('li:contains("<%= item[3] %>")');
+        } else {
+            $($('a.menu-raiz:contains("<%= item[3] %>")')[0].parentElement).addClass("active");
+            div_pai_bread_crumbs = $($('a.menu-raiz:contains("<%= item[3] %>")')[0].parentElement);
+        }
+    </script>
+  <% else %>
+    <script>
+        if (div_pai_bread_crumbs != null) {
+            $(div_pai_bread_crumbs.find('li:contains("<%= item[3] %>")')[0]).addClass("active");
+            div_pai_bread_crumbs = div_pai_bread_crumbs.find('li:contains("<%= item[3] %>")');
+        } else {
+            $($('a.menu-raiz:contains("<%= item[3] %>")')[0].parentElement).addClass("active");
+            div_pai_bread_crumbs = $($('a.menu-raiz:contains("<%= item[3] %>")')[0].parentElement);
+        }
+    </script>
+  <% end %>
+<% end %>

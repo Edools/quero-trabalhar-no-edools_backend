@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    attributes:
+      tb_curso:
+        titulo: Título do Curso
+        descricao: Descrição
+        conteudo: Conteúdo
+        duracao: Duração (horas)
+        qtd_alunos_ativos: Alunos Ativos
+        preco: Preço (R$)

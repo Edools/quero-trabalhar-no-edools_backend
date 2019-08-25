@@ -1,0 +1,91 @@
+<% content_for :title, "Visualizar #{breadcrumb('administracao.escola.base')}" %>
+
+<div class="card shadow mb-4">
+  <%= panel_header("#{breadcrumb('administracao.escola.base')}") %>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= TbEscola.human_attribute_name(:logo) %>:</b></th>
+
+        <td><%= image_tag @tb_escola.logo.url, width: '80' %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= TbEscola.human_attribute_name(:nome) %>:</b></th>
+
+        <td><%= h @tb_escola.nome %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= TbEscola.human_attribute_name(:email_dono) %>:</b></th>
+
+        <td><%= h @tb_escola.email_dono %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= TbEscola.human_attribute_name(:pitch) %>:</b></th>
+
+        <td><%= h @tb_escola.pitch %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= TbEscola.human_attribute_name(:subdominio) %>:</b></th>
+
+        <td><%= h @tb_escola.decorate.subdominio_completo %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= TbEscola.human_attribute_name(:cursos) %>:</b></th>
+
+        <td>
+          <% @tb_escola&.tb_cursos.each do |curso| %>
+            <div class="card mb-4 py-3 border-left-info">
+              <div class="card-body">
+                <h5><%= curso.titulo %></h5>
+                <div class="table-responsive">
+                  <table class="table table-hover table-bordered">
+                    <tbody>
+                    <tr>
+                      <th><%= TbCurso.human_attribute_name(:duracao) %>:</th>
+                      <td><%= curso.duracao %></td>
+                      <th><%= TbCurso.human_attribute_name(:qtd_alunos_ativos) %>:</th>
+                      <td><%= curso.qtd_alunos_ativos %></td>
+                      <th><%= TbCurso.human_attribute_name(:preco) %>:</th>
+                      <td><%= curso.preco.to_dinheiro %></td>
+                      <th><%= TbCurso.human_attribute_name(:duracao) %>:</th>
+                      <td><%= curso.duracao %></td>
+                    </tr>
+                    <tr>
+                      <th colspan="4" width="50%"><%= TbCurso.human_attribute_name(:descricao) %>:</th>
+                      <th colspan="4"><%= TbCurso.human_attribute_name(:conteudo) %>:</th>
+                    </tr>
+                    <tr>
+                      <td colspan="4"><%= curso.descricao %></td>
+                      <td colspan="4"><%= curso.conteudo %></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+      </thead>
+    </table>
+    <div class="row">
+      <div class="form-actions col-md-12">
+        <%= link_to "Voltar", tb_escolas_path, :class => "btn btn-info" %>
+        <div class="pull-right">
+          <%= link_to edit_tb_escola_path(id: @tb_escola), class: 'btn btn-warning',
+                      style: "color: #FFF; float: none;" do %>
+            <span class="fa fa-pencil"></span>
+            Editar
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

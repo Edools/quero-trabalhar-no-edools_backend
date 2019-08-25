@@ -1,0 +1,22 @@
+<div class="ibox-title">
+  <h5>
+    <%=  pluralize_model options[:model] if options[:model].present? %>
+    <%=  options[:title] if options[:title].present? %>
+  </h5>
+  <div class="pull-right">
+    <% if options[:links].present? %>
+      <% options[:links].each do |link| %>
+
+          <%= link_to link[:link], class: 'btn btn-success btn-xs', label: link[:label] do %>
+            <% if link[:icone].present? %>
+              <span class="fa <%= link[:icone] %>"></span>
+            <% end %>
+            <%= link[:label] %>
+          <% end if (link[:link].present? and link[:label].present? and !link[:link].split('/').last == 'new' ) or (link[:link].present? and
+              link[:label].present? and link[:link].split('/').last == 'new' and  can? :create, options[:model] ) %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+

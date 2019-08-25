@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    attributes:
+      tb_escola:
+        nome: Nome da Escola
+        email_dono: E-mail do dono
+        pitch: Pitch
+        subdominio: SubDomínio
+        logo: Logo
+        cursos: Cursos
+      tb_cursos:
+        titulo: Título do Curso
+        descricao: Descrição
+        conteudo: Conteúdo
+        duracao: Duração (horas)
+        qtd_alunos_ativos: Alunos Ativos
+        preco: Preço
