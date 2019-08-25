@@ -28,7 +28,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 #################### PROJECT GEMS #######################################
 gem 'ttfunk'
-gem 'rqrcode'
 gem 'stringex'
 gem 'json'
 gem 'utf8-cleaner'
@@ -55,9 +54,8 @@ gem 'will_paginate'
 
 #########################################################################
 group :development do
-  # gem 'pronto'
-  # gem 'pronto-rubocop'
-  gem 'gitlab'
+  gem 'pronto'
+  gem 'pronto-rubocop'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
