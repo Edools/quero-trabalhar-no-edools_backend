@@ -1,0 +1,38 @@
+<% esconder ||= [:csv] %>
+<div class="btn-group" role="group">
+  <button class="btn btn-info dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-print"></span>
+    Imprimir
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" style="min-width: 100px !important;">
+    <% if !esconder.include? :pdf %>
+      <li>
+        <%= link_to "javascript:;", :value => "PDF", :onclick => "$('#format').val('pdf');$('#tipo_relatorio').val('PDF');$('#params_relatorio').val('PDF');$(this).closest(\"form\").submit();" do %>
+          <span class='fa fa-file-pdf-o'></span> PDF
+        <% end if !esconder.include? :pdf %>
+      </li>
+    <% end %>
+    <% if !esconder.include? :xls %>
+      <li>
+        <%= link_to "javascript:;", :value => "XLSX", :onclick => "$('#format').val('XLSX');$('#tipo_relatorio').val('XLSX');$('#params_relatorio').val('XLSX');$(this).closest(\"form\").submit();" do %>
+          <span class='fa fa-file-excel-o'></span> XLSX
+        <% end %>
+      </li>
+    <% end %>
+    <% if !esconder.include? :csv %>
+      <li>
+        <%= link_to "javascript:;", :value => "CSV", :onclick => "$('#format').val('csv');$('#tipo_relatorio').val('CSV');$('#params_relatorio').val('CSV');$(this).closest(\"form\").submit();" do %>
+          <span class='fa fa-file-text-o'></span> CSV
+        <% end %>
+      </li>
+    <% end %>
+    <% if !esconder.include? :xml %>
+      <li>
+        <%= link_to "javascript:;", :value => "XML", :onclick => "$('#format').val('xml');$('#tipo_relatorio').val('XML');$('#params_relatorio').val('XML');$(this).closest(\"form\").submit();" do %>
+          <span class='fa fa-file-code-o'></span> XML
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

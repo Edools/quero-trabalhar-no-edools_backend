@@ -1,0 +1,60 @@
+<%= f.fields_for :tb_cursos, f.object.monta_tb_cursos do |p| %>
+  <div class="card mb-4 py-3 border-left-info">
+    <div class="card-body">
+      <h5><%= human_attr(f.object.class, :cursos) %></h5>
+
+      <%= p.hidden_field :id %>
+      <div class="row">
+        <div class="col-md-4">
+          <%= h p.text_field :titulo, class: 'form-control',
+                             label: "#{human_attr(p.object.class, :titulo)}",
+                             placeholder: "Digite o #{human_attr(p.object.class, :titulo)}" %>
+        </div>
+        <div class="col-md-2">
+          <%= h p.number_field :duracao, class: 'form-control',
+                               label: "#{human_attr(p.object.class, :duracao)}",
+                               placeholder: "Digite o #{human_attr(p.object.class, :duracao)}" %>
+        </div>
+        <div class="col-md-2">
+          <%= h p.number_field :qtd_alunos_ativos,
+                               label: "#{human_attr(p.object.class, :qtd_alunos_ativos)}",
+                               placeholder: "Digite o #{human_attr(p.object.class, :qtd_alunos_ativos)}" %>
+        </div>
+        <div class="col-md-2">
+          <%= input_dinheiro_precisao p, :preco,
+                                      human_attr(p.object.class, :preco),
+                                      :valor, "Digite o #{human_attr(p.object.class, :preco)}",
+                                      true, '.', ',', nil, 'col-md-2', 'col-md-10', 2 %>
+        </div>
+
+        <div class="col-md-2 margin-top-20">
+          <div class="text-center">
+            <%= p.link_to_remove class: 'btn btn-danger', style: 'display: inline-block;', title: 'Excluir Registro' do %>
+              <i class="fa fa-trash-o"></i>&nbsp; Remover
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= h p.text_area :descricao,
+                            class: 'form-control',
+                            rows: 3,
+                            label: "#{human_attr(p.object.class, :descricao)}",
+                            placeholder: "Descreva o #{human_attr(p.object.class, :descricao)}",
+                            label_class: "margin-top-10" %>
+        </div>
+
+        <div class="col-md-6">
+          <%= h p.text_area :conteudo,
+                            class: 'form-control',
+                            rows: 3,
+                            label: "#{human_attr(p.object.class, :conteudo)}",
+                            placeholder: "Descreva o #{human_attr(p.object.class, :conteudo)}",
+                            label_class: "margin-top-10" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

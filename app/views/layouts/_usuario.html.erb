@@ -1,0 +1,38 @@
+<div class="dropdown profile-element">
+                    <span>
+                      <img alt="image" class="img-circle" height="48" src="<%= escopo_recursos_humanos_view_foto_path(:id => matricula_usuario_logado) if matricula_usuario_logado %>">
+                    </span>
+  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold"><%= format_name_user(nome_usuario_logado) %></strong>
+                            </span> <span class="text-muted text-xs block"><%= usuario_logado_cargo %>&nbsp;<b class="caret"></b></span>
+                        </span>
+  </a>
+  <ul class="dropdown-menu animated fadeInRight m-t-xs">
+    <% if can? :manage, :administrativo %>
+        <li>
+          <%= link_to escopo_tb_perfil_webs_path do %>
+              <i class="mdi mdi-key-variant"> </i> Perfis de Acesso
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to escopo_tb_perfil_usuario_webs_path do %>
+              <i class="mdi mdi-account-key"> </i> Permissões de Usuários
+          <% end %>
+        </li>
+        <li>
+          <%= link_to escopo_recursos_humanos_tb_modulo_webs_path do %>
+              <i class="mdi mdi-desktop-mac"> </i> Liberação de Módulos
+          <% end %>
+        </li>
+    <% end %>
+
+    <li>
+      <%= link_to escopo_logins_logout_path do %>
+          <i class="fa fa-sign-out"> </i> Sair
+      <% end %>
+    </li>
+  </ul>
+</div>

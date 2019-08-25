@@ -1,0 +1,17 @@
+pt-BR:
+  alerts:
+    permission_to_manipulate: 'Você não possui permissão para manipular este registro'
+    success_created: 'Registro criado com sucesso!'
+    success_updated: 'Registro atualizado com sucesso!'
+    success_destroyed: 'Registro removido com sucesso!'
+    success_canceled: 'Registro cancelado com sucesso!'
+    unsuccess_created: 'Atenção!  O Sistema não conseguiu salvar o registro!'
+    unsuccess_updated: 'Atenção! O Sistema não conseguiu atualizar o registro!'
+    unsuccess_destroy: 'Atenção! O Sistema não conseguiu excluir o registro!'
+    unsuccess_canceled: 'Atenção! O Sistema não conseguiu cancelar o registro!'
+    defalt_alert_message: 'Por favor corrija os erros abaixo.'
+    permission_denied: 'Você não tem permissão para acessar esta função!'
+    data_empty: Nenhum dado encontrado com os parametros de pesquisa informados
+    finish_attendance: Atendimento finalizado com sucesso!
+    success_operation: Operação Realizada!
+    unsuccess_operation: Operação não Realizada!

@@ -1,0 +1,14 @@
+<%# Rails flash messages styled for Bootstrap 3.0 %>
+
+<div id="alerts_container">
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <%= content_tag :div, class: "alert alert-#{check_alert(name)}",
+        data: { content: msg, type: name } do %>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <span class="fa <%= check_alert_icon name %>"></span>&nbsp;
+        <%= content_tag :div, msg.html_safe, :id => "flash_#{name}", :style => "display: inline;" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

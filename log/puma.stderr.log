@@ -1,0 +1,99 @@
+=== puma startup: 2019-04-15 15:25:33 -0300 ===
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/config/initializers/dinheiro.rb:19: warning: constant ::Fixnum is deprecated
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/config/initializers/dinheiro.rb:50: warning: constant ::Fixnum is deprecated
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/config/initializers/mes.rb:15: warning: constant ::Fixnum is deprecated
+=== puma startup: 2019-04-15 15:25:50 -0300 ===
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/config/initializers/dinheiro.rb:19: warning: constant ::Fixnum is deprecated
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/config/initializers/dinheiro.rb:50: warning: constant ::Fixnum is deprecated
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/config/initializers/mes.rb:15: warning: constant ::Fixnum is deprecated
+=== puma startup: 2019-04-15 15:27:04 -0300 ===
+=== puma startup: 2019-04-15 15:27:39 -0300 ===
+fatal: No names found, cannot describe anything.
+=== puma startup: 2019-05-14 17:31:46 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:39653
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:35339
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+=== puma startup: 2019-05-14 17:40:24 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:37523
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:45185
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+=== puma startup: 2019-05-14 17:43:25 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:37385
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:33317
+=== puma startup: 2019-05-14 17:45:37 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:45485
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:44097
+=== puma startup: 2019-05-14 17:45:44 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:46587
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:40845
+=== puma startup: 2019-05-14 17:48:28 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:37791
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:38677
+=== puma startup: 2019-05-14 17:57:41 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:38565
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:41653
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+=== puma startup: 2019-05-21 10:00:31 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:41473
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:41453
+=== puma startup: 2019-05-21 10:01:25 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:42971
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:44685
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+=== puma startup: 2019-05-30 10:01:39 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:44743
+Subprocess Debugger (ruby-debug-ide 0.7.0.beta7, debase 0.2.3.beta5, file filtering is supported) listens on 0.0.0.0:40409
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.

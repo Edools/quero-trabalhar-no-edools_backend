@@ -1,0 +1,534 @@
+=== puma startup: 2019-07-23 10:44:35 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:38367
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:37155
+=== puma startup: 2019-07-23 10:45:01 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:40869
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:46349
+=== puma startup: 2019-07-23 10:45:54 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:41809
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:33323
+=== puma startup: 2019-07-23 10:46:40 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:44827
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:33633
+fatal: No names found, cannot describe anything.
+=== puma startup: 2019-07-23 11:05:35 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:41949
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:34791
+Loading pages (1/6)
+[>                                                           ] 0%[======>                                                     ] 10%[===========================>                                ] 45%[=============================>                              ] 49%[============================================================] 100%Counting pages (2/6)                                               
+[============================================================] Object 1 of 1Resolving links (4/6)                                                       
+[============================================================] Object 1 of 1Loading headers and footers (5/6)                                           
+Printing pages (6/6)
+[>                                                           ] Preparing[============================================================] Page 1 of 1Done                                                                      
+Loading pages (1/6)
+[>                                                           ] 0%[======>                                                     ] 10%[==================>                                         ] 30%[===================>                                        ] 33%[============================================================] 100%Counting pages (2/6)                                               
+[============================================================] Object 1 of 1Resolving links (4/6)                                                       
+[============================================================] Object 1 of 1Loading headers and footers (5/6)                                           
+Printing pages (6/6)
+[>                                                           ] Preparing[============================================================] Page 1 of 1Done                                                                      
+=== puma startup: 2019-07-23 11:16:18 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:33351
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:42835
+=== puma startup: 2019-07-23 11:27:22 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:45565
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:42405
+=== puma startup: 2019-07-23 11:27:43 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:44263
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:34865
+=== puma startup: 2019-07-23 11:27:55 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:33765
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:45089
+=== puma startup: 2019-07-23 11:29:13 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:44879
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:38489
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:46: warning: already initialized constant RecursosHumanos::TbTipoEvento::CODIGO_EVENTO_AVERBACOES
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:37: warning: previous definition of CODIGO_EVENTO_AVERBACOES was here
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:46: warning: already initialized constant RecursosHumanos::TbTipoEvento::CODIGO_EVENTO_AVERBACOES
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:37: warning: previous definition of CODIGO_EVENTO_AVERBACOES was here
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:46: warning: already initialized constant RecursosHumanos::TbTipoEvento::CODIGO_EVENTO_AVERBACOES
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:37: warning: previous definition of CODIGO_EVENTO_AVERBACOES was here
+=== puma startup: 2019-07-23 11:34:56 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:42991
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:34195
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:46: warning: already initialized constant RecursosHumanos::TbTipoEvento::CODIGO_EVENTO_AVERBACOES
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:37: warning: previous definition of CODIGO_EVENTO_AVERBACOES was here
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:46: warning: already initialized constant RecursosHumanos::TbTipoEvento::CODIGO_EVENTO_AVERBACOES
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:37: warning: previous definition of CODIGO_EVENTO_AVERBACOES was here
+=== puma startup: 2019-07-23 11:36:43 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:33897
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:36193
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:46: warning: already initialized constant RecursosHumanos::TbTipoEvento::CODIGO_EVENTO_AVERBACOES
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:37: warning: previous definition of CODIGO_EVENTO_AVERBACOES was here
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:46: warning: already initialized constant RecursosHumanos::TbTipoEvento::CODIGO_EVENTO_AVERBACOES
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:37: warning: previous definition of CODIGO_EVENTO_AVERBACOES was here
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:46: warning: already initialized constant RecursosHumanos::TbTipoEvento::CODIGO_EVENTO_AVERBACOES
+/home/victor/projetos/tcdf/portal_transparencia_tcdf/app/models/recursos_humanos/tb_tipo_evento.rb:37: warning: previous definition of CODIGO_EVENTO_AVERBACOES was here
+Loading pages (1/6)
+[>                                                           ] 0%[======>                                                     ] 10%[==============================>                             ] 50%[============================================================] 100%Counting pages (2/6)                                               
+[============================================================] Object 1 of 1Resolving links (4/6)                                                       
+[============================================================] Object 1 of 1Loading headers and footers (5/6)                                           
+Printing pages (6/6)
+[>                                                           ] Preparing[>                                                           ] Page 1 of 73[=>                                                          ] Page 2 of 73[==>                                                         ] Page 3 of 73[===>                                                        ] Page 4 of 73[===>                                                        ] Page 5 of 73[====>                                                       ] Page 6 of 73[=====>                                                      ] Page 7 of 73[======>                                                     ] Page 8 of 73[=======>                                                    ] Page 9 of 73[=======>                                                    ] Page 10 of 73[=========>                                                  ] Page 11 of 73[=========>                                                  ] Page 12 of 73[==========>                                                 ] Page 13 of 73[===========>                                                ] Page 14 of 73[============>                                               ] Page 15 of 73[============>                                               ] Page 16 of 73[=============>                                              ] Page 17 of 73[==============>                                             ] Page 18 of 73[===============>                                            ] Page 19 of 73[================>                                           ] Page 20 of 73[================>                                           ] Page 21 of 73[==================>                                         ] Page 22 of 73[==================>                                         ] Page 23 of 73[===================>                                        ] Page 24 of 73[====================>                                       ] Page 25 of 73[=====================>                                      ] Page 26 of 73[=====================>                                      ] Page 27 of 73[======================>                                     ] Page 28 of 73[=======================>                                    ] Page 29 of 73[========================>                                   ] Page 30 of 73[=========================>                                  ] Page 31 of 73[=========================>                                  ] Page 32 of 73[===========================>                                ] Page 33 of 73[===========================>                                ] Page 34 of 73[============================>                               ] Page 35 of 73[=============================>                              ] Page 36 of 73[==============================>                             ] Page 37 of 73[===============================>                            ] Page 38 of 73[===============================>                            ] Page 39 of 73[================================>                           ] Page 40 of 73[=================================>                          ] Page 41 of 73[==================================>                         ] Page 42 of 73[==================================>                         ] Page 43 of 73[====================================>                       ] Page 44 of 73[====================================>                       ] Page 45 of 73[=====================================>                      ] Page 46 of 73[======================================>                     ] Page 47 of 73[=======================================>                    ] Page 48 of 73[========================================>                   ] Page 49 of 73[========================================>                   ] Page 50 of 73[=========================================>                  ] Page 51 of 73[==========================================>                 ] Page 52 of 73[===========================================>                ] Page 53 of 73[===========================================>                ] Page 54 of 73[=============================================>              ] Page 55 of 73[=============================================>              ] Page 56 of 73[==============================================>             ] Page 57 of 73[===============================================>            ] Page 58 of 73[================================================>           ] Page 59 of 73[=================================================>          ] Page 60 of 73[=================================================>          ] Page 61 of 73[==================================================>         ] Page 62 of 73[===================================================>        ] Page 63 of 73[====================================================>       ] Page 64 of 73[=====================================================>      ] Page 65 of 73[======================================================>     ] Page 66 of 73[======================================================>     ] Page 67 of 73[=======================================================>    ] Page 68 of 73[========================================================>   ] Page 69 of 73[=========================================================>  ] Page 70 of 73[==========================================================> ] Page 71 of 73[==========================================================> ] Page 72 of 73[============================================================] Page 73 of 73Done                                                                        
+=== puma startup: 2019-07-23 11:48:29 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:33449
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:46229
+=== puma startup: 2019-07-23 11:48:58 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:40311
+Subprocess Debugger (ruby-debug-ide 0.7.0, debase 0.2.3, file filtering is supported) listens on 0.0.0.0:46877
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+=== puma startup: 2019-07-23 18:14:33 -0300 ===
+=== puma startup: 2019-07-23 18:14:33 -0300 ===
+=== puma startup: 2019-07-23 18:14:33 -0300 ===
+=== puma startup: 2019-07-23 18:14:33 -0300 ===
+=== puma startup: 2019-07-23 18:14:33 -0300 ===
+=== puma startup: 2019-07-23 18:14:33 -0300 ===
+Uncaught exception: SIGTERM
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/puma-3.12.1/lib/puma/cluster.rb:396:in `block in setup_signals'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/puma-3.12.1/lib/puma/cluster.rb:490:in `select'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/puma-3.12.1/lib/puma/cluster.rb:490:in `run'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/puma-3.12.1/lib/puma/launcher.rb:186:in `run'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/puma-3.12.1/lib/rack/handler/puma.rb:73:in `run'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/rack-2.0.7/lib/rack/server.rb:297:in `start'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/commands/server/server_command.rb:53:in `start'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/commands/server/server_command.rb:147:in `block in perform'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/commands/server/server_command.rb:142:in `tap'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/commands/server/server_command.rb:142:in `perform'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/thor-0.20.3/lib/thor/command.rb:27:in `run'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/thor-0.20.3/lib/thor/invocation.rb:126:in `invoke_command'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/thor-0.20.3/lib/thor.rb:387:in `dispatch'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/command/base.rb:65:in `perform'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/command.rb:46:in `invoke'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/commands.rb:18:in `<main>'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.4.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.4.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.4.2/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.4.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.4.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:291:in `block in require'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:257:in `load_dependency'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:291:in `require'
+	/home/victor/projetos/tcdf/portal_transparencia_tcdf/bin/rails:9:in `<top (required)>'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `load'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.0.2/lib/spring/client/rails.rb:28:in `call'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.0.2/lib/spring/client/command.rb:7:in `call'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.0.2/lib/spring/client.rb:30:in `run'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.0.2/bin/spring:49:in `<top (required)>'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `load'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.0.2/lib/spring/binstub.rb:31:in `<top (required)>'
+	/home/victor/.rvm/rubies/ruby-2.5.3/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:65:in `require'
+	/home/victor/.rvm/rubies/ruby-2.5.3/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:65:in `require'
+	/home/victor/projetos/tcdf/portal_transparencia_tcdf/bin/spring:15:in `<top (required)>'
+	/home/victor/projetos/tcdf/portal_transparencia_tcdf/bin/rails:3:in `load'
+	/home/victor/projetos/tcdf/portal_transparencia_tcdf/bin/rails:3:in `<top (required)>'
+=== puma startup: 2019-08-22 15:12:45 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:45457
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43481
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+=== puma startup: 2019-08-22 15:37:20 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:37975
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:40823
+fatal: No names found, cannot describe anything.
+=== puma startup: 2019-08-22 15:48:36 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:33289
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:39419
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-22 15:54:50 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:45783
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43655
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-22 16:05:30 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:46849
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:39033
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-22 16:06:03 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44947
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:38199
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-22 16:10:45 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:41727
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:40481
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-22 16:11:55 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:46641
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:38579
+=== puma startup: 2019-08-22 16:13:55 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:39799
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44769
+=== puma startup: 2019-08-22 16:14:40 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43161
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:33945
+=== puma startup: 2019-08-22 16:15:43 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44485
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:36273
+=== puma startup: 2019-08-22 16:16:16 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43531
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44041
+=== puma startup: 2019-08-22 16:17:33 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:46221
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:42555
+=== puma startup: 2019-08-22 16:20:48 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:35795
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43289
+=== puma startup: 2019-08-22 16:25:35 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:32945
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:35493
+=== puma startup: 2019-08-22 16:27:09 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:45817
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:34703
+=== puma startup: 2019-08-22 16:27:17 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:38909
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:45239
+=== puma startup: 2019-08-22 16:27:58 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:33863
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:34911
+=== puma startup: 2019-08-22 16:28:10 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:46025
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:37417
+=== puma startup: 2019-08-22 16:28:31 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:39661
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:39515
+=== puma startup: 2019-08-22 16:29:02 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43141
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:37147
+=== puma startup: 2019-08-22 16:29:52 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:34529
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:40579
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-22 16:57:56 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:46039
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:41079
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-22 17:27:15 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:37017
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:41499
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-22 18:06:06 -0300 ===
+=== puma startup: 2019-08-22 18:06:06 -0300 ===
+=== puma startup: 2019-08-22 18:06:06 -0300 ===
+=== puma startup: 2019-08-22 18:06:06 -0300 ===
+=== puma startup: 2019-08-22 18:06:06 -0300 ===
+Uncaught exception: SIGTERM
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/puma-3.12.1/lib/puma/cluster.rb:396:in `block in setup_signals'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/puma-3.12.1/lib/puma/cluster.rb:490:in `select'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/puma-3.12.1/lib/puma/cluster.rb:490:in `run'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/puma-3.12.1/lib/puma/launcher.rb:186:in `run'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/puma-3.12.1/lib/rack/handler/puma.rb:73:in `run'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/rack-2.0.7/lib/rack/server.rb:297:in `start'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/commands/server/server_command.rb:53:in `start'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/commands/server/server_command.rb:147:in `block in perform'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/commands/server/server_command.rb:142:in `tap'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/commands/server/server_command.rb:142:in `perform'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/thor-0.20.3/lib/thor/command.rb:27:in `run'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/thor-0.20.3/lib/thor/invocation.rb:126:in `invoke_command'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/thor-0.20.3/lib/thor.rb:387:in `dispatch'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/command/base.rb:65:in `perform'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/command.rb:46:in `invoke'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/commands.rb:18:in `<top (required)>'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.4.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:291:in `block in require'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:257:in `load_dependency'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:291:in `require'
+	/home/victor/projetos/tcdf/portal_transparencia_tcdf/bin/rails:9:in `<top (required)>'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.1.0/lib/spring/client/rails.rb:28:in `load'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.1.0/lib/spring/client/rails.rb:28:in `call'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.1.0/lib/spring/client/command.rb:7:in `call'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.1.0/lib/spring/client.rb:30:in `run'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.1.0/bin/spring:49:in `<top (required)>'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.1.0/lib/spring/binstub.rb:11:in `load'
+	/home/victor/.rvm/gems/ruby-2.5.3/gems/spring-2.1.0/lib/spring/binstub.rb:11:in `<top (required)>'
+	/home/victor/.rvm/rubies/ruby-2.5.3/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	/home/victor/.rvm/rubies/ruby-2.5.3/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	/home/victor/projetos/tcdf/portal_transparencia_tcdf/bin/spring:15:in `<top (required)>'
+	/home/victor/projetos/tcdf/portal_transparencia_tcdf/bin/rails:3:in `load'
+	/home/victor/projetos/tcdf/portal_transparencia_tcdf/bin/rails:3:in `<top (required)>'
+=== puma startup: 2019-08-23 07:58:45 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43675
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:35853
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-23 08:31:08 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:40967
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44635
+Loading pages (1/6)
+[>                                                           ] 0%[======>                                                     ] 10%[==============================>                             ] 50%[==================================>                         ] 57%[============================================================] 100%Counting pages (2/6)                                               
+[============================================================] Object 1 of 1Resolving links (4/6)                                                       
+[============================================================] Object 1 of 1Loading headers and footers (5/6)                                           
+Printing pages (6/6)
+[>                                                           ] Preparing[>                                                           ] Page 1 of 383[>                                                           ] Page 2 of 383[>                                                           ] Page 3 of 383[>                                                           ] Page 4 of 383[>                                                           ] Page 5 of 383[>                                                           ] Page 6 of 383[>                                                           ] Page 7 of 383[=>                                                          ] Page 8 of 383[=>                                                          ] Page 9 of 383[=>                                                          ] Page 10 of 383[=>                                                          ] Page 11 of 383[=>                                                          ] Page 12 of 383[=>                                                          ] Page 13 of 383[=>                                                          ] Page 14 of 383[=>                                                          ] Page 15 of 383[==>                                                         ] Page 16 of 383[==>                                                         ] Page 17 of 383[==>                                                         ] Page 18 of 383[==>                                                         ] Page 19 of 383[===>                                                        ] Page 20 of 383[===>                                                        ] Page 21 of 383[===>                                                        ] Page 22 of 383[===>                                                        ] Page 23 of 383[===>                                                        ] Page 24 of 383[===>                                                        ] Page 25 of 383[===>                                                        ] Page 26 of 383[====>                                                       ] Page 27 of 383[====>                                                       ] Page 28 of 383[====>                                                       ] Page 29 of 383[====>                                                       ] Page 30 of 383[====>                                                       ] Page 31 of 383[====>                                                       ] Page 32 of 383[====>                                                       ] Page 33 of 383[====>                                                       ] Page 34 of 383[=====>                                                      ] Page 35 of 383[=====>                                                      ] Page 36 of 383[=====>                                                      ] Page 37 of 383[=====>                                                      ] Page 38 of 383[======>                                                     ] Page 39 of 383[======>                                                     ] Page 40 of 383[======>                                                     ] Page 41 of 383[======>                                                     ] Page 42 of 383[======>                                                     ] Page 43 of 383[======>                                                     ] Page 44 of 383[======>                                                     ] Page 45 of 383[=======>                                                    ] Page 46 of 383[=======>                                                    ] Page 47 of 383[=======>                                                    ] Page 48 of 383[=======>                                                    ] Page 49 of 383[=======>                                                    ] Page 50 of 383[=======>                                                    ] Page 51 of 383[=======>                                                    ] Page 52 of 383[=======>                                                    ] Page 53 of 383[========>                                                   ] Page 54 of 383[========>                                                   ] Page 55 of 383[========>                                                   ] Page 56 of 383[========>                                                   ] Page 57 of 383[=========>                                                  ] Page 58 of 383[=========>                                                  ] Page 59 of 383[=========>                                                  ] Page 60 of 383[=========>                                                  ] Page 61 of 383[=========>                                                  ] Page 62 of 383[=========>                                                  ] Page 63 of 383[=========>                                                  ] Page 64 of 383[=========>                                                  ] Page 65 of 383[==========>                                                 ] Page 66 of 383[==========>                                                 ] Page 67 of 383[==========>                                                 ] Page 68 of 383[==========>                                                 ] Page 69 of 383[==========>                                                 ] Page 70 of 383[==========>                                                 ] Page 71 of 383[==========>                                                 ] Page 72 of 383[===========>                                                ] Page 73 of 383[===========>                                                ] Page 74 of 383[===========>                                                ] Page 75 of 383[===========>                                                ] Page 76 of 383[============>                                               ] Page 77 of 383[============>                                               ] Page 78 of 383[============>                                               ] Page 79 of 383[============>                                               ] Page 80 of 383[============>                                               ] Page 81 of 383[============>                                               ] Page 82 of 383[============>                                               ] Page 83 of 383[============>                                               ] Page 84 of 383[=============>                                              ] Page 85 of 383[=============>                                              ] Page 86 of 383[=============>                                              ] Page 87 of 383[=============>                                              ] Page 88 of 383[=============>                                              ] Page 89 of 383[=============>                                              ] Page 90 of 383[=============>                                              ] Page 91 of 383[==============>                                             ] Page 92 of 383[==============>                                             ] Page 93 of 383[==============>                                             ] Page 94 of 383[==============>                                             ] Page 95 of 383[===============>                                            ] Page 96 of 383[===============>                                            ] Page 97 of 383[===============>                                            ] Page 98 of 383[===============>                                            ] Page 99 of 383[===============>                                            ] Page 100 of 383[===============>                                            ] Page 101 of 383[===============>                                            ] Page 102 of 383[===============>                                            ] Page 103 of 383[================>                                           ] Page 104 of 383[================>                                           ] Page 105 of 383[================>                                           ] Page 106 of 383[================>                                           ] Page 107 of 383[================>                                           ] Page 108 of 383[================>                                           ] Page 109 of 383[================>                                           ] Page 110 of 383[================>                                           ] Page 111 of 383[=================>                                          ] Page 112 of 383[=================>                                          ] Page 113 of 383[=================>                                          ] Page 114 of 383[==================>                                         ] Page 115 of 383[==================>                                         ] Page 116 of 383[==================>                                         ] Page 117 of 383[==================>                                         ] Page 118 of 383[==================>                                         ] Page 119 of 383[==================>                                         ] Page 120 of 383[==================>                                         ] Page 121 of 383[==================>                                         ] Page 122 of 383[===================>                                        ] Page 123 of 383[===================>                                        ] Page 124 of 383[===================>                                        ] Page 125 of 383[===================>                                        ] Page 126 of 383[===================>                                        ] Page 127 of 383[===================>                                        ] Page 128 of 383[===================>                                        ] Page 129 of 383[===================>                                        ] Page 130 of 383[====================>                                       ] Page 131 of 383[====================>                                       ] Page 132 of 383[====================>                                       ] Page 133 of 383[====================>                                       ] Page 134 of 383[=====================>                                      ] Page 135 of 383[=====================>                                      ] Page 136 of 383[=====================>                                      ] Page 137 of 383[=====================>                                      ] Page 138 of 383[=====================>                                      ] Page 139 of 383[=====================>                                      ] Page 140 of 383[=====================>                                      ] Page 141 of 383[======================>                                     ] Page 142 of 383[======================>                                     ] Page 143 of 383[======================>                                     ] Page 144 of 383[======================>                                     ] Page 145 of 383[======================>                                     ] Page 146 of 383[======================>                                     ] Page 147 of 383[======================>                                     ] Page 148 of 383[======================>                                     ] Page 149 of 383[=======================>                                    ] Page 150 of 383[=======================>                                    ] Page 151 of 383[=======================>                                    ] Page 152 of 383[=======================>                                    ] Page 153 of 383[========================>                                   ] Page 154 of 383[========================>                                   ] Page 155 of 383[========================>                                   ] Page 156 of 383[========================>                                   ] Page 157 of 383[========================>                                   ] Page 158 of 383[========================>                                   ] Page 159 of 383[========================>                                   ] Page 160 of 383[=========================>                                  ] Page 161 of 383[=========================>                                  ] Page 162 of 383[=========================>                                  ] Page 163 of 383[=========================>                                  ] Page 164 of 383[=========================>                                  ] Page 165 of 383[=========================>                                  ] Page 166 of 383[=========================>                                  ] Page 167 of 383[=========================>                                  ] Page 168 of 383[==========================>                                 ] Page 169 of 383[==========================>                                 ] Page 170 of 383[==========================>                                 ] Page 171 of 383[==========================>                                 ] Page 172 of 383[===========================>                                ] Page 173 of 383[===========================>                                ] Page 174 of 383[===========================>                                ] Page 175 of 383[===========================>                                ] Page 176 of 383[===========================>                                ] Page 177 of 383[===========================>                                ] Page 178 of 383[===========================>                                ] Page 179 of 383[===========================>                                ] Page 180 of 383[============================>                               ] Page 181 of 383[============================>                               ] Page 182 of 383[============================>                               ] Page 183 of 383[============================>                               ] Page 184 of 383[============================>                               ] Page 185 of 383[============================>                               ] Page 186 of 383[============================>                               ] Page 187 of 383[=============================>                              ] Page 188 of 383[=============================>                              ] Page 189 of 383[=============================>                              ] Page 190 of 383[=============================>                              ] Page 191 of 383[==============================>                             ] Page 192 of 383[==============================>                             ] Page 193 of 383[==============================>                             ] Page 194 of 383[==============================>                             ] Page 195 of 383[==============================>                             ] Page 196 of 383[==============================>                             ] Page 197 of 383[==============================>                             ] Page 198 of 383[==============================>                             ] Page 199 of 383[===============================>                            ] Page 200 of 383[===============================>                            ] Page 201 of 383[===============================>                            ] Page 202 of 383[===============================>                            ] Page 203 of 383[===============================>                            ] Page 204 of 383[===============================>                            ] Page 205 of 383[===============================>                            ] Page 206 of 383[================================>                           ] Page 207 of 383[================================>                           ] Page 208 of 383[================================>                           ] Page 209 of 383[================================>                           ] Page 210 of 383[=================================>                          ] Page 211 of 383[=================================>                          ] Page 212 of 383[=================================>                          ] Page 213 of 383[=================================>                          ] Page 214 of 383[=================================>                          ] Page 215 of 383[=================================>                          ] Page 216 of 383[=================================>                          ] Page 217 of 383[=================================>                          ] Page 218 of 383[==================================>                         ] Page 219 of 383[==================================>                         ] Page 220 of 383[==================================>                         ] Page 221 of 383[==================================>                         ] Page 222 of 383[==================================>                         ] Page 223 of 383[==================================>                         ] Page 224 of 383[==================================>                         ] Page 225 of 383[===================================>                        ] Page 226 of 383[===================================>                        ] Page 227 of 383[===================================>                        ] Page 228 of 383[===================================>                        ] Page 229 of 383[====================================>                       ] Page 230 of 383[====================================>                       ] Page 231 of 383[====================================>                       ] Page 232 of 383[====================================>                       ] Page 233 of 383[====================================>                       ] Page 234 of 383[====================================>                       ] Page 235 of 383[====================================>                       ] Page 236 of 383[====================================>                       ] Page 237 of 383[=====================================>                      ] Page 238 of 383[=====================================>                      ] Page 239 of 383[=====================================>                      ] Page 240 of 383[=====================================>                      ] Page 241 of 383[=====================================>                      ] Page 242 of 383[=====================================>                      ] Page 243 of 383[=====================================>                      ] Page 244 of 383[=====================================>                      ] Page 245 of 383[======================================>                     ] Page 246 of 383[======================================>                     ] Page 247 of 383[======================================>                     ] Page 248 of 383[=======================================>                    ] Page 249 of 383[=======================================>                    ] Page 250 of 383[=======================================>                    ] Page 251 of 383[=======================================>                    ] Page 252 of 383[=======================================>                    ] Page 253 of 383[=======================================>                    ] Page 254 of 383[=======================================>                    ] Page 255 of 383[=======================================>                    ] Page 256 of 383[========================================>                   ] Page 257 of 383[========================================>                   ] Page 258 of 383[========================================>                   ] Page 259 of 383[========================================>                   ] Page 260 of 383[========================================>                   ] Page 261 of 383[========================================>                   ] Page 262 of 383[========================================>                   ] Page 263 of 383[========================================>                   ] Page 264 of 383[=========================================>                  ] Page 265 of 383[=========================================>                  ] Page 266 of 383[=========================================>                  ] Page 267 of 383[=========================================>                  ] Page 268 of 383[==========================================>                 ] Page 269 of 383[==========================================>                 ] Page 270 of 383[==========================================>                 ] Page 271 of 383[==========================================>                 ] Page 272 of 383[==========================================>                 ] Page 273 of 383[==========================================>                 ] Page 274 of 383[==========================================>                 ] Page 275 of 383[===========================================>                ] Page 276 of 383[===========================================>                ] Page 277 of 383[===========================================>                ] Page 278 of 383[===========================================>                ] Page 279 of 383[===========================================>                ] Page 280 of 383[===========================================>                ] Page 281 of 383[===========================================>                ] Page 282 of 383[===========================================>                ] Page 283 of 383[============================================>               ] Page 284 of 383[============================================>               ] Page 285 of 383[============================================>               ] Page 286 of 383[============================================>               ] Page 287 of 383[=============================================>              ] Page 288 of 383[=============================================>              ] Page 289 of 383[=============================================>              ] Page 290 of 383[=============================================>              ] Page 291 of 383[=============================================>              ] Page 292 of 383[=============================================>              ] Page 293 of 383[=============================================>              ] Page 294 of 383[==============================================>             ] Page 295 of 383[==============================================>             ] Page 296 of 383[==============================================>             ] Page 297 of 383[==============================================>             ] Page 298 of 383[==============================================>             ] Page 299 of 383[==============================================>             ] Page 300 of 383[==============================================>             ] Page 301 of 383[==============================================>             ] Page 302 of 383[===============================================>            ] Page 303 of 383[===============================================>            ] Page 304 of 383[===============================================>            ] Page 305 of 383[===============================================>            ] Page 306 of 383[================================================>           ] Page 307 of 383[================================================>           ] Page 308 of 383[================================================>           ] Page 309 of 383[================================================>           ] Page 310 of 383[================================================>           ] Page 311 of 383[================================================>           ] Page 312 of 383[================================================>           ] Page 313 of 383[================================================>           ] Page 314 of 383[=================================================>          ] Page 315 of 383[=================================================>          ] Page 316 of 383[=================================================>          ] Page 317 of 383[=================================================>          ] Page 318 of 383[=================================================>          ] Page 319 of 383[=================================================>          ] Page 320 of 383[=================================================>          ] Page 321 of 383[==================================================>         ] Page 322 of 383[==================================================>         ] Page 323 of 383[==================================================>         ] Page 324 of 383[==================================================>         ] Page 325 of 383[===================================================>        ] Page 326 of 383[===================================================>        ] Page 327 of 383[===================================================>        ] Page 328 of 383[===================================================>        ] Page 329 of 383[===================================================>        ] Page 330 of 383[===================================================>        ] Page 331 of 383[===================================================>        ] Page 332 of 383[===================================================>        ] Page 333 of 383[====================================================>       ] Page 334 of 383[====================================================>       ] Page 335 of 383[====================================================>       ] Page 336 of 383[====================================================>       ] Page 337 of 383[====================================================>       ] Page 338 of 383[====================================================>       ] Page 339 of 383[====================================================>       ] Page 340 of 383[=====================================================>      ] Page 341 of 383[=====================================================>      ] Page 342 of 383[=====================================================>      ] Page 343 of 383[=====================================================>      ] Page 344 of 383[======================================================>     ] Page 345 of 383[======================================================>     ] Page 346 of 383[======================================================>     ] Page 347 of 383[======================================================>     ] Page 348 of 383[======================================================>     ] Page 349 of 383[======================================================>     ] Page 350 of 383[======================================================>     ] Page 351 of 383[======================================================>     ] Page 352 of 383[=======================================================>    ] Page 353 of 383[=======================================================>    ] Page 354 of 383[=======================================================>    ] Page 355 of 383[=======================================================>    ] Page 356 of 383[=======================================================>    ] Page 357 of 383[=======================================================>    ] Page 358 of 383[=======================================================>    ] Page 359 of 383[=======================================================>    ] Page 360 of 383[========================================================>   ] Page 361 of 383[========================================================>   ] Page 362 of 383[========================================================>   ] Page 363 of 383[=========================================================>  ] Page 364 of 383[=========================================================>  ] Page 365 of 383[=========================================================>  ] Page 366 of 383[=========================================================>  ] Page 367 of 383[=========================================================>  ] Page 368 of 383[=========================================================>  ] Page 369 of 383[=========================================================>  ] Page 370 of 383[=========================================================>  ] Page 371 of 383[==========================================================> ] Page 372 of 383[==========================================================> ] Page 373 of 383[==========================================================> ] Page 374 of 383[==========================================================> ] Page 375 of 383[==========================================================> ] Page 376 of 383[==========================================================> ] Page 377 of 383[==========================================================> ] Page 378 of 383[==========================================================> ] Page 379 of 383[===========================================================>] Page 380 of 383[===========================================================>] Page 381 of 383[===========================================================>] Page 382 of 383[============================================================] Page 383 of 383Done                                                                          
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+Loading pages (1/6)
+[>                                                           ] 0%[======>                                                     ] 10%[======================>                                     ] 37%[========================>                                   ] 40%[============================================================] 100%Counting pages (2/6)                                               
+[============================================================] Object 1 of 1Resolving links (4/6)                                                       
+[============================================================] Object 1 of 1Loading headers and footers (5/6)                                           
+Printing pages (6/6)
+[>                                                           ] Preparing[============================================================] Page 1 of 1Done                                                                      
+Loading pages (1/6)
+[>                                                           ] 0%[======>                                                     ] 10%[======================>                                     ] 38%[========================>                                   ] 40%[============================================================] 100%Counting pages (2/6)                                               
+[============================================================] Object 1 of 1Resolving links (4/6)                                                       
+[============================================================] Object 1 of 1Loading headers and footers (5/6)                                           
+Printing pages (6/6)
+[>                                                           ] Preparing[============================================================] Page 1 of 1Done                                                                      
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-23 10:41:04 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43937
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:45991
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-23 10:54:17 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:35387
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43295
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+cat: VERSION: Arquivo ou diretório inexistente
+=== puma startup: 2019-08-23 14:22:50 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:33961
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:45875
+=== puma startup: 2019-08-23 14:33:27 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:39523
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43419
+=== puma startup: 2019-08-23 14:34:13 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:34617
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:42777
+=== puma startup: 2019-08-24 11:19:21 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:41073
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:46535
+=== puma startup: 2019-08-24 11:50:13 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:34005
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44823
+=== puma startup: 2019-08-24 11:53:40 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:37811
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:41809
+=== puma startup: 2019-08-24 11:54:18 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44255
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:42769
+=== puma startup: 2019-08-24 12:25:26 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:39423
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44917
+=== puma startup: 2019-08-24 12:39:59 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:33759
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:41697
+=== puma startup: 2019-08-24 15:04:15 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:45975
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:46785
+=== puma startup: 2019-08-24 15:05:50 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43999
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:38371
+=== puma startup: 2019-08-24 15:10:59 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:34201
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44337
+=== puma startup: 2019-08-24 16:08:00 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:34213
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44271
+=== puma startup: 2019-08-24 16:48:21 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:34243
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43989
+=== puma startup: 2019-08-24 16:48:55 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:39733
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44371
+=== puma startup: 2019-08-24 16:49:41 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:38849
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:37643
+=== puma startup: 2019-08-24 16:50:35 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:40545
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:32955
+=== puma startup: 2019-08-24 16:51:57 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:32989
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:46675
+=== puma startup: 2019-08-24 16:55:29 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:35141
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43059
+=== puma startup: 2019-08-24 16:55:54 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:37581
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:43121
+=== puma startup: 2019-08-24 16:56:17 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:38239
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:44735
+=== puma startup: 2019-08-24 17:02:27 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:38897
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:42457
+=== puma startup: 2019-08-24 17:02:37 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:38105
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:35871
+=== puma startup: 2019-08-24 17:04:29 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:36659
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:38629
+=== puma startup: 2019-08-24 21:05:28 -0300 ===
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:33551
+Subprocess Debugger (ruby-debug-ide 0.8.0.beta6, debase 0.3.0.beta7, file filtering is supported, block breakpoints supported, smart steps supported, obtaining return values supported) listens on 0.0.0.0:37889

@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-hover table-striped table-bordered" style="margin-top: 6px;">
+        <thead>
+        <tr>
+          <th><%= sort_link(@q, :nome) %></th>
+          <th><%= sort_link(@q, :email_dono) %></th>
+          <th><%= sort_link(@q, :subdominio) %></th>
+          <th class="text-center"><%= TbCurso.human_attribute_name(:cursos) %></th>
+          <th class="text-center"><%= TbCurso.human_attribute_name(:qtd_alunos_ativos) %></th>
+
+          <th width="10%" class="text-center">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @tb_escolas.each do |escola| %>
+          <tr>
+            <td><%= h escola.nome %> </td>
+            <td><%= h escola.email_dono %> </td>
+            <td><%= h escola.decorate.subdominio_completo %> </td>
+            <td><%= h escola.decorate.lista_cursos %> </td>
+            <td class="text-center"><%= h escola.decorate.qtd_alunos_ativos %> </td>
+            <td class="text-center">
+              <%= link_to tb_escola_path(escola),
+                          class: 'btn btn-info btn-xs', style: 'color: #FFF; float: none;', title: 'Visualizar' do %>
+                <span class="fa fa-search"></span>
+              <% end %>
+
+              <%= link_to edit_tb_escola_path(escola),
+                          class: 'btn btn-warning btn-xs', title: 'Alterar', style: 'color: #FFF; float: none;' do %>
+                <span class="fa fa-pencil"></span>
+              <% end %>
+
+              <%= link_to tb_escola_path(escola),
+                          method: :delete,
+                          class: 'btn btn-danger btn-xs',
+                          title: 'Excluir',
+                          data:{ confirm: 'Deseja realmente excluir o registro?'},
+                          style: "color: #FFF; float: none;" do %>
+                <span class="fa fa-trash-o"></span>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%= paginate_password_with_count @tb_escolas.total_entries, TOTAL_REGISTROS, params[:page] %>
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>

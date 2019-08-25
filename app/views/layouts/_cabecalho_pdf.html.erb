@@ -1,0 +1,16 @@
+<table class="table table-condensed" width="100%">
+  <thead>
+  <tr>
+    <td class="text-center">
+      <%= image_tag("logo_orgao.fw.png", :width => 260) %>
+    </td>
+  </tr>
+  <tr>
+    <th class="text-center">
+      <%= NOME_DO_ORGAO %>
+    </th>
+  </tr>
+  </thead>
+</table>
+
+<%= titulo_relatorio_pdf(titulo) if titulo %>

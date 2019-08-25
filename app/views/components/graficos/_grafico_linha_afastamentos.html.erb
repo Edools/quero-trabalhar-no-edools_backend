@@ -1,0 +1,216 @@
+<% cdg_unidade ||= nil %>
+<% cdg_ordem ||= nil %>
+<% exibe_regional ||= nil %>
+<% exibir_tres_anos ||= nil %>
+<% filtro_por_magistrado ||= nil %>
+<% lista_afastamentos ||= nil %>
+<% cdg_sitfunc ||= [3, 10, 12, 15] %>
+<% cdg_substitutos ||= [] %>
+<% anomes ||= Util.ref_anomes_atual %>
+<% if cdg_unidade.present? or lista_afastamentos %>
+  <%
+    unless lista_afastamentos
+      tb_unidade = RecursosHumanos::TbUnidade.find_by_cdg_unidade_atual(cdg_unidade)
+      if tb_unidade
+        lista_afastamentos = tb_unidade.lista_afastamentos_grafico(cdg_ordem, cdg_sitfunc, cdg_substitutos, anomes)
+        lista_afastamentos_substitutos = lista_afastamentos.select { |x| x[:cdg_ordem] == cdg_ordem or cdg_substitutos.include? x[:cdg_ordem] }
+      end
+
+    end
+  %>
+  <div class="col-md-12">
+
+
+    <div class="bg-primary p-xs b-r-sm section-header margin-bottom-10">Gráfico de Afastamentos
+      - <%= tb_unidade.nme_unidade if tb_unidade %></div>
+
+    <div class="ibox-content">
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+          <% if cdg_substitutos.present? %>
+            <div class="col-md-3">
+              <label onclick="monta_grafico()">
+                <div class="icheckbox_square-green" style="position: relative;">
+                  <input type="checkbox" value="1" class="i-checks" style="position: absolute; opacity: 0;" id="ck_afastamento_sub">
+                  <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                </div>
+                <strong class="font-bold">Mostrar apenas substitutos</strong>
+              </label>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-md-12">
+          <div id="chart_div"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+      $(document).on('turbolinks:load', function () {
+          google.charts.load('current', {'packages': ['timeline'], 'language': 'pt-br'}); //gantt
+          google.charts.setOnLoadCallback(drawChartTimeLine);
+      });
+
+      function monta_grafico() {
+          if ($("#ck_afastamento_sub").is(":checked")) {
+              drawChartTimeLine();
+          } else {
+              $("#ck_afastamento_regional").iCheck('uncheck');
+              $("#ck_afastamento_por_magistrado").iCheck('uncheck');
+              $("#form_filtro_por_magistrado_ferias").hide();
+              drawChartTimeLineSub();
+          }
+      }
+
+      function monta_grafico_regional() {
+          if ($("#ck_afastamento_regional").is(":checked")) {
+              drawChartTimeLine();
+          } else {
+              $("#ck_afastamento_sub").iCheck('uncheck');
+              $("#ck_afastamento_por_magistrado").iCheck('uncheck');
+              $("#form_filtro_por_magistrado_ferias").hide();
+              $("#filtro_regional_ferias").submit();
+          }
+      }
+
+      function monta_grafico_por_magistrado() {
+          if ($("#ck_afastamento_por_magistrado").is(":checked")) {
+              drawChartTimeLine();
+          } else {
+              $("#ck_afastamento_sub").iCheck('uncheck');
+              $("#ck_afastamento_regional").iCheck('uncheck');
+              $("#form_filtro_por_magistrado_ferias").show();
+          }
+      }
+
+      <% if lista_afastamentos and lista_afastamentos.size > 0 %>
+
+      function drawChartTimeLine() {
+          var container = document.getElementById('chart_div');
+          var chart = new google.visualization.Timeline(container);
+          var dataTable = new google.visualization.DataTable();
+
+          dataTable.addColumn({type: 'string', id: 'President'});
+          dataTable.addColumn({type: 'string', id: 'dummy bar label'});
+          dataTable.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+          dataTable.addColumn({type: 'date', id: 'Start'});
+          dataTable.addColumn({type: 'date', id: 'End'});
+
+          dataTable.addRows([
+              <% lista_afastamentos.sort_by{|x| x[:nome]}.each do |afastamento| %>
+              <%
+              if afastamento[:nome].nil?
+               afastamento[:nome] =afastamento.nome
+              end
+              afastamento = afastamento.as_json.inject({}){|memo,(k,v)| memo[k.downcase.to_sym] = v; memo}
+
+              %>
+
+              <% if afastamento[:dta_fim].present? %>
+              [
+                  '<%= "#{afastamento[:cdg_ordem]} - #{afastamento[:nome]} - #{afastamento[:nme_unidade]}" %>',
+                  '',
+                  '<div class="google-visualization-tooltip" style="width: 200px;top: -220px; left:-200px"> ' +
+                  '  <ul class="google-visualization-tooltip-item-list"> ' +
+                  '    <li class="google-visualization-tooltip-item"> ' +
+                  '      <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none; font-weight: bold;"><%= "#{afastamento[:cdg_ordem]} - #{afastamento[:nome]} - #{afastamento[:nme_unidade]}" %></span> ' +
+                  '    </li> ' +
+                  '  </ul> ' +
+                  '  <div class="google-visualization-tooltip-separator"></div> ' +
+                  '  <ul class="google-visualization-tooltip-action-list"> ' +
+                  '    <li class="google-visualization-tooltip-action"> ' +
+                  '      <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none; font-weight: bold;">Usufruto:</span><span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none;"> <%= afastamento[:dta_inicio].to_date.to_s_br if afastamento[:dta_inicio].present? %> - <%= afastamento[:dta_fim].to_date.to_s_br if afastamento[:dta_fim].present? %></span> ' +
+                  '    </li> ' +
+                  '    <li class="google-visualization-tooltip-action"> ' +
+                  '      <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none;' +
+                  ' font-weight: bold;">Total de Dias:</span><span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0);' +
+                  ' margin: 0px; text-decoration: none;"> <%= (afastamento[:dta_fim].to_date - afastamento[:dta_inicio].to_date)
+                        .to_i + 1 if afastamento[:dta_fim].present? %> Dias</span> ' +
+                  '    </li> ' +
+                  '    <li class="google-visualization-tooltip-action"> ' +
+                  '      <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none;' +
+                  ' font-weight: bold;">Motivo:</span><span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); ' +
+                  'margin: 0px; text-decoration: none;"> <%= afastamento[:tp_afastamento].present? ? afastamento[:tp_afastamento] :
+                         afastamento[:tipo] %></span> ' +
+                  '    </li> ' +
+                  '  </ul> ' +
+                  '</div> ',
+                  new Date(<%= afastamento[:dta_inicio].to_date.year %>, <%= afastamento[:dta_inicio].to_date.month - 1 %>, <%= afastamento[:dta_inicio].to_date.day %>),
+                  new Date(<%= afastamento[:dta_fim].to_date.year %>, <%= afastamento[:dta_fim].to_date.month - 1 %>, <%= afastamento[:dta_fim].to_date.day %>)
+              ],
+              <% end %>
+              <% end %>
+          ]);
+
+          var options = {
+              height: <%= 120 + lista_afastamentos.group_by {|x| x[:cdg_ordem]}.size * 20 %>,
+              timeline: {colorByRowLabel: true},
+              tooltip: {isHtml: true},
+              focusTarget: 'category',
+              legend: 'none'
+          };
+          chart.draw(dataTable, options);
+      }
+
+      <% end %>
+
+
+      <% if lista_afastamentos_substitutos.present? %>
+
+      function drawChartTimeLineSub() {
+          var container = document.getElementById('chart_div');
+          var chart = new google.visualization.Timeline(container);
+          var dataTable = new google.visualization.DataTable();
+
+          dataTable.addColumn({type: 'string', id: 'President'});
+          dataTable.addColumn({type: 'string', id: 'dummy bar label'});
+          dataTable.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+          dataTable.addColumn({type: 'date', id: 'Start'});
+          dataTable.addColumn({type: 'date', id: 'End'});
+
+          dataTable.addRows([
+              <% lista_afastamentos_substitutos.each do |afastamento| %>
+              [
+                  '<%= "#{afastamento[:cdg_ordem]} - #{afastamento[:nome]} - #{afastamento[:nme_unidade]}" %>',
+                  '',
+                  '<div class="google-visualization-tooltip" style="width: 200px;top: -220px; left:-200px"> ' +
+                  '  <ul class="google-visualization-tooltip-item-list"> ' +
+                  '    <li class="google-visualization-tooltip-item"> ' +
+                  '      <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none; font-weight: bold;"><%= "#{afastamento[:cdg_ordem]} - #{afastamento[:nome]} - #{afastamento[:nme_unidade]}" %></span> ' +
+                  '    </li> ' +
+                  '  </ul> ' +
+                  '  <div class="google-visualization-tooltip-separator"></div> ' +
+                  '  <ul class="google-visualization-tooltip-action-list"> ' +
+                  '    <li class="google-visualization-tooltip-action"> ' +
+                  '      <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none; font-weight: bold;">Usufruto:</span><span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none;"> <%= afastamento[:dta_inicio].to_date.to_s_br %> - <%= afastamento[:dta_fim].to_date.to_s_br %></span> ' +
+                  '    </li> ' +
+                  '    <li class="google-visualization-tooltip-action"> ' +
+                  '      <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none; font-weight: bold;">Total de Dias:</span><span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none;"> <%= (afastamento[:dta_fim].to_date - afastamento[:dta_inicio].to_date).to_i %> Dias</span> ' +
+                  '    </li> ' +
+                  '    <li class="google-visualization-tooltip-action"> ' +
+                  '      <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none; font-weight: bold;">Motivo:</span><span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); margin: 0px; text-decoration: none;"> <%= afastamento[:tp_afastamento] %></span> ' +
+                  '    </li> ' +
+                  '  </ul> ' +
+                  '</div> ',
+                  new Date(<%= afastamento[:dta_inicio].year %>, <%= afastamento[:dta_inicio].month - 1 %>, <%= afastamento[:dta_inicio].day %>),
+                  new Date(<%= afastamento[:dta_fim].year %>, <%= afastamento[:dta_fim].month - 1 %>, <%= afastamento[:dta_fim].day %>)
+              ],
+              <% end %>
+          ]);
+
+          var options = {
+              height: 500,
+              timeline: {colorByRowLabel: true},
+              tooltip: {isHtml: true},
+              focusTarget: 'category',
+              legend: 'none'
+          };
+          chart.draw(dataTable, options);
+      }
+
+      <% end %>
+  </script>
+<% end %>

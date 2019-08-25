@@ -1,0 +1,12 @@
+pt-BR:
+  breadcrumb:
+    dashboard: Dashboard
+    administracao:
+      base: Administração
+      escola:
+        base: Escola
+        plural: Escolas
+        cadastro: Cadastro
+      relatorios:
+        base: Relatórios
+        alunos: Alunos Ativos

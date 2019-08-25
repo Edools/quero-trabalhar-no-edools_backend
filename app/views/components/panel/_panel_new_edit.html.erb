@@ -1,0 +1,9 @@
+<% content_for :title, options[:title] if defined? options %>
+<div class="ibox float-e-margins">
+  <div class="ibox-title">
+    <h5><%= options[:title] if defined? options %></h5>
+  </div>
+  <div class="ibox-content">
+    <%= render 'form' %>
+  </div>
+</div>

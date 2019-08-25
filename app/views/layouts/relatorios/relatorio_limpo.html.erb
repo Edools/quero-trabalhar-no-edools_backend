@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;font-size: 11px;" xmlns="http://www.w3.org/1999/html">
+<table class="table table-condensed" width="100%">
+  <thead>
+  <tr>
+    <td class="text-center">
+      <img width="250" height="120" src="<%= logo_base_64 %>">
+    </td>
+  </tr>
+  <tr>
+    <th class="text-center">
+      <h2><%= NOME_DO_ORGAO %></h2>
+    </th>
+  </tr>
+  </thead>
+</table>
+
+<% if @nome_relatorio.present? %>
+  <div class="text-center">
+    <p>
+    <h2><%= @nome_relatorio %></h2>
+    <% if defined? @titulo_relatorio %>
+      <h3><%= @titulo_relatorio %></h3>
+    <% end %>
+    </p>
+  </div>
+  <br/>
+<% end %>
+
+<%= yield %>
+
+<% if defined? @autenticidade_doc and @autenticidade_doc %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <td style="width: 10%;">
+        <%= @autenticidade_doc.qrcode.as_svg(offset: 0, color: '000',
+                                             shape_rendering: 'crispEdges',
+                                             module_size: 2).html_safe %>
+      </td>
+      <td>
+        <div class="titulo">A autenticidade deste documento pode ser conferida no link abaixo:</div>
+        <div class="titulo">
+          <a href="<%= URL_AUTENTICADOR %>/"><%= URL_AUTENTICADOR %>/</a>
+        </div>
+        <div class="titulo">Código RCC: <strong><%= @autenticidade_doc.id.to_i.to_s %></strong></div>
+        <div class="titulo">Código verificador: <strong><%= @autenticidade_doc.cod_verificador %></strong></div>
+      </td>
+    </tr>
+  </table>
+<% end %>
+</body>
+</html>

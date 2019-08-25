@@ -1,0 +1,15 @@
+<label class="control-label"><%= options[:label] if defined? options%></label>
+<div class="input-group date">
+  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+  <%= form.text_field field,
+                      options.merge(
+                          value: form.object[field].to_s_br,
+                          disable_plugin: true,
+                          class: "form-control date-picker #{options[:class] if defined? options}",
+                          onchange: "#{options[:onchange] if defined? options}",
+                          data: {behaviour: 'datepicker',
+                                 mask: '99/99/9999',
+                                 picker: 'date date-picker'}) do %>
+
+  <% end %>
+</div>

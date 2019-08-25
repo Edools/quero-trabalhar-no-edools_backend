@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title><%= content_for?(:title) ? yield(:title) + " - " + NOME_EMPRESA : NOME_EMPRESA %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) + " - " + NOME_EMPRESA : NOME_EMPRESA %>">
+  <meta name="author" content="<%= NOME_EMPRESA %>">
+  <meta name="theme-color" content="#222222">
+  <!-- Meta Tags -->
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Main css styles -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <!-- Main javascript files -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="page-top">
+
+<div id="wrapper">
+  <%= render 'layouts/menu_lateral' %>
+
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <%= render "layouts/menu_topo" %>
+
+      <div class="container-fluid">
+        <%= render 'layouts/navegacao' %>
+        <%= render 'layouts/flash_alerts' %>
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render 'layouts/footer' %>
+  </div>
+</div>
+
+<%= yield :javascript %>
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary" href="login.html">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

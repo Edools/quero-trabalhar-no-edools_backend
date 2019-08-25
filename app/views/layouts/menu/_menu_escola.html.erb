@@ -1,0 +1,23 @@
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+<!-- Heading -->
+<div class="sidebar-heading">
+  <%= breadcrumb('administracao.base') %>
+</div>
+
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    <i class="fa fa-fw fa-graduation-cap"></i>
+    <span><%= breadcrumb('administracao.escola.base') %></span>
+    <span class="fa arrow"></span>
+  </a>
+  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <%= link_to tb_escolas_path, class: 'collapse-item' do %>
+        <%= breadcrumb('administracao.escola.cadastro') %>
+      <% end %>
+    </div>
+  </div>
+</li>
