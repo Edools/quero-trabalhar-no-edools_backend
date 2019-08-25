@@ -9,16 +9,16 @@ development:
   <<: *default
   username: gpweb
   host:     127.0.0.1
-  password: '5iedo5noTCDFgpweb'
+  password: '123123'
 
 test:
   <<: *default
   username: gpweb
   host:     127.0.0.1
-  password: '5iedo5noTCDFgpweb'
+  password: '123123'
 
 production:
   <<: *default
   username: gpweb
   host:     192.168.1.8
-  password: <%= ENV['GPWEB_PROD_PASSWORD']  %>
+  password: '123123'
