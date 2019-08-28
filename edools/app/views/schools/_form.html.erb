@@ -1,0 +1,28 @@
+<%= form_with model: @school, class: "ls-form row" do |f| %>
+  <fieldset>
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Name</b>
+      <%= f.text_field :name, placeholder: 'School Name', required: true %>
+    </label>
+
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Owner E-mail</b>
+      <%= f.text_field :owner_email, placeholder: 'school@email.com'%>
+    </label>
+
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Pitch</b>
+      <%= f.text_field :pitch, placeholder: 'School Pitch' %>
+    </label>
+
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Subdomain</b>
+      <%= f.text_field :subdomain, placeholder: 'school.edools.com', required: true %>
+    </label>
+  </fieldset>
+
+  <div class="ls-actions-btn">
+    <%= f.submit btn_text, class: 'class="ls-btn' %>  
+    <a href="<%= schools_path %>" class="ls-btn-danger">Cancel</a>
+  </div>
+<% end %>

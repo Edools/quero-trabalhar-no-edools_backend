@@ -1,0 +1,37 @@
+<h1 class="ls-title-intro ls-ico-home">Courses</h1>
+
+<a href="<%= new_course_path %>" class="ls-btn-primary">Create</a>
+
+<table class="ls-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Content</th>
+      <th>Duration</th>
+      <th>Active Students</th>
+      <th>Price</th>
+      <th>School</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.title %></td>
+        <td><%= course.description %></td>
+        <td><%= course.content %></td>
+        <td><%= course.duration %></td>
+        <td><%= course.active_students %></td>
+        <td><%= course.price %></td>
+        <td><%= link_to course.school.name, school_path(course.school) %></td>
+        <td><%= course.created_at.to_date %></td>
+        <td>
+          <%= link_to 'Edit', edit_course_path(course), class: 'ls-btn-primary ls-btn-xs' %>
+          <%= link_to 'Delete', course_path(course), method: :delete, class: 'ls-btn-primary-danger ls-btn-xs', data: { confirm: 'Are you sure?' }  %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

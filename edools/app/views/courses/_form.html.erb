@@ -1,0 +1,46 @@
+<%= form_with model: @course, class: "ls-form row" do |f| %>
+  <fieldset>
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Title</b>
+      <%= f.text_field :title, placeholder: 'Course Title', required: true %>
+    </label>
+
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Description</b>
+      <%= f.text_field :description, placeholder: 'Description', required: true %>
+    </label>
+
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Content</b>
+      <%= f.text_field :content, placeholder: 'Content', required: true %>
+    </label>
+
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Duration</b>
+      <%= f.number_field :duration, placeholder: 'In Hours', required: true %>
+    </label>
+
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Active Students</b>
+      <%= f.number_field :active_students, placeholder: '123', required: true %>
+    </label>
+
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Price</b>
+      <%= f.text_field :active_students, placeholder: '$ 123,45', required: true %>
+    </label>
+
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">School</b>
+      <div class="ls-custom-select">
+        <%= f.collection_select(:school_id, School.all, :id, :name) %>
+      </div>
+    </label>
+
+  </fieldset>
+
+  <div class="ls-actions-btn">
+    <%= f.submit btn_text, class: 'class="ls-btn' %>  
+    <a href="<%= schools_path %>" class="ls-btn-danger">Cancel</a>
+  </div>
+<% end %>

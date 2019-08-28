@@ -1,0 +1,29 @@
+<h1 class="ls-title-intro ls-ico-home"><%= @school.name %></h1>
+
+<a href="<%= schools_path %>" class="ls-btn-dark">< Previous</a>
+
+<table class="ls-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Owner Email</th>
+      <th>Pitch</th>
+      <th>Subdomain</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @school.name %></td>
+      <td><%= @school.owner_email %></td>
+      <td><%= @school.pitch %></td>
+      <td><%= @school.subdomain %></td>
+      <td><%= @school.created_at.to_date %></td>
+      <td>
+        <%= link_to 'Edit', edit_school_path(@school), class: 'ls-btn-primary ls-btn-xs' %>
+        <%= link_to 'Delete', school_path(@school), method: :delete, class: 'ls-btn-primary-danger ls-btn-xs', data: { confirm: 'Are you sure?' }  %>
+      </td>
+    </tr>
+  </tbody>
+</table>
