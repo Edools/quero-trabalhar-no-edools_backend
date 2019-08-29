@@ -3,6 +3,8 @@ class SchoolsController < ApplicationController
 
   def index
     @schools = School.order(created_at: :desc).all
+
+    @schools = School.search params[:keywords], fields: [:name] if params[:keywords]
   end
 
   def new

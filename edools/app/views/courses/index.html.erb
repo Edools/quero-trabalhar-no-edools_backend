@@ -1,6 +1,45 @@
 <h1 class="ls-title-intro ls-ico-home">Courses</h1>
 
-<a href="<%= new_course_path %>" class="ls-btn-primary">Create</a>
+<div class="row">
+
+  <div class="ls-box-filter">
+    <div class="col-md-1">
+      <a href="<%= new_course_path %>" class="ls-btn-primary">Create</a>
+    </div>
+
+    <form role="form" action="<%= courses_path %>" class="ls-form ls-form-inline ls-float-left">
+      <label class="ls-label col-md-4 col-sm-4" role="search">
+        <input type="text" name="keywords" placeholder="Search Courses.." required="" class="ls-field">
+      </label>
+
+      <div class="ls-actions-btn">
+        <input type="submit" value="Search" class="ls-btn" title="Search">
+      </div>
+
+      <div class="ls-actions-btn">
+        <a href="<%= courses_path %>" class="ls-btn-primary-grey">Show All</a>
+      </div>
+    </form>
+
+    <form action="<%= courses_path %>" class="ls-form ls-form-inline ls-float-right">
+      <label class="ls-label">
+        <div class="ls-custom-select">
+          <select name="school_id" class="ls-select">
+            <option value="">All Schools</option>
+            <% School.all.each do |s| %>
+              <option value="<%= s.id %>"><%= s.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </label>
+
+      <div class="ls-actions-btn">
+        <input type="submit" value="Filter" class="ls-btn" title="Filter">
+      </div>
+    </form>
+  </div>
+   
+</div>
 
 <table class="ls-table">
   <thead>

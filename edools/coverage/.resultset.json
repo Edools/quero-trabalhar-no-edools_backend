@@ -176,6 +176,7 @@
         1,
         null,
         1,
+        1,
         null
       ],
       "/Users/sapienza/Documents/projects/labs/quero-trabalhar-no-edools_backend/edools/app/models/application_record.rb": [
@@ -196,6 +197,7 @@
         1,
         null,
         1,
+        1,
         null
       ],
       "/Users/sapienza/Documents/projects/labs/quero-trabalhar-no-edools_backend/edools/app/controllers/courses_controller.rb": [
@@ -203,6 +205,9 @@
         1,
         null,
         1,
+        2,
+        null,
+        2,
         2,
         null,
         null,
@@ -265,6 +270,9 @@
       "/Users/sapienza/Documents/projects/labs/quero-trabalhar-no-edools_backend/edools/app/controllers/home_controller.rb": [
         1,
         1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/sapienza/Documents/projects/labs/quero-trabalhar-no-edools_backend/edools/app/controllers/schools_controller.rb": [
@@ -272,6 +280,8 @@
         1,
         null,
         1,
+        2,
+        null,
         2,
         null,
         null,
@@ -324,6 +334,6 @@
         null
       ]
     },
-    "timestamp": 1566873473
+    "timestamp": 1567041021
   }
 }

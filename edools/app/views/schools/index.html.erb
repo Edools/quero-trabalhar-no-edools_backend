@@ -1,6 +1,26 @@
 <h1 class="ls-title-intro ls-ico-home">Schools</h1>
 
-<a href="<%= new_school_path %>" class="ls-btn-primary">Create</a>
+<div class="row">
+  <div class="ls-box-filter">
+    <form role="form" action="<%= schools_path %>" class="ls-form ls-form-inline">
+      <div class="col-md-1">
+        <a href="<%= new_school_path %>" class="ls-btn-primary">Create</a>
+      </div>
+
+      <label class="ls-label col-md-3 col-sm-4">
+        <input type="text" name="keywords" placeholder="Search Courses..">
+      </label>
+
+      <div class="ls-actions-btn">
+        <button type="submit" class="ls-btn">Search</button>
+      </div>
+
+      <div class="ls-actions-btn">
+        <a href="<%= schools_path %>" class="ls-btn-primary-grey">Show All</a>
+      </div>
+    </form>
+  </div>
+</div>
 
 <table class="ls-table">
   <thead>

@@ -3,6 +3,9 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course.joins(:school).order(created_at: :desc).all
+
+    @courses = Course.search params[:keywords], fields: [:title] if params[:keywords]
+    @courses = Course.where(school_id: params[:school_id]) if params[:school_id]
   end
 
   def new
