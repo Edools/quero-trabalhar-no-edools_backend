@@ -25,7 +25,7 @@
       <label class="ls-label">
         <div class="ls-custom-select">
           <select name="school_id" class="ls-select">
-            <option value="">All Schools</option>
+            <option value="" id='all_schools'>All Schools</option>
             <% School.all.each do |s| %>
               <option value="<%= s.id %>"><%= s.name %></option>
             <% end %>
@@ -74,3 +74,6 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @courses %> 
+<%= page_entries_info @courses %>

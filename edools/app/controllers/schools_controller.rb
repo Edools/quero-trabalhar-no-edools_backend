@@ -2,7 +2,7 @@ class SchoolsController < ApplicationController
   before_action :set_school, only: %i[show edit update destroy]
 
   def index
-    @schools = School.order(created_at: :desc).all
+    @schools = School.order(created_at: :desc).page(params[:page]).per(10)
 
     @schools = School.search params[:keywords], fields: [:name] if params[:keywords]
   end

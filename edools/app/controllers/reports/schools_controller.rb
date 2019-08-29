@@ -3,7 +3,7 @@ module Reports
     def index
       generate_report if params[:id]
 
-      @reports = SchoolReport.joins(:school).order(created_at: :desc).all
+      @reports = SchoolReport.joins(:school).order(created_at: :desc).page(params[:page]).per(10)
     end
 
     private
