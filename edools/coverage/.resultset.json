@@ -309,6 +309,7 @@
         1,
         2,
         2,
+        2,
         null
       ],
       "/Users/sapienza/Documents/projects/labs/quero-trabalhar-no-edools_backend/edools/app/models/school.rb": [
@@ -318,6 +319,7 @@
         1,
         1,
         null,
+        1,
         1,
         null
       ],
@@ -455,6 +457,6 @@
         null
       ]
     },
-    "timestamp": 1567049690
+    "timestamp": 1567051211
   }
 }

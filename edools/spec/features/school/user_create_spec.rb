@@ -8,7 +8,7 @@ feature 'user create school' do
       fill_in 'Name', with: 'School Name'
       fill_in 'Owner E-mail', with: 'school@name.com'
       fill_in 'Pitch', with: 'School Pitch'
-      fill_in 'Subdomain', with: 'schoolname-edools.com'
+      fill_in 'Subdomain', with: Faker::Internet.domain_word
 
       click_on 'Create'
     end

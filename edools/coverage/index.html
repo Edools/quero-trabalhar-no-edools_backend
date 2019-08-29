@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-29T00:34:50-03:00">2019-08-29T00:34:50-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-29T01:00:11-03:00">2019-08-29T01:00:11-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.09%</span></span>
+    (<span class="covered_percent"><span class="green">99.1%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>21</b> files in total.
-    <b>219</b> relevant lines. 
-    <span class="green"><b>217</b> lines covered</span> and
+    <b>221</b> relevant lines. 
+    <span class="green"><b>219</b> lines covered</span> and
     <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -123,9 +123,9 @@
       <tr>
         <td class="strong"><a href="#47eaa6f86fd381e970ef2c8eb70d2d2a806fa1dc" class="src_link" title="app/models/school.rb">app/models/school.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
-        <td>5</td>
-        <td>5</td>
+        <td>9</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -253,11 +253,11 @@
       <tr>
         <td class="strong"><a href="#32cf7c26451c3da55092ea8c3243ee726ab9f050" class="src_link" title="spec/models/school_spec.rb">spec/models/school_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
-        <td>4</td>
-        <td>4</td>
+        <td>7</td>
+        <td>5</td>
+        <td>5</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>1.6</td>
       </tr>
       
     </tbody>
@@ -1470,8 +1470,8 @@
     <h3>app/models/school.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1521,7 +1521,13 @@
           <code class="ruby">  validates :name, :subdomain, presence: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :subdomain, uniqueness: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
@@ -2094,7 +2100,7 @@
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">      fill_in &#39;Subdomain&#39;, with: &#39;schoolname-edools.com&#39;</code>
+          <code class="ruby">      fill_in &#39;Subdomain&#39;, with: Faker::Internet.domain_word</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -3091,8 +3097,8 @@
     <h3>spec/models/school_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3130,7 +3136,13 @@
           <code class="ruby">  it { is_expected.to validate_presence_of(:name) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  it { is_expected.to validate_uniqueness_of(:subdomain) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>

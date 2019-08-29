@@ -5,4 +5,5 @@ class School < ApplicationRecord
   has_many :school_reports
 
   validates :name, :subdomain, presence: true
+  validates :subdomain, uniqueness: true
 end
