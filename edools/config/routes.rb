@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   resources :schools
   resources :courses
+
+  scope module: 'reports' do
+    get 'reports/schools', to: 'schools#index'
+  end
 end

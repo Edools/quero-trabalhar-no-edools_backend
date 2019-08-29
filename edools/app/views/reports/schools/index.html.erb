@@ -1,0 +1,44 @@
+<h1 class="ls-title-intro ls-ico-home">Reports:: Schools</h1>
+
+<div class="row">
+  <div class="ls-box-filter">
+    <form role="form" action="<%= reports_schools_path %>" class="ls-form ls-form-inline">
+      <label class="ls-label">
+        <div class="ls-custom-select">
+          <select name="id" class="ls-select">
+            <option value="">Select School</option>
+            <% School.all.each do |s| %>
+              <option value="<%= s.id %>"><%= s.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </label>
+
+      <div class="ls-actions-btn">
+        <button type="submit" class="ls-btn-primary">Generate Report</button>
+      </div>
+    </form>
+      
+  </div>
+</div>
+
+<table class="ls-table">
+  <thead>
+    <tr>
+      <th>School</th>
+      <th>Month Students</th>
+      <th>All Students</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.school.name %></td>
+        <td><%= report.month_active_students %></td>
+        <td><%= report.accumulated_active_students %></td>
+        <td><%= report.created_at.to_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
