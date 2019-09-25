@@ -1,0 +1,14 @@
+.card.green-sidenav
+	.sidenav-title.center
+		h5 SCHOOLSPARK
+	.sidenav-divider.divider
+	.sidenav-menu
+		ul
+			li
+				= link_to root_path(), class: active_option?(['dashboards']) do
+					i.fas.fa-chart-bar
+					.sidenav-option Dashboard
+			li
+				= link_to schools_path(), class: active_option?(['schools']) do
+					i.fas.fa-chart-bar
+					.sidenav-option Escolas

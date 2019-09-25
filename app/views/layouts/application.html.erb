@@ -7,9 +7,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar'%>
+    <div class="main-container">
+      <aside class="aside-sidenav">
+        <%= render '/layouts/sidenav'%>
+      </aside>
+      <div class="main">
+        <%= yield %>
+      </div>
+    </div>
+    <div id="main-modal" class="modal"></div>
   </body>
 </html>
