@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      course:
+        one:    "Curso"
+        other:  "Cursos"
+    attributes:
+      course:
+        title: 'Nome'
+        duration: 'Duração'
+        duration_unit: 'Periodo de duração'
+        price: 'Preço'
