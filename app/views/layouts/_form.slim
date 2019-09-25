@@ -1,0 +1,22 @@
+= form_for(school, url: form_url, method: form_method, remote: true) do |f|
+  .row style="margin-bottom:0px;"
+    .field.col.s12
+      = form_group_for f, :name, label:true do
+        = f.text_field :name, autofocus: true, placeholder: 'Nome', class:"form-field"
+  .row style="margin-bottom:0px;"
+    .field.col.s12
+      = form_group_for f, :owner_email, label:true do
+        = f.text_field :name, placeholder: 'Email do proprietário', class:"form-field"
+  .row style="margin-bottom:0px;"
+    .field.col.s12
+      = form_group_for f, :subdomain, label:true do
+        = f.text_field :subdomain, placeholder: 'Subdomínio', class:"form-field"
+  .row style="margin-bottom:0px;"
+    .field.col.s12
+      = form_group_for f, :creation_date, label:true do
+        = f.text_field :creation_date, placeholder: 'Data de criação', class:"form-field"
+  .row style="margin-top:20px; margin-bottom:0px;"
+    .col.s6.actions
+        = link_to 'Voltar', '#', class:"modal-close btn btn-admin orange-btn"
+    .col.s6.actions.right-align
+      = f.submit "Salvar", class:"btn btn-admin green-btn", style:"height:36px;"

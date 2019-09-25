@@ -1,0 +1,2 @@
+$('#main-modal').html("<%= escape_javascript(render 'form',  course: @course, form_url: course_path(@course), form_method: :put)%>");
+$('#main-modal').modal('open');

@@ -1,0 +1,29 @@
+= form_for(course, url: form_url, method: form_method, remote: true) do |f|
+  .row style="margin-bottom:0px;"
+    .field.col.s12
+      = form_group_for f, :title, label:true do
+        = f.text_field :title, autofocus: true, placeholder: 'Nome', class:"form-field"
+  .row style="margin-bottom:0px;"
+    .field.col.s12
+      = form_group_for f, :description, label:true do
+        = f.text_field :description, placeholder: 'Email do proprietário', class:"form-field"
+  .row style="margin-bottom:0px;"
+    .field.col.s6
+      = form_group_for f, :duration, label:true do
+        = f.text_field :duration, placeholder: 'Subdomínio', class:"form-field"
+    .field.col.s6
+      = form_group_for f, :duration_unit, label:true do
+        = f.text_field :duration_unit, placeholder: 'Subdomínio', class:"form-field"
+  .row style="margin-bottom:0px;"
+    .field.col.s12
+      = form_group_for f, :price, label:true do
+        = f.text_field :price, placeholder: 'Data de criação', class:"form-field"
+  .row style="margin-bottom:0px;"
+    .field.col.s12
+      = form_group_for f, :creation_date, label:true do
+        = f.text_field :creation_date, placeholder: 'Data de criação', class:"form-field"
+  .row style="margin-top:20px; margin-bottom:0px;"
+    .col.s6.actions
+        = link_to 'Voltar', '#', class:"modal-close btn btn-admin orange-btn"
+    .col.s6.actions.right-align
+      = f.submit "Salvar", class:"btn btn-admin green-btn", style:"height:36px;"
