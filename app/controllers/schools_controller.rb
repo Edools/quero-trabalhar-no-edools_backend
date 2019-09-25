@@ -1,7 +1,9 @@
 class SchoolsController < ApplicationController
   before_action :set_school, except: [:index, :new, :create]
 
-  def index; end
+  def index
+    @schools = School.all.page(params[:page])
+  end
 
   def show; end
 
