@@ -10,6 +10,33 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require stylesheets/materialize.min.css
  *= require_tree .
  *= require_self
  */
+
+@import 'variables';
+
+html, body{
+  height: 100%;
+}
+body{
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  background-color: $background-color;
+}
+.main-container{
+  min-height:90%;
+  display: flex;
+  flex-direction:row;
+  flex-wrap:  nowrap;
+}
+.main{
+  padding:0px 20px;
+  width:100%;
+}
+.main-divider{
+  background-color: $green-color;
+  margin: 10px  0px  30px 0px;
+}

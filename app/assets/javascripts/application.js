@@ -12,5 +12,6 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require js/materialize.min.js
 //= require turbolinks
 //= require_tree .

@@ -1,0 +1,17 @@
+@import 'variables';
+.blue-card{
+  background-color: $secondary-color;
+  min-width: 300px;
+  padding:20px;
+  border-radius: 5px;
+}
+
+.title{
+  p{
+    font-size:1.2rem;
+    margin-left:10px;
+    margin-top:5px;
+    margin-bottom:5px;
+    color: white;
+  }
+}

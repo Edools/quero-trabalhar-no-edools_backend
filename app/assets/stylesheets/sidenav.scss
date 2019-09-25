@@ -1,0 +1,46 @@
+@import 'variables';
+.green-sidenav{
+  background-image: linear-gradient($green-color, #53887C);
+  //background-color: $primary-color;
+  width:250px;
+  min-height:90%;
+  border-radius: 5px;
+  color:white;
+}
+.sidenav-title{
+  padding-top:20px;
+}
+.sidenav-divider{
+  margin:10px 40px;
+}
+.sidenav-menu{
+  padding-left:40px;
+  font-family: 'Titillium Web', sans-serif;
+  font-size:1.2rem;
+  ul {
+    li {
+      padding-top:20px;
+      a {
+        font-size: 1.3rem;
+        text-decoration:none;
+        color:white;
+        -webkit-transition: all 0.5s; /* Safari */
+        transition: all 0.5s;
+        .sidenav-option{
+          display: inline-block;
+          padding-left:30px;
+        }
+      }
+      a:hover, a:focus{
+        color:$secondary-color;
+        font-size:1.5rem;
+        -webkit-transition: all 0.5s; /* Safari */
+        transition: all 0.5s;
+      }
+      .sidenav_active{
+        color:$secondary-color;
+        font-size:1.4rem;
+      }
+    }
+  }
+}
