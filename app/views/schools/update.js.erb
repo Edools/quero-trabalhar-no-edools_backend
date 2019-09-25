@@ -1,0 +1,8 @@
+<% if @school.errors.any? %>
+  $('#main-modal').html("<%= escape_javascript(render 'form',  school: @school, form_url: school_path(@school), form_method: :put)%>");
+<% else %>
+  $('#school_table').html("<%= escape_javascript(render 'index', schools: @schools) %>")
+  $('#main-modal').modal('close');
+<% end %>
+
+

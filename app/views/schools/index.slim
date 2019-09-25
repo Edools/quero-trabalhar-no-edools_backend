@@ -1,0 +1,9 @@
+.row
+  .col.s12
+    .card.blue-card
+      .title
+        p
+          b Escolas
+      .divider.main-divider
+      = link_to 'Adicionar Escola', new_school_path, remote: true
+      = render 'index'
