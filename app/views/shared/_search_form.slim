@@ -1,0 +1,5 @@
+= form_tag form_path, method: :get, remote: true, html:{class:'row'}  do
+  .col.s10
+    = text_field_tag 'search', '', class:"form-field", placeholder: placeholder
+  .col.s2
+    = submit_tag "Buscar", class:'btn'

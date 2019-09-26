@@ -1,5 +1,5 @@
 class SchoolsController < ApplicationController
-  before_action :set_school, except: [:index, :new, :create]
+  before_action :set_school, except: [:index, :new, :create, :search]
 
   def index
     @schools = School.all.page(params[:page])
@@ -7,29 +7,37 @@ class SchoolsController < ApplicationController
 
   def show; end
 
+  def search
+    @schools = School.by_name(params[:search]).page(params[:page])
+  end
+
   def new
     @school = School.new
   end
 
   def create
     @school = School.new(school_params)
-    @school.save
+    set_schools if @school.save
   end
 
   def edit; end
 
   def update
-    @params.update(school_params)
+    set_schools if @school.update(school_params)
   end
 
   def destroy
-    @school.destroy
+    set_schools if @school.destroy
   end
 
   private
 
   def set_school
     @school = School.find(params[:id])
+  end
+
+  def set_schools
+    @schools = School.all.page(params[:page])
   end
 
   def school_params
