@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
     models:
-      school:
+      schools:
         one:    "Escola"
         other:  "Escolas"
     attributes:

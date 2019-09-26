@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
     models:
-      course:
+      courses:
         one:    "Curso"
         other:  "Cursos"
     attributes:
