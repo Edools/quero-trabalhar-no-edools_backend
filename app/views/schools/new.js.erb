@@ -1,4 +1,5 @@
 $( document ).ready( function() {
-  $('#main-modal').html("<%= escape_javascript(render 'form',  school: @school, form_url: schools_path(), form_method: :post)%>");
+  $('#main-modal').html("<%= escape_javascript(render 'new')%>");
   $('#main-modal').modal('open');
+  $('.datepicker').datepicker();
 })

@@ -1,2 +1,3 @@
-$('#main-modal').html("<%= escape_javascript(render 'form',  school: @school, form_url: school_path(@school), form_method: :put)%>");
+$('#main-modal').html("<%= escape_javascript(render 'edit')%>");
 $('#main-modal').modal('open');
+$('.datepicker').datepicker();

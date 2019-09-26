@@ -5,5 +5,10 @@
         p
           b Escolas
       .divider.main-divider
-      = link_to 'Adicionar Escola', new_school_path, remote: true
-      = render 'index'
+      .container
+        .right-align
+          = link_to 'Adicionar Escola', new_school_path, remote: true, class:'btn'
+      .container style="margin-top:30px"
+        = render 'shared/search_form', form_path: search_schools_path, placeholder: 'Nome'
+      #school_table style="margin-top:100px"
+        = render 'index'

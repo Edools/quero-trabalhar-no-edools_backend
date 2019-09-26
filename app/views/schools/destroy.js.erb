@@ -1,0 +1,9 @@
+<%if @school.errors.present? %>
+  Swal.fire({
+    type: 'error',
+    title: 'Oops...',
+    text: "<%= @school.errors.full_messages.first%>"
+  })
+<%else%>
+  $('#school_table').html("<%= escape_javascript(render 'index', schools: @schools) %>")
+<%end%>
