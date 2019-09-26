@@ -1,2 +1,4 @@
-$('#main-modal').html("<%= escape_javascript(render 'form',  course: @course, form_url: courses_path(), form_method: :post)%>");
+<% byebug%>
+
+$('#main-modal').html("<%= escape_javascript(render 'new')%>");
 $('#main-modal').modal('open');

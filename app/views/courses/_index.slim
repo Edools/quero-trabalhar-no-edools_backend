@@ -1,17 +1,29 @@
-table
-  thead
-    tr
-      th Nome
-      th Email do proprietário
-      th Subdominio
-      th Data de criação
-      th
-  tbody
-    - @schools.each do |school|
-      tr
-        td = school.name
-        td = school.owner_email
-        td = school.subdomain
-        td = school.creation_date
-        td
-    = paginate @schools
+- if @courses
+  .container
+    table
+      thead
+        tr
+          th Título
+          th Duração
+          th Preço
+          th Alunos ativos
+          th Data de criação
+          th Ações
+      tbody
+        - @courses.each do |course|
+          tr
+            td = course.title
+            td = course.owner_email
+            td = course.price
+            td = course.active_students
+            td = course.creation_date
+            td
+              = link_to course_path(course.id) do
+                i.fas.fa-search
+              = link_to edit_course_path(course.id), remote: true do
+                i.fas.fa-edit
+              = link_to course_path(course.id), method: :delete, remote: true do
+                i.far.fa-trash-alt
+  = paginate @courses
+- else
+  h4 Nenhum registro encontrado

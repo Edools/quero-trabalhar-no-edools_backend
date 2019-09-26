@@ -6,10 +6,11 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
-    resources :courses do
-      collection do
-        get :search
-      end
+  end
+
+  resources :courses do
+    collection do
+      get :search
     end
   end
 end

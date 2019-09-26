@@ -10,5 +10,9 @@
 					.sidenav-option Dashboard
 			li
 				= link_to schools_path(), class: active_option?(['schools']) do
-					i.fas.fa-chart-bar
+					i.fas.fa-school
 					.sidenav-option Escolas
+			li
+				= link_to courses_path(), class: active_option?(['courses']) do
+					i.fas.fa-chalkboard-teacher
+					.sidenav-option Cursos
