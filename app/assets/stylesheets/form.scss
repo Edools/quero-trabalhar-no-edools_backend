@@ -1,0 +1,65 @@
+@import "variables.scss";
+
+.form-label{
+  font-size:1.2rem;
+  color:white;
+}
+
+input {
+  border-bottom: none !important;
+  box-shadow: none !important;
+  color: white;
+  padding: 0px 7px !important;
+  box-sizing: border-box !important;
+}
+
+.form-field, .form-field:hover, .form-field:focus{
+  border:1px solid $border-color !important;
+  border-radius:5px !important;
+  background-color: $form-field-color !important;
+}
+
+.form-actions{
+  width:100%;
+  margin: 0 auto;
+}
+
+.form-links{
+  margin-top:10px;
+  a{
+    color: $link-color;
+    font-weight: bold;
+  }
+}
+
+.field_with_errors input{
+  border: 1px solid $error !important;
+}
+
+.form-group{
+  p.error {
+    color:$error;
+    font-size:0.7rem;
+    margin-top:-8px;
+  }
+}
+
+.select-dropdown{
+  color: $input-color;
+  padding: 0px 7px !important;
+  box-sizing: border-box !important;
+  border:1px solid $border-color !important;
+  border-radius:5px !important;
+}
+
+.field-select{
+  padding-bottom: 10px;
+}
+
+.picker__holder{
+  overflow: visible;
+  height:auto;
+  width:auto;
+  max-width:700px;
+  background: transparent !important ;
+}
