@@ -13,7 +13,7 @@
         = f.text_field :duration, class:"form-field"
     .field.col.s6
       = form_group_for f, :duration_unit do
-        = f.text_field :duration_unit, class:"form-field"
+        = f.select :duration_unit, Course.duration_units.map { |k, v| [ I18n.t("activerecord.attributes.course.duration_unit.#{k}"), k]}, class:"form-field select2"
   .row style="margin-bottom:0px;"
     .field.col.s6
       = form_group_for f, :price do

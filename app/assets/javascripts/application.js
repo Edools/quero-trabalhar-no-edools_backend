@@ -19,4 +19,5 @@
 
 $(document).ready(function(){
   $('.modal').modal();
+  $('.select2').select2();
 });

@@ -6,4 +6,5 @@ class Course < ApplicationRecord
 
   enum duration_unit: [ :hours, :days, :months ]
 
+  scope :by_name, ->(name) { where('name like ?', "%#{name}%") }
 end

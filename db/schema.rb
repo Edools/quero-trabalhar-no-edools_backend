@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_09_21_050023) do
     t.string "description"
     t.integer "duration"
     t.integer "duration_unit"
+    t.integer "active_students"
     t.date "creation_date"
     t.string "price"
     t.datetime "created_at", null: false

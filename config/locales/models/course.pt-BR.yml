@@ -8,5 +8,12 @@ pt-BR:
       course:
         title: 'Nome'
         duration: 'Duração'
-        duration_unit: 'Periodo de duração'
+        duration_unit:
+          one: Tempo de Duração
+          hours: 'Horas'
+          days: 'Dias'
+          months: 'Meses'
+        creation_date: 'Data de criação'
+        active_students: 'Alunos ativos'
         price: 'Preço'
+
