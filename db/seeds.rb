@@ -25,12 +25,12 @@
         duration: 1,
         duration_unit: 1,
         creation_date: 1.year.ago,
-        price: 123,
+        price: 123
       )
 
       5.times do
         Student.create(
-          course_id: course,
+          course_id: course.id,
           name: Faker::Artist.name,
           active: rand(2) == 1
         )
