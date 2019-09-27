@@ -1,0 +1,7 @@
+<% if @student.errors.any? %>
+  $('#main-modal').html("<%= escape_javascript(render 'new')%>");
+  $('.datepicker').datepicker();
+<% else %>
+  $('#students').html("<%= escape_javascript(render 'index', students: @course.students) %>")
+  $('#main-modal').modal('close');
+<% end %>

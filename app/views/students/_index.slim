@@ -1,0 +1,21 @@
+- if students
+  .container
+    table
+      thead
+        tr
+          th Nome
+          th Ativo?
+          th Ações
+      tbody
+        - students.each do |student|
+          tr
+            td = student.name
+            td = student.active? ? 'Sim' : 'Não'
+            td
+              - if student.active
+                = link_to 'Desativar' ,deactivate_course_student_path(@course, student), remote: true
+              - else
+                = link_to 'Ativar' ,activate_course_student_path(@course, student), remote: true
+- else
+  .title
+    h5.center-align  Nenhum aluno cadastrado

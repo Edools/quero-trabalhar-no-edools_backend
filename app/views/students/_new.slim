@@ -1,0 +1,5 @@
+.title
+  p
+    b Criar Aluno
+.divider.main-divider
+= render 'form',  student: @student, course: @course, form_url: course_students_path(@course, @student), form_method: :post

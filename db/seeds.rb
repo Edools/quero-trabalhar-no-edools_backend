@@ -6,16 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 50.times do
-  school = School.create(
+  school = School.new(
     name: Faker::Educator.secondary_school,
     pitch: Faker::Lorem.paragraph,
     owner_email: Faker::Internet.email,
     subdomain: Faker::Internet.slug,
     creation_date: 2.years.ago
   )
-  if school.persisted?
+
+  # sometimes school can be invalid
+
+  if school.save
     5.times do
-      Course.create(
+      course = Course.create(
         school_id: school.id,
         title: Faker::Educator.course_name,
         description: Faker::Lorem.paragraph,
@@ -25,6 +28,14 @@
         price: 123,
         active_students: 10
       )
+
+      5.times do
+        Student.create(
+          course_id: course,
+          name: Faker::Artist.name,
+          active: rand(2) == 1
+        )
+      end
     end
   end
 end

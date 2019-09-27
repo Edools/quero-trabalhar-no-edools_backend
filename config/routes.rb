@@ -13,5 +13,11 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+    resources :students, only: [:new, :create] do
+      member do
+        get :activate
+        get :deactivate
+      end
+    end
   end
 end

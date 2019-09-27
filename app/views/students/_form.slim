@@ -1,0 +1,14 @@
+= form_for(student, url: form_url, method: form_method, remote: true) do |f|
+  = f.hidden_field :course_id, value: course.id
+  .row style="margin-bottom:0px;"
+    .field.col.s6
+      = form_group_for f, :name do
+        = f.text_field :name, autofocus: true, class:"form-field"
+    .field.col.s6
+      = form_group_for f, :active do
+        = f.select :active, [['Ativo', 1], ['Inativo', 0]], class:"form-field select2"
+  .row style="margin-top:20px; margin-bottom:0px;"
+    .col.s6.actions
+        = link_to 'Voltar', '#', class:"modal-close btn btn-admin orange-btn"
+    .col.s6.actions.right-align
+      = f.submit "Salvar", class:"btn btn-admin green-btn", style:"height:36px;"

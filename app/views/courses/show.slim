@@ -10,7 +10,7 @@
           = link_to 'Editar', edit_school_course_path(@course.school, @course), remote: true, class:'btn'
         .col.s6
           .right-align
-            = link_to 'Adicionar Aluno'
+            = link_to 'Adicionar Aluno', new_course_student_path( @course), remote: true, class:'btn'
       #school_table style="margin-top:10px"
         .row
           .col.s12.m4
@@ -19,3 +19,4 @@
                 = render 'show'
           .col.s12.m8
             #students
+              = render 'students/index', students: @course.students

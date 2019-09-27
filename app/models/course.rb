@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
 
   belongs_to :school
+  has_many :students
 
   validates_presence_of :school, :title, :duration, :duration_unit, :price
 
