@@ -10,12 +10,6 @@ class StudentsController < ApplicationController
     @student.save
   end
 
-  def edit; end
-
-  def update
-    @student.update(student_params)
-  end
-
   def activate
     @student.update_attribute(:active, true)
   end

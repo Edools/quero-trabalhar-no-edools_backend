@@ -11,7 +11,7 @@ RSpec.describe StudentsController, type: :controller do
         get :new,  params: {  course_id: course.id }, xhr: true, format: 'js'
       end
 
-      it 'returns status 204' do
+      it 'returns status 200' do
         expect(response.status).to eq(200)
       end
     end
@@ -37,12 +37,48 @@ RSpec.describe StudentsController, type: :controller do
     context 'Failure' do
       before :each do
         post :create,
-             params: {course_id: course.id, student: { name: '' }.merge(course_id: course.id) },
-             xhr: true, format: 'js'
+            params: {course_id: course.id, student: { name: '' }.merge(course_id: course.id) },
+            xhr: true, format: 'js'
       end
 
       it 'returns created object' do
         expect(assigns[:student].id).to be_nil
+      end
+    end
+  end
+
+  describe 'GET activate' do
+    context 'Success' do
+      before :each do
+        get :activate,
+              params: {course_id: course.id, id: student.id},
+              xhr: true, format: 'js'
+      end
+
+      it 'returns 200 status code' do
+        expect(response.status).to eq(200)
+      end
+
+      it 'returns created object' do
+        expect(assigns[:student].active).to be_truthy
+      end
+    end
+  end
+
+  describe 'GET deactivate' do
+    context 'Success' do
+      before :each do
+        get :deactivate,
+              params: {course_id: course.id, id: student.id},
+              xhr: true, format: 'js'
+      end
+
+      it 'returns 200 status code' do
+        expect(response.status).to eq(200)
+      end
+
+      it 'returns created object' do
+        expect(assigns[:student].active).to be_falsey
       end
     end
   end

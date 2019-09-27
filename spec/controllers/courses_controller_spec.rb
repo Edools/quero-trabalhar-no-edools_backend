@@ -4,6 +4,22 @@ RSpec.describe CoursesController, type: :controller do
   let!(:school) { create(:school) }
   let!(:course) { create(:course, school_id: school.id) }
 
+  describe 'GET #index' do
+    before(:each) do
+      get :index, xhr: true, format: 'js'
+    end
+
+    context 'Success' do
+      it 'returns school' do
+        expect(assigns[:courses].count).to eq(1)
+      end
+
+      it 'returns 200 status code' do
+        expect(response.status).to eq(200)
+      end
+    end
+  end
+
   describe 'GET #show' do
     before(:each) do
       get :show, params: { school_id: school.id, id: course.id },

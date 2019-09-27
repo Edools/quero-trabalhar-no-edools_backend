@@ -3,6 +3,22 @@ require 'rails_helper'
 RSpec.describe SchoolsController, type: :controller do
   let!(:school) { create(:school) }
 
+  describe 'GET #index' do
+    before(:each) do
+      get :index, xhr: true, format: 'js'
+    end
+
+    context 'Success' do
+      it 'returns school' do
+        expect(assigns[:schools].count).to eq(1)
+      end
+
+      it 'returns 200 status code' do
+        expect(response.status).to eq(200)
+      end
+    end
+  end
+
   describe 'GET #show' do
     before(:each) do
       get :show, params: { id: school.id }, xhr: true, format: 'js'
