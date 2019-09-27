@@ -11,7 +11,7 @@
             .col.s6
               = link_to 'Editar', edit_school_path(@school), remote: true, class:'btn'
             .col.s6
-              = link_to 'Estudantes Ativos', active_students_by_school_school_students_path(@school), class:'btn'
+              = link_to 'Estudantes Ativos', active_students_by_school_school_students_path(@school, format: :pdf), class:'btn'
         .col.s6
           .right-align
             = link_to 'Adicionar Curso', new_school_course_path(@school), remote: true, class:'btn'

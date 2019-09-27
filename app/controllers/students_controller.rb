@@ -19,7 +19,14 @@ class StudentsController < ApplicationController
   end
 
   def active_students_by_school
-    @students = Student.active_by_school_id(params[:school_id])
+    @school = School.find(params[:school_id])
+    @students = Student.active_by_school_id(@school.id)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "students_report"
+      end
+    end
   end
 
   private

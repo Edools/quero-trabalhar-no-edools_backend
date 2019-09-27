@@ -1,23 +1,23 @@
-.row
-  .col.s12
-    .card.blue-card
-      .title
-        p
-          b Alunos ativos por escola
-      .divider.main-divider
-      .container
-      - if @students
-        .container
-          table
-            thead
-              tr
-                th Curso
-                th Nome
-            tbody
-              - @students.each do |student|
-                tr
-                  td = student.course.title
-                  td = student.name
-      - else
-        .title
-          h5.center-align  Nenhum aluno encontrado
+h2 Alunos ativos por escola
+br
+h3
+  b Escola: #{@school.name}
+br
+h3
+  b Alunos ativos: #{@students.count}
+br
+  - if @students
+    .container
+      table
+        thead
+          tr
+            th Curso
+            th Nome
+        tbody
+          - @students.each do |student|
+            tr
+              td = student.course.title
+              td = student.name
+  - else
+    .title
+      h5.center-align  Nenhum aluno encontrado
