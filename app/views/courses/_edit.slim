@@ -2,4 +2,4 @@
   p
     b Editar Curso
 .divider.main-divider
-= render 'form',  course: @course, form_url: course_path(@course), form_method: :put
+= render 'form',  course: @course, school: @school, form_url: school_course_path(@school, @course), form_method: :put

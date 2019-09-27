@@ -3,14 +3,14 @@
     .card.blue-card
       .title
         p
-          b = @school.name
+          b = @course.title
       .divider.main-divider
       .row
         .col.s6
-          = link_to 'Editar', edit_school_path(@school), remote: true, class:'btn'
+          = link_to 'Editar', edit_school_course_path(@course.school, @course), remote: true, class:'btn'
         .col.s6
           .right-align
-            = link_to 'Adicionar Curso', new_school_course_path(@school), remote: true, class:'btn'
+            = link_to 'Adicionar Aluno'
       #school_table style="margin-top:10px"
         .row
           .col.s12.m4
@@ -18,5 +18,4 @@
               #show
                 = render 'show'
           .col.s12.m8
-            #courses
-              = render 'courses/shared/courses', courses: @school.courses
+            #students

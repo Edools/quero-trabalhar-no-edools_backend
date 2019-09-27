@@ -1,6 +1,7 @@
 <% if @course.errors.any? %>
   $('#main-modal').html("<%= escape_javascript(render 'new')%>");
+  $('.datepicker').datepicker();
 <% else %>
-  $('#school_table').html("<%= escape_javascript(render 'index', courses: @courses) %>")
+  $('#courses').html("<%= escape_javascript(render 'courses/shared/courses', courses: @school.courses) %>")
   $('#main-modal').modal('close');
 <% end %>

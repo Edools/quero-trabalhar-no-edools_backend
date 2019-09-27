@@ -2,7 +2,7 @@
   $('#main-modal').html("<%= escape_javascript(render 'edit')%>");
   $('.datepicker').datepicker();
 <% else %>
-  $('#school_table').html("<%= escape_javascript(render 'index', schools: @schools) %>")
+  $('#show').html("<%= escape_javascript(render 'show', schools: @schools) %>")
   $('#main-modal').modal('close');
 <% end %>
 

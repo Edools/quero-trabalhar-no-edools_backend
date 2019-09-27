@@ -1,0 +1,10 @@
+h5
+  | Escola:
+  = link_to  @course.school.name, school_path(@course.school)
+h5 Titulo: #{@course.title}
+h5 Descrição: #{@course.description}
+h5
+  |Duração:
+  =@course.duration.to_s + '/' + I18n.t("activerecord.attributes.course.duration_unit.#{@course.duration_unit}")
+h5 Data de criação: #{@course.creation_date}
+h5 Preço: #{@course.price}

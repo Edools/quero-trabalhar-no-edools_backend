@@ -1,4 +1,6 @@
 = form_for(course, url: form_url, method: form_method, remote: true) do |f|
+  = f.hidden_field :school_id, value: school.id
+
   .row style="margin-bottom:0px;"
     .field.col.s12
       = form_group_for f, :title do
@@ -20,7 +22,7 @@
         = f.text_field :price, class:"form-field"
     .field.col.s6
       = form_group_for f, :creation_date do
-        = f.text_field :creation_date, class:"form-field"
+        = f.text_field :creation_date, class:"form-field datepicker"
   .row style="margin-bottom:0px;"
     .field.col.s6
       = form_group_for f, :active_students do

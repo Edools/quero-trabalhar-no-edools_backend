@@ -3,7 +3,6 @@
     table
       thead
         tr
-          th Escola
           th Título
           th Duração
           th Preço
@@ -13,7 +12,6 @@
       tbody
         - courses.each do |course|
           tr
-            td = course.school.try(:name)
             td = course.title
             td = course.duration.to_s + '/' + I18n.t("activerecord.attributes.course.duration_unit.#{course.duration_unit}")
             td = course.price
