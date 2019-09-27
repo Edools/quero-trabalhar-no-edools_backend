@@ -26,7 +26,6 @@
         duration_unit: 1,
         creation_date: 1.year.ago,
         price: 123,
-        active_students: 10
       )
 
       5.times do

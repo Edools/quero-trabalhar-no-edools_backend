@@ -6,7 +6,6 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.string :description
       t.integer :duration
       t.integer :duration_unit
-      t.integer :active_students
       t.date :creation_date
       t.string :price
       t.timestamps

@@ -11,10 +11,14 @@ class Course < ApplicationRecord
   scope :by_school_name, ->(name) { joins(:school).where('schools.name LIKE ?', "%#{name}%") }
   before_destroy :can_be_destroyed?
 
+  def active_students
+    students.select { |student| student.active}
+  end
+
   private
 
   def can_be_destroyed?
-    if active_students.to_i.positive?
+    if active_students.present?
       errors.add(:base, 'Existem alunos ativos')
       throw :abort
     end

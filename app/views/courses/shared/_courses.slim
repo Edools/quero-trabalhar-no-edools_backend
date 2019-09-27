@@ -15,7 +15,7 @@
             td = course.title
             td = course.duration.to_s + '/' + I18n.t("activerecord.attributes.course.duration_unit.#{course.duration_unit}")
             td = course.price
-            td = course.active_students
+            td = course.active_students.count
             td = course.creation_date
             td
               = link_to course_path(course.id) do

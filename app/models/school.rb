@@ -12,14 +12,10 @@ class School < ApplicationRecord
 
   before_destroy :can_be_destroyed?
 
-  def active_students
-    courses.inject(0){|sum,course| sum + course.active_students.to_i }
-  end
-
   private
 
   def can_be_destroyed?
-    if active_students.positive?
+    if Students.acive_by_school_id(id).present?
       errors.add(:base, 'Existem alunos ativos')
       throw :abort
     end

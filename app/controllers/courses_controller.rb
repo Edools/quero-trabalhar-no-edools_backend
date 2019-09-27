@@ -2,11 +2,11 @@ class CoursesController < ApplicationController
   before_action :set_course, except: [:index, :new, :create, :search]
   before_action :set_school, only: [ :new, :create, :edit, :update]
   def index
-    @courses = Course.all.page(params[:page])
+    @courses = Course.includes(:school, :students).all.page(params[:page])
   end
 
   def search
-    @courses = Course.by_title(params[:search]).by_school_name(params[:name])
+    @courses = Course.includes(:school, :students).by_title(params[:search]).by_school_name(params[:name])
   end
 
   def show; end
@@ -33,7 +33,7 @@ class CoursesController < ApplicationController
   private
 
   def set_course
-    @course = Course.find(params[:id])
+    @course = Course.includes(:school, :students).find(params[:id])
   end
 
   def set_school
@@ -43,7 +43,7 @@ class CoursesController < ApplicationController
   def course_params
     params.require(:course).permit(
       :title, :school_id, :description, :duration,
-      :duration_unit, :creation_date, :price, :school_id, :active_students
+      :duration_unit, :creation_date, :price, :school_id
     )
   end
 end
