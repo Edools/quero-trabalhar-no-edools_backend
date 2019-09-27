@@ -6,12 +6,19 @@
   border-radius: 5px;
 }
 
+.green-card{
+  background-color: $green-color;
+  min-width: 300px;
+  padding:20px;
+  border-radius: 5px;
+}
+
 .title{
+  color: white;
   p{
     font-size:1.2rem;
     margin-left:10px;
     margin-top:5px;
     margin-bottom:5px;
-    color: white;
   }
 }

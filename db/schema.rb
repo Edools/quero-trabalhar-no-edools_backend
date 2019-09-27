@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_09_21_050023) do
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
-    t.string "school_id"
+    t.integer "school_id"
     t.string "description"
     t.integer "duration"
     t.integer "duration_unit"

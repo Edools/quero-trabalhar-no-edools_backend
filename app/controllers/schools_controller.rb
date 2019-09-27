@@ -33,7 +33,7 @@ class SchoolsController < ApplicationController
   private
 
   def set_school
-    @school = School.find(params[:id])
+    @school = School.includes(:courses).find(params[:id])
   end
 
   def set_schools

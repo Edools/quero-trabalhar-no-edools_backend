@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe School sController, type: :controller do
+RSpec.describe SchoolsController, type: :controller do
   let!(:school) { create(:school) }
 
   describe 'GET #show' do
@@ -10,7 +10,7 @@ RSpec.describe School sController, type: :controller do
 
     context 'Success' do
       it 'returns school' do
-        expect(assigns[:school].id).to eq(@school.id)
+        expect(assigns[:school].id).to eq(school.id)
       end
 
       it 'returns 200 status code' do
@@ -26,7 +26,7 @@ RSpec.describe School sController, type: :controller do
       end
 
       it 'returns status 204' do
-        expect(response.status).to eq(204)
+        expect(response.status).to eq(200)
       end
     end
   end
@@ -90,7 +90,7 @@ RSpec.describe School sController, type: :controller do
             params: {
               id: school.id, school: { name: 'Test' }
             }, xhr: true, format: 'js'
-        @school.reload
+        school.reload
       end
 
       it 'returns js' do
@@ -108,7 +108,7 @@ RSpec.describe School sController, type: :controller do
 
     context 'Failure' do
       before(:each) do
-        put params: {
+        put :update, params: {
           id: school.id, school: { name: nil }
         }, xhr: true, format: 'js'
       end
