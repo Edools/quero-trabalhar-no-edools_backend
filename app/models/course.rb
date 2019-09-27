@@ -13,7 +13,7 @@ class Course < ApplicationRecord
   private
 
   def can_be_destroyed?
-    if active_students.positive?
+    if active_students.to_i.positive?
       errors.add(:base, 'Existem alunos ativos')
       throw :abort
     end
