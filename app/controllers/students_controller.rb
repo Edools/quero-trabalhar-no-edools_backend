@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:activate, :deactivate]
-  before_action :set_course
+  before_action :set_course, except: [:active_students_by_school]
   def new
     @student = Student.new
   end
@@ -22,6 +22,10 @@ class StudentsController < ApplicationController
 
   def deactivate
     @student.update_attribute(:active, false)
+  end
+
+  def active_students_by_school
+    @students = Student.active_by_school_id(params[:school_id])
   end
 
   private
