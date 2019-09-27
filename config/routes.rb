@@ -6,10 +6,10 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
-    resources :courses, only: [:new, :create]
+    resources :courses, only: [:new, :create, :edit, :update]
   end
 
-  resources :courses, except: [:new, :create] do
+  resources :courses, except: [:new, :create, :edit, :update] do
     collection do
       get :search
     end
