@@ -2,7 +2,16 @@
 
 # Passos para executar o projeto
 O projeto foi gerado com o docker-compose. Portanto basta executar o comando "docker-compose up -d" e tudo será configurado.
-Talvez seja necessário inicializar o servidor pelo próprio container.
+
+# Acessando container
+* docker exec -it herospark /bin/bash
+* rake db:create
+* rake db:migrate
+* rake db:seed
+* rails s -b 0.0.0.0
+
+
+
 
 * Ruby version -> 2.5.5
 * Rails version -> 5.2.3
