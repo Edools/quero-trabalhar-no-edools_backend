@@ -5,10 +5,7 @@
         p
           b Cursos
       .divider.main-divider
-      .container
-        .right-align
-          = link_to 'Adicionar Curso', new_course_path, remote: true, class:'btn'
       .container style="margin-top:30px"
         = render 'shared/search_form', form_path: search_courses_path, placeholder: 'Nome'
-      #school_table style="margin-top:100px"
-        = render 'index'
+      #school_table style="margin-top:10px"
+        = render 'index', courses: @courses

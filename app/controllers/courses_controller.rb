@@ -1,5 +1,13 @@
 class CoursesController < ApplicationController
-  before_action :set_course, except: [:index, :new, :create]
+  before_action :set_course, except: [:index, :new, :create, :search]
+
+  def index
+    @courses = Course.all.page(params[:page])
+  end
+
+  def search
+    @courses = Course.by_title(params[:search]).by_school_name(params[:name])
+  end
 
   def show; end
 
@@ -15,7 +23,7 @@ class CoursesController < ApplicationController
   def edit; end
 
   def update
-    @params.update(course_params)
+    @course.update(course_params)
   end
 
   def destroy

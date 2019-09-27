@@ -1,0 +1,17 @@
+.row
+  .col.s12
+    .card.blue-card
+      .title
+        p
+          b = @school.name
+      .divider.main-divider
+      .row
+        .col.s6
+          = link_to 'Editar', edit_school_path(@school), remote: true, class:'btn'
+      #school_table style="margin-top:10px"
+        .row
+          .col.s12.m4
+            .card.green-card
+              = render 'show'
+          .col.s12.m8
+            = render 'courses/index', courses: @school.courses

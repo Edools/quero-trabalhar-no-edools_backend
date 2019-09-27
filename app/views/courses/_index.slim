@@ -1,8 +1,9 @@
-- if @courses
+- if courses
   .container
     table
       thead
         tr
+          th Escola
           th Título
           th Duração
           th Preço
@@ -10,10 +11,11 @@
           th Data de criação
           th Ações
       tbody
-        - @courses.each do |course|
+        - courses.each do |course|
           tr
+            td = course.school.try(:name)
             td = course.title
-            td = course.owner_email
+            td = course.duration.to_s + '/' + I18n.t("activerecord.attributes.course.duration_unit.#{course.duration_unit}")
             td = course.price
             td = course.active_students
             td = course.creation_date
@@ -24,6 +26,8 @@
                 i.fas.fa-edit
               = link_to course_path(course.id), method: :delete, remote: true do
                 i.far.fa-trash-alt
-  = paginate @courses
+  - if courses.try(:total_pages)
+    = paginate courses
 - else
-  h4 Nenhum registro encontrado
+  .title
+    h5.center-align  Nenhum curso encontrado
